@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.089
+Now, when I conducted such an experiment for the very first time,
+
+00:00:03.089 --> 00:00:07.334
+I was absolutely amazed by the window that opened up into the memory of my computer.
+
+00:00:07.334 --> 00:00:09.929
+Looking at the raw bits and bytes can really take
+
+00:00:09.929 --> 00:00:12.719
+away a sense of complexity from the topic of memory management.
+
+00:00:12.720 --> 00:00:15.510
+It can show us that at the very bottom of it,
+
+00:00:15.509 --> 00:00:17.579
+there are only ones and zeros.
+
+00:00:17.579 --> 00:00:19.199
+If we know the coding scheme,
+
+00:00:19.199 --> 00:00:20.309
+we can even understand them.
+
+00:00:20.309 --> 00:00:23.114
+Now that we have directly accessed memory cells,
+
+00:00:23.114 --> 00:00:28.109
+the question arises, where this exercise actually took place physically in the computer.
+
+00:00:28.109 --> 00:00:29.969
+In order to answer this question,
+
+00:00:29.969 --> 00:00:31.919
+we need to take a close look at
+
+00:00:31.920 --> 00:00:34.875
+the different forms of computer memory in the next section.
+
+00:00:34.875 --> 00:00:37.270
+So see you all there shortly.
+

@@ -1,0 +1,258 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Automatic Memory Allocation (The Stack)</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Variables and Memory</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. The Process Memory Model.html">01. The Process Memory Model</a>
+    </li>
+    <li class="">
+      <a href="02. Automatic Memory Allocation (The Stack).html">02. Automatic Memory Allocation (The Stack)</a>
+    </li>
+    <li class="">
+      <a href="03. Call-By-Value vs. Call-By-Reference.html">03. Call-By-Value vs. Call-By-Reference</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Automatic Memory Allocation (The Stack)</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L02 02.1 Automatic Memory Allocation (The Stack) HS</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L02 02.1 Automatic Memory Allocation (The Stack) HS-PlBDxf5ujyo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L02 02.1 Automatic Memory Allocation (The Stack) HS-PlBDxf5ujyo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="properties-of-stack-memory">Properties of Stack Memory</h2>
+<p>In the available literature on C++, the terms <em>stack</em> and <em>heap</em> are used regularly, even though this is not formally correct: C++ has the <em>free space</em>, <em>storage classes</em> and the <em>storage duration</em> of objects. However, since  stack and heap are widely used in the C++ community, we will also use it throughout this course. Should you come across the above-mentioned terms in a book or tutorial on the subject, you now know that they refer to the same concepts as stack and heap do. </p>
+<p>As mentioned in the last section, the stack is the place in virtual memory where the local variables reside, including arguments to functions. Each time a function is called, the stack grows (from top to bottom) and each time a function returns, the stack contracts. When using multiple threads (as in concurrent programming), it is important to know that each thread has its own stack memory - which can be considered thread-safe. </p>
+<p>In the following, a short list of key properties of the stack is listed: </p>
+<ol>
+<li><p>The stack is a <strong>contiguous block of memory</strong>. It will not become fragmented (as opposed to the heap) and it has a fixed maximum size. </p></li>
+<li><p>When the <strong>maximum size of the stack</strong> memory is exceeded, a program will crash. </p></li>
+<li><p>Allocating and deallocating <strong>memory is fast</strong> on the stack. It only involves moving the stack pointer to a new position. </p></li>
+</ol>
+<p>The following diagram shows the stack memory during a function call:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c22-fig1.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In the example, the variable <code>x</code> is created on the stack within the scope of main. Then, a stack frame which represents the function <code>Add</code> and its variables is pushed to the stack, moving the stack pointer further downwards. It can be seen that this includes the local variables <code>a</code> and <code>b</code>, as well as the return address, a base pointer and finally the return value <code>s</code>.  </p>
+<p>In the following, let us dig a little more deeply and conduct some experiments with variables on the stack.</p>
+<h2 id="stack-growth-and-contraction">Stack Growth and Contraction</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L02 02.2 Automatic Memory Allocation (The Stack) SC</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L02 02.2 Automatic Memory Allocation (The Stack) SC-W62TL4_NhEs.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L02 02.2 Automatic Memory Allocation (The Stack) SC-W62TL4_NhEs.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L02 02.3 Automatic Memory Allocation (The Stack) HS</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L02 02.3 Automatic Memory Allocation (The Stack) HS-gXdpjZiL7m8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L02 02.3 Automatic Memory Allocation (The Stack) HS-gXdpjZiL7m8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Before we take a look at the heap memory in the next lesson, let us briefly revisit the principles of call-by-value and call-by-reference with regard to stack usage. </p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Call-By-Value vs. Call-By-Reference.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Automatic Memory Allocation (The Stack)')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.889
+On the previous section, we have seen
+
+00:00:01.889 --> 00:00:04.184
+that memory in computers is arranged in a hierarchy,
+
+00:00:04.184 --> 00:00:08.640
+and the reason why this is done is related to the processing speed of modern CPUs,
+
+00:00:08.640 --> 00:00:12.330
+and also to the high prices of fast memory in the market.
+
+00:00:12.330 --> 00:00:15.900
+So small amounts of fast memory are combined with large amounts of
+
+00:00:15.900 --> 00:00:20.609
+slow memory to meet the needs of the CPU and the programmer's wallet.
+
+00:00:20.609 --> 00:00:23.789
+Now the cache is the intermediary in-between those two poles.
+
+00:00:23.789 --> 00:00:26.070
+It grabs data from slow memory from which it
+
+00:00:26.070 --> 00:00:28.850
+believes that the CPU might need it in the near future,
+
+00:00:28.850 --> 00:00:33.990
+and also data that will probably not be needed anytime soon is purged from cache memory.
+
+00:00:33.990 --> 00:00:36.920
+There are two major principles with caches which are
+
+00:00:36.920 --> 00:00:40.030
+called spatial and temporal locality,
+
+00:00:40.030 --> 00:00:41.704
+and as a C++ program,
+
+00:00:41.704 --> 00:00:46.219
+we can exploit these principles to produce faster and more efficient code.
+
+00:00:46.219 --> 00:00:50.219
+Sometimes a tiny change is enough to significantly increase the speed of a program,
+
+00:00:50.219 --> 00:00:53.539
+and sadly this is also true the other way around.
+
+00:00:53.539 --> 00:00:55.070
+So let's take a look at caches,
+
+00:00:55.070 --> 00:00:58.829
+cache levels, and customer-friendly programming.
+

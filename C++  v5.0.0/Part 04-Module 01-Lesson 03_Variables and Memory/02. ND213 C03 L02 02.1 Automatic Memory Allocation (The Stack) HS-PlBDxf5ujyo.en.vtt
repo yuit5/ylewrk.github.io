@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.020 --> 00:00:02.819
+Now, the stack is one of four areas in
+
+00:00:02.819 --> 00:00:06.619
+the process memory model which you as a programmer can use to hold data structures.
+
+00:00:06.620 --> 00:00:10.890
+It is faster than the heap because the operating system has much less managing overhead,
+
+00:00:10.890 --> 00:00:14.010
+and the only thing it does is to move a pointer to the top of the stack,
+
+00:00:14.009 --> 00:00:16.679
+up and down depending on the variables and
+
+00:00:16.679 --> 00:00:20.160
+functions in the local scope and the function calls that happened within.
+
+00:00:20.160 --> 00:00:22.230
+From our perspective as a programmer,
+
+00:00:22.230 --> 00:00:24.929
+stack memory is easy to use and we do not have to
+
+00:00:24.929 --> 00:00:28.199
+concern ourselves at all with memory deallocation.
+
+00:00:28.199 --> 00:00:30.869
+However, there are some downsides also as
+
+00:00:30.870 --> 00:00:33.630
+always to stack memory as we will see in this section.
+
+00:00:33.630 --> 00:00:35.770
+So let's take a look.
+

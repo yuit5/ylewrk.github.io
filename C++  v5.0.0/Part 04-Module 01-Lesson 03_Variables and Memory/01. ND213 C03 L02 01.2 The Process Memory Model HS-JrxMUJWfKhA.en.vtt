@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.424
+In this section, you have seen that virtual memory is divided into six sections.
+
+00:00:04.424 --> 00:00:06.419
+As a programmer, you can use four of these with
+
+00:00:06.419 --> 00:00:08.810
+stack and heap being the most important ones.
+
+00:00:08.810 --> 00:00:12.915
+Now, the major differences between stack and heap can be summarized as follows.
+
+00:00:12.914 --> 00:00:17.445
+The stack should be the default choice for memory allocations.
+
+00:00:17.445 --> 00:00:21.899
+Access is usually faster because its management is done by the operating system,
+
+00:00:21.899 --> 00:00:24.269
+and this is done much easier than with a heap.
+
+00:00:24.269 --> 00:00:28.079
+Also, you don't have to concern yourselves with de-allocations at all,
+
+00:00:28.079 --> 00:00:29.369
+his is done for you.
+
+00:00:29.370 --> 00:00:33.200
+The problem with a stack is its limited size and also in some cases
+
+00:00:33.200 --> 00:00:36.950
+its limited flexibility with regard to de-allocations,
+
+00:00:36.950 --> 00:00:39.000
+at the point in time which you want to.
+
+00:00:39.000 --> 00:00:42.500
+You have to wait until the scope is left before a variable is de-allocated,
+
+00:00:42.500 --> 00:00:44.960
+and the heap gives you much more flexibility here.
+
+00:00:44.960 --> 00:00:49.789
+Also, it is much larger than the stack and thus well-suited for larger data structures,
+
+00:00:49.789 --> 00:00:51.714
+as images, as videos, for example.
+
+00:00:51.715 --> 00:00:53.910
+However, you need to carefully manage it,
+
+00:00:53.909 --> 00:00:56.179
+otherwise there will be trouble in the form of
+
+00:00:56.179 --> 00:00:59.479
+memory leaks or dangling pointers as we will soon see.
+
+00:00:59.479 --> 00:01:02.134
+Now, let's move forward to the next section which is about
+
+00:01:02.134 --> 00:01:06.030
+automatic memory management on the stack.
+

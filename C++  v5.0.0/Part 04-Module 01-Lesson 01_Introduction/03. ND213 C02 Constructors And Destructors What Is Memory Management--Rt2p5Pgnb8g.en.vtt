@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.639 --> 00:00:09.779
+There's something that came in at the first week of the design of C++,
+
+00:00:09.779 --> 00:00:12.480
+the idea that you have an operation that
+
+00:00:12.480 --> 00:00:17.804
+initializes and operation that cleans up when you're finished.
+
+00:00:17.804 --> 00:00:20.550
+That's how you're going to have things in the scope.
+
+00:00:20.550 --> 00:00:22.890
+Because one is a local variable,
+
+00:00:22.890 --> 00:00:27.580
+a constructor will start up when you first come to it.
+
+00:00:27.579 --> 00:00:29.639
+When you're finished at the end of the scope,
+
+00:00:29.640 --> 00:00:34.079
+the destructor will be coordinated to clean up all of this.
+
+00:00:34.079 --> 00:00:40.034
+There are people who says that's the real secret to C++.
+
+00:00:40.034 --> 00:00:45.274
+Also competition, people trying to find what are your favorite C++ feature,
+
+00:00:45.274 --> 00:00:48.829
+and everybody agreed with a guy called Roger Orr,
+
+00:00:48.829 --> 00:00:51.179
+the end curly brace,
+
+00:00:52.280 --> 00:00:57.710
+the final closing brace because that's where all the magic happens,
+
+00:00:57.710 --> 00:01:01.384
+that's for all of the destructors fire and clean up the messes.
+
+00:01:01.384 --> 00:01:03.530
+That means you can actually have these message.
+
+00:01:03.530 --> 00:01:05.480
+You can grab lots of resources,
+
+00:01:05.480 --> 00:01:06.859
+you can take locks,
+
+00:01:06.859 --> 00:01:08.599
+you can open files,
+
+00:01:08.599 --> 00:01:11.339
+and all they cleaned up at the end.
+

@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.480
+We have seen quite a few examples in this section.
+
+00:00:02.480 --> 00:00:04.560
+You should be aware of the differences between
+
+00:00:04.559 --> 00:00:09.524
+call-by-value and call-by-reference with regard to memory usage and data ownership.
+
+00:00:09.525 --> 00:00:12.210
+Also you have seen that it makes a difference whether you
+
+00:00:12.210 --> 00:00:15.810
+harness 32-bit or 64-bit operating system,
+
+00:00:15.810 --> 00:00:18.855
+and even though the data structures from the examples have been small,
+
+00:00:18.855 --> 00:00:21.615
+imagine a program where you have to create many, many,
+
+00:00:21.614 --> 00:00:25.139
+many of such structures or maybe even larger structures which could
+
+00:00:25.140 --> 00:00:29.070
+eventually lead to stack overflow and thus a program crash.
+
+00:00:29.070 --> 00:00:30.510
+In the upcoming chapters,
+
+00:00:30.510 --> 00:00:34.469
+call-by-value and call-by-reference will play an important role in many situations.
+
+00:00:34.469 --> 00:00:36.929
+So let's move on to the next lesson which will introduce
+
+00:00:36.929 --> 00:00:41.009
+dynamic memory management on the heap. See you there.
+

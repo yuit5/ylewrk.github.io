@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.855
+Now, before we go into the details of memory management in C++,
+
+00:00:03.855 --> 00:00:07.009
+I want you to understand the structure of computer memory.
+
+00:00:07.009 --> 00:00:09.570
+You will most certainly know that information and computers
+
+00:00:09.570 --> 00:00:12.150
+are stored as a sequence of zeros and ones,
+
+00:00:12.150 --> 00:00:13.620
+which are also called bits.
+
+00:00:13.619 --> 00:00:18.089
+Now, a bit by the way is the smallest piece of information we can have in computing.
+
+00:00:18.089 --> 00:00:22.134
+You will also know that eight bits are grouped into something called a byte.
+
+00:00:22.135 --> 00:00:25.660
+Now, bits and bytes are expressed in a base two number system,
+
+00:00:25.660 --> 00:00:29.094
+which is an alternative to the base 10 we're also familiar.
+
+00:00:29.094 --> 00:00:31.239
+What some programmers do not know however,
+
+00:00:31.239 --> 00:00:33.949
+is that in addition to the base two numbering system,
+
+00:00:33.950 --> 00:00:36.520
+there is also a base 16 system,
+
+00:00:36.520 --> 00:00:39.345
+which plays an important role in memory management.
+
+00:00:39.344 --> 00:00:41.359
+Now, the idea of this section is to give you
+
+00:00:41.359 --> 00:00:44.539
+an introduction into why base two is so useful,
+
+00:00:44.539 --> 00:00:47.719
+how bits and bytes can be used to represent information,
+
+00:00:47.719 --> 00:00:50.045
+and what a base 16 system does for us.
+
+00:00:50.045 --> 00:00:53.070
+So let's go and look at some numbers.
+

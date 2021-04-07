@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.660
+Hi and welcome to this course on memory management in C plus plus.
+
+00:00:03.660 --> 00:00:06.900
+Now, before we dive into all the material that is waiting for you here,
+
+00:00:06.900 --> 00:00:08.805
+let me introduce myself briefly.
+
+00:00:08.805 --> 00:00:13.155
+My name is Andreas Haya and I'm a professor of engineering at a German university.
+
+00:00:13.155 --> 00:00:17.340
+Also I do hold a PhD in computer science from Heidelberg University,
+
+00:00:17.340 --> 00:00:19.890
+which is one of the oldest universities we have in
+
+00:00:19.890 --> 00:00:22.920
+Germany and one of the most renowned also internationally.
+
+00:00:22.920 --> 00:00:25.460
+I've been programming ever since I was 14,
+
+00:00:25.460 --> 00:00:27.725
+starting with Pascal and then C plus plus,
+
+00:00:27.725 --> 00:00:29.800
+something like 25 years ago.
+
+00:00:29.800 --> 00:00:34.429
+During my time in the automotive industry I've created a number of interesting projects,
+
+00:00:34.429 --> 00:00:37.970
+such as an autonomous braking system based on computer vision with Bush,
+
+00:00:37.970 --> 00:00:40.190
+and more recently an autonomous parking
+
+00:00:40.190 --> 00:00:43.585
+system,during my time as a project manager with phosphor.
+
+00:00:43.585 --> 00:00:45.475
+On both of these projects,
+
+00:00:45.475 --> 00:00:47.870
+C Plus Plus was the best choice we could
+
+00:00:47.870 --> 00:00:50.740
+make to create these ambitious feats of engineering,
+
+00:00:50.740 --> 00:00:52.490
+and maybe also of interest to you,
+
+00:00:52.490 --> 00:00:56.360
+I have created a few other courses for Udacity such as the camera course in
+
+00:00:56.360 --> 00:01:02.090
+the sensor fusion outdegree and also here the concurrency course in this degree.
+
+00:01:02.090 --> 00:01:05.290
+So we will meet quite a few times over the next weeks and months.
+
+00:01:05.290 --> 00:01:09.440
+Now, let's dive into memory management in C plus plus, which to me,
+
+00:01:09.440 --> 00:01:11.960
+is one of the most interesting topics there is because
+
+00:01:11.960 --> 00:01:14.815
+it really lets you get to the heart of the language.
+
+00:01:14.815 --> 00:01:16.460
+After completing this course,
+
+00:01:16.460 --> 00:01:19.565
+you will have a much deeper understanding of C plus plus.
+
+00:01:19.565 --> 00:01:21.305
+That is something I can promise to you.
+
+00:01:21.305 --> 00:01:24.540
+So let's have a look at the course content now.
+

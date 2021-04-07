@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.425
+When a program starts,
+
+00:00:01.425 --> 00:00:04.080
+it gets its very own block of virtual memory.
+
+00:00:04.080 --> 00:00:05.250
+Depending on the system,
+
+00:00:05.250 --> 00:00:07.890
+this block can have an upper limit of let's say four gigabyte,
+
+00:00:07.889 --> 00:00:14.939
+on a 32-bit system or 16 exabytes which is basically no limit at all on a 64-bit system.
+
+00:00:14.939 --> 00:00:17.219
+The virtual memory of our program does have
+
+00:00:17.219 --> 00:00:19.799
+some convenient properties as we have seen in the last section.
+
+00:00:19.800 --> 00:00:22.230
+In addition to the contiguous address space,
+
+00:00:22.230 --> 00:00:25.170
+so let's divide it into different areas, and as programmers,
+
+00:00:25.170 --> 00:00:28.660
+we can use four out of six of these areas for storing data,
+
+00:00:28.660 --> 00:00:31.129
+the rest is managed by the operating system.
+
+00:00:31.129 --> 00:00:33.969
+The most important areas for us are the heap and the stacks,
+
+00:00:33.969 --> 00:00:35.615
+which you may have heard about already.
+
+00:00:35.615 --> 00:00:37.280
+From a memory management perspective,
+
+00:00:37.280 --> 00:00:40.340
+the decision of how to use stack and keeping your program
+
+00:00:40.340 --> 00:00:44.180
+is one of the core responsibilities of you as a programmer.
+
+00:00:44.179 --> 00:00:46.820
+Now the implications of using memory on the heap are
+
+00:00:46.820 --> 00:00:50.270
+fundamentally different from using an equal amount of memory on the stack.
+
+00:00:50.270 --> 00:00:52.490
+This section is meant as an introduction into
+
+00:00:52.490 --> 00:00:56.679
+the process memory model which you must adhere to as a C++ program.
+
+00:00:56.679 --> 00:00:59.329
+The other section of this lesson will then
+
+00:00:59.329 --> 00:01:02.479
+show you how to correctly use both stack and heap.
+
+00:01:02.479 --> 00:01:07.289
+But let's not get ahead of ourselves and take a look at the memory model first
+

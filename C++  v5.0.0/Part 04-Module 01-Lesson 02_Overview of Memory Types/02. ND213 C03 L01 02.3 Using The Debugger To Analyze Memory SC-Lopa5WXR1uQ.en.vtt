@@ -1,0 +1,211 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.830
+In order show this memory,
+
+00:00:01.830 --> 00:00:03.770
+we have to use the x command.
+
+00:00:03.770 --> 00:00:07.815
+If you look into the cheatsheet in variables and memory here on the right,
+
+00:00:07.815 --> 00:00:09.320
+we have this command,
+
+00:00:09.320 --> 00:00:10.500
+it's not so intuitive.
+
+00:00:10.500 --> 00:00:12.555
+So it might seem a little bit intimidating,
+
+00:00:12.555 --> 00:00:14.370
+all these characters here n, and f,
+
+00:00:14.370 --> 00:00:15.795
+and u these parameters,
+
+00:00:15.795 --> 00:00:18.375
+x helps you access memory.
+
+00:00:18.375 --> 00:00:21.810
+You are using the backslash here or the slash here to separate it from
+
+00:00:21.810 --> 00:00:25.590
+the parameters which you can provide in order to format the memory.
+
+00:00:25.590 --> 00:00:29.235
+So the n refers to the number of units you want to print.
+
+00:00:29.235 --> 00:00:32.340
+As we have seven characters in Udacity,
+
+00:00:32.340 --> 00:00:35.025
+we want to print seven successive memory addresses
+
+00:00:35.025 --> 00:00:38.820
+starting from the address of the character array.
+
+00:00:38.820 --> 00:00:40.690
+So n is going to be seven for us.
+
+00:00:40.690 --> 00:00:44.810
+Then we have the format in which we want to show the characters,
+
+00:00:44.810 --> 00:00:49.310
+and the format actually can be seen here on the upper-left corner of the second page.
+
+00:00:49.310 --> 00:00:51.720
+This is what the f is referring to,
+
+00:00:51.720 --> 00:00:55.370
+and if you look into the lower half here we have the parameter t,
+
+00:00:55.370 --> 00:00:57.710
+which says okay print it as an integer but as
+
+00:00:57.710 --> 00:01:00.850
+a binary integers that means only zeros and ones,
+
+00:01:00.850 --> 00:01:03.980
+and if you want to print something in binary format use t.
+
+00:01:03.980 --> 00:01:07.120
+So we have seven for seven memory addresses,
+
+00:01:07.120 --> 00:01:09.020
+seven successive memory addresses,
+
+00:01:09.020 --> 00:01:12.160
+and then t for binary information.
+
+00:01:12.160 --> 00:01:15.680
+The last parameter we want to use is b,
+
+00:01:15.680 --> 00:01:17.330
+and b is going to be byte.
+
+00:01:17.330 --> 00:01:22.490
+So the unit we are going to print seven successive bytes in binary form.
+
+00:01:22.490 --> 00:01:26.345
+So what we need to do now is we need to enter the x command and we have the slash,
+
+00:01:26.345 --> 00:01:30.085
+then we use seven for seven successive memory addresses,
+
+00:01:30.085 --> 00:01:32.660
+then we are going to use t for binary,
+
+00:01:32.660 --> 00:01:34.415
+and then we're going to 044,
+
+00:01:34.415 --> 00:01:38.210
+zeros and ones, then we are using b for binary and that's basically here.
+
+00:01:38.210 --> 00:01:42.035
+The only thing missing now is the memory address where we want to start the operation.
+
+00:01:42.035 --> 00:01:50.540
+This is going to be 0x7ffeefbff940,
+
+00:01:50.540 --> 00:01:52.550
+which is exactly the one which we have
+
+00:01:52.550 --> 00:01:55.410
+gotten from printing the address of string number 1.
+
+00:01:55.410 --> 00:01:56.480
+Let's hit Enter.
+
+00:01:56.480 --> 00:01:59.645
+What we can see here now is a succession of bits
+
+00:01:59.645 --> 00:02:03.200
+and of course all the bits together in one group is called a byte.
+
+00:02:03.200 --> 00:02:06.680
+So we have bits inside a byte and several bytes in a row,
+
+00:02:06.680 --> 00:02:08.479
+seven for seven successive bytes.
+
+00:02:08.479 --> 00:02:10.909
+If you look up the ASCII table,
+
+00:02:10.910 --> 00:02:14.690
+what you will find is that the information printed as
+
+00:02:14.690 --> 00:02:18.875
+binaries here corresponds to the letter u in the ASCII table.
+
+00:02:18.875 --> 00:02:20.525
+This is the D, the A,
+
+00:02:20.525 --> 00:02:23.090
+the C, I, T and Y.
+
+00:02:23.090 --> 00:02:27.035
+So this is the Udacity directly inside computer memory.
+
+00:02:27.035 --> 00:02:30.635
+What we can also do because we have been talking about hexadecimal,
+
+00:02:30.635 --> 00:02:33.725
+we can change this format into hex format,
+
+00:02:33.725 --> 00:02:38.465
+we can simply repeat the string and change the t here in our call,
+
+00:02:38.465 --> 00:02:41.305
+let's look up the format again into an x,
+
+00:02:41.305 --> 00:02:44.550
+printed as hexadecimal, and then by
+
+00:02:44.550 --> 00:02:48.380
+changing this column only this one position pressing Enter,
+
+00:02:48.380 --> 00:02:53.000
+we get the same information printed to the console in hexadecimal format.
+
+00:02:53.000 --> 00:02:54.180
+So that's basically it.
+
+00:02:54.180 --> 00:02:59.810
+We have now, taken a look directly inside the virtual memory of our example program
+
+00:02:59.810 --> 00:03:02.330
+and we have located the location of
+
+00:03:02.330 --> 00:03:05.810
+Udacity and printed the content of the string as well.
+
+00:03:05.810 --> 00:03:08.915
+So that's basically how computer memory works. It's really that easy.
+
+00:03:08.915 --> 00:03:11.990
+You convert information into binary form,
+
+00:03:11.990 --> 00:03:14.870
+you store the information at a certain memory address,
+
+00:03:14.870 --> 00:03:18.395
+and depending on the type of information which you have be it the character,
+
+00:03:18.395 --> 00:03:19.745
+a float or a double,
+
+00:03:19.745 --> 00:03:22.370
+you can simply print the information to
+
+00:03:22.370 --> 00:03:25.175
+the console using in this case the [inaudible] debugger,
+
+00:03:25.175 --> 00:03:27.575
+and analyze it and in some cases,
+
+00:03:27.575 --> 00:03:31.230
+you might also be able to track down certain errors.
+

@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.970
+Now, from a memory management perspective creating
+
+00:00:02.970 --> 00:00:07.125
+variables on the stack does not require much thought and effort from you as a programmer.
+
+00:00:07.125 --> 00:00:10.500
+The operating system can expand and contract the stack by moving
+
+00:00:10.500 --> 00:00:13.875
+the stack memory pointed downwards or upwards, and if possible,
+
+00:00:13.875 --> 00:00:16.620
+you should allocate variables on the stack as
+
+00:00:16.620 --> 00:00:20.370
+a default because allocation and deallocation are faster there and
+
+00:00:20.370 --> 00:00:23.234
+there is no special deallocation needed by you or
+
+00:00:23.234 --> 00:00:27.839
+manual deallocation because this is done automatically by the operating system.
+
+00:00:27.839 --> 00:00:32.369
+There is the danger of a program crash when the size of the stack memory is exceeded.
+
+00:00:32.369 --> 00:00:36.169
+In case you need to maintain large data structures such as images or videos,
+
+00:00:36.170 --> 00:00:39.115
+you should use the dynamic heap memory instead.
+
+00:00:39.115 --> 00:00:43.775
+Also, the heap offers higher flexibility for the deallocations as we will soon see.
+
+00:00:43.774 --> 00:00:45.949
+But before we learn more about the heap though,
+
+00:00:45.950 --> 00:00:50.510
+we need to revisit the concepts of call by value and call by reference,
+
+00:00:50.509 --> 00:00:52.399
+which you surely will have heard about as they have
+
+00:00:52.399 --> 00:00:56.134
+a direct influence of how and where memory is allocated.
+
+00:00:56.134 --> 00:00:59.009
+Let's take a look at the next section.
+

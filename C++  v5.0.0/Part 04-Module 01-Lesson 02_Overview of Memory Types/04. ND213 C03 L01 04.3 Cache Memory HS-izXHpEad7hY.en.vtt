@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.450
+This section we have seen that exploiting knowledge about the workings of
+
+00:00:03.450 --> 00:00:06.929
+cache memory can really increase the speed of your programs.
+
+00:00:06.929 --> 00:00:11.804
+A slight change in the order of two loops can cause a major speedup and also vice versa.
+
+00:00:11.804 --> 00:00:14.849
+The bottom line here is you need to have a grasp of
+
+00:00:14.849 --> 00:00:18.419
+the structure of computer memory to produce high-performance code.
+
+00:00:18.420 --> 00:00:20.115
+There is just no way around this.
+
+00:00:20.114 --> 00:00:24.554
+Now that we know about the different memory types and also about caches where to go next.
+
+00:00:24.554 --> 00:00:27.495
+Well, directly into C plus plus.
+
+00:00:27.495 --> 00:00:30.480
+Let's take a look at one more thing before we do this.
+
+00:00:30.480 --> 00:00:34.799
+I imagine you had optimized the program to run super efficiently on one machine
+
+00:00:34.799 --> 00:00:39.439
+and then on another machine it runs much slower or worse it crushes altogether.
+
+00:00:39.439 --> 00:00:42.049
+It would be really nice to be totally independent of
+
+00:00:42.049 --> 00:00:46.009
+the hardware configuration of the computer on which your programs run.
+
+00:00:46.009 --> 00:00:48.619
+Also writing a new program with
+
+00:00:48.619 --> 00:00:51.259
+variations for different hardware configurations would be really
+
+00:00:51.259 --> 00:00:56.449
+tedious and the solution to both of these aspects is called virtual memory.
+
+00:00:56.450 --> 00:00:59.480
+That's what we'll take a look at in the last section of this lesson,
+
+00:00:59.479 --> 00:01:02.069
+so see you there shortly.
+

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.270
+In the last section, we have seen how the computer cache can speed up
+
+00:00:03.270 --> 00:00:06.779
+programs by moving data from slow memory into fast memory,
+
+00:00:06.780 --> 00:00:08.804
+and that will be needed by the CPU in the near future.
+
+00:00:08.804 --> 00:00:10.994
+That's the basic idea of a cache.
+
+00:00:10.994 --> 00:00:14.939
+In this section, we will take a look at the concept of virtual memory.
+
+00:00:14.939 --> 00:00:17.189
+It's safe to say that a virtual memory makes it
+
+00:00:17.190 --> 00:00:20.460
+possible to run your program on a variety of computers,
+
+00:00:20.460 --> 00:00:23.070
+all with different amounts of memory and disk space,
+
+00:00:23.070 --> 00:00:26.039
+without the need to change the thing in your code,
+
+00:00:26.039 --> 00:00:31.199
+and virtual memory assigns a contiguous and well ordered block of memory to each program,
+
+00:00:31.199 --> 00:00:33.329
+and takes care that other programs do not
+
+00:00:33.329 --> 00:00:36.030
+interfere with the virtual memory of your program.
+
+00:00:36.030 --> 00:00:37.770
+Let's take a look at how this works,
+
+00:00:37.770 --> 00:00:41.080
+and what it means to us as programmers.
+

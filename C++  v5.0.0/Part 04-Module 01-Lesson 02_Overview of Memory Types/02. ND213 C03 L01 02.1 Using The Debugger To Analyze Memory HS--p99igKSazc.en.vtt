@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.419
+In the last section, you have seen how binary and text numbers
+
+00:00:03.419 --> 00:00:06.419
+can be used to store information such as text on a computer.
+
+00:00:06.419 --> 00:00:09.629
+Now in this section, we will use a debugger to glimpse directly into
+
+00:00:09.630 --> 00:00:13.860
+computer memory to locate a string of characters and its binary form.
+
+00:00:13.859 --> 00:00:16.050
+The key idea here is to understand that there is
+
+00:00:16.050 --> 00:00:18.690
+no magic behind storing information in memory.
+
+00:00:18.690 --> 00:00:21.420
+Based on a coding scheme such as ASCII, for example,
+
+00:00:21.420 --> 00:00:26.298
+data is available to us and we can directly see it in computer memory and if necessary,
+
+00:00:26.298 --> 00:00:28.750
+we can also change it and store it.
+
+00:00:28.750 --> 00:00:31.234
+Before we start, I'd like to warn you a little bit.
+
+00:00:31.234 --> 00:00:32.960
+The GDP output is not pretty,
+
+00:00:32.960 --> 00:00:35.030
+there is no need graphical user interface we will
+
+00:00:35.030 --> 00:00:37.325
+use to look at a colorful display up on memory,
+
+00:00:37.325 --> 00:00:40.580
+but instead, we will see the raw numbers in the terminal,
+
+00:00:40.579 --> 00:00:42.409
+both in binary and in hex form.
+
+00:00:42.409 --> 00:00:44.519
+So let's go for it.
+

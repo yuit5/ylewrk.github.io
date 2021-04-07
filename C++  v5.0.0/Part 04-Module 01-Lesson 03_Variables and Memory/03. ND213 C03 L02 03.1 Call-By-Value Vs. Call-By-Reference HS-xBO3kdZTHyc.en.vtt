@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.819
+Now, you are surely already familiar with the concepts of call by
+
+00:00:02.819 --> 00:00:06.375
+value and call by reference when passing variables to a function.
+
+00:00:06.375 --> 00:00:08.160
+With regard to memory management,
+
+00:00:08.160 --> 00:00:10.650
+the two concepts differ significantly from each
+
+00:00:10.650 --> 00:00:13.589
+other as you have seen before and as you will see again.
+
+00:00:13.589 --> 00:00:14.775
+When a function is called,
+
+00:00:14.775 --> 00:00:18.330
+a stack frame is created which contains information about the function
+
+00:00:18.329 --> 00:00:22.574
+such as the return address and all the local variables within the function scope.
+
+00:00:22.574 --> 00:00:24.839
+When you pass a variable by value,
+
+00:00:24.839 --> 00:00:27.269
+it will exist on the stack within the scope of
+
+00:00:27.269 --> 00:00:30.839
+the color for example in main which you have seen countless times before.
+
+00:00:30.839 --> 00:00:32.310
+When you declare a variable in main,
+
+00:00:32.310 --> 00:00:34.875
+it's within the scope of the main function.
+
+00:00:34.875 --> 00:00:36.380
+But when you pass it to a function,
+
+00:00:36.380 --> 00:00:39.450
+it will also exist as a copy in the function itself,
+
+00:00:39.450 --> 00:00:43.010
+so we have essentially doubled the memory load to hold the data.
+
+00:00:43.009 --> 00:00:46.309
+The alternative is to call the function by reference and in doing so,
+
+00:00:46.310 --> 00:00:48.715
+no local copy will be created on the stack.
+
+00:00:48.715 --> 00:00:51.470
+Now, instead, you will be able to directly operate on
+
+00:00:51.469 --> 00:00:54.564
+the original data that lives in the scope of the color.
+
+00:00:54.564 --> 00:00:56.929
+The third alternative is a combination of both worlds.
+
+00:00:56.929 --> 00:01:00.019
+You can also pass a pointer to a variable by
+
+00:01:00.020 --> 00:01:04.185
+value which creates a local point of variable on the stack but allows you to,
+
+00:01:04.185 --> 00:01:07.750
+using the pointer, directly manipulate the memory to which it points.
+
+00:01:07.750 --> 00:01:10.760
+A pointer can also be null and you can initialize it within
+
+00:01:10.760 --> 00:01:13.790
+the function which is not possible with references.
+
+00:01:13.790 --> 00:01:16.040
+So let's take a look at call-by-value and
+
+00:01:16.040 --> 00:01:19.859
+call-by-reference with memory management in mind.
+

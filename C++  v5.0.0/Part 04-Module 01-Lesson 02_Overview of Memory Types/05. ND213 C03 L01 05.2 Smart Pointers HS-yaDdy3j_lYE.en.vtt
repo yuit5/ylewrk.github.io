@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.160
+Now, virtual memory is a concept from which we really benefit as programmers.
+
+00:00:04.160 --> 00:00:06.150
+We do not have to concern ourselves with
+
+00:00:06.150 --> 00:00:09.540
+the specific hardware configuration of the computer we are working on.
+
+00:00:09.539 --> 00:00:11.129
+We can simply write a program,
+
+00:00:11.130 --> 00:00:13.290
+compile it, and be done with it.
+
+00:00:13.289 --> 00:00:15.644
+However, the virtual memory does not remove
+
+00:00:15.644 --> 00:00:18.359
+the necessity of cache and reprogramming altogether.
+
+00:00:18.359 --> 00:00:20.445
+Also knowing about what's beneath
+
+00:00:20.445 --> 00:00:23.339
+the shiny surface of your current block of program memory is
+
+00:00:23.339 --> 00:00:25.559
+beneficial in such cases where you want to
+
+00:00:25.559 --> 00:00:28.769
+squeeze some extra performance out of your programs.
+
+00:00:28.769 --> 00:00:31.800
+Now a low-hanging fruit would be to relocate
+
+00:00:31.800 --> 00:00:33.750
+the virtual swap file on your computer to
+
+00:00:33.750 --> 00:00:37.049
+a faster location such as a high-speed solid state.
+
+00:00:37.049 --> 00:00:39.199
+One huge advantage of virtual memory is
+
+00:00:39.200 --> 00:00:41.859
+the contiguous address space you get for each program.
+
+00:00:41.859 --> 00:00:43.789
+This makes it possible to divide
+
+00:00:43.789 --> 00:00:47.299
+the addresses in this space into areas for dedicated usage.
+
+00:00:47.299 --> 00:00:48.589
+You could for example say,
+
+00:00:48.590 --> 00:00:51.355
+okay this is an area where only global variables live.
+
+00:00:51.354 --> 00:00:53.239
+Or you could fence a memory range in which
+
+00:00:53.240 --> 00:00:55.789
+the programmer and which the program code is stored,
+
+00:00:55.789 --> 00:00:57.784
+where the programmer has no direct access to.
+
+00:00:57.784 --> 00:01:01.199
+Such a thing exists and it is called Memory Model.
+
+00:01:01.200 --> 00:01:04.250
+Knowing about the structure and the properties of the different areas of
+
+00:01:04.250 --> 00:01:06.859
+the C++ memory model is basically what
+
+00:01:06.859 --> 00:01:09.739
+memory management and also this course is all about.
+
+00:01:09.739 --> 00:01:12.289
+You now know how memory is structured on a bit level,
+
+00:01:12.290 --> 00:01:15.094
+you know about different memory types and the properties,
+
+00:01:15.093 --> 00:01:18.309
+and you've seen what virtual memory does for you.
+
+00:01:18.310 --> 00:01:19.359
+In the next lesson,
+
+00:01:19.359 --> 00:01:21.599
+we will dive deeper into the C++ memory model,
+
+00:01:21.599 --> 00:01:25.155
+and we will also talk about the concepts of heap and of stack,
+
+00:01:25.155 --> 00:01:27.064
+which you might already have heard about.
+
+00:01:27.064 --> 00:01:29.750
+But beware, it's going to be a really deep dive.
+
+00:01:29.750 --> 00:01:32.159
+So see there shortly.
+

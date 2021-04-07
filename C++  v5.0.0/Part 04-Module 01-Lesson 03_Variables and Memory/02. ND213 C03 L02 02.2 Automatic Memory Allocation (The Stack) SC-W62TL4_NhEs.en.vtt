@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.660
+Now when a variable is created on the stack or when a function is called,
+
+00:00:03.660 --> 00:00:07.095
+the stack pointer has moved downwards which means it expands.
+
+00:00:07.094 --> 00:00:10.039
+When a function returns and the variable goes out of scope,
+
+00:00:10.039 --> 00:00:11.739
+the stack contracts again.
+
+00:00:11.740 --> 00:00:16.094
+In this experiment we will create some variables on the stack and also call a function.
+
+00:00:16.094 --> 00:00:20.009
+The idea is to look at the respective addresses and see if we can really
+
+00:00:20.010 --> 00:00:24.330
+witness the expansion and contraction of the stack. Here we go.
+
+00:00:24.329 --> 00:00:25.889
+Before we go into the example,
+
+00:00:25.890 --> 00:00:27.690
+let's have a quick look at the function here.
+
+00:00:27.690 --> 00:00:32.310
+We have the main function inside the main function there is a variable i an integer
+
+00:00:32.310 --> 00:00:37.155
+and there's a j and integer l which are created here and getting assigned some values.
+
+00:00:37.155 --> 00:00:38.410
+In between j and l,
+
+00:00:38.409 --> 00:00:40.924
+we have a call to a function called myfunc.
+
+00:00:40.924 --> 00:00:43.084
+This one is to be found up here.
+
+00:00:43.085 --> 00:00:47.210
+Inside myfunc, we also have an integer which is allocated on the stack which gets
+
+00:00:47.210 --> 00:00:51.439
+assigned the value three and with all variables which are allocated here,
+
+00:00:51.439 --> 00:00:55.443
+we are printing the respective address on the stack to the console
+
+00:00:55.444 --> 00:01:00.050
+together with the value which is assigned to the variable itself so it's going to be one,
+
+00:01:00.049 --> 00:01:02.329
+two, three and four.
+
+00:01:02.329 --> 00:01:05.090
+When we execute the program which we will do now,
+
+00:01:05.090 --> 00:01:09.320
+we can see that we are getting a whole bunch of addresses and these are
+
+00:01:09.319 --> 00:01:11.974
+the addresses where the variables are
+
+00:01:11.974 --> 00:01:15.929
+stored on the stack and now let's get back into the example.
+

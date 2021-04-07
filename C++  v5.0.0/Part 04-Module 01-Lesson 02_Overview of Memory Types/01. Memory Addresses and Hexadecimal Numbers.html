@@ -1,0 +1,386 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memory Addresses and Hexadecimal Numbers</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Overview of Memory Types</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Memory Addresses and Hexadecimal Numbers.html">01. Memory Addresses and Hexadecimal Numbers</a>
+    </li>
+    <li class="">
+      <a href="02. Using the Debugger to Analyze Memory.html">02. Using the Debugger to Analyze Memory</a>
+    </li>
+    <li class="">
+      <a href="03. Types of Computer Memory.html">03. Types of Computer Memory</a>
+    </li>
+    <li class="">
+      <a href="04. Cache Memory.html">04. Cache Memory</a>
+    </li>
+    <li class="">
+      <a href="05. Virtual Memory.html">05. Virtual Memory</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">01. Memory Addresses and Hexadecimal Numbers</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L01 01.1 Memory Addresses And Hexadecimal Numbers HS</p></h3>
+  <video controls>
+  <source src="01. ND213 C03 L01 01.1 Memory Addresses And Hexadecimal Numbers HS-OAU28NfySsQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="01. ND213 C03 L01 01.1 Memory Addresses And Hexadecimal Numbers HS-OAU28NfySsQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="memory-addresses-and-hexadecimal-numbers">Memory Addresses and Hexadecimal Numbers</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Understanding the number system used by computers  to store and process data is essential for effective memory management, which is why we will start with an introduction into the binary and hexadecimal number systems and the structure of memory addresses. </p>
+<p>Early attempts to invent an electronic computing device met with disappointing results as long as engineers and computer scientists tried to use the decimal system. One of the biggest problems was the low distinctiveness of the individual symbols in the presence of <a href="https://en.wikipedia.org/wiki/Noise_%28electronics%29" rel="noopener noreferrer" target="_blank">noise</a>. A 'symbol' in our alphabet might be a letter in the range A-Z while in our decimal system it might be a number in the range 0-9. The more symbols there are, the harder it can be to differentiate between them, especially when there is electrical interference. After many years of research, an early pioneer in  computing, John Atanasoff,  proposed to use a coding system that expressed numbers as sequences of only two digits: one by the presence of a charge and one by the absence of a charge. This numbering system is called Base 2 or binary and it is represented by the digits 0 and 1 (called 'bit')  instead of 0-9 as with the decimal system. Differentiating between only two symbols, especially at high frequencies, was much easier and more robust than with 10 digits. In a way, the ones and zeroes of the binary system can be compared to Morse Code, which is also a very robust way to transmit information in the presence of much interference. This was one of the primary reasons why the binary system quickly became the standard for computing.</p>
+<p>Inside each computer, all numbers, characters, commands and every imaginable type of information are represented in binary form. Over the years, many coding schemes and techniques were invented to manipulate these 0s and 1s effectively.  One of the most widely used schemes is called ASCII (<em>American Standard Code for Information Interchange</em>), which lists the binary code for a set of 127 characters. The idea was to represent each letter with a sequence of binary numbers so that storing texts on in computer memory and on hard (or floppy) disks would be possible. </p>
+<p>The film enthusiasts among you might know the scene in the hit movie "The Martian" with Mat Daemon, in which an ASCII table plays an important role in the rescue from Mars.</p>
+<p>The following figure shows an ASCII table, where each character (rightmost column) is associated with an 8-digit binary number:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ascii-table-black.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The letter <code>U</code> for example can be represented by the following sequence of bits: <code>0101 0101</code></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Can you figure out the binary sequence for the word "UDACITY"?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1568139989298" name="930276" id="a1568139989298">
+        <label for="a1568139989298"><p>01001000 01100101 01101100 01101100 01101111 0100000 01010111 01101111 01110010 01101100 01100100</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568139996411" name="930276" id="a1568139996411">
+        <label for="a1568139996411"><p>01110100 01110010 01111001 01000001 01100111 01100001 01101001 01101110</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568139997403" name="930276" id="a1568139997403">
+        <label for="a1568139997403"><p>01010101 01000100 01000001 01000011 01001001 01010100 01011001</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568139998081" name="930276" id="a1568139998081">
+        <label for="a1568139998081"><p>01010101 01000100 01001111 01001110 01001101 01001101 01001101</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    01010101 01000100 01000001 01000011 01001001 01010100 01011001
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In addition to the decimal number (column "Dec") and the binary number, the ASCII table provides a third number for each character (column "Hex"). According to the table above, the letter <code>z</code> is referenced by the decimal number <code>122</code>, by the binary number <code>0111 1010</code> and by <code>7A</code>. You have probably seen this type of notation before, which is called "<em>hexadecimal</em>".  Hexadecimal (hex) numbers are used often in computer systems, e.g for displaying memory readouts - which is why we will look into this topic a little bit deeper. Instead of having a base of 2 (such as binary numbers) or a base of 10 (such as our conventional decimal numbers), hex numbers have a base of 16. The conversion between the different numbering systems is a straightforward operation and can be easily performed with any scientific calculator. More details on how to do this can e.g. be found <a href="https://en.wikipedia.org/wiki/Computer_number_format" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p>There are several reasons why it is preferable to use hex numbers instead of binary numbers (which computers store at the lowest level), three of which are given below: </p>
+<ol>
+<li><p><strong>Readability</strong>: It is significantly easier for a human to understand hex numbers as they resemble the decimal numbers we are used to. It is simply not intuitive to look at binary numbers and decide how big they are and how they relate to another binary number. </p></li>
+<li><p><strong>Information density</strong>: A hex number with two digits can express any number from 0 to 255 (because 16^2 is 256). To do the same in the binary system, we would require 8 digits. This difference is even more pronounced as numbers get larger and thus harder to deal with. </p></li>
+<li><p><strong>Conversion into bytes</strong>:  Bytes are units of information consisting of 8 bits. Almost all computers are byte-addressed, meaning all memory is referenced by byte, instead of by bit. Therefore, using a counting system that can easily convert into bytes is an important requirement. We will shortly see why grouping bits into a byte plays a central role in understanding how computer memory works.</p></li>
+</ol>
+<p>The reason why early computer scientists have decided to not use decimal numbers can also be seen in the figure below. In these days (before pocket calculators were widely available), programers had to interpret computer output in their head on a regular basis. For them, it was much easier and quicker to look at and interpret <code>7E</code>instead of <code>0111 1110</code>. Ideally, they would have used the decimal system, but the conversion between base 2 and base 10 is much harder than between base 2 and base 16. Note in the figure that the decimal system's digit transitions never match those of the binary system. With the hexadecimal system, which is based on a multiple of 2, digit transitions match up each time, thus making it much easier to convert quickly between these numbering systems.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c11-fig2.png" alt="Each dot represents an increase in the number of digits required to express a number in different number systems. For base 2, this happens at 2, 4, 8, 32, 64, 128 and 256. The red dots indicate positions where several numbering systems align. Note that there are breaks in the number line to conserve space." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Each dot represents an increase in the number of digits required to express a number in different number systems. For base 2, this happens at 2, 4, 8, 32, 64, 128 and 256. The red dots indicate positions where several numbering systems align. Note that there are breaks in the number line to conserve space.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Convert the following numbers from binary into hex and vice-versa:</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>11101</p></button>
+  <button class="btn btn-primary"><p>D9</p></button>
+  <button class="btn btn-primary"><p>1111 1111</p></button>
+  <button class="btn btn-primary"><p>96</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Number</p>
+      </th>
+      <th>
+        <p>Conversion</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>FF</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>1D</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>1101 1001</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>1001 0110</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Number</p>
+        </th>
+        <th>
+          <p>Conversion</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>1D</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>11101</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>1101 1001</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>D9</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>FF</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>1111 1111</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>1001 0110</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>96</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L01 01.2 Memory Addresses And Hexadecimal Numbers HS</p></h3>
+  <video controls>
+  <source src="01. ND213 C03 L01 01.2 Memory Addresses And Hexadecimal Numbers HS-q1C7lBXNGn0.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="01. ND213 C03 L01 01.2 Memory Addresses And Hexadecimal Numbers HS-q1C7lBXNGn0.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="02. Using the Debugger to Analyze Memory.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Memory Addresses and Hexadecimal Numbers')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

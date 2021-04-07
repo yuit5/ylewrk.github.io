@@ -1,0 +1,341 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Using the Debugger to Analyze Memory</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Overview of Memory Types</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Memory Addresses and Hexadecimal Numbers.html">01. Memory Addresses and Hexadecimal Numbers</a>
+    </li>
+    <li class="">
+      <a href="02. Using the Debugger to Analyze Memory.html">02. Using the Debugger to Analyze Memory</a>
+    </li>
+    <li class="">
+      <a href="03. Types of Computer Memory.html">03. Types of Computer Memory</a>
+    </li>
+    <li class="">
+      <a href="04. Cache Memory.html">04. Cache Memory</a>
+    </li>
+    <li class="">
+      <a href="05. Virtual Memory.html">05. Virtual Memory</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Using the Debugger to Analyze Memory</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L01 02.1 Using The Debugger To Analyze Memory HS</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L01 02.1 Using The Debugger To Analyze Memory HS--p99igKSazc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L01 02.1 Using The Debugger To Analyze Memory HS--p99igKSazc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="using-the-debugger-to-analyze-memory">Using the Debugger to Analyze Memory</h2>
+<p>As you have seen in the last section, binary numbers and hex numbers can be used to represent information. A coding scheme such as an ASCII table makes it possible to convert text into binary form. In the following, we will try to look at computer memory and locate information there.</p>
+<p>In the following example, we will use the debugger to look for a particular string in computer memory. Depending on your computer operating system and on the compiler you have installed, there might be several debugging tools available to you. In the following video, we will use the gdb debugger to locate the character sequence "UDACITY" in computer memory. The code below creates an array of characters in computer memory (on the stack, which we will learn more about shortly) and prints it to the console:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    char str1[]= "UDACITY";
+    printf("%s",str1);
+
+    return 0;
+}</code></pre>
+<p>Let us try to locate the string in memory using gdb.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L01 02.2 Using The Debugger To Analyze Memory SC</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L01 02.2 Using The Debugger To Analyze Memory SC-Spj2jK1-uIE.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L01 02.2 Using The Debugger To Analyze Memory SC-Spj2jK1-uIE.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L01 02.3 Using The Debugger To Analyze Memory SC</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L01 02.3 Using The Debugger To Analyze Memory SC-Lopa5WXR1uQ.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L01 02.3 Using The Debugger To Analyze Memory SC-Lopa5WXR1uQ.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>As you have just seen in the video, the binary ASCII codes for the letters in UDACITY could be located in computer memory by using the address of the variable <code>str1</code> from the code example above. The output of gdb can also be observed in the following image: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/8e0935d2-6391-4e89-84fd-7a424a090cff.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>You can clearly see that using hex numbers to display the information is a much shorter and more convenient form for a human programmer than looking at the binary numbers. Note that hex numbers are usually prepended with "0x". </p>
+<p>Computer memory is treated as a sequence of cells. This means that we can use the starting address to retrieve the byte of information stored there. The following figure illustrates the principle: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c12-fig2.png" alt="Computer memory represented as a sequence of data cells (e.g. 01010101) with their respective memory addresses shown on top." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Computer memory represented as a sequence of data cells (e.g. 01010101) with their respective memory addresses shown on top.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Let us perform a short experiment using gdb again: By adding 1, 2, 3, … to the address of the string variable <code>str1</code>, we can proceed to the next cell until we reach the end of the memory we want to look at. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/340b8883-80b9-4d51-97d3-b67d845d74d4.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Note that the numbers above represent the string "UDACITY" again. Also note that once we exceed the end of the string, the memory cell has the value 0x00. This means that the experiment has shown that an offset of 1 in a hexadecimal address corresponds to an offset of 8 bits (or 1 byte) in computer memory. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="your-turn">Your Turn</h2>
+<p>Unfortunately, gdb will not work in Udacity Workspaces, but you can still try this exercise either in your local environment if you have g++ and gdb installed, or you can use <a href="https://www.onlinegdb.com/" rel="noopener noreferrer" target="_blank">OnlineGDB</a> to follow along.</p>
+<p>Try to locate the characters of "Udacity" using gdb in your local environment or in the online debugger. </p>
+<h4 id="using-gdb-locally">Using GDB Locally</h4>
+<p>In order to use gdb locally, you will need to compile <code>main.cpp</code> with <a href="https://en.wikipedia.org/wiki/Debug_symbol" rel="noopener noreferrer" target="_blank">debugging symbols</a>. This can be done with the <code>-g</code> option for g++:</p>
+<pre><code class="bash language-bash">g++ -g main.cpp</code></pre>
+<p>You can then run gdb on the output with:</p>
+<pre><code class="bash language-bash">gdb a.out</code></pre>
+<p>When gdb displays the line <code>Type &lt;RET&gt; for more, q to quit, c to continue without paging</code>, be sure to press the RETURN key to continue.</p>
+<h4 id="using-gdb-online">Using GDB Online</h4>
+<p>To use the OnlineGDB application, simply paste the code into the online editor and press the "Debug" button at the top of the screen.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/onlinegdb.gif" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>You can find the gdb "cheat sheet" used in the videos above <a href="https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf" rel="noopener noreferrer" target="_blank">here</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L01 02.4 Using The Debugger To Analyze Memory HS</p></h3>
+  <video controls>
+  <source src="02. ND213 C03 L01 02.4 Using The Debugger To Analyze Memory HS-9oESTYFVCV8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C03 L01 02.4 Using The Debugger To Analyze Memory HS-9oESTYFVCV8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Types of Computer Memory.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Using the Debugger to Analyze Memory')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

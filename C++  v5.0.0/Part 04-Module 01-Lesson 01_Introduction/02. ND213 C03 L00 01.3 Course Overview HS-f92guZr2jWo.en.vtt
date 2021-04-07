@@ -1,0 +1,178 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+Until now, you already know how to create variables,
+
+00:00:02.790 --> 00:00:03.870
+you specify the type,
+
+00:00:03.870 --> 00:00:05.730
+let's say an integer, you give it a name,
+
+00:00:05.730 --> 00:00:07.260
+and you use it in your code.
+
+00:00:07.260 --> 00:00:10.035
+This also works for doubles and characters,
+
+00:00:10.035 --> 00:00:13.875
+and even for your own data types in the form of classes or structs.
+
+00:00:13.875 --> 00:00:18.180
+You've also come across the concept of pointers and references and many people say
+
+00:00:18.180 --> 00:00:22.515
+that C++ is hard because of them and in part, this is somewhat true.
+
+00:00:22.515 --> 00:00:24.900
+When you use new at some place in your code,
+
+00:00:24.900 --> 00:00:26.850
+you need a delete somewhere else in your code,
+
+00:00:26.850 --> 00:00:28.650
+otherwise there might be trouble.
+
+00:00:28.650 --> 00:00:30.810
+But don't make the mistake of using delete
+
+00:00:30.810 --> 00:00:33.200
+twice because otherwise your program will crash,
+
+00:00:33.200 --> 00:00:35.640
+and maybe this is what they mean by heart.
+
+00:00:35.640 --> 00:00:37.830
+When you create variables without new,
+
+00:00:37.830 --> 00:00:39.945
+they will live on the so-called stack,
+
+00:00:39.945 --> 00:00:44.360
+which is a special place in memory about which we will talk a lot in this course.
+
+00:00:44.360 --> 00:00:46.670
+If you create a variable using new,
+
+00:00:46.670 --> 00:00:49.130
+it will be allocated on the heap instead,
+
+00:00:49.130 --> 00:00:50.990
+which is yet another area of program memory.
+
+00:00:50.990 --> 00:00:54.595
+So you need to know both about stack and about heap.
+
+00:00:54.595 --> 00:00:57.350
+Memory management on the stack is pretty straightforward.
+
+00:00:57.350 --> 00:00:59.360
+There is not much to it as you will soon see,
+
+00:00:59.360 --> 00:01:04.215
+and the bad news here is the size of the stack is limited to a few megabytes only,
+
+00:01:04.215 --> 00:01:06.080
+so that's not enough for many programs.
+
+00:01:06.080 --> 00:01:07.970
+Now the heap on the other side can grow much
+
+00:01:07.970 --> 00:01:10.070
+larger depending on your system architecture.
+
+00:01:10.070 --> 00:01:11.140
+Is it 32-bit?
+
+00:01:11.140 --> 00:01:12.670
+Is it 64-bit?
+
+00:01:12.670 --> 00:01:15.560
+However, it needs to be managed very carefully by you as
+
+00:01:15.560 --> 00:01:18.985
+a programmer so as to avoid performance problems or even worse.
+
+00:01:18.985 --> 00:01:21.235
+When people talk about memory management,
+
+00:01:21.235 --> 00:01:23.540
+they are most often referring to the heap.
+
+00:01:23.540 --> 00:01:26.795
+But it is the combination of stack and heap in C++,
+
+00:01:26.795 --> 00:01:28.670
+where the true potential awaits.
+
+00:01:28.670 --> 00:01:31.340
+The concept of smart pointers really benefits from
+
+00:01:31.340 --> 00:01:34.730
+this combination and so would you once you finish this course.
+
+00:01:34.730 --> 00:01:40.190
+But memory management in modern C++ is much more than smart pointers in this course.
+
+00:01:40.190 --> 00:01:44.070
+We will talk here about computer architecture, about memory types,
+
+00:01:44.070 --> 00:01:46.010
+about the process memory model,
+
+00:01:46.010 --> 00:01:47.600
+about automatic memory allocation,
+
+00:01:47.600 --> 00:01:51.190
+and different ways of passing data to functions.
+
+00:01:51.190 --> 00:01:54.125
+Also we will discuss dynamic memory allocation which happens
+
+00:01:54.125 --> 00:01:57.080
+on the heap using new entity but also malloc,
+
+00:01:57.080 --> 00:02:01.685
+and free which are a legacy from the old ANSI C which is still around,
+
+00:02:01.685 --> 00:02:05.210
+but in understanding the somewhat aged concepts,
+
+00:02:05.210 --> 00:02:07.895
+you will be better able to leverage the power
+
+00:02:07.895 --> 00:02:11.245
+of the modern counterparts in C++ 11 and beyond.
+
+00:02:11.245 --> 00:02:13.400
+Also we will look at the variety of
+
+00:02:13.400 --> 00:02:16.760
+memory management problems such as memory leaks, dangling pointers,
+
+00:02:16.760 --> 00:02:20.440
+and several more before we move on to copy and move semantics,
+
+00:02:20.440 --> 00:02:22.630
+a concept called RAII,
+
+00:02:22.630 --> 00:02:24.920
+and finally smart pointers.
+
+00:02:24.920 --> 00:02:26.210
+By the end of the course,
+
+00:02:26.210 --> 00:02:29.655
+you will be well prepared to solve some ambitious tasks
+
+00:02:29.655 --> 00:02:34.430
+in the final project which involves creating a memory and management chat bot.
+
+00:02:34.430 --> 00:02:36.605
+So don't lose time and start right away.
+
+00:02:36.605 --> 00:02:39.540
+See you soon in the first lesson.
+

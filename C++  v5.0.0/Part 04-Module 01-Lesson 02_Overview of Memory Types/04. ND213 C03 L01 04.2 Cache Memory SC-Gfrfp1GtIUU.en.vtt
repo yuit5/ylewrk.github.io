@@ -1,0 +1,313 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.710
+In this code example, we will be looking at
+
+00:00:01.710 --> 00:00:04.230
+a simple program with an inner and an outer loop,
+
+00:00:04.230 --> 00:00:08.265
+and inside this nested loop is an array which we can access by other loop index.
+
+00:00:08.265 --> 00:00:12.570
+Now the idea here is to show that the auto of the index when accessing the array,
+
+00:00:12.570 --> 00:00:18.225
+which is a tiny detail can cause the code to speed up or slow down by a factor of two.
+
+00:00:18.225 --> 00:00:19.620
+Knowing about the cache,
+
+00:00:19.620 --> 00:00:23.850
+its structure and the structure of data and memory helps us to
+
+00:00:23.850 --> 00:00:28.385
+design more cache-friendly code which can speed up the programs we write a lot.
+
+00:00:28.385 --> 00:00:29.870
+So let's have a look here.
+
+00:00:29.870 --> 00:00:31.519
+So before we go into the example,
+
+00:00:31.519 --> 00:00:35.689
+let's take a look at the program we're about to execute. Let's start from the top.
+
+00:00:35.689 --> 00:00:37.519
+We have two includes here, the first is chrono,
+
+00:00:37.520 --> 00:00:38.840
+the second is iostream.
+
+00:00:38.840 --> 00:00:42.079
+Chrono ship us a lot of time functions,
+
+00:00:42.079 --> 00:00:43.609
+the functions for time measurement,
+
+00:00:43.609 --> 00:00:49.284
+functions for time formatting and it's a library inside the Standard Template Library.
+
+00:00:49.284 --> 00:00:52.904
+int main, we are first creating an array, which is done here,
+
+00:00:52.905 --> 00:00:55.325
+we are inserting the size of the array here
+
+00:00:55.325 --> 00:00:57.875
+and currently in the first example that's going to be four.
+
+00:00:57.875 --> 00:01:01.969
+So we are having a four by four static integer array that
+
+00:01:01.969 --> 00:01:06.265
+means 16 elements which are going to be stored in memory.
+
+00:01:06.265 --> 00:01:07.629
+This one here this call,
+
+00:01:07.629 --> 00:01:11.119
+this basically saves the current time into the variable t1.
+
+00:01:11.120 --> 00:01:14.689
+We are using the chrono library here especially the high resolution clock
+
+00:01:14.689 --> 00:01:18.515
+from chrono and now gives us the current time,
+
+00:01:18.515 --> 00:01:23.540
+and in order to not write out the lengthy return value data type,
+
+00:01:23.540 --> 00:01:28.580
+we can simply use auto to have a much shorter form of specifying t1.
+
+00:01:28.579 --> 00:01:30.649
+We don't need to know what auto is all about,
+
+00:01:30.650 --> 00:01:32.420
+what the compiler says,
+
+00:01:32.420 --> 00:01:34.040
+the correct data type would be,
+
+00:01:34.040 --> 00:01:36.890
+you can now see it in the pop up here and by using
+
+00:01:36.890 --> 00:01:39.799
+auto we can spare us from writing this all out here.
+
+00:01:39.799 --> 00:01:45.310
+Okay. T1 holds the time at this point in time when line number 10 gets executed.
+
+00:01:45.310 --> 00:01:46.650
+Then we have a nested loop,
+
+00:01:46.650 --> 00:01:49.530
+which is running in lines 11 and 13,
+
+00:01:49.530 --> 00:01:54.320
+we have an outer loop which uses the variable i and runs from zero to size minus one,
+
+00:01:54.319 --> 00:01:58.669
+the same for J in the inner loop running from zero to size minus one.
+
+00:01:58.670 --> 00:02:00.484
+Inside the inner loop,
+
+00:02:00.484 --> 00:02:04.310
+we have the writing operation which writes data into the array.
+
+00:02:04.310 --> 00:02:09.080
+We are using j and i as indexes to address the current data element,
+
+00:02:09.080 --> 00:02:12.925
+the respective data element inside x and we are writing
+
+00:02:12.925 --> 00:02:17.420
+the result of the addition i plus j into this location here.
+
+00:02:17.419 --> 00:02:19.869
+It's not important that we are using i plus j,
+
+00:02:19.870 --> 00:02:24.219
+we could also use a constant value or only i or only zero something,
+
+00:02:24.219 --> 00:02:25.384
+it doesn't really matter.
+
+00:02:25.384 --> 00:02:28.264
+What's of interest is the amount of time it
+
+00:02:28.264 --> 00:02:31.684
+takes to write information to this array here.
+
+00:02:31.685 --> 00:02:35.650
+Before we get to the point where we can see how this time can be computed,
+
+00:02:35.650 --> 00:02:37.180
+let's look at the output here,
+
+00:02:37.180 --> 00:02:40.370
+we are using cout from the iostream library to output
+
+00:02:40.370 --> 00:02:43.789
+the address of the respective cells in the array.
+
+00:02:43.789 --> 00:02:47.419
+So ampersand x, j and i gives us the address
+
+00:02:47.419 --> 00:02:51.229
+of the jth and ith location of the element here.
+
+00:02:51.229 --> 00:02:56.780
+We're also putting out i and j for reference and after the loop has been completed,
+
+00:02:56.780 --> 00:03:01.050
+we are again measuring the execution time here, high-resolution clock now.
+
+00:03:01.050 --> 00:03:03.680
+So this gives us the second moment in time.
+
+00:03:03.680 --> 00:03:06.575
+The first was stored up here, t1,
+
+00:03:06.574 --> 00:03:11.044
+now we have the second time measurement and this call here chrono
+
+00:03:11.044 --> 00:03:17.750
+duration cast actually gives us the difference between t2 and t1 in microseconds.
+
+00:03:17.750 --> 00:03:21.860
+We can also choose nano seconds here or milliseconds or seconds but for now,
+
+00:03:21.860 --> 00:03:24.050
+I think microseconds is a good way to look at
+
+00:03:24.050 --> 00:03:28.219
+the execution time and this information is stored in duration.
+
+00:03:28.219 --> 00:03:31.984
+As you can see, it's a long variable and it's the number of
+
+00:03:31.985 --> 00:03:36.290
+microseconds which it took for the program to execute
+
+00:03:36.289 --> 00:03:40.384
+between lines 11 and line 19 or line 18
+
+00:03:40.384 --> 00:03:42.620
+and now we are printing the execution time to
+
+00:03:42.620 --> 00:03:45.110
+the console and that's basically what's happening here.
+
+00:03:45.110 --> 00:03:47.690
+Let's simply run the program to see what happens,
+
+00:03:47.689 --> 00:03:49.340
+we're going to look at the details in the example,
+
+00:03:49.340 --> 00:03:50.735
+but just for reference now,
+
+00:03:50.735 --> 00:03:53.735
+so what you can see here is a bunch of memory addresses.
+
+00:03:53.735 --> 00:03:56.810
+These are all the 16 addresses at which the information inside
+
+00:03:56.810 --> 00:04:00.349
+the array is stored together with the respective indexes,
+
+00:04:00.349 --> 00:04:04.069
+i and j and we get the execution time which is 98 microseconds,
+
+00:04:04.069 --> 00:04:07.699
+and I'm executing this right now to tell you that this
+
+00:04:07.699 --> 00:04:11.584
+actually is not the time it takes to access the array.
+
+00:04:11.585 --> 00:04:12.800
+This would be pretty slow.
+
+00:04:12.800 --> 00:04:15.800
+This is the amount of time it takes to print something to
+
+00:04:15.800 --> 00:04:19.340
+the console which is a very slow operation and now as to see what I mean,
+
+00:04:19.339 --> 00:04:21.764
+let's simply comment out this line here,
+
+00:04:21.764 --> 00:04:24.774
+let's execute the program again and as you can see,
+
+00:04:24.774 --> 00:04:27.289
+the execution time now it's down to zero microseconds.
+
+00:04:27.290 --> 00:04:31.760
+It's even below the scale we can measure using the microseconds.
+
+00:04:31.759 --> 00:04:34.899
+We can simply change this to nanoseconds,
+
+00:04:34.899 --> 00:04:39.734
+to make it even more high resolution, nanoseconds.
+
+00:04:39.735 --> 00:04:41.639
+Now let's execute it a third time,
+
+00:04:41.639 --> 00:04:42.750
+see what happens here.
+
+00:04:42.750 --> 00:04:48.394
+Now, we see that it took the program 144 nanoseconds to execute this array here.
+
+00:04:48.394 --> 00:04:50.329
+Let's revert back to microseconds,
+
+00:04:50.329 --> 00:04:55.500
+what we can also do is we can increment the amount of arrays inside the array,
+
+00:04:55.500 --> 00:05:01.598
+let's for example use 1,000 elements so it's now an array holding a million integers,
+
+00:05:01.598 --> 00:05:03.014
+let's see what happens here.
+
+00:05:03.014 --> 00:05:07.490
+What you can see now is that it took 3,349
+
+00:05:07.490 --> 00:05:13.835
+microseconds to execute this code where we accessed a million addresses in memory.
+
+00:05:13.834 --> 00:05:16.764
+That's the program we're going to look at in the example.
+
+00:05:16.764 --> 00:05:18.979
+I wish you a lot of fun with looking at
+
+00:05:18.980 --> 00:05:22.295
+this particular example here where we look at cache-friendly coding,
+
+00:05:22.295 --> 00:05:25.490
+because the time measurement results here depending on
+
+00:05:25.490 --> 00:05:28.790
+the order of j and i here and this inner loop here,
+
+00:05:28.790 --> 00:05:29.855
+they are quite huge.
+
+00:05:29.855 --> 00:05:32.210
+This is an example where you can get a lot of
+
+00:05:32.209 --> 00:05:35.555
+runtime performance out of a very small change in the code.
+
+00:05:35.555 --> 00:05:37.889
+You will soon see. Have fun.
+

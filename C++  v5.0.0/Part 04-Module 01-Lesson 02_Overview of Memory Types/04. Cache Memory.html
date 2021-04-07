@@ -1,0 +1,347 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cache Memory</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Overview of Memory Types</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Memory Addresses and Hexadecimal Numbers.html">01. Memory Addresses and Hexadecimal Numbers</a>
+    </li>
+    <li class="">
+      <a href="02. Using the Debugger to Analyze Memory.html">02. Using the Debugger to Analyze Memory</a>
+    </li>
+    <li class="">
+      <a href="03. Types of Computer Memory.html">03. Types of Computer Memory</a>
+    </li>
+    <li class="">
+      <a href="04. Cache Memory.html">04. Cache Memory</a>
+    </li>
+    <li class="">
+      <a href="05. Virtual Memory.html">05. Virtual Memory</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Cache Memory</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L01 04.1 Cache Memory HS</p></h3>
+  <video controls>
+  <source src="04. ND213 C03 L01 04.1 Cache Memory HS-FNaaBipEqBw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND213 C03 L01 04.1 Cache Memory HS-FNaaBipEqBw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="cache-levels">Cache Levels</h3>
+<p>Cache memory is much faster but also significantly smaller than standard RAM. It holds the data that will (or might) be used by the CPU more often. In the memory hierarchy we have seen in the last section, the cache plays an intermediary role between fast CPU and slow RAM and hard disk. The figure below gives a rough overview of a typical system architecture: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c14-fig1.png" alt="System architecture diagram showing caches, ALU (arithmetic logic unit), main memory, and the buses connected each component." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>System architecture diagram showing caches, ALU (arithmetic logic unit), main memory, and the buses connected each component.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The central CPU chip is connected to the outside world by a number of buses. There is a cache bus, which leads to a block denoted as L2 cache, and there is a system bus as well as a memory bus that leads to the computer main memory. The latter holds the comparatively large RAM while the L2 cache as well as the L1 cache are very small with the latter also being a part of the CPU itself. </p>
+<p>The concept of L1 and L2 (and even L3) cache is further illustrated by the following figure, which shows a multi-core CPU and its interplay with L1, L2 and L3 caches: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c14-fig2.png" alt="L1, L2, and L3 cache" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>L1, L2, and L3 cache</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li><p><strong>Level 1 cache</strong> is the fastest and smallest memory type in the cache hierarchy. In most systems, the L1 cache is not very large. Mostly it is in the range of 16 to 64 kBytes, where the memory areas for instructions and data are separated from each other (L1i  and L1d, where "i" stands for "instruction" and "d" stands for "data". Also see "<a href="https://en.wikipedia.org/wiki/Harvard_architecture" rel="noopener noreferrer" target="_blank">Harvard architecture</a>" for further reference). The importance of the L1 cache grows with increasing speed of the CPU. In the L1 cache, the most frequently required instructions and data are buffered so that as few accesses as possible to the slow main memory are required. This cache avoids delays in data transmission and helps to make optimum use of the CPU's capacity.</p></li>
+<li><p><strong>Level 2 cache</strong> is located close to the CPU and has a direct connection to it. The information exchange between L2 cache and CPU is managed by the L2 controller on the computer main board. The size of the L2 cache is usually at or below 2 megabytes. On modern multi-core processors, the L2 cache is often located within the CPU itself. The choice between a processor with more clock speed or a larger L2 cache can be answered as follows: With a higher clock speed, individual programs run faster, especially those with high computing requirements. As soon as several programs run simultaneously, a larger cache is advantageous. Usually normal desktop computers with a processor that has a large cache are better served than with a processor that has a high clock rate.</p></li>
+<li><p><strong>Level 3 cache</strong> is shared among all cores of a multicore processor.  With the L3 cache, the <a href="https://en.wikipedia.org/wiki/Cache_coherence" rel="noopener noreferrer" target="_blank">cache coherence</a> protocol of multicore processors can work much faster. This protocol compares the caches of all cores to maintain data consistency so that all processors have access to the same data at the same time. The L3 cache therefore has less the function of a cache, but is intended to simplify and accelerate the cache coherence protocol and the data exchange between the cores.</p></li>
+</ol>
+<p>On Mac, information about the system cache can be obtained by executing the command <code>sysctl -a hw</code> in a terminal. On Debian Linux linux, this information can be found with <code>lscpu | grep cache</code>. On my iMac Pro (2017), this command yielded (among others) the following output: </p>
+<pre><code>hw.memsize: 34359738368
+hw.l1icachesize: 32768
+hw.l1dcachesize: 32768
+hw.l2cachesize: 1048576
+hw.l3cachesize: 14417920</code></pre>
+<ul>
+<li><em>hw.l1icachesize</em> is the size of the L1 instruction cache, wich is at 32kB. This cache is strictly reserved for storing CPU instructions only. </li>
+<li><em>hw.l1dcachesize</em> is also 32 KB and is dedicated for data as opposed to instructions.</li>
+<li><em>hw.l2cachesize</em> and <em>hw.l3cachesize</em> show the size of the L2 and L3 cache, which are at 1MB and 14MB respectively. </li>
+</ul>
+<p>It should be noted that the size of all caches combined is very small when compared to the size of the main memory (the RAM), which is at 32GB on my system.</p>
+<p>Ideally, data needed by the CPU should be read from the various caches for more than 90% of all memory access operations. This way, the high latency of RAM and hard disk can be efficiently compensated. </p>
+<h3 id="temporal-and-spatial-locality">Temporal and Spatial Locality</h3>
+<p>The following table presents a rough overview of the latency of various memory access operations. Even though these numbers will differ significantly between systems, the order of magnitude between the different memory types is noteworthy. While L1 access operations are close to the speed of a photon traveling at light speed for a distance of 1 foot, the latency of L2 access is roughly one order of magnitude slower already while access to main memory is two orders of magnitude slower.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/image.png" alt="Originally from Peter Norvig:
+http://norvig.com/21-days.html#answers" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Originally from Peter Norvig:<br />
+<a href="http://norvig.com/21-days.html#answers" rel="noopener noreferrer" target="_blank">http://norvig.com/21-days.html#answers</a></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In algorithm design, programmers can exploit two principles to increase runtime performance: </p>
+<ol>
+<li><p><strong>Temporal locality</strong> means that address ranges that are accessed are likely to be used again in the near future. In the course of time, the same memory address is accessed relatively frequently (e.g. in a loop). This property can be used at all levels of the memory hierarchy to keep memory areas accessible as quickly as possible. </p></li>
+<li><p><strong>Spatial locality</strong> means that after an access to an address range, the next access to an address in the immediate vicinity is highly probable (e.g. in arrays). In the course of time, memory addresses that are very close to each other are accessed again multiple times. This can be exploited by moving the adjacent address areas upwards into the next hierarchy level during a memory access.</p></li>
+</ol>
+<p>Let us consider the following code example: </p>
+<pre><code>#include &lt;chrono&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+    // create array 
+    const int size = 4;
+    static int x[size][size];
+
+    auto t1 = std::chrono::high_resolution_clock::now();
+    for (int i = 0; i &lt; size; i++)
+    {
+        for (int j = 0; j &lt; size; j++)
+        {
+            x[j][i] = i + j;
+            std::cout &lt;&lt; &amp;x[j][i] &lt;&lt; ": i=" &lt;&lt; i &lt;&lt; ", j=" &lt;&lt; j &lt;&lt; std::endl;
+        }
+    }
+
+    // print execution time to console
+    auto t2 = std::chrono::high_resolution_clock::now(); // stop time measurement
+    auto duration = std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(t2 - t1).count();
+    std::cout &lt;&lt; "Execution time: " &lt;&lt; duration &lt;&lt; " microseconds" &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L01 04.2 Cache Memory SC</p></h3>
+  <video controls>
+  <source src="04. ND213 C03 L01 04.2 Cache Memory SC-Gfrfp1GtIUU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND213 C03 L01 04.2 Cache Memory SC-Gfrfp1GtIUU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="exercise--cache-friendly-coding">Exercise : Cache-friendly coding</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L01 04.3 Cache Memory HS</p></h3>
+  <video controls>
+  <source src="04. ND213 C03 L01 04.3 Cache Memory HS-izXHpEad7hY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="04. ND213 C03 L01 04.3 Cache Memory HS-izXHpEad7hY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Virtual Memory.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Cache Memory')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
