@@ -1,0 +1,283 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.585
+So here comes the code base for the final project.
+
+00:00:03.585 --> 00:00:06.509
+Let's take a look at the left side first.
+
+00:00:06.509 --> 00:00:10.019
+So this is my version of the code and as you can see,
+
+00:00:10.019 --> 00:00:13.500
+there are some files which have an ending _Instructor,
+
+00:00:13.500 --> 00:00:17.100
+and also some files which have an ending _Student.
+
+00:00:17.100 --> 00:00:21.630
+The version you will download on GitHub is a version where you have,
+
+00:00:21.629 --> 00:00:24.344
+of course, only access to the student files,
+
+00:00:24.344 --> 00:00:27.479
+but in your version they are not named _Students,
+
+00:00:27.480 --> 00:00:32.520
+they are simply called Intersection.cpp, or Intersection.h.
+
+00:00:32.520 --> 00:00:37.950
+We will now be looking at the _Student files and when you download the repo from GitHub,
+
+00:00:37.950 --> 00:00:41.505
+you will have the same files but with a slightly different name.
+
+00:00:41.505 --> 00:00:45.230
+So that also means that all the files which
+
+00:00:45.229 --> 00:00:48.964
+have not such an ending _Student and _Instructor,
+
+00:00:48.965 --> 00:00:50.900
+they have not been changed.
+
+00:00:50.899 --> 00:00:52.250
+So in this overview,
+
+00:00:52.250 --> 00:00:55.369
+you can clearly see that the only positions in
+
+00:00:55.369 --> 00:01:00.814
+the GitHub repo where you need to make changes are the files Intersection.cpp,
+
+00:01:00.814 --> 00:01:03.140
+Intersection.h, TrafficLight, of course,
+
+00:01:03.140 --> 00:01:06.530
+TrafficLight has to be implemented from scratch.
+
+00:01:06.530 --> 00:01:08.780
+In vehicle, for example,
+
+00:01:08.780 --> 00:01:10.954
+you don't have to do any changes,
+
+00:01:10.954 --> 00:01:14.734
+also in TrafficObject there are no changes which need to be done.
+
+00:01:14.734 --> 00:01:19.010
+I suggest we don't start with looking at the different files, but instead,
+
+00:01:19.010 --> 00:01:22.820
+let's use the search function because what I did is in the code,
+
+00:01:22.819 --> 00:01:26.809
+I used the same numbering system as seen in the PowerPoint slides.
+
+00:01:26.810 --> 00:01:30.769
+You can simply search for the different tasks for the final project,
+
+00:01:30.769 --> 00:01:33.634
+and the first one is called FP.1.
+
+00:01:33.635 --> 00:01:37.219
+There's one result here, let's click on this search results and it
+
+00:01:37.219 --> 00:01:40.789
+directly takes you into the student version of TrafficLight,
+
+00:01:40.790 --> 00:01:42.484
+but the class is already there,
+
+00:01:42.484 --> 00:01:46.879
+and you have to add all the different items which are demanded by the tasks.
+
+00:01:46.879 --> 00:01:51.629
+So here's a position where FP.1 has to be added,
+
+00:01:51.629 --> 00:01:53.515
+and if you scroll up a little bit,
+
+00:01:53.515 --> 00:01:57.170
+this is the class file or the header file for TrafficLight,
+
+00:01:57.170 --> 00:02:01.025
+here is already a template for the MessageQueue which you should implement.
+
+00:02:01.025 --> 00:02:05.690
+It's the templatized class that means it's a MessageQueue that will be able to take.
+
+00:02:05.689 --> 00:02:07.609
+Arbitrary pieces of information,
+
+00:02:07.609 --> 00:02:10.835
+in our case is going to be traffic by phases,
+
+00:02:10.835 --> 00:02:13.800
+and below the class MessageQueue,
+
+00:02:13.800 --> 00:02:15.240
+we have the class TrafficLight,
+
+00:02:15.240 --> 00:02:17.610
+which is what the first task is about.
+
+00:02:17.610 --> 00:02:20.935
+To define a class TrafficLight which is a child class of TrafficObject,
+
+00:02:20.935 --> 00:02:22.935
+as you see currently it's not,
+
+00:02:22.935 --> 00:02:25.969
+you have to add this and also the other tasks
+
+00:02:25.969 --> 00:02:29.375
+here which I already discussed with you in the previous video.
+
+00:02:29.375 --> 00:02:32.009
+So if you look for FP.2,
+
+00:02:32.009 --> 00:02:37.429
+you will get two hits actually because the task 2 consists of two parts.
+
+00:02:37.430 --> 00:02:42.290
+The first part 2a is concerned with the method cycle through phases,
+
+00:02:42.289 --> 00:02:44.900
+as you can see it's all commented out here.
+
+00:02:44.900 --> 00:02:49.939
+I have the ending of a comment block here and the begin of the comment block there.
+
+00:02:49.939 --> 00:02:52.189
+There's quite a lot in there already,
+
+00:02:52.189 --> 00:02:54.680
+some shelled out functions which we have here.
+
+00:02:54.680 --> 00:02:59.564
+I suggest that you implement or that you integrate those functions one by one,
+
+00:02:59.564 --> 00:03:03.495
+and FP.2a is down here whereas FP.2b
+
+00:03:03.495 --> 00:03:11.375
+is in simulate where you should call the method cycle through phases in a thread.
+
+00:03:11.375 --> 00:03:14.509
+You can do with all the other tasks the very same thing,
+
+00:03:14.509 --> 00:03:19.144
+FP.3, it's one hit and TrafficLights_Student.h up here.
+
+00:03:19.145 --> 00:03:21.400
+Then we have FP.4.
+
+00:03:21.400 --> 00:03:27.015
+Again two hits, it's the first part in TrafficLights_Student.cpp,
+
+00:03:27.014 --> 00:03:29.729
+and the MessageQueue part we have
+
+00:03:29.729 --> 00:03:33.939
+FP.4b which is in the header part of TrafficLights_Student.
+
+00:03:33.939 --> 00:03:37.055
+We have FP.5, again, two parts.
+
+00:03:37.055 --> 00:03:42.844
+First in Student.cpp of the TrafficLIght implementation file,
+
+00:03:42.844 --> 00:03:44.705
+and the second one as well.
+
+00:03:44.705 --> 00:03:48.860
+The last one number 6 is in the intersection file.
+
+00:03:48.860 --> 00:03:51.785
+Again, two tasks of two parts of the task.
+
+00:03:51.784 --> 00:03:55.729
+The first one should call the simulate function on this private member
+
+00:03:55.729 --> 00:03:59.840
+TrafficLight which is a member of the Intersection class,
+
+00:03:59.840 --> 00:04:02.344
+and in task FP.6b,
+
+00:04:02.344 --> 00:04:06.319
+this is where you should use the methods TrafficLight get current phase and wait for
+
+00:04:06.319 --> 00:04:10.579
+green to block the path of execution until the traffic light turns green.
+
+00:04:10.580 --> 00:04:13.644
+This function here add vehicle to queue, basically,
+
+00:04:13.644 --> 00:04:17.870
+that's where we have waited for permission to enter the intersection until now.
+
+00:04:17.870 --> 00:04:20.480
+Now we need an additional permission to
+
+00:04:20.480 --> 00:04:23.330
+enter the intersection only if the traffic light is green.
+
+00:04:23.329 --> 00:04:25.159
+So if you look at this code here,
+
+00:04:25.160 --> 00:04:27.920
+here we wait until we are allowed to enter.
+
+00:04:27.920 --> 00:04:31.225
+This has been done in one of the previous lesson projects already,
+
+00:04:31.225 --> 00:04:34.075
+and once this permission is granted,
+
+00:04:34.074 --> 00:04:41.189
+we get a return of this wait function here on the future of vehicle allowed to enter,
+
+00:04:41.189 --> 00:04:45.319
+and then we can proceed to wait for the traffic light to turn green.
+
+00:04:45.319 --> 00:04:49.639
+This part here, this code here is exactly the reason why in the simulation you can
+
+00:04:49.639 --> 00:04:54.769
+see that once a vehicle has started driving into the intersection,
+
+00:04:54.769 --> 00:04:57.799
+the intersection traffic light might turn red again.
+
+00:04:57.800 --> 00:05:02.335
+That's the reason this code here where this might happen.
+
+00:05:02.334 --> 00:05:06.109
+So that's a very brief overview of the code base.
+
+00:05:06.110 --> 00:05:08.389
+Most of it is familiar to you already,
+
+00:05:08.389 --> 00:05:12.110
+and the parts in the code where the tasks need to be done are
+
+00:05:12.110 --> 00:05:15.935
+best looked for using the search function of Visual Studio Code.
+
+00:05:15.935 --> 00:05:18.709
+I wish you all the best for the upcoming tasks,
+
+00:05:18.709 --> 00:05:22.519
+and I'm very curious to see your submissions as soon as you get them out.
+
+00:05:22.519 --> 00:05:25.099
+So have fun, enjoy.
+
+00:05:25.100 --> 00:05:30.270
+Thanks for doing the concurrent programming course with Udacity.
+

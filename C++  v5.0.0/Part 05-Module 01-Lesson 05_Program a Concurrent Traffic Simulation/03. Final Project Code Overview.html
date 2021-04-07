@@ -1,0 +1,205 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Final Project Code Overview</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Program a Concurrent Traffic Simulation</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Final Project Intro.html">01. Final Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Final Project Tasks.html">02. Final Project Tasks</a>
+    </li>
+    <li class="">
+      <a href="03. Final Project Code Overview.html">03. Final Project Code Overview</a>
+    </li>
+    <li class="">
+      <a href="04. Final Project Workspace.html">04. Final Project Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Program a Concurrent Traffic Simulation.html">Project Description - Program a Concurrent Traffic Simulation</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Program a Concurrent Traffic Simulation.html">Project Rubric - Program a Concurrent Traffic Simulation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Final Project Code Overview</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="final-project-code-overview">Final Project Code Overview</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C04 L05 C5-1-A3-SC</p></h3>
+  <video controls>
+  <source src="03. ND213 C04 L05 C5-1-A3-SC-XVQt4iKEQwo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND213 C04 L05 C5-1-A3-SC-XVQt4iKEQwo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="task-list">Task List</h2>
+<ul>
+<li><p><strong>Task FP.1</strong> : Define a class <code>TrafficLight</code> which is a child class of <code>TrafficObject</code>. The class shall have the public methods <code>void waitForGreen()</code> and <code>void simulate()</code> as well as <code>TrafficLightPhase getCurrentPhase()</code>, where <code>TrafficLightPhase</code> is an enum that can be either <code>red</code> or <code>green</code>. Also, add the private method <code>void cycleThroughPhases()</code>. Furthermore, there shall be the private member <code>_currentPhase</code> which can take <code>red</code> or <code>green</code> as its value.</p></li>
+<li><p><strong>Task FP.2</strong> : Implement the function with an infinite loop that measures the time between two loop cycles and toggles the current phase of the traffic light between red and green and sends an update method to the message queue using move semantics. The cycle duration should be a random value between 4 and 6 seconds. Also, the while-loop should use <code>std::this_thread::sleep_</code>for to wait 1ms between two cycles. Finally, the private method <code>cycleThroughPhases</code> should be started in a thread when the public method <code>simulate</code> is called. To do this, use the thread queue in the base class.</p></li>
+<li><p><strong>Task FP.3</strong> : Define a class <code>MessageQueue</code> which has the public methods send and receive. Send should take an rvalue reference of type TrafficLightPhase whereas receive should return this type. Also, the class should define an <code>std::dequeue</code> called <code>_queue</code>, which stores objects of type <code>TrafficLightPhase</code>. Finally, there should be an <code>std::condition_variable</code> as well as an <code>std::mutex</code> as private members.</p></li>
+<li><p><strong>Task FP.4</strong> : Implement the method <code>Send</code>, which should use the mechanisms <code>std::lock_guard&lt;std::mutex&gt;</code> as well as <code>_condition.notify_one()</code> to add a new message to the queue and afterwards send a notification. Also, in class <code>TrafficLight</code>, create a private member of type <code>MessageQueue</code> for messages of type <code>TrafficLightPhase</code> and use it within the infinite loop to push each new <code>TrafficLightPhase</code> into it by calling send in conjunction with move semantics.</p></li>
+<li><p><strong>Task FP.5</strong> : The method receive should use <code>std::unique_lock&lt;std::mutex&gt;</code> and <code>_condition.wait()</code> to wait for and receive new messages and pull them from the queue using move semantics. The received object should then be returned by the receive function. Then, add the implementation of the method <code>waitForGreen</code>, in which an infinite while-loop runs and repeatedly calls the <code>receive</code> function on the message queue. Once it receives <code>TrafficLightPhase::green</code>, the method returns.</p></li>
+<li><p><strong>Task FP.6</strong> : In class Intersection, add a private member <code>_trafficLight</code> of type <code>TrafficLight</code>. In method <code>Intersection::simulate()</code>, start the simulation of <code>_trafficLight</code>. Then, in method <code>Intersection::addVehicleToQueue</code>, use the methods <code>TrafficLight::getCurrentPhase</code> and <code>TrafficLight::waitForGreen</code> to block the execution until the traffic light turns green.</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Final Project Workspace.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Final Project Code Overview')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

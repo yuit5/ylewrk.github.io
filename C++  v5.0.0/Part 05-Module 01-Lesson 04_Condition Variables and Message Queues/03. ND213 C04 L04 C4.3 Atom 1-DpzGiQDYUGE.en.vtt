@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.035
+Now, this is the last section before you will start with a final project.
+
+00:00:04.035 --> 00:00:07.560
+The infinite polling loop we have used in the previous section put a heavy load on
+
+00:00:07.559 --> 00:00:11.355
+the processor due to the constant iterations in very short intervals.
+
+00:00:11.355 --> 00:00:14.955
+The alternative to constant polling is to block, go to sleep,
+
+00:00:14.955 --> 00:00:17.998
+and wait for a signal to tell us that new data is available,
+
+00:00:17.998 --> 00:00:21.059
+then we can wake up again and fetch the data.
+
+00:00:21.059 --> 00:00:22.979
+In one of the previous sections we have already discussed
+
+00:00:22.980 --> 00:00:26.714
+the promised future concept which could in principle do this job.
+
+00:00:26.714 --> 00:00:28.440
+The problem with futures, however,
+
+00:00:28.440 --> 00:00:31.050
+is that there can only be used a single time,
+
+00:00:31.050 --> 00:00:33.000
+and for the purpose of our message queue,
+
+00:00:33.000 --> 00:00:37.399
+we need a signaling mechanism that can be reused as often as we need it.
+
+00:00:37.399 --> 00:00:39.530
+This is why we will look at the condition
+
+00:00:39.530 --> 00:00:42.829
+variable which is one of the last building blocks that is missing.
+
+00:00:42.829 --> 00:00:44.405
+The second type of this section,
+
+00:00:44.405 --> 00:00:48.020
+we will start with the actual implementation of a concurrent message queue.
+
+00:00:48.020 --> 00:00:50.190
+So see you there.
+

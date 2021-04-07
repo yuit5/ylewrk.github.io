@@ -1,0 +1,380 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Program a Concurrent Traffic Simulation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Program a Concurrent Traffic Simulation</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Final Project Intro.html">01. Final Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Final Project Tasks.html">02. Final Project Tasks</a>
+    </li>
+    <li class="">
+      <a href="03. Final Project Code Overview.html">03. Final Project Code Overview</a>
+    </li>
+    <li class="">
+      <a href="04. Final Project Workspace.html">04. Final Project Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Program a Concurrent Traffic Simulation.html">Project Description - Program a Concurrent Traffic Simulation</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Program a Concurrent Traffic Simulation.html">Project Rubric - Program a Concurrent Traffic Simulation</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Program a Concurrent Traffic Simulation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>FP.1 Create a TrafficLight class</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The <code>TrafficLight</code> class is defined</p>
+        </td>
+        <td>
+          <p>A <code>TrafficLight</code> class is is defined which is a child class of <code>TrafficObject</code>.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The <code>TrafficLight</code> class methods are completed</p>
+        </td>
+        <td>
+          <p>The class shall have the public methods <code>void waitForGreen()</code> and <code>void simulate()</code> as well as <code>TrafficLightPhase getCurrentPhase()</code>, where <code>TrafficLightPhase</code> is an enum that can be either <code>red</code> or <code>green</code>.</p>
+<p>Also, there should be a private method <code>void cycleThroughPhases()</code> and a private member <code>_currentPhase</code> which can take <code>red</code> or <code>green</code> as its value.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>FP.2: Implement a cycleThroughPhases method</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The <code>cycleThroughPhases()</code> method is implemented.</p>
+        </td>
+        <td>
+          <p>Implement the function with an infinite loop that measures the time between two loop cycles and toggles the current phase of the traffic light between red and green. </p>
+<p>The cycle duration should be a random value between 4 and 6 seconds, and the while-loop should use <code>std::this_thread::sleep_for</code> to wait 1ms between two cycles.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The <code>cycleThroughPhases()</code> method is started correctly.</p>
+        </td>
+        <td>
+          <p>The private <code>cycleThroughPhases()</code> method should be started in a thread when the public method <code>simulate</code> is called. To do this, a thread queue should be used in the base class.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>FP.3 Define class MessageQueue</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>A <code>MessageQueue</code> class is defined</p>
+        </td>
+        <td>
+          <p>A <code>MessageQueue</code> class is defined in the header of class <code>TrafficLight</code> which has the public methods <code>send</code> and <code>receive</code>.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The <code>MessageQueue</code> class methods and members are declared correctly</p>
+        </td>
+        <td>
+          <p><code>send</code> should take an <code>rvalue</code> reference of type <code>TrafficLightPhase</code> whereas <code>receive</code> should return this type.</p>
+<p>Also, the <code>MessageQueue</code> class should define a <code>std::dequeue</code> called <code>_queue</code>, which stores objects of type <code>TrafficLightPhase</code>.</p>
+<p>Also, there should be a <code>std::condition_variable</code> as well as an <code>std::mutex</code> as private members.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>FP.4 Implement the method <code>send</code></p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The method <code>send</code> is correctly implemented</p>
+        </td>
+        <td>
+          <p>The method <code>send</code> should use the mechanisms <code>std::lock_guard&lt;std::mutex&gt;</code> as well as <code>_condition.notify_one()</code> to add a new message to the queue and afterwards send a notification. </p>
+<p>In the class <code>TrafficLight</code>, a private member of type <code>MessageQueue</code> should be created and used within the infinite loop to push each new <code>TrafficLightPhase</code> into it by calling <code>send</code> in conjunction with move semantics.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>FP.5 Implement the methods <code>receive</code> and <code>waitForGreen</code></p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The method <code>receive</code> is correctly implemented</p>
+        </td>
+        <td>
+          <p>The method receive should use <code>std::unique_lock&lt;std::mutex&gt;</code> and<br />
+<code>_condition.wait()</code> to wait for and receive new messages and pull them from the queue using move semantics. The received object should then be returned by the <code>receive</code> function.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The method <code>waitForGreen</code> is correctly implemented</p>
+        </td>
+        <td>
+          <p>The method <code>waitForGreen</code> is completed, in which an infinite while loop runs and repeatedly calls the <code>receive</code> function on the message queue. Once it receives <code>TrafficLightPhase::green</code>, the method returns.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>FP.6 Implement message exchange</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The message exchange is correctly implemented</p>
+        </td>
+        <td>
+          <p>In class Intersection, a private member <code>_trafficLight</code> of type <code>TrafficLight</code> should exist. </p>
+<p>The method <code>Intersection::simulate()</code>, should start the simulation of<br />
+<code>_trafficLight</code>.</p>
+<p>The method <code>Intersection::addVehicleToQueue</code>, should use the methods <code>TrafficLight::getCurrentPhase</code> and <code>TrafficLight::waitForGreen</code> to block<br />
+the execution until the traffic light turns green.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Program a Concurrent Traffic Simulation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

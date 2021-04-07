@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.330
+Now the first step towards developing our concurrent message queue is to
+
+00:00:03.330 --> 00:00:06.720
+understand and implement the monitor object pattern.
+
+00:00:06.719 --> 00:00:10.679
+This is a design pattern which is used to synchronize concurrent method execution to
+
+00:00:10.679 --> 00:00:14.625
+ensure that only one method at a time runs within an object.
+
+00:00:14.625 --> 00:00:16.500
+This is especially useful in cases where
+
+00:00:16.500 --> 00:00:19.320
+an application contains objects whose methods are invoked
+
+00:00:19.320 --> 00:00:22.199
+concurrently by multiple client threads and where
+
+00:00:22.199 --> 00:00:25.605
+these methods modify the state of their objects.
+
+00:00:25.605 --> 00:00:28.890
+Now this could be something like adding elements to a standard vector as we have done
+
+00:00:28.890 --> 00:00:33.030
+already in the lesson project with a class weighting vehicles, if you recall.
+
+00:00:33.030 --> 00:00:35.115
+Now with the mechanisms we have so far,
+
+00:00:35.115 --> 00:00:38.510
+we can add elements to a vector as soon as a new object arrives,
+
+00:00:38.509 --> 00:00:43.804
+but we can only access the vector to process all edit vehicles all at once, all in bulk.
+
+00:00:43.804 --> 00:00:47.060
+What we would like to do now is develop a mechanism that would
+
+00:00:47.060 --> 00:00:50.545
+allow us to react as soon as a new item was available.
+
+00:00:50.545 --> 00:00:53.719
+One first step to do this is to implement a polling loop,
+
+00:00:53.719 --> 00:00:54.935
+an infinite polling loop.
+
+00:00:54.935 --> 00:00:57.840
+Take a look down below in this section.
+

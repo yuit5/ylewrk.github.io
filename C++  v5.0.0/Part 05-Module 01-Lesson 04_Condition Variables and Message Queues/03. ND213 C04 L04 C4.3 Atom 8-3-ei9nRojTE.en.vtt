@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.310
+Now that we have created a generic version of
+
+00:00:02.310 --> 00:00:06.900
+a concurrent message queue that can be used to pass almost any data type,
+
+00:00:06.900 --> 00:00:09.255
+we want to apply this concept in practice.
+
+00:00:09.255 --> 00:00:11.100
+In the upcoming final project,
+
+00:00:11.099 --> 00:00:14.309
+you will implement a new class called traffic light,
+
+00:00:14.310 --> 00:00:17.460
+which is responsible for managing traffic at an intersection,
+
+00:00:17.460 --> 00:00:20.640
+and the basic mechanism within each traffic light will be
+
+00:00:20.640 --> 00:00:24.060
+a version of a concurrent message queue from the last coding example.
+
+00:00:24.059 --> 00:00:29.649
+So get yourself a fresh cup of coffee and see you in the final project.
+

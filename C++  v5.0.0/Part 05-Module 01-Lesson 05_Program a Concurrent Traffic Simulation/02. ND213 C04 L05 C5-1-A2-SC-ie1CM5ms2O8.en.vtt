@@ -1,0 +1,619 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.594
+Let's take a look at the tasks in the final project of the concurrency course in C++.
+
+00:00:05.594 --> 00:00:11.859
+Now the purpose is to develop a traffic light system for concurrent traffic simulation.
+
+00:00:11.859 --> 00:00:15.239
+The simulation as it is right now in its current state is working just fine,
+
+00:00:15.240 --> 00:00:19.079
+and vehicles are moving along streets just as as they are supposed to do.
+
+00:00:19.079 --> 00:00:21.659
+They're crossing intersections, and they are doing this one
+
+00:00:21.660 --> 00:00:24.240
+by one just as we have programmed them to.
+
+00:00:24.239 --> 00:00:27.659
+They are also communicating safely with the intersection so that
+
+00:00:27.660 --> 00:00:32.460
+only a single vehicle at one instant in time is allowed to access the intersection.
+
+00:00:32.460 --> 00:00:36.060
+However, the problem in this city is that with increasing traffic,
+
+00:00:36.060 --> 00:00:39.150
+traffic lights are needed for road user safety.
+
+00:00:39.149 --> 00:00:41.570
+This is why it has been decided that traffic lights should be
+
+00:00:41.570 --> 00:00:45.145
+installed at every intersection in the city grid.
+
+00:00:45.145 --> 00:00:49.955
+This project a suitable and thread-safe communication protocol between vehicles,
+
+00:00:49.954 --> 00:00:55.284
+intersections, and traffic lights thus needs to be established which is your job.
+
+00:00:55.284 --> 00:00:59.569
+Your task is to use your knowledge of concurrent programming such as mutexes,
+
+00:00:59.570 --> 00:01:02.600
+locks and especially message queues to implement
+
+00:01:02.600 --> 00:01:06.805
+such traffic lights and to integrate them properly in the codebase.
+
+00:01:06.805 --> 00:01:10.730
+Now here's an overview of the entire program schematic.
+
+00:01:10.730 --> 00:01:13.280
+Most of this diagram is already known to you.
+
+00:01:13.280 --> 00:01:15.754
+On the left-hand side we have the main function.
+
+00:01:15.754 --> 00:01:20.375
+Then we have the method process vehicle Q and the class intersection,
+
+00:01:20.375 --> 00:01:24.260
+then we have vehicle drive in the class vehicle which manages
+
+00:01:24.260 --> 00:01:28.130
+the entire motion of the vehicle through the city grid,
+
+00:01:28.129 --> 00:01:29.944
+the movement through the grid.
+
+00:01:29.944 --> 00:01:33.529
+Then we have the method intersection at Vehicle to queue,
+
+00:01:33.530 --> 00:01:38.750
+and actually here is the first indicator that something new is coming up.
+
+00:01:38.750 --> 00:01:41.239
+All additions to the last state of
+
+00:01:41.239 --> 00:01:44.839
+the lesson project which is doesn't project three are marked in blue again.
+
+00:01:44.840 --> 00:01:49.549
+So the first new item is here to wait until a traffic light is green.
+
+00:01:49.549 --> 00:01:52.819
+Before we were talking about traffic lights as
+
+00:01:52.819 --> 00:01:56.329
+soon as a vehicle ended waiting to enter an intersection,
+
+00:01:56.329 --> 00:01:59.899
+we had this arrow here connected to this block here.
+
+00:01:59.900 --> 00:02:01.510
+That's the major difference.
+
+00:02:01.510 --> 00:02:04.640
+So as soon as the vehicle was permitted to enter the intersection,
+
+00:02:04.640 --> 00:02:07.849
+there was a signal going back to the vehicle drive function,
+
+00:02:07.849 --> 00:02:10.794
+and then the vehicle started driving into the intersection.
+
+00:02:10.794 --> 00:02:13.144
+Now we have a traffic light in between,
+
+00:02:13.145 --> 00:02:15.425
+and even though the intersection might have
+
+00:02:15.425 --> 00:02:18.285
+allowed the vehicle to enter the intersection,
+
+00:02:18.284 --> 00:02:20.930
+the condition is that when the traffic light is
+
+00:02:20.930 --> 00:02:24.079
+red even though there might be a permission by the intersection,
+
+00:02:24.079 --> 00:02:25.310
+we will not drive.
+
+00:02:25.310 --> 00:02:28.849
+We will wait for the traffic lights to be green and only then will
+
+00:02:28.849 --> 00:02:33.620
+we sent the signal to the vehicle to drive through the intersection.
+
+00:02:33.620 --> 00:02:38.080
+On the right-hand side, we have a totally new class and method.
+
+00:02:38.080 --> 00:02:39.890
+The new class is called traffic light.
+
+00:02:39.889 --> 00:02:42.504
+The new method is called cycle through phases.
+
+00:02:42.504 --> 00:02:44.659
+Again, we have an infinite loop here.
+
+00:02:44.659 --> 00:02:46.699
+We are initializing a stopwatch,
+
+00:02:46.699 --> 00:02:48.364
+we are computing the time difference,
+
+00:02:48.365 --> 00:02:51.620
+and then we are toggling between red and green.
+
+00:02:51.620 --> 00:02:55.240
+So every time an appropriate timeout is reached,
+
+00:02:55.240 --> 00:02:59.600
+this is when we leave this intersection point here towards this block.
+
+00:02:59.599 --> 00:03:02.780
+We are toggling the traffic light phase between green and red.
+
+00:03:02.780 --> 00:03:05.270
+We don't have yellow we only have red and green.
+
+00:03:05.270 --> 00:03:10.075
+As soon as the green signal is received or independent actually
+
+00:03:10.074 --> 00:03:14.929
+of the signal it can be either red or green as soon as it has been toggled.
+
+00:03:14.930 --> 00:03:17.840
+We are sending an updated message to the queue.
+
+00:03:17.840 --> 00:03:19.159
+That means the message queue.
+
+00:03:19.159 --> 00:03:22.954
+You should implement works inside the class traffic light,
+
+00:03:22.955 --> 00:03:27.530
+and it is filled with messages inside the method cycle through phases.
+
+00:03:27.530 --> 00:03:31.039
+The new traffic light phase is then sent to
+
+00:03:31.039 --> 00:03:35.120
+this block here following the red arrows the red dashed line,
+
+00:03:35.120 --> 00:03:40.564
+and here we are evaluating whether it is red or green and only when it is green
+
+00:03:40.564 --> 00:03:43.579
+we as discussed before sending the signal to
+
+00:03:43.580 --> 00:03:46.460
+the vehicle to safely enter the intersection.
+
+00:03:46.460 --> 00:03:48.260
+At the end of cycle through phases,
+
+00:03:48.259 --> 00:03:52.834
+we simply reset the stopwatch and perform the cycle over and over again.
+
+00:03:52.835 --> 00:03:55.340
+So the new additions to the to
+
+00:03:55.340 --> 00:04:00.920
+lesson project which make up the final projects are basically shown here in these colors,
+
+00:04:00.919 --> 00:04:03.634
+and you need the concepts of message queues,
+
+00:04:03.634 --> 00:04:06.919
+also we need some mutexes,
+
+00:04:06.919 --> 00:04:09.769
+and locking mechanisms, but you will see this very shortly.
+
+00:04:09.770 --> 00:04:13.250
+Let's take a look at how this program looks in practice.
+
+00:04:13.250 --> 00:04:14.479
+Now here in the video,
+
+00:04:14.479 --> 00:04:17.089
+what you can see is again the intersection in Paris.
+
+00:04:17.089 --> 00:04:20.074
+This central plaza with the Arc De Triomphe.
+
+00:04:20.074 --> 00:04:22.490
+Now we have the intersections changing color.
+
+00:04:22.490 --> 00:04:24.860
+They are toggling between red and green.
+
+00:04:24.860 --> 00:04:28.580
+What you can see here is as soon as the intersection turns green,
+
+00:04:28.579 --> 00:04:30.800
+a vehicle is entering the intersection.
+
+00:04:30.800 --> 00:04:32.915
+Maybe you have just noted that
+
+00:04:32.915 --> 00:04:35.900
+the vehicle has been entering the intersection and while it
+
+00:04:35.899 --> 00:04:41.479
+was on its way into the intersection like here now the traffic light may turn red again,
+
+00:04:41.480 --> 00:04:45.740
+but the code has been designed in a way that the checking for
+
+00:04:45.740 --> 00:04:47.629
+the traffic light color is only
+
+00:04:47.629 --> 00:04:51.384
+performed when the vehicle is about to enter the intersection.
+
+00:04:51.384 --> 00:04:53.459
+When it's already entering the intersection,
+
+00:04:53.459 --> 00:04:57.185
+and then the signal turns red the vehicle will disregard it.
+
+00:04:57.185 --> 00:04:59.689
+That's not a glitch. That's how it's supposed to be.
+
+00:04:59.689 --> 00:05:02.719
+So as soon as you cross the traffic light it's just like in
+
+00:05:02.720 --> 00:05:06.050
+real life as soon as you are beyond the traffic light,
+
+00:05:06.050 --> 00:05:07.490
+and when it then turns red,
+
+00:05:07.490 --> 00:05:12.259
+you're already in the intersection you are still allowed to leave the intersection.
+
+00:05:12.259 --> 00:05:14.089
+You don't have to drive back and wait again
+
+00:05:14.089 --> 00:05:16.429
+until it's your turn to drive through a green light.
+
+00:05:16.430 --> 00:05:18.155
+So that's how it's done here.
+
+00:05:18.154 --> 00:05:22.594
+The vehicles are cycling through this street grid here and
+
+00:05:22.595 --> 00:05:24.170
+all the traffic lights at
+
+00:05:24.170 --> 00:05:26.975
+the intersections are working totally independently of each other,
+
+00:05:26.975 --> 00:05:29.689
+each one in its own thread and as soon as
+
+00:05:29.689 --> 00:05:34.550
+the traffic light turns green just as we saw it here where my mouse is now,
+
+00:05:34.550 --> 00:05:36.785
+the vehicle is allowed to drive on.
+
+00:05:36.785 --> 00:05:38.840
+So let's take a look at your tasks.
+
+00:05:38.839 --> 00:05:41.659
+In total we have six tasks waiting for you.
+
+00:05:41.660 --> 00:05:43.790
+So the first task is to define
+
+00:05:43.790 --> 00:05:47.710
+a class traffic light which is a child class of traffic object.
+
+00:05:47.709 --> 00:05:51.139
+The class shall have the public methods wait for green and
+
+00:05:51.139 --> 00:05:55.699
+also simulate as well as traffic light phase get current phase.
+
+00:05:55.699 --> 00:05:58.759
+So the get current phase method will return
+
+00:05:58.759 --> 00:06:02.855
+an object of type traffic light phase which can either be red or green,
+
+00:06:02.855 --> 00:06:05.810
+and we can also or you will also add
+
+00:06:05.810 --> 00:06:09.930
+the private method cycle through phases to the traffic light class.
+
+00:06:09.930 --> 00:06:14.959
+Furthermore there shall be a private member underscore current phase which denotes
+
+00:06:14.959 --> 00:06:21.639
+the current light of the traffic light either red or green which it has as its value.
+
+00:06:21.639 --> 00:06:26.689
+That's the first task. Also, when we look at the code and just a few minutes you will see
+
+00:06:26.689 --> 00:06:28.399
+the respective positions in
+
+00:06:28.399 --> 00:06:32.089
+the code files where you should implement these various tasks.
+
+00:06:32.089 --> 00:06:34.129
+So bear with me for a few more seconds.
+
+00:06:34.129 --> 00:06:37.954
+Let's go through the tasks one by one before we take a look at the code.
+
+00:06:37.954 --> 00:06:39.949
+Now in task FP.2,
+
+00:06:39.949 --> 00:06:43.069
+we shall implement the function with an infinite loop that measures
+
+00:06:43.069 --> 00:06:46.579
+the time between two loop cycles and toggles the
+
+00:06:46.579 --> 00:06:49.399
+current phase of the traffic light between red and green and sends
+
+00:06:49.399 --> 00:06:53.329
+an update method to the message queue using move semantics.
+
+00:06:53.329 --> 00:06:55.819
+Which method this is the function we will
+
+00:06:55.819 --> 00:06:58.719
+see in the code at the respective position where FP.2 is.
+
+00:06:58.720 --> 00:07:03.005
+The cycle duration should be a random value between four and six seconds.
+
+00:07:03.004 --> 00:07:05.600
+Also, the while loop should use these sleep
+
+00:07:05.600 --> 00:07:08.615
+for function two weight one millisecond between two cycles.
+
+00:07:08.615 --> 00:07:12.125
+Basically the reason for this as we have seen this many times before.
+
+00:07:12.125 --> 00:07:15.290
+If we have an infinite while loop,
+
+00:07:15.290 --> 00:07:18.830
+the processor simply burns through this while loop super quickly and
+
+00:07:18.829 --> 00:07:22.560
+super-fast and in order to reduce the load on the processor,
+
+00:07:22.560 --> 00:07:25.930
+we are simply including this small weight function here.
+
+00:07:25.930 --> 00:07:27.209
+It doesn't do any harm to wait.
+
+00:07:27.209 --> 00:07:31.759
+one milliseconds and it really brings down the processor usage of our program.
+
+00:07:31.759 --> 00:07:34.849
+Now finally the private method cycle through phases should be
+
+00:07:34.850 --> 00:07:38.965
+started in the thread when the public method simulators is called.
+
+00:07:38.964 --> 00:07:43.264
+To do this you should use the threat queue in the base class.
+
+00:07:43.264 --> 00:07:46.879
+Remember that in the base class tropic object we have this queue
+
+00:07:46.879 --> 00:07:50.579
+which takes all the threads which had been started on a tropic object,
+
+00:07:50.579 --> 00:07:56.269
+and in the destructor one of the earlier tasks in the lesson project was to use
+
+00:07:56.269 --> 00:07:58.849
+a barrier which made sure that at the end of
+
+00:07:58.850 --> 00:08:02.270
+the time of destruction of the traffic object,
+
+00:08:02.269 --> 00:08:05.794
+all the threads which have been possibly started in it.
+
+00:08:05.795 --> 00:08:07.569
+Where joined correctly.
+
+00:08:07.569 --> 00:08:10.409
+Okay. Let's continue to task number three.
+
+00:08:10.410 --> 00:08:13.790
+Task number three you shall define a class called
+
+00:08:13.790 --> 00:08:17.694
+message queue which has the public methods send and receive.
+
+00:08:17.694 --> 00:08:20.089
+Send should take an R value reference of
+
+00:08:20.089 --> 00:08:24.199
+type traffic light phase which we have implemented already in one of the earlier tasks,
+
+00:08:24.199 --> 00:08:26.604
+whereas received should return this type.
+
+00:08:26.605 --> 00:08:30.455
+Also, the class should define a standard dequeue
+
+00:08:30.454 --> 00:08:34.414
+called queue which stores objects of traffic light phase.
+
+00:08:34.414 --> 00:08:38.329
+The reason we are not using a vector here is that we want to follow
+
+00:08:38.330 --> 00:08:41.240
+the first-in-first-out principle and that's much easier done with
+
+00:08:41.240 --> 00:08:44.855
+a dequeue then with a vector which is last in first out.
+
+00:08:44.855 --> 00:08:48.320
+So finally there should be a standard condition
+
+00:08:48.320 --> 00:08:52.650
+variable concept we have thoroughly discussed in the last lesson,
+
+00:08:52.649 --> 00:08:56.199
+as well as a standard mutex as private members.
+
+00:08:56.200 --> 00:08:59.134
+Now in task FP.4 you should
+
+00:08:59.134 --> 00:09:02.509
+implement the method Send which should use the mechanisms lock
+
+00:09:02.509 --> 00:09:05.569
+guard as well as condition notify one to add
+
+00:09:05.570 --> 00:09:09.545
+a new message to the queue and a afterwards send notification.
+
+00:09:09.544 --> 00:09:11.360
+If you are asking yourself, well,
+
+00:09:11.360 --> 00:09:16.759
+which notification at where to take a good look at the program schematic again which we
+
+00:09:16.759 --> 00:09:19.819
+discussed and follow the red arrows which clearly tell
+
+00:09:19.820 --> 00:09:23.754
+you from where to where notifications should be sent.
+
+00:09:23.754 --> 00:09:25.664
+Also, in class TrafficLight,
+
+00:09:25.664 --> 00:09:28.538
+that's the second half of task FP.4
+
+00:09:28.538 --> 00:09:31.879
+create a private member of type message queue for messages of
+
+00:09:31.879 --> 00:09:35.674
+TrafficLightPhase and use it within the infinite loop to push
+
+00:09:35.674 --> 00:09:41.169
+each new TrafficLightPhase into it by calling send together with move semantics.
+
+00:09:41.169 --> 00:09:45.004
+Okay. Here come the last two tasks or the final project.
+
+00:09:45.004 --> 00:09:50.779
+Task number five and the method receive should use standard unique luck and also
+
+00:09:50.779 --> 00:09:53.345
+condition wait to wait for and receive
+
+00:09:53.345 --> 00:09:56.935
+new messages and pull them from the queue using move semantics.
+
+00:09:56.934 --> 00:10:00.844
+Now, the received object should then be returned by the receive function.
+
+00:10:00.845 --> 00:10:03.740
+Then you should add the implementation of the method wait for
+
+00:10:03.740 --> 00:10:07.144
+green which is already in the code and you have to
+
+00:10:07.144 --> 00:10:10.490
+implement it in which an infinite while loop runs and
+
+00:10:10.490 --> 00:10:13.955
+repeatedly calls the receive function on the message queue.
+
+00:10:13.955 --> 00:10:18.485
+Once it receives traffic light phase green the method shall return.
+
+00:10:18.485 --> 00:10:22.460
+Okay, the last task FP.6 is about the class intersection.
+
+00:10:22.460 --> 00:10:25.340
+Again where should add a private member called underscore
+
+00:10:25.340 --> 00:10:28.685
+TrafficLight which is of the type TrafficLight.
+
+00:10:28.684 --> 00:10:31.554
+Then the method intersection simulate you should
+
+00:10:31.554 --> 00:10:35.599
+start the simulation of the traffic light because the traffic light also
+
+00:10:35.600 --> 00:10:38.570
+is running in its own thread when it started up it's
+
+00:10:38.570 --> 00:10:42.500
+always cycling through this loop where it's toggling between red and green all the time.
+
+00:10:42.500 --> 00:10:46.730
+This has to be started up together with the intersection simulations.
+
+00:10:46.730 --> 00:10:49.279
+So the position where the intersection starts
+
+00:10:49.279 --> 00:10:53.524
+simulating shall also be the position where the traffic light is fired up.
+
+00:10:53.524 --> 00:10:56.600
+Then in the method intersection add vehicleToQueue you
+
+00:10:56.600 --> 00:10:59.540
+should use the methods TrafficLight:: getCurrentPhase
+
+00:10:59.539 --> 00:11:02.360
+and also TrafficLight:: WaitForGreen to block
+
+00:11:02.360 --> 00:11:05.840
+the execution until the traffic light turns green.
+
+00:11:05.840 --> 00:11:08.480
+Again, in order to see the position in
+
+00:11:08.480 --> 00:11:11.210
+the code where it makes sense to implement this functionality,
+
+00:11:11.210 --> 00:11:14.600
+take a look at the program schematic again to see where
+
+00:11:14.600 --> 00:11:18.190
+this these two items need to be included.
+
+00:11:18.190 --> 00:11:21.860
+Okay, so that's the end of the final project description.
+
+00:11:21.860 --> 00:11:23.350
+In the next video,
+
+00:11:23.350 --> 00:11:28.620
+we will be taking a look at the actual code base of a project. See you there.
+

@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.485
+Now welcome to the final project of the C++ concurrency course.
+
+00:00:04.485 --> 00:00:08.175
+Over the last weeks, you have made the transition from writing linear
+
+00:00:08.175 --> 00:00:12.120
+and synchronous code to becoming a concurrent programmer.
+
+00:00:12.119 --> 00:00:15.138
+You now know how to create parallel path of execution
+
+00:00:15.138 --> 00:00:18.289
+and how to exchange data between asynchronous threads,
+
+00:00:18.289 --> 00:00:22.019
+and concepts such as standard async, mutexes, locks,
+
+00:00:22.019 --> 00:00:24.210
+Lambdas, and Rvalue reference,
+
+00:00:24.210 --> 00:00:25.495
+as well as move semantics,
+
+00:00:25.495 --> 00:00:28.580
+now belong to your toolbox and they will greatly enhance
+
+00:00:28.579 --> 00:00:32.094
+the quality and the performance of the code you write.
+
+00:00:32.094 --> 00:00:33.229
+In the upcoming project,
+
+00:00:33.229 --> 00:00:37.344
+you will extend the current traffic simulation that we have by a new concept.
+
+00:00:37.344 --> 00:00:40.359
+In addition to vehicles, intersections, and streets,
+
+00:00:40.359 --> 00:00:42.740
+the city needs traffic lights to manage the flow of
+
+00:00:42.740 --> 00:00:45.215
+vehicles and it will be your job to develop them.
+
+00:00:45.215 --> 00:00:47.460
+So let's take a look.
+

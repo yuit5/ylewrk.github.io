@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.439
+Now, the infinite polling loop,
+
+00:00:01.439 --> 00:00:03.960
+we have implemented so far does not work optimally.
+
+00:00:03.960 --> 00:00:05.429
+As long as the program is running,
+
+00:00:05.429 --> 00:00:08.084
+the while loop will keep the processor totally busy,
+
+00:00:08.085 --> 00:00:10.785
+constantly asking whether the new data was available.
+
+00:00:10.785 --> 00:00:13.349
+You can verify this by using a system task manager,
+
+00:00:13.349 --> 00:00:15.899
+and by looking at the CPU load of our program.
+
+00:00:15.900 --> 00:00:19.455
+In the next section, we will look at a better way to solve this problem
+
+00:00:19.454 --> 00:00:24.129
+without putting too much load on the processor. See you there shortly.
+

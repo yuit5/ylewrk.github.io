@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.685
+At this point you should have a solid understanding of
+
+00:00:02.685 --> 00:00:06.720
+basic thread and of task management as well as of shared data protection.
+
+00:00:06.719 --> 00:00:09.509
+We have seen that data protection is a critical element in
+
+00:00:09.509 --> 00:00:13.379
+concurrent programming and after looking at several ways to achieve this,
+
+00:00:13.380 --> 00:00:16.350
+we now want to build on these concepts even further.
+
+00:00:16.350 --> 00:00:18.630
+Now the goal here is to develop a method for
+
+00:00:18.629 --> 00:00:23.129
+a controlled and finally range data exchange between several threads.
+
+00:00:23.129 --> 00:00:26.574
+In this lesson, we will build a concurrent message queue,
+
+00:00:26.574 --> 00:00:31.160
+and for you this means understanding a data exchange protocol that can be used in
+
+00:00:31.160 --> 00:00:36.215
+a large number of scenarios where threads need to communicate efficiently and safely.
+
+00:00:36.215 --> 00:00:38.660
+Now before we can build the message queue however,
+
+00:00:38.659 --> 00:00:42.049
+you need to first understand some basic concepts such as
+
+00:00:42.049 --> 00:00:46.280
+the monitor object pattern and condition variables.
+
+00:00:46.280 --> 00:00:49.370
+Now once we have our message queue ready at the end of this lesson,
+
+00:00:49.369 --> 00:00:52.099
+you are well-prepared to start with a final product of
+
+00:00:52.100 --> 00:00:56.850
+this course so don't lose any time and go ahead with the first section.
+
