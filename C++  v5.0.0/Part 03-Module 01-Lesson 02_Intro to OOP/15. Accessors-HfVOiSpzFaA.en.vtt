@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:05.339
+Accessor functions which are sometimes called getter functions,
+
+00:00:05.339 --> 00:00:07.650
+are functions like this;
+
+00:00:07.650 --> 00:00:15.039
+in day or in month or in year in this state class that get data from the function.
+
+00:00:15.039 --> 00:00:19.679
+They are typically marked as constant because they are
+
+00:00:19.679 --> 00:00:24.329
+designed not to change the interior state of an object and they
+
+00:00:24.329 --> 00:00:29.099
+often just return a private member variable but
+
+00:00:29.100 --> 00:00:36.189
+by channeling access to that private member variable through a public accessor function.
+
+00:00:36.189 --> 00:00:40.964
+We can better control in particular how that member variable gets set.
+
+00:00:40.965 --> 00:00:43.370
+We could take the year,
+
+00:00:43.369 --> 00:00:47.579
+for example and make that a public member and then people could
+
+00:00:47.579 --> 00:00:52.625
+set the year at will but if people do something like set the year to a leap year,
+
+00:00:52.625 --> 00:00:54.829
+that may actually change or
+
+00:00:54.829 --> 00:00:59.449
+invalidate the number of days we have in a month for example if the date is
+
+00:00:59.450 --> 00:01:07.715
+February 29th 2016 and then somebody goes and changes the year to 2017,
+
+00:01:07.715 --> 00:01:14.525
+that might that might break the date because February 29th 2017 isn't a valid date.
+
+00:01:14.525 --> 00:01:19.010
+So we make year a private member variable but that also means we need to create
+
+00:01:19.010 --> 00:01:26.390
+this public accessor method that simply returns the value of year when it gets called.
+
+00:01:26.390 --> 00:01:31.234
+Sometimes this accessor method would be named something like get year.
+
+00:01:31.234 --> 00:01:35.075
+I like to name it just year,
+
+00:01:35.075 --> 00:01:36.829
+with a capital letter,
+
+00:01:36.829 --> 00:01:42.379
+which is a convention for member functions but it's
+
+00:01:42.379 --> 00:01:49.199
+the same name essentially as the private member variable that it returns.
+

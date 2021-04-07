@@ -1,0 +1,330 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise: Static Members</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Intro to OOP</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Classes and OOP.html">01. Classes and OOP</a>
+    </li>
+    <li class="">
+      <a href="02. Bjarne On Classes In C++.html">02. Bjarne On Classes In C++</a>
+    </li>
+    <li class="">
+      <a href="03. Jupyter Notebooks.html">03. Jupyter Notebooks</a>
+    </li>
+    <li class="">
+      <a href="04. Structures.html">04. Structures</a>
+    </li>
+    <li class="">
+      <a href="05. Member Initialization.html">05. Member Initialization</a>
+    </li>
+    <li class="">
+      <a href="06. Access Specifiers.html">06. Access Specifiers</a>
+    </li>
+    <li class="">
+      <a href="07. Classes.html">07. Classes</a>
+    </li>
+    <li class="">
+      <a href="08. Encapsulation and Abstraction.html">08. Encapsulation and Abstraction</a>
+    </li>
+    <li class="">
+      <a href="09. Bjarne on Encapsulation.html">09. Bjarne on Encapsulation</a>
+    </li>
+    <li class="">
+      <a href="10. Constructors.html">10. Constructors</a>
+    </li>
+    <li class="">
+      <a href="11. Scope Resolution.html">11. Scope Resolution</a>
+    </li>
+    <li class="">
+      <a href="12. Initializer Lists.html">12. Initializer Lists</a>
+    </li>
+    <li class="">
+      <a href="13. Initializing Constant Members.html">13. Initializing Constant Members</a>
+    </li>
+    <li class="">
+      <a href="14. Encapsulation.html">14. Encapsulation</a>
+    </li>
+    <li class="">
+      <a href="15. Accessor Functions.html">15. Accessor Functions</a>
+    </li>
+    <li class="">
+      <a href="16. Mutator Functions.html">16. Mutator Functions</a>
+    </li>
+    <li class="">
+      <a href="17. Quiz Classes in C++.html">17. Quiz: Classes in C++</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Pyramid Class.html">18. Exercise: Pyramid Class</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Student Class.html">19. Exercise: Student Class</a>
+    </li>
+    <li class="">
+      <a href="20. Encapsulation in C++.html">20. Encapsulation in C++</a>
+    </li>
+    <li class="">
+      <a href="21. Bjarne On Abstraction.html">21. Bjarne On Abstraction</a>
+    </li>
+    <li class="">
+      <a href="22. Abstraction.html">22. Abstraction</a>
+    </li>
+    <li class="">
+      <a href="23. Exercise Sphere Class.html">23. Exercise: Sphere Class</a>
+    </li>
+    <li class="">
+      <a href="24. Exercise Private Method.html">24. Exercise: Private Method</a>
+    </li>
+    <li class="">
+      <a href="25. Exercise Static Members.html">25. Exercise: Static Members</a>
+    </li>
+    <li class="">
+      <a href="26. Exercise Static Methods.html">26. Exercise: Static Methods</a>
+    </li>
+    <li class="">
+      <a href="27. Bjarne On Solving Problems.html">27. Bjarne On Solving Problems</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">25. Exercise: Static Members</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Static</p></h3>
+  <video controls>
+  <source src="25. Static-7fBkcIL6d8k.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="25. Static-7fBkcIL6d8k.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="static-members">Static Members</h2>
+<p>Class members can be declared <code>static</code>, which means that the member belongs to the entire class, instead of to a specific instance of the class. More specifically, a <code>static</code> member is created only once and then shared by all instances (i.e. objects) of the class. That means that if the <code>static</code> member gets changed, either by a user of the class or within a member function of the class itself, then all members of the class will see that change the next time they access the <code>static</code> member.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>A second static counter</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Imagine you have a <code>class Sphere</code> with a <code>static int counter</code> member. <code>Sphere</code> increments <code>counter</code> in the constructor and uses this to track how many <code>Sphere</code>s have been created. What would happen if you instantiated a new classes (<code>Cube</code>, for instance) that also had a <code>static int counter</code>? Would the two <code>counter</code>s conflict?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1551573735345" name="833225" id="a1551573735345">
+        <label for="a1551573735345"><p>Yes, instantiating a class of a different name that has a static attribute <code>counter</code> will increment the same <code>counter</code> as before.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1551573941894" name="833225" id="a1551573941894">
+        <label for="a1551573941894"><p>No, because the new static attribute <code>counter</code> is defined within the <code>Cube</code> class, it has nothing to do with <code>Sphere::counter</code>.</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1551573992530" name="833225" id="a1551573992530">
+        <label for="a1551573992530"><p>Only if both classes are instantiated within the same scope do the two <code>counter</code> attributes conflict.</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    No, because the new static attribute `counter` is defined within the `Cube` class, it has nothing to do with `Sphere::counter`.
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="implementation">Implementation</h2>
+<p><code>static</code> members are <strong>declared</strong> within their <code>class</code> (often in a header file) but in most cases they must be <strong>defined</strong> within the global scope. That's because memory is allocated for <code>static</code> variables immediately when the program begins, at the same time any global variables are initialized.</p>
+<p>Here is an example:</p>
+<pre><code>#include &lt;cassert&gt;
+
+class Foo {
+ public:
+  static int count;
+  Foo() { Foo::count += 1; }
+};
+
+int Foo::count{0};
+
+int main() {
+  Foo f{};
+  assert(Foo::count == 1);
+}</code></pre>
+<p>An exception to the global definition of <code>static</code> members is if such members can be marked as <a href="https://en.cppreference.com/w/cpp/language/constexpr" rel="noopener noreferrer" target="_blank"><code>constexpr</code></a>. In that case, the <code>static</code> member variable can be both declared and defined within the <code>class</code> definition:</p>
+<pre><code>struct Kilometer {
+  static constexpr int meters{1000};
+};</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="exercise-pi">Exercise: Pi</h2>
+<p><code>class Sphere</code> has a member <code>const double pi</code>. Experiment with specifying <code>pi</code> to be <code>const</code>, <code>constexpr</code>, and <code>static</code>. Which specifications work and which break? Do you understand why?</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="26. Exercise Static Methods.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('25. Exercise: Static Members')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

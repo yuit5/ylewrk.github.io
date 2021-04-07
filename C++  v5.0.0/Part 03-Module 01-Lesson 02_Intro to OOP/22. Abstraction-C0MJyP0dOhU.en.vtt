@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.020 --> 00:00:09.584
+Abstraction is how we separate the interface of a class from its implementation.
+
+00:00:09.585 --> 00:00:11.940
+Sometimes, we say that we abstract the way
+
+00:00:11.939 --> 00:00:15.570
+the implementation details so that the user doesn't have to worry about them.
+
+00:00:15.570 --> 00:00:19.980
+So you can see we have a date class here and we have declared
+
+00:00:19.980 --> 00:00:26.024
+this function string which converts the date to a string.
+
+00:00:26.024 --> 00:00:29.579
+If we scroll down here, we have the definition of the string function,
+
+00:00:29.579 --> 00:00:30.914
+it's empty right now.
+
+00:00:30.914 --> 00:00:35.969
+There are a lot of different ways that we could implement the string function.
+
+00:00:35.969 --> 00:00:41.379
+One way might be to have a vector of strings which represents the months because the test
+
+00:00:41.380 --> 00:00:46.560
+we want to pass ultimately is that if we create a date 29th of August,
+
+00:00:46.560 --> 00:00:51.290
+1981, we want the string output of that to be August 29th, 1981.
+
+00:00:51.289 --> 00:00:53.240
+So we could get August here by creating
+
+00:00:53.240 --> 00:00:55.895
+a vector of months and indexing the correct month,
+
+00:00:55.895 --> 00:01:01.115
+we could have a case statement based on the month or switch statement based on the month,
+
+00:01:01.115 --> 00:01:05.150
+we could have a bunch of if else conditionals.
+
+00:01:05.150 --> 00:01:07.130
+There are lots of different ways to do this.
+
+00:01:07.129 --> 00:01:10.909
+The point is, we don't want the user to have to worry about how we do this,
+
+00:01:10.909 --> 00:01:15.679
+we just want the user to be able to call this function and get the appropriate string.
+
+00:01:15.680 --> 00:01:17.990
+If we decide later to change how we do this,
+
+00:01:17.989 --> 00:01:20.239
+the user doesn't have to worry about that at all.
+
+00:01:20.239 --> 00:01:23.909
+That's the definition of abstraction.
+

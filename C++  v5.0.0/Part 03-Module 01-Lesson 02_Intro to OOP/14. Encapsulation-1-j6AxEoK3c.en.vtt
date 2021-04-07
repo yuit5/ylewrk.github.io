@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.889
+Encapsulation captures the idea that we want to group together
+
+00:00:04.889 --> 00:00:09.689
+similar data and logic into a single class.
+
+00:00:09.689 --> 00:00:13.679
+That's as opposed to having that data and logic be spread out across
+
+00:00:13.679 --> 00:00:18.433
+multiple classes or having that data and logic exist independently and loosely,
+
+00:00:18.434 --> 00:00:19.800
+inside of the program,
+
+00:00:19.800 --> 00:00:22.769
+with no real connection to each other within the program.
+
+00:00:22.769 --> 00:00:27.059
+Encapsulation is a little bit of a tricky concept because
+
+00:00:27.059 --> 00:00:31.409
+encapsulation exists intention with the idea that we want to
+
+00:00:31.410 --> 00:00:36.719
+segregate out data that's not related to each other so that we
+
+00:00:36.719 --> 00:00:42.034
+don't have giant classes and objects that do many many different things.
+
+00:00:42.034 --> 00:00:49.564
+Each class should really have a single self-contained idea that it operates under.
+
+00:00:49.564 --> 00:00:51.710
+So if we think about the date class,
+
+00:00:51.710 --> 00:00:54.469
+for example, right now in the date class,
+
+00:00:54.469 --> 00:00:59.750
+we have this hard-coded invariant that a day must be less than or equal to 31.
+
+00:00:59.750 --> 00:01:06.420
+But, of course, we know that 31 is an upper bound some months only have 30 days
+
+00:01:06.420 --> 00:01:09.750
+in them and February actually only has 28 days
+
+00:01:09.750 --> 00:01:13.230
+and actually February gets even more complicated if it's a leap year,
+
+00:01:13.230 --> 00:01:15.765
+then February has 29 days on it.
+
+00:01:15.765 --> 00:01:17.570
+What we might want here,
+
+00:01:17.569 --> 00:01:21.229
+is instead of setting the invariant to be less than or equal to 31,
+
+00:01:21.230 --> 00:01:23.840
+maybe we would have something like a days and
+
+00:01:23.840 --> 00:01:29.060
+month function that returns the number of days in a given month
+
+00:01:29.060 --> 00:01:32.960
+and limits our ability to set
+
+00:01:32.959 --> 00:01:38.209
+a day to whatever the appropriate upper bound of days in a month is.
+
+00:01:38.209 --> 00:01:40.640
+So this is a function that might, in fact,
+
+00:01:40.640 --> 00:01:44.795
+make a lot of sense to exist inside of the day class because
+
+00:01:44.795 --> 00:01:49.790
+the invariant for the day class or one of the invariants depends on this function,
+
+00:01:49.790 --> 00:01:53.540
+so the class maybe can't exist without this logic in it.
+
+00:01:53.540 --> 00:02:02.200
+On the other hand, you might imagine creating a function that's something like tomorrow,
+
+00:02:03.739 --> 00:02:06.030
+oh, I think I misspelled tomorrow,
+
+00:02:06.030 --> 00:02:09.810
+there we go and actually let's put it
+
+00:02:09.810 --> 00:02:14.000
+up since we're not going to go through the process of defining it.
+
+00:02:14.000 --> 00:02:15.724
+Let's just declare it right now.
+
+00:02:15.724 --> 00:02:18.185
+Maybe what we could have a function
+
+00:02:18.185 --> 00:02:21.710
+tomorrow that returns the appropriate date for tomorrow.
+
+00:02:21.710 --> 00:02:24.740
+Well, in fact, this function may
+
+00:02:24.740 --> 00:02:27.995
+not actually be a great candidate to exist within the date class
+
+00:02:27.995 --> 00:02:35.435
+because tomorrow doesn't need particular access to the way that the date is stored.
+
+00:02:35.435 --> 00:02:40.099
+So it doesn't need to necessarily be a member of the date class and
+
+00:02:40.099 --> 00:02:44.854
+the date class doesn't really depend on tomorrow for any its invariants or other logic.
+
+00:02:44.854 --> 00:02:49.939
+So we might actually imagine having just a totally separate function,
+
+00:02:49.939 --> 00:02:59.539
+totally independent of the date class that calculates tomorrow for a given date.
+
+00:02:59.539 --> 00:03:06.829
+Then we could go to find that function and return what tomorrow is.
+
+00:03:06.830 --> 00:03:11.045
+That's kind of an example of the trickiness and
+
+00:03:11.044 --> 00:03:15.859
+judgment in design that has to go into encapsulating elements of a function together.
+
+00:03:15.860 --> 00:03:20.060
+You want to have all of the data and logic that is
+
+00:03:20.060 --> 00:03:24.574
+really necessary to live together' to all be encapsulated together in a class.
+
+00:03:24.574 --> 00:03:28.339
+But other data and logic that might be related but
+
+00:03:28.340 --> 00:03:32.300
+isn't specifically necessary to group together,
+
+00:03:32.300 --> 00:03:35.270
+you might want to segregate out so that your class is
+
+00:03:35.270 --> 00:03:40.320
+tighter and cleaner than if you just start to throw everything in there.
+

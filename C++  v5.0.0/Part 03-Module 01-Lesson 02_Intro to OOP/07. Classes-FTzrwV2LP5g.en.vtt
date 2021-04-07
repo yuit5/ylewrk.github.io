@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.830 --> 00:00:08.535
+Invariants are logical conditions that member variables must adhere to.
+
+00:00:08.535 --> 00:00:14.835
+In a sense, they limit what values we can set or we can assign to member variables.
+
+00:00:14.835 --> 00:00:17.789
+For example, in this date class,
+
+00:00:17.789 --> 00:00:22.890
+day needs to be between 1 and 31 and in fact,
+
+00:00:22.890 --> 00:00:26.339
+you could set a more sophisticated and more accurate invariant
+
+00:00:26.339 --> 00:00:29.160
+that looked at what the month was and
+
+00:00:29.160 --> 00:00:35.600
+set the appropriate invariant for day based on the value of month.
+
+00:00:35.600 --> 00:00:38.480
+We have a pretty simple invariant here that just simply says
+
+00:00:38.479 --> 00:00:41.949
+the day has to be between 1 and 31 because for all months,
+
+00:00:41.950 --> 00:00:44.350
+day is at least between 1 and 31,
+
+00:00:44.350 --> 00:00:48.935
+and then it's a little more limited for certain months like, say, February.
+
+00:00:48.935 --> 00:00:53.540
+You could imagine also setting up invariants for month.
+
+00:00:53.539 --> 00:00:55.820
+Year doesn't really have an invariant.
+
+00:00:55.820 --> 00:01:01.490
+If you assume that negative is essentially a year in BC,
+
+00:01:01.490 --> 00:01:04.790
+then year might not have an invariant.
+
+00:01:04.790 --> 00:01:10.820
+In fact, we might assign or specify the year is a public member variable.
+
+00:01:10.819 --> 00:01:13.250
+But sometimes it's cleaner for symmetry if
+
+00:01:13.250 --> 00:01:16.219
+all the other members are private and have accessors and
+
+00:01:16.219 --> 00:01:18.890
+mutators to just give year its own accessor
+
+00:01:18.890 --> 00:01:22.680
+and mutator even if the mutator doesn't really apply an invariant.
+
+00:01:23.000 --> 00:01:28.909
+This is the main reason to use a class instead of a struct.
+
+00:01:28.909 --> 00:01:32.539
+If you're just carrying publicly accessible data where
+
+00:01:32.540 --> 00:01:35.210
+all the data members can vary independently of each
+
+00:01:35.209 --> 00:01:38.349
+other and don't really have any limitations then you might use a struct.
+
+00:01:38.349 --> 00:01:42.229
+As soon as you start to have data members that you want to make private or
+
+00:01:42.230 --> 00:01:45.710
+that have invariants or limits on them,
+
+00:01:45.709 --> 00:01:47.914
+and often those two things are connected,
+
+00:01:47.915 --> 00:01:54.150
+then the convention is typically to convert from a struct into a class
+

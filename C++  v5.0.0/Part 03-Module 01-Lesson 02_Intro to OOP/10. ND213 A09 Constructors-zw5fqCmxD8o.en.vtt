@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.825
+In order to instantiate objects in C++,
+
+00:00:03.825 --> 00:00:06.870
+we build and use constructors.
+
+00:00:06.870 --> 00:00:11.205
+These are functions which construct objects of a class.
+
+00:00:11.205 --> 00:00:16.004
+All classes come with a default constructor which takes no arguments.
+
+00:00:16.004 --> 00:00:20.280
+But we can also define our own constructors so that there might
+
+00:00:20.280 --> 00:00:24.750
+be multiple different ways to instantiate an object of the class.
+
+00:00:24.750 --> 00:00:26.489
+As a rule of thumb,
+
+00:00:26.489 --> 00:00:30.500
+the constructor should initialize the data members of the class.
+
+00:00:30.500 --> 00:00:34.490
+It's also a good idea not to have any complex logic in
+
+00:00:34.490 --> 00:00:39.425
+a constructor because you want to ensure that the constructor does not fail.
+
+00:00:39.424 --> 00:00:43.369
+It's hard to handle errors that take place within the constructor.
+
+00:00:43.369 --> 00:00:46.459
+Coming up, you're going to practice building
+
+00:00:46.460 --> 00:00:50.219
+lots of different types of constructors. Here we go.
+

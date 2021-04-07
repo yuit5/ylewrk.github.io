@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:04.724
+So in addition to static member variables,
+
+00:00:04.724 --> 00:00:07.859
+classes can also have static member functions.
+
+00:00:07.860 --> 00:00:12.824
+A static member function can be called without ever initializing,
+
+00:00:12.824 --> 00:00:16.214
+or creating, or instantiating an object of the class.
+
+00:00:16.214 --> 00:00:18.719
+So down here, we actually have an example of this.
+
+00:00:18.719 --> 00:00:22.529
+We're calling static member function volume,
+
+00:00:22.530 --> 00:00:23.880
+which we haven't defined yet.
+
+00:00:23.879 --> 00:00:26.549
+We have a normal member function volume,
+
+00:00:26.550 --> 00:00:29.969
+but we haven't yet defined the static member function volume.
+
+00:00:29.969 --> 00:00:35.820
+The way this static member function is supposed to work is we pass in a radius,
+
+00:00:35.820 --> 00:00:39.134
+and then volume creates or calculates
+
+00:00:39.134 --> 00:00:43.865
+the correct volume or approximately the correct volume given a radius.
+
+00:00:43.865 --> 00:00:49.160
+In this example, we actually don't need to create any objects of type Sphere.
+
+00:00:49.159 --> 00:00:53.779
+So we can go ahead and start to delete all of the data here
+
+00:00:53.780 --> 00:00:58.649
+that's tied to individual objects of type Sphere.
+
+00:00:58.649 --> 00:01:07.439
+Instead, we can just create a static member function volume which returns a float,
+
+00:01:07.439 --> 00:01:09.239
+it takes a radius,
+
+00:01:09.239 --> 00:01:11.629
+and then the interesting thing to do will be to
+
+00:01:11.629 --> 00:01:16.909
+actually define what the implementation of
+
+00:01:16.909 --> 00:01:20.840
+volume is and see if it actually works to calculate the volume
+
+00:01:20.840 --> 00:01:25.799
+of the Sphere without ever actually initializing an object of type Sphere.
+

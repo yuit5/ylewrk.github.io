@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.410 --> 00:00:04.155
+In this exercise, we're going to continue working with
+
+00:00:04.155 --> 00:00:11.115
+abstraction by updating the sphere class to contain a mutator,
+
+00:00:11.115 --> 00:00:12.660
+really just one mutator,
+
+00:00:12.660 --> 00:00:17.295
+and that's a function to mutate the radius of the sphere.
+
+00:00:17.295 --> 00:00:19.170
+That means we're going to have to remove
+
+00:00:19.170 --> 00:00:22.530
+the constant specifier from both radius and volume,
+
+00:00:22.530 --> 00:00:26.130
+and we're going to have to make sure that we update the volume.
+
+00:00:26.129 --> 00:00:28.504
+At the same time, we update the radius because there's
+
+00:00:28.504 --> 00:00:31.535
+an invariant that connects the radius to volume.
+
+00:00:31.535 --> 00:00:36.695
+Volume is always equal to pi times four divided by three times the radius cubed.
+
+00:00:36.695 --> 00:00:39.310
+So when we add the radius mutator,
+
+00:00:39.310 --> 00:00:42.015
+we'll have to also update the volume,
+
+00:00:42.015 --> 00:00:45.270
+and we'll also need to check that the radius is positive.
+
+00:00:45.270 --> 00:00:47.240
+In fact, we have a test down here
+
+00:00:47.240 --> 00:00:50.929
+essentially trying to set the radius to a negative value.
+
+00:00:50.929 --> 00:00:54.500
+Then we assert that in fact we did catch an exception.
+
+00:00:54.500 --> 00:00:56.450
+So what should happen when we set
+
+00:00:56.450 --> 00:00:58.700
+the radius to a negative value or at least when we tried to
+
+00:00:58.700 --> 00:01:03.590
+set the radius to a negative value is that the mutator should throw an exception.
+
+00:01:03.590 --> 00:01:08.344
+The purpose of all of this is again to
+
+00:01:08.344 --> 00:01:11.329
+emphasize that the user of this function or
+
+00:01:11.329 --> 00:01:14.959
+this class doesn't care exactly how volume is set.
+
+00:01:14.959 --> 00:01:22.759
+All that the user cares about is that when they call volume on the sphere,
+
+00:01:22.760 --> 00:01:24.829
+that the volume returns the correct value.
+
+00:01:24.829 --> 00:01:29.060
+Whether that value is calculated in
+
+00:01:29.060 --> 00:01:32.299
+real time via multiplication or
+
+00:01:32.299 --> 00:01:35.825
+whether that value is set in cash when the radius is updated,
+
+00:01:35.825 --> 00:01:38.609
+the user doesn't really care about.
+

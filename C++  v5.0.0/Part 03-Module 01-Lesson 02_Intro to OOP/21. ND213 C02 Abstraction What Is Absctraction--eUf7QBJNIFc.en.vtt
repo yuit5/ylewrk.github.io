@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:08.640
+Well, basically abstraction is
+
+00:00:08.640 --> 00:00:13.605
+just getting away from the hardware and building on other things.
+
+00:00:13.605 --> 00:00:20.385
+If I have a string and a number and I want an address,
+
+00:00:20.385 --> 00:00:26.820
+I can build it out of strings and say integers with the name and address.
+
+00:00:26.820 --> 00:00:29.670
+So I can basically sort of build up from previous things.
+
+00:00:29.670 --> 00:00:31.125
+Each time you do that,
+
+00:00:31.125 --> 00:00:37.269
+you say you're abstracting from the underlying thing providing a new abstraction.
+
+00:00:37.270 --> 00:00:45.560
+So from strings, I can build addresses and I can build file path support,
+
+00:00:45.560 --> 00:00:50.850
+I can build log messages,
+
+00:00:50.850 --> 00:00:56.980
+I can build just endless things you can build on top and that's called abstraction.
+
+00:00:56.979 --> 00:01:00.469
+Building more closer to the human and
+
+00:01:00.469 --> 00:01:05.709
+the user needs than the basic stuff that's in the machine.
+

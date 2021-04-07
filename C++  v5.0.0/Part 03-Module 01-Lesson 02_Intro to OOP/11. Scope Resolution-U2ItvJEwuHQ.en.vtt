@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.129
+Scope resolution allows us to tell the compiler
+
+00:00:05.129 --> 00:00:09.839
+and future programmers that a particular identifier,
+
+00:00:09.839 --> 00:00:13.814
+so maybe a function name or a variable name,
+
+00:00:13.814 --> 00:00:17.129
+is associated with a particular scope.
+
+00:00:17.129 --> 00:00:21.114
+In this case, the scope we might be concerned with is the scope of the Date class.
+
+00:00:21.114 --> 00:00:24.149
+So in this class definition,
+
+00:00:24.149 --> 00:00:28.199
+we have all of the functions defined within the class definition.
+
+00:00:28.199 --> 00:00:31.019
+We might want to separate that out for various reasons.
+
+00:00:31.019 --> 00:00:33.719
+Maybe we only want to show the interface and
+
+00:00:33.719 --> 00:00:36.585
+not the actual implementation to potential users.
+
+00:00:36.585 --> 00:00:39.495
+Maybe we want to split these into separate files.
+
+00:00:39.494 --> 00:00:45.155
+But either way, we will use scope resolution in order to make that possible.
+
+00:00:45.155 --> 00:00:51.365
+So for example, we could declare this date constructor within
+
+00:00:51.365 --> 00:00:55.550
+the class definition but not define the date
+
+00:00:55.549 --> 00:01:01.969
+constructor or within the class only define it outside of the class definition.
+
+00:01:01.969 --> 00:01:03.875
+So we could say, for example,
+
+00:01:03.875 --> 00:01:11.084
+date and then pass an int d int m and int y.
+
+00:01:11.084 --> 00:01:19.359
+Now we have the exact same definition of this constructor,
+
+00:01:19.359 --> 00:01:23.885
+but the constructor is defined outside of the class definition.
+
+00:01:23.885 --> 00:01:28.160
+However, we use scope resolution in order to connect the constructor
+
+00:01:28.159 --> 00:01:32.659
+to the class so that as a user of this class,
+
+00:01:32.659 --> 00:01:34.579
+when we call the constructor,
+
+00:01:34.579 --> 00:01:35.899
+it's all the same to us.
+
+00:01:35.900 --> 00:01:38.600
+It doesn't matter whether the constructor is defined
+
+00:01:38.599 --> 00:01:42.125
+within the class definition or defined outside of the class definition.
+
+00:01:42.125 --> 00:01:46.129
+When we compile this code and run it,
+
+00:01:46.129 --> 00:01:48.879
+everything works and we're all set.
+

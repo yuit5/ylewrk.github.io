@@ -1,0 +1,307 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classes</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Intro to OOP</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Classes and OOP.html">01. Classes and OOP</a>
+    </li>
+    <li class="">
+      <a href="02. Bjarne On Classes In C++.html">02. Bjarne On Classes In C++</a>
+    </li>
+    <li class="">
+      <a href="03. Jupyter Notebooks.html">03. Jupyter Notebooks</a>
+    </li>
+    <li class="">
+      <a href="04. Structures.html">04. Structures</a>
+    </li>
+    <li class="">
+      <a href="05. Member Initialization.html">05. Member Initialization</a>
+    </li>
+    <li class="">
+      <a href="06. Access Specifiers.html">06. Access Specifiers</a>
+    </li>
+    <li class="">
+      <a href="07. Classes.html">07. Classes</a>
+    </li>
+    <li class="">
+      <a href="08. Encapsulation and Abstraction.html">08. Encapsulation and Abstraction</a>
+    </li>
+    <li class="">
+      <a href="09. Bjarne on Encapsulation.html">09. Bjarne on Encapsulation</a>
+    </li>
+    <li class="">
+      <a href="10. Constructors.html">10. Constructors</a>
+    </li>
+    <li class="">
+      <a href="11. Scope Resolution.html">11. Scope Resolution</a>
+    </li>
+    <li class="">
+      <a href="12. Initializer Lists.html">12. Initializer Lists</a>
+    </li>
+    <li class="">
+      <a href="13. Initializing Constant Members.html">13. Initializing Constant Members</a>
+    </li>
+    <li class="">
+      <a href="14. Encapsulation.html">14. Encapsulation</a>
+    </li>
+    <li class="">
+      <a href="15. Accessor Functions.html">15. Accessor Functions</a>
+    </li>
+    <li class="">
+      <a href="16. Mutator Functions.html">16. Mutator Functions</a>
+    </li>
+    <li class="">
+      <a href="17. Quiz Classes in C++.html">17. Quiz: Classes in C++</a>
+    </li>
+    <li class="">
+      <a href="18. Exercise Pyramid Class.html">18. Exercise: Pyramid Class</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise Student Class.html">19. Exercise: Student Class</a>
+    </li>
+    <li class="">
+      <a href="20. Encapsulation in C++.html">20. Encapsulation in C++</a>
+    </li>
+    <li class="">
+      <a href="21. Bjarne On Abstraction.html">21. Bjarne On Abstraction</a>
+    </li>
+    <li class="">
+      <a href="22. Abstraction.html">22. Abstraction</a>
+    </li>
+    <li class="">
+      <a href="23. Exercise Sphere Class.html">23. Exercise: Sphere Class</a>
+    </li>
+    <li class="">
+      <a href="24. Exercise Private Method.html">24. Exercise: Private Method</a>
+    </li>
+    <li class="">
+      <a href="25. Exercise Static Members.html">25. Exercise: Static Members</a>
+    </li>
+    <li class="">
+      <a href="26. Exercise Static Methods.html">26. Exercise: Static Methods</a>
+    </li>
+    <li class="">
+      <a href="27. Bjarne On Solving Problems.html">27. Bjarne On Solving Problems</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Classes</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Classes</p></h3>
+  <video controls>
+  <source src="07. Classes-FTzrwV2LP5g.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. Classes-FTzrwV2LP5g.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="classes">Classes</h1>
+<p>Classes, like structures, provide a way for C++ programmers to aggregate data together in a way that makes sense in the context of a specific program. By convention, programmers use structures when member variables are independent of each other, and <a href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#c2-use-class-if-the-class-has-an-invariant-use-struct-if-the-data-members-can-vary-independently" rel="noopener noreferrer" target="_blank">use classes when member variables are related by an "invariant"</a>. </p>
+<h2 id="invariants">Invariants</h2>
+<p>An "invariant" is a rule that limits the values of member variables. </p>
+<p>For example, in a <code>Date</code> class, an invariant would specify that the member variable <code>day</code> cannot be less than 0. Another invariant would specify that the value of <code>day</code> cannot exceed 28, 29, 30, or 31, depending on the month and year. Yet another invariant would limit the value of <code>month</code> to the range of 1 to 12.</p>
+<h2 id="date-class"><code>Date</code> Class</h2>
+<p>Let's define a <code>Date</code> class:</p>
+<pre><code class="cpp language-cpp">// Use the keyword “class” to define a Date class:
+class Date {
+  int day{1};
+  int month{1};
+  int year{0};
+};</code></pre>
+<p>So far, this class definition provides no invariants. The data members can vary independently of each other.</p>
+<p>There is one subtle but important change that takes place when we change <code>struct Date</code> to <code>class Date</code>. By default, all members of a <code>struct</code> default to public, whereas all members of a <code>class</code> default to private. Since we have not specified access for the members of <code>class Date</code>, all of the members are private. In fact, we are not able to assign value to them at all!</p>
+<h3 id="date-accessors-and-mutators"><code>Date</code> Accessors And Mutators</h3>
+<p>As the first step to adding the appropriate invariants, let's specify that the member variable <code>day</code> is private. In order to access this member, we'll provide accessor and mutatot functions. Then we can add the appropriate invariants to the mutators.</p>
+<pre><code class="cpp language-cpp">class Date {
+ public:
+  int Day() { return day_; }
+  void Day(int d) { day_ = d; }
+
+ private:
+  int day_{1};
+  int month_{1};
+  int year_{0};
+};</code></pre>
+<h3 id="date-invariants"><code>Date</code> Invariants</h3>
+<p>Now we can add the invariants within the mutators.</p>
+<pre><code class="cpp language-cpp">class Date {
+ public:
+  int Day() { return day; }
+  void Day(int d) {
+    if (d &gt;= 1 &amp;&amp; d &lt;= 31) day_ = d;
+  }
+
+ private:
+  int day_{1};
+  int month_{1};
+  int year_{0};
+};</code></pre>
+<p>Now we have a set of invariants for the the class members!</p>
+<p>As a general rule, member data subject to an invariant should be specified <code>private</code>, in order to enforce the invariant before updating the member's value.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Encapsulation and Abstraction.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Classes')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

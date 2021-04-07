@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.429 --> 00:00:09.164
+Basically, you look at your application domain.
+
+00:00:09.164 --> 00:00:14.594
+A programmer can't just be an expert at programming.
+
+00:00:14.595 --> 00:00:16.905
+You have to understand what it is,
+
+00:00:16.905 --> 00:00:20.490
+what the problem is that you have to solve.
+
+00:00:20.489 --> 00:00:27.059
+So you have to understand the world of your users, of your customers,
+
+00:00:27.059 --> 00:00:31.229
+and so you listen to how they talk,
+
+00:00:31.230 --> 00:00:35.759
+and you see what are the concepts they deal with.
+
+00:00:35.759 --> 00:00:42.299
+So graphical people have shapes and rotations and certain forms of movements,
+
+00:00:42.299 --> 00:00:46.474
+and you then break that down in the things that you manipulate,
+
+00:00:46.475 --> 00:00:50.870
+like the shapes, and the operation should build onto those shapes.
+
+00:00:50.869 --> 00:00:57.739
+Now you get various forms of shape classes or image classes and operations on them.
+
+00:00:57.740 --> 00:01:00.590
+So it allows your customers to work at
+
+00:01:00.590 --> 00:01:04.655
+the level they would like to work at using their vocabulary.
+
+00:01:04.655 --> 00:01:06.469
+What we do is,
+
+00:01:06.469 --> 00:01:09.799
+we lift the language from the machine up to
+
+00:01:09.799 --> 00:01:14.724
+the humans to make basically a language that's fit for humans,
+
+00:01:14.724 --> 00:01:17.344
+and that's a set of classes and
+
+00:01:17.344 --> 00:01:21.140
+relations between classes and operations on objects of classes,
+
+00:01:21.140 --> 00:01:23.159
+and things like that.
+

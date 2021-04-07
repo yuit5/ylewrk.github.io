@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.169 --> 00:00:05.594
+What is encapsulation?
+
+00:00:05.594 --> 00:00:11.189
+Basically, if I want to write abstraction,
+
+00:00:11.189 --> 00:00:14.519
+then I would have it as a class and it will tend to have
+
+00:00:14.519 --> 00:00:18.405
+some data and some operations on that data.
+
+00:00:18.405 --> 00:00:20.490
+If we go back again to the vector,
+
+00:00:20.489 --> 00:00:24.000
+it keeps the elements and then there's operations through to access
+
+00:00:24.000 --> 00:00:28.230
+the elements like getting the 17th element or something like that.
+
+00:00:28.230 --> 00:00:33.119
+Now, I don't really want my users to mess with my data,
+
+00:00:33.119 --> 00:00:36.289
+I want them to use the operations I'm providing.
+
+00:00:36.289 --> 00:00:40.009
+A constructor for using curtailing the vector,
+
+00:00:40.009 --> 00:00:44.304
+pushback for growing it by one element, things like that.
+
+00:00:44.304 --> 00:00:48.560
+So to protect my data against people sneaking
+
+00:00:48.560 --> 00:00:53.495
+past the official interface and using the data directly,
+
+00:00:53.494 --> 00:01:04.280
+I provide what's called a public interface and private part the implementation details.
+
+00:01:04.280 --> 00:01:07.564
+So I say that the data has been encapsulated
+
+00:01:07.564 --> 00:01:11.909
+inside the object that provides the interface.
+

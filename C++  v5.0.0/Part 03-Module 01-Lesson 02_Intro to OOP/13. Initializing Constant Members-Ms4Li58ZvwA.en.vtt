@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:10.515
+Let's imagine that we want to change this class Date and make it class Birthday.
+
+00:00:10.515 --> 00:00:15.315
+One of the things we might want to do if we make this class Birthday
+
+00:00:15.314 --> 00:00:20.564
+is to make the members constant because presumably,
+
+00:00:20.565 --> 00:00:24.615
+once you have a birthday, it never changes.
+
+00:00:24.614 --> 00:00:29.099
+So we can set all these members to constant.
+
+00:00:29.100 --> 00:00:34.575
+What that's going to do though is make it really tough for us
+
+00:00:34.575 --> 00:00:44.359
+to assign values to these member variables from within the constructor.
+
+00:00:44.359 --> 00:00:46.609
+In fact, when I say really tough what I actually mean is,
+
+00:00:46.609 --> 00:00:50.674
+it's not going to work. Let me save this.
+
+00:00:50.674 --> 00:00:52.129
+Now, when we compile,
+
+00:00:52.130 --> 00:00:58.730
+we get all sorts of issues actually first of all related to the fact that we're trying to
+
+00:00:58.729 --> 00:01:02.250
+declare a class Date that no longer
+
+00:01:02.250 --> 00:01:07.939
+exists and now we get assignment of read-only member birthday.
+
+00:01:07.939 --> 00:01:12.250
+So we're trying to basically assign to a constant which we're not allowed to do.
+
+00:01:12.250 --> 00:01:21.674
+So what we might do here is to declare an initializer list,
+
+00:01:21.674 --> 00:01:30.765
+day(d) and month(m) and year(y).
+
+00:01:30.765 --> 00:01:34.290
+Now, everything should compile and work.
+
+00:01:36.049 --> 00:01:38.849
+Whoops, let me save this.
+
+00:01:38.849 --> 00:01:45.869
+Oh, sorry we need to change this from Date to Birthday.
+
+00:01:46.390 --> 00:01:54.420
+Now, if I save this, no match.
+
+00:01:56.560 --> 00:02:04.890
+Oh, here, we need to also change the declaration of the constructor.
+
+00:02:07.599 --> 00:02:09.789
+Now what we see is,
+
+00:02:09.789 --> 00:02:11.439
+we just get errors related
+
+00:02:11.439 --> 00:02:17.229
+to these mutator functions and that's because we can't mutate a constant.
+
+00:02:17.229 --> 00:02:23.949
+So actually probably what we need to do is get rid of these mutator functions.
+
+00:02:23.949 --> 00:02:31.419
+Now if we compile the function,
+
+00:02:31.419 --> 00:02:33.549
+everything works and all of the tests pass.
+
+00:02:33.550 --> 00:02:37.330
+So we're able to turn Date into a Birthday and make the day,
+
+00:02:37.330 --> 00:02:40.255
+month, and year constant by using an initializer list.
+
+00:02:40.254 --> 00:02:44.740
+Now one of the issues that we might run
+
+00:02:44.740 --> 00:02:49.550
+into here is that we're not checking the invariants.
+
+00:02:49.550 --> 00:02:55.230
+So we could set Day to some crazy negative 29 value.
+
+00:02:55.229 --> 00:02:59.179
+That would work even though there probably should be
+
+00:02:59.180 --> 00:03:06.724
+some catch validating whether the input data is good or not.
+
+00:03:06.724 --> 00:03:11.810
+We might want to actually declare a date and then have a birthday
+
+00:03:11.810 --> 00:03:19.759
+be subclass or a derived class from date or be constructed or composed of a date.
+
+00:03:19.759 --> 00:03:22.549
+Those are more advanced topics that we'll get to later.
+
+00:03:22.550 --> 00:03:24.920
+But for the moment, I think the most interesting thing to
+
+00:03:24.919 --> 00:03:27.394
+see is that if we have const member variables,
+
+00:03:27.395 --> 00:03:32.370
+what we need to do in order to initialize them is to use these initializer lists.
+

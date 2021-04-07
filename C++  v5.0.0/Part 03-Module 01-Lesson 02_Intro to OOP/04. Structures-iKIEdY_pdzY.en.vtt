@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.580
+In this exercise, you're going to practice working with structures which are
+
+00:00:05.580 --> 00:00:12.705
+a user-defined type that allows you to aggregate different other types of data together.
+
+00:00:12.705 --> 00:00:16.350
+So in this program, you can see we have a struct date, that's a structure,
+
+00:00:16.350 --> 00:00:19.725
+and we've named this type Date,
+
+00:00:19.725 --> 00:00:21.150
+and then in the main function,
+
+00:00:21.149 --> 00:00:24.820
+we're going to declare a variable date of type Date.
+
+00:00:24.820 --> 00:00:30.149
+Now it might get a little confusing that the variable and the type have the same,
+
+00:00:30.149 --> 00:00:31.529
+or actually not quite the same,
+
+00:00:31.530 --> 00:00:32.550
+but very similar names.
+
+00:00:32.549 --> 00:00:35.759
+They're not quite the same because this date has a capital D,
+
+00:00:35.759 --> 00:00:39.604
+and this date has a lowercase d. So they're slightly different.
+
+00:00:39.604 --> 00:00:41.509
+We could in fact reverse these,
+
+00:00:41.509 --> 00:00:43.519
+there's no requirement that structures
+
+00:00:43.520 --> 00:00:47.220
+have a name that starts with a capital letter, but that's a convention.
+
+00:00:47.219 --> 00:00:49.640
+It's just the way programmers normally do it in order to
+
+00:00:49.640 --> 00:00:53.539
+help us keep track of what's a type and what's a variable.
+
+00:00:53.539 --> 00:00:55.204
+Typically, types start with
+
+00:00:55.204 --> 00:00:58.939
+capital letters and variable names start with lowercase letters.
+
+00:00:58.939 --> 00:01:04.259
+So we have this variable date of type capital Date,
+
+00:01:04.260 --> 00:01:09.785
+and what we want to do is initialize this variable date to August 29th, 1981.
+
+00:01:09.784 --> 00:01:14.629
+Now before we do that, let's just test what happens if we compile this code.
+
+00:01:14.629 --> 00:01:17.314
+So we compile this code. Compile is fine.
+
+00:01:17.314 --> 00:01:22.549
+If we run it, we get this error assertion data.day equals equals 29
+
+00:01:22.549 --> 00:01:24.935
+failed because we are declaring
+
+00:01:24.935 --> 00:01:28.010
+a date without ever setting what the member variables are.
+
+00:01:28.010 --> 00:01:30.995
+These are called member variables: day, month, and year.
+
+00:01:30.995 --> 00:01:36.510
+So we can set now data.day equals 29.
+
+00:01:37.569 --> 00:01:42.964
+First, I'll clear it, and then if we compile and run the code now,
+
+00:01:42.965 --> 00:01:48.600
+we need to save it.
+
+00:01:48.599 --> 00:01:54.524
+Sorry. I thought we should pass the test.
+
+00:01:54.525 --> 00:01:55.719
+Now that we've saved it, in fact,
+
+00:01:55.719 --> 00:01:58.299
+we do pass the day equals equals 29 test.
+
+00:01:58.299 --> 00:02:01.340
+We fail on the month equals equals 8 test.
+
+00:02:01.340 --> 00:02:06.755
+So we need to go ahead and keep initializing the member variables month and year.
+
+00:02:06.754 --> 00:02:08.719
+Then once all of these tests pass,
+
+00:02:08.719 --> 00:02:14.210
+then we'll output the date in a more conventional date format.
+

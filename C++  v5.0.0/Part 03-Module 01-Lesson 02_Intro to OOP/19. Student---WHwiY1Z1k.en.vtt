@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.530
+In this exercise, you're going to define a class student and then write all of
+
+00:00:07.530 --> 00:00:11.220
+the tests to verify that student constructs
+
+00:00:11.220 --> 00:00:16.005
+correctly and initializes correctly and that all of the invariants are adhered to.
+
+00:00:16.004 --> 00:00:23.000
+So the first thing you might want to start out to do is to try and use students.
+
+00:00:23.000 --> 00:00:25.609
+So you might create a student student,
+
+00:00:25.609 --> 00:00:29.210
+and the student has a fake name,
+
+00:00:29.210 --> 00:00:31.539
+and the student has a grade,
+
+00:00:31.539 --> 00:00:34.630
+and the student has a GPA.
+
+00:00:34.630 --> 00:00:37.984
+Finally to think of a second grader with a GPA.
+
+00:00:37.984 --> 00:00:45.649
+But then you might assert that the student's name is equal to
+
+00:00:45.649 --> 00:00:54.920
+the name we just gave it and assert some of the other member data gets set correctly.
+
+00:00:54.920 --> 00:00:56.840
+Then we might try and do something
+
+00:00:56.840 --> 00:01:04.630
+like set one of the member variables to some invalid number.
+
+00:01:04.629 --> 00:01:08.199
+So let's say we want to set a grade to negative 100.
+
+00:01:08.200 --> 00:01:16.070
+We might want to essentially assert that some exception gets thrown.
+
+00:01:16.069 --> 00:01:21.149
+So maybe my exception.
+
+00:01:21.310 --> 00:01:25.930
+One way to do this might be to create a bool of
+
+00:01:25.930 --> 00:01:31.885
+my exception that we initially initialize as false.
+
+00:01:31.885 --> 00:01:41.425
+Then we try and use this mutator to set an invalid value to violate the class invariant.
+
+00:01:41.424 --> 00:01:45.230
+We might say you know catch everything.
+
+00:01:45.230 --> 00:01:50.760
+If we catch an exception then my exception is set to true.
+
+00:01:50.760 --> 00:01:55.400
+That's a way of verifying and asserting that we actually do catch an exception.
+
+00:01:55.400 --> 00:01:57.800
+So if you go ahead and create the constructor and,
+
+00:01:57.799 --> 00:01:59.359
+the accessors, and mutators,
+
+00:01:59.359 --> 00:02:01.519
+and then set all the private member data,
+
+00:02:01.519 --> 00:02:05.840
+and then create some sort of mechanism either within the mutators and the constructor,
+
+00:02:05.840 --> 00:02:09.020
+or in another function for throwing an exception,
+
+00:02:09.020 --> 00:02:14.159
+then you should be able to pass this exercise.
+

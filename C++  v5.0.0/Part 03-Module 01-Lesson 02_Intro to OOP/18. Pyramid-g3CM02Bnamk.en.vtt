@@ -1,0 +1,244 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.900
+Let's imagine that we want to create a class pyramid and
+
+00:00:06.900 --> 00:00:09.104
+we will also create
+
+00:00:09.103 --> 00:00:13.724
+a small main function basically just to test that our pyramid class works.
+
+00:00:13.724 --> 00:00:15.419
+So let's imagine in main,
+
+00:00:15.419 --> 00:00:22.910
+we want to create a pyramid and we want to initialize it with a length of one,
+
+00:00:22.910 --> 00:00:25.519
+a width of two and a height of three,
+
+00:00:25.519 --> 00:00:27.274
+and then we want to
+
+00:00:27.274 --> 00:00:33.629
+assert that each side
+
+00:00:33.630 --> 00:00:39.780
+is in fact what we think it is, assertpyramid.Length.
+
+00:00:39.780 --> 00:00:44.480
+We'll use an accessor function there that is equal to one and
+
+00:00:44.479 --> 00:00:49.069
+then we'll copy and paste the same function.
+
+00:00:49.070 --> 00:00:58.314
+So assertpyramid.Width is equal to two and assert pyramid.Height is equal to three,
+
+00:00:58.314 --> 00:01:06.739
+and then what we'd want to do is assert that pyramid.Volume is equal to
+
+00:01:06.739 --> 00:01:10.909
+some number and we'll leave it for now as an exercise to go
+
+00:01:10.909 --> 00:01:15.349
+figure out what that number should be and how to calculate the volume of a pyramid.
+
+00:01:15.349 --> 00:01:18.439
+But for now, let's just say that we want to create
+
+00:01:18.439 --> 00:01:23.359
+this class pyramid and a pyramid privately it
+
+00:01:23.359 --> 00:01:32.670
+should have an int length and int width.
+
+00:01:33.920 --> 00:01:39.125
+Actually we'll put those trail and underscores after the private member variables,
+
+00:01:39.125 --> 00:01:41.180
+just to remind us that they're private.
+
+00:01:41.180 --> 00:01:42.950
+We don't have to put that trail and underscore,
+
+00:01:42.950 --> 00:01:48.920
+but it's a convention and
+
+00:01:48.920 --> 00:01:55.504
+let's say that we want to have a constructor and that constructor will take int length,
+
+00:01:55.504 --> 00:02:01.405
+int width, int height and we'll create an initializer list.
+
+00:02:01.405 --> 00:02:09.020
+We'll say that length is going to be initialized to the length parameter
+
+00:02:09.020 --> 00:02:12.409
+and the width member variable is going to be
+
+00:02:12.409 --> 00:02:17.849
+initialized to the width parameter and the same thing with height.
+
+00:02:19.430 --> 00:02:28.284
+There we go, and then of course here we'd want some getter.
+
+00:02:28.284 --> 00:02:32.430
+Excuse me, so that's not going to be pyramid.
+
+00:02:32.430 --> 00:02:37.460
+That's going to be int length and that'll be
+
+00:02:37.460 --> 00:02:42.655
+a constant because it's not going to change the state of the object,
+
+00:02:42.655 --> 00:02:51.830
+and we'll just say that that's going to return length and so on and so forth.
+
+00:02:51.830 --> 00:03:02.990
+Length, width,
+
+00:03:02.990 --> 00:03:10.635
+height, and the same here, height, width.
+
+00:03:10.634 --> 00:03:16.280
+So let's test and see whether our pyramid class or this program even compiles.
+
+00:03:16.280 --> 00:03:21.650
+So let's say g++ and we'll use C++ 17,
+
+00:03:21.650 --> 00:03:26.664
+and we'll try and compile pyramid.cpp,
+
+00:03:26.664 --> 00:03:29.280
+and oh, we don't have assert.
+
+00:03:29.280 --> 00:03:33.539
+We're going to need to include cassert in order to
+
+00:03:33.539 --> 00:03:38.984
+get the assert function and it compiles,
+
+00:03:38.985 --> 00:03:41.010
+and if we run a.out, everything works.
+
+00:03:41.009 --> 00:03:44.929
+Great. So what else do we need to add here to our pyramid class?
+
+00:03:44.930 --> 00:03:47.930
+Well, there are a few things I might imagine.
+
+00:03:47.930 --> 00:03:51.460
+We have accessors and a lot of times when you have accessors,
+
+00:03:51.460 --> 00:03:53.030
+you typically want mutators.
+
+00:03:53.030 --> 00:03:55.069
+Right now we don't have any way to change the length,
+
+00:03:55.069 --> 00:03:57.169
+width, and height of a pyramid.
+
+00:03:57.169 --> 00:03:59.764
+So we may want to update that.
+
+00:03:59.764 --> 00:04:02.599
+Otherwise, if we don't want to add mutators,
+
+00:04:02.599 --> 00:04:05.629
+we might want to mark these private member variables as constants.
+
+00:04:05.629 --> 00:04:06.859
+So once they get initialized,
+
+00:04:06.860 --> 00:04:08.075
+they can never be changed.
+
+00:04:08.074 --> 00:04:11.209
+But let's say that we want to have a mutatable pyramid.
+
+00:04:11.210 --> 00:04:14.030
+So we want to add mutator functions and then
+
+00:04:14.030 --> 00:04:17.060
+we want to think about if we have these accessors and mutators,
+
+00:04:17.060 --> 00:04:19.745
+typically it's because there's some class invariant.
+
+00:04:19.745 --> 00:04:22.639
+Otherwise, we might as well just make the member data,
+
+00:04:22.639 --> 00:04:25.669
+member variables public and have the user be able to set them
+
+00:04:25.670 --> 00:04:27.379
+directly and in fact we could even turn
+
+00:04:27.379 --> 00:04:29.870
+this whole thing into a struct if that were the case.
+
+00:04:29.870 --> 00:04:34.250
+But we have this as a class for a reason and we have
+
+00:04:34.250 --> 00:04:40.399
+these member variables as private for a reason,
+
+00:04:40.399 --> 00:04:43.849
+and think about what that reason might be and if you have trouble
+
+00:04:43.850 --> 00:04:47.770
+figuring out why you might want to have an invariant on those values.
+
+00:04:47.769 --> 00:04:49.604
+Think about what might happen, say,
+
+00:04:49.605 --> 00:04:55.985
+if you were to try and set this pyramid length to negative one.
+
+00:04:55.985 --> 00:04:58.955
+Think about how you might want to protect against that both
+
+00:04:58.954 --> 00:05:01.699
+in the mutators and in the constructor.
+
+00:05:01.699 --> 00:05:05.704
+We have an empty constructor now and we
+
+00:05:05.704 --> 00:05:09.529
+initialize the member variables
+
+00:05:09.529 --> 00:05:13.114
+through this class initializer or through this initialization list,
+
+00:05:13.115 --> 00:05:20.000
+but we need to think about how we want to protect and enforce that class invariant,
+
+00:05:20.000 --> 00:05:22.160
+and then of course we want to figure out how do
+
+00:05:22.160 --> 00:05:25.040
+we add and calculate this volume function.
+
+00:05:25.040 --> 00:05:27.319
+So there's a lot of interesting stuff going on here.
+
+00:05:27.319 --> 00:05:29.029
+It's a pretty simple class,
+
+00:05:29.029 --> 00:05:32.119
+but it gives you a sense of a lot of
+
+00:05:32.120 --> 00:05:35.540
+the different things that you might consider when you're creating a class and trying
+
+00:05:35.540 --> 00:05:38.735
+to enforce these invariants and initialize
+
+00:05:38.735 --> 00:05:43.050
+the values and set the accessors and mutator functions properly.
+

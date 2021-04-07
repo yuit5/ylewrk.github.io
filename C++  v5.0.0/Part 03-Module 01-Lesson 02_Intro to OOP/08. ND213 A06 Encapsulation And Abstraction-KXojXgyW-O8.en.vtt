@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.569
+Encapsulation and abstraction are two of
+
+00:00:03.569 --> 00:00:08.865
+the core properties of object-oriented programming, they're also related.
+
+00:00:08.865 --> 00:00:13.379
+Encapsulation means that we bundle related properties together in
+
+00:00:13.380 --> 00:00:16.380
+a single class and sometimes we protect
+
+00:00:16.379 --> 00:00:20.640
+those properties from unauthorized or accidental modifications.
+
+00:00:20.640 --> 00:00:24.225
+Abstraction means that users of our class
+
+00:00:24.225 --> 00:00:27.780
+only need to be familiar with the interface we provide,
+
+00:00:27.780 --> 00:00:33.450
+they don't have to know how we actually store member data or implement member functions.
+
+00:00:33.450 --> 00:00:37.220
+Encapsulation and abstraction are related because
+
+00:00:37.219 --> 00:00:41.390
+encapsulation groups relevant data together in a class,
+
+00:00:41.390 --> 00:00:46.210
+while abstraction hides the details of how we work with this data.
+
+00:00:46.210 --> 00:00:49.935
+All the user of a class needs to know is that we
+
+00:00:49.935 --> 00:00:54.500
+have the data and we provide an interface to interact with it.
+
+00:00:54.500 --> 00:01:02.310
+Coming up, you'll see how to practice both encapsulation and abstraction in C++,
+
+00:01:02.310 --> 00:01:07.260
+then you'll try implementing these concepts yourself. Good luck
+

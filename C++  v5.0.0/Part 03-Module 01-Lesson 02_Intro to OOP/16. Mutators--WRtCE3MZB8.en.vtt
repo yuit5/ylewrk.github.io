@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.230 --> 00:00:09.075
+Mutators are public member functions that allow us to change the state of an object.
+
+00:00:09.074 --> 00:00:11.849
+So in this date class,
+
+00:00:11.849 --> 00:00:17.355
+a mutator function for example might be this day function.
+
+00:00:17.355 --> 00:00:24.929
+We pass in a value for a day to the Day mutator function,
+
+00:00:24.929 --> 00:00:27.164
+sometimes this is called a setter function,
+
+00:00:27.164 --> 00:00:31.230
+it might be named SetDay although in this case I've just named it Day.
+
+00:00:31.230 --> 00:00:37.679
+Then when we come down to the actual definition of the day function,
+
+00:00:37.679 --> 00:00:41.085
+this is our mutator here,
+
+00:00:41.085 --> 00:00:46.410
+it mutates the day_private member variable,
+
+00:00:46.409 --> 00:00:54.324
+then we can update the value of the state or we can update the state of the object.
+
+00:00:54.325 --> 00:01:00.980
+Often, we want to create a mutator function if there's some invariant to the class
+
+00:01:00.979 --> 00:01:08.299
+that's like a logic or some limit to how we can set the state of the class.
+
+00:01:08.299 --> 00:01:13.189
+So in this case for example a day needs to be somewhere between one and
+
+00:01:13.189 --> 00:01:18.280
+the number of days in the particular month and year of the overall date,
+
+00:01:18.280 --> 00:01:23.165
+so we couldn't set the day value to negative 2 or to 1,000.
+
+00:01:23.165 --> 00:01:29.900
+So instead of making this a public member variable,
+
+00:01:29.900 --> 00:01:33.094
+we make it a private member variable and then control
+
+00:01:33.094 --> 00:01:37.500
+its mutation through this mutator function Day,
+
+00:01:37.500 --> 00:01:42.170
+and this allows us to set the invariant logic for the class and limit
+
+00:01:42.170 --> 00:01:48.924
+the value of day to the actual values that are valid for the class.
+
+00:01:48.924 --> 00:01:52.109
+You can see we also have mutator functions for month,
+
+00:01:52.109 --> 00:01:54.230
+this could just as easily be called SetMonth,
+
+00:01:54.230 --> 00:01:55.280
+I've just called it Month,
+
+00:01:55.280 --> 00:01:56.945
+you could name it whatever you want,
+
+00:01:56.944 --> 00:01:59.074
+month has an invariant.
+
+00:01:59.075 --> 00:02:03.019
+Down here, year does not have an invariant so you might think,
+
+00:02:03.019 --> 00:02:09.049
+"We could make year a public member as opposed to a private member," and that's
+
+00:02:09.050 --> 00:02:14.900
+certainly possible although one thing we see is way up here in the day function,
+
+00:02:14.900 --> 00:02:19.819
+we actually use the year to calculate whether the day is valid.
+
+00:02:19.819 --> 00:02:23.539
+So we might not want to limit how you
+
+00:02:23.539 --> 00:02:27.349
+can change year because if somebody comes along and says,
+
+00:02:27.349 --> 00:02:31.909
+"I want to change February 29th 2016,
+
+00:02:31.909 --> 00:02:33.139
+I just want to change the year to
+
+00:02:33.139 --> 00:02:38.044
+2017," then all of a sudden that day will become invalid.
+
+00:02:38.044 --> 00:02:40.399
+So we might put some check here
+
+00:02:40.400 --> 00:02:48.689
+to say after we've set year to year,
+
+00:02:48.689 --> 00:02:49.949
+we might even do it beforehand,
+
+00:02:49.949 --> 00:02:53.259
+we might have some function that says
+
+00:03:03.500 --> 00:03:06.585
+if setting this year is valid,
+
+00:03:06.585 --> 00:03:08.370
+then update the year otherwise don't,
+
+00:03:08.370 --> 00:03:11.240
+of course then we'd have to create this valid function.
+
+00:03:11.240 --> 00:03:17.570
+But that's the whole point of mutators to allow us to set invariant logic for the class,
+
+00:03:17.569 --> 00:03:26.370
+and prevent a user from setting member data to an invalid state.
+

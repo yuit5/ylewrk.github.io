@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.200 --> 00:00:04.530
+A static variable is a variable that
+
+00:00:04.530 --> 00:00:09.105
+belongs to the whole class and not just to an individual object of the class.
+
+00:00:09.105 --> 00:00:15.650
+So without static pi here belongs to an object of class sphere.
+
+00:00:15.650 --> 00:00:18.734
+So every time we create a new object for class sphere,
+
+00:00:18.734 --> 00:00:21.125
+that object gets its own value of Pi.
+
+00:00:21.125 --> 00:00:25.519
+That's fine because Pi is declared as a constant.
+
+00:00:25.519 --> 00:00:28.460
+It's initialized to 3.14159 which
+
+00:00:28.460 --> 00:00:31.894
+is approximately the right value and then it can never be changed.
+
+00:00:31.894 --> 00:00:37.399
+But it's not really necessary for each object of class sphere to have its own copy of Pi.
+
+00:00:37.399 --> 00:00:41.780
+You could imagine just having one copy of Pi for the whole class.
+
+00:00:41.780 --> 00:00:47.134
+As long as nobody can change that value of Pi to something invalid
+
+00:00:47.134 --> 00:00:52.730
+then every object of class sphere can use the same value of Pi.
+
+00:00:52.729 --> 00:00:55.219
+So we might declare this static.
+
+00:00:55.219 --> 00:01:01.284
+An interesting thing if we declare it static is that if we can pile it,
+
+00:01:01.284 --> 00:01:03.769
+we'll see that this doesn't actually work.
+
+00:01:03.770 --> 00:01:08.510
+We're told that instead of a const we need to make this a const expression
+
+00:01:08.510 --> 00:01:12.920
+which means that it will be evaluated at compile time instead of runtime.
+
+00:01:12.920 --> 00:01:15.185
+Now if we compile everything works.
+
+00:01:15.185 --> 00:01:19.475
+This gets the tricky interaction between three keywords,
+
+00:01:19.474 --> 00:01:22.875
+static, const expression, and const.
+
+00:01:22.875 --> 00:01:27.409
+One of the purposes of the exercise here is to
+
+00:01:27.409 --> 00:01:32.179
+experiment with static and const and const expression and with
+
+00:01:32.180 --> 00:01:40.880
+declaring a variable inside of the class and then initializing it outside of
+
+00:01:40.879 --> 00:01:45.769
+the class and figuring out what works and what doesn't
+
+00:01:45.769 --> 00:01:51.515
+and trying to build up some intuition for what the rules are and why.
+
+00:01:51.515 --> 00:01:56.194
+Here we're going to have to name sphere the variable.
+
+00:01:56.194 --> 00:01:59.989
+So now we can see that it works.
+
+00:01:59.989 --> 00:02:03.289
+So if you spend a little time trying different permutations of
+
+00:02:03.290 --> 00:02:05.855
+static and const and const expression and
+
+00:02:05.855 --> 00:02:09.965
+no const or const expression and just seeing what works and what doesn't.
+
+00:02:09.965 --> 00:02:13.890
+It's a bit of an interesting and instructive exercise.
+

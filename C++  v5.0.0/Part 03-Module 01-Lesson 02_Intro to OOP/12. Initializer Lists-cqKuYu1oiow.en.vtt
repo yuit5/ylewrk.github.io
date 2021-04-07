@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.189 --> 00:00:06.164
+Initializer lists allow us to initialize
+
+00:00:06.165 --> 00:00:11.714
+the value of member variables before an object is even created.
+
+00:00:11.714 --> 00:00:14.070
+In this example here,
+
+00:00:14.070 --> 00:00:17.190
+we assign the values of day, month,
+
+00:00:17.190 --> 00:00:22.490
+and year to the object through these mutator functions,
+
+00:00:22.489 --> 00:00:26.044
+the day, month, and year mutator functions.
+
+00:00:26.045 --> 00:00:30.185
+So these values are assigned once the object is created.
+
+00:00:30.184 --> 00:00:32.839
+It's a little bit hard to grasp,
+
+00:00:32.840 --> 00:00:34.460
+but the day, month,
+
+00:00:34.460 --> 00:00:39.259
+and year values are actually initialize to these default initialization values one,one,
+
+00:00:39.259 --> 00:00:42.259
+and zero and then once the object is created they
+
+00:00:42.259 --> 00:00:45.879
+are assigned to the values passed in the arguments.
+
+00:00:45.880 --> 00:00:49.575
+If we change this year argument,
+
+00:00:49.575 --> 00:00:50.900
+excuse me we don't need to delete it,
+
+00:00:50.899 --> 00:00:53.810
+but if we instead of assigning it,
+
+00:00:53.810 --> 00:01:02.300
+if we change it to year then we are
+
+00:01:02.299 --> 00:01:06.769
+initializing the member variable year with
+
+00:01:06.769 --> 00:01:11.479
+the argument passed in from the constructor list,
+
+00:01:11.480 --> 00:01:15.950
+so we could even to make it clear change that y to a y.
+
+00:01:15.950 --> 00:01:20.240
+So now this year represents the member variable year which
+
+00:01:20.239 --> 00:01:26.194
+is private and then this y represents the argument to the constructor.
+
+00:01:26.194 --> 00:01:31.889
+If we compile and run this example,
+
+00:01:31.890 --> 00:01:33.450
+everything still works fine.
+
+00:01:33.450 --> 00:01:34.859
+We pass in 29, 8,
+
+00:01:34.859 --> 00:01:36.974
+1981 that's my birthday,
+
+00:01:36.974 --> 00:01:42.364
+and we set the year value in the initializer list.
+
+00:01:42.364 --> 00:01:46.354
+We could go even further and set the day and month value in the initializer list.
+
+00:01:46.355 --> 00:01:49.790
+But the reason that we might not want to do that in this case is
+
+00:01:49.790 --> 00:01:55.490
+that day and month have these invariants attached to them.
+
+00:01:55.489 --> 00:01:59.569
+They check that the day and the month is inside a specific range and then they don't
+
+00:01:59.569 --> 00:02:04.474
+set the day and the month if the value is outside of that range.
+
+00:02:04.474 --> 00:02:09.430
+If we pass, or if we try and set the day and the month value in the initializer list,
+
+00:02:09.430 --> 00:02:11.290
+will lose that invariant checks.
+
+00:02:11.289 --> 00:02:16.219
+So for example, we could set day or just
+
+00:02:16.219 --> 00:02:21.259
+again to be more clear day d and will change this again to be
+
+00:02:21.259 --> 00:02:28.659
+clear month m. Now if we do something
+
+00:02:28.659 --> 00:02:37.319
+like try and set this to negative 2 1,000,
+
+00:02:37.319 --> 00:02:43.609
+and we want to assert that the date is in fact equal to negative two,
+
+00:02:43.610 --> 00:02:47.365
+and the month is in fact equal to 1,000.
+
+00:02:47.365 --> 00:02:51.629
+This will actually all compile and run correctly,
+
+00:02:52.090 --> 00:02:56.330
+oh, sorry we need to save it.
+
+00:02:56.330 --> 00:02:59.590
+Even though it should fail,
+
+00:02:59.590 --> 00:03:02.090
+it should fail because negative two and 1,000
+
+00:03:02.090 --> 00:03:05.825
+are nonsense values for a day of the month, end of month.
+
+00:03:05.824 --> 00:03:08.194
+But we've skipped the invariant checks.
+
+00:03:08.194 --> 00:03:13.430
+So in this case we may only want to put year in the initializer list because
+
+00:03:13.430 --> 00:03:19.650
+year does not have an invariant and then we can set month and day,
+
+00:03:19.650 --> 00:03:23.780
+or we can assign those using the mutator function with
+
+00:03:23.780 --> 00:03:28.800
+the attached invariants when we construct the object.
+
