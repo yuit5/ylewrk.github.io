@@ -1,0 +1,379 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memory Management Chatbot</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Memory Management Chatbot</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Program Schematic.html">02. Program Schematic</a>
+    </li>
+    <li class="">
+      <a href="03. Membot Knowledge Base.html">03. Membot Knowledge Base</a>
+    </li>
+    <li class="">
+      <a href="04. Project Tasks Overview.html">04. Project Tasks Overview</a>
+    </li>
+    <li class="">
+      <a href="05. Code Walkthrough.html">05. Code Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Task Details.html">06. Task Details</a>
+    </li>
+    <li class="">
+      <a href="07. Project Workspace.html">07. Project Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Memory Management Chatbot.html">Project Description - Memory Management Chatbot</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Memory Management Chatbot.html">Project Rubric - Memory Management Chatbot</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Memory Management Chatbot</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Quality of Code</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Is the code functional?</p>
+        </td>
+        <td>
+          <p>The code compiles and runs with <code>cmake</code> and <code>make</code>.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Task 1: Exclusive Ownership 1</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p><code>_chatLogic</code> is an exclusive resource of <code>ChatbotPanelDialog</code></p>
+        </td>
+        <td>
+          <p>In file <code>chatgui.h</code> / <code>chatgui.cpp</code>,  <code>_chatLogic</code> is made an exclusive resource to class <code>ChatbotPanelDialog</code> using an appropriate smart pointer. Where required, changes are made to the code such that data structures and function parameters reflect the new structure.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Task 2: The Rule of Five</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Class design meets the Rule of Five guidelines.</p>
+        </td>
+        <td>
+          <p>In file <code>chatbot.h</code> / <code>chatbot.cpp</code>, changes are made to the class <code>ChatBot</code> such that it complies with the Rule of Five. Memory resources are properly allocated / deallocated on the heap and member data is copied where it makes sense.  In each of the methods (e.g. the copy constructor), a string of the type "ChatBot Copy Constructor" is printed to the console so that it is possible to see which method is called in later examples.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Task 3: Exclusive Ownership 2</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The <code>GraphNode</code>s in the vector <code>_nodes</code> are exclusively owned by the class <code>ChatLogic</code>.</p>
+        </td>
+        <td>
+          <p>In file <code>chatlogic.h</code> / <code>chatlogic.cpp</code>, the vector <code>_nodes</code> are adapted in a way that the instances of <code>GraphNodes</code> to which the vector elements refer are exclusively owned by the class <code>ChatLogic</code>.  An appropriate type of smart pointer is used to achieve this. </p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p><code>GraphNode</code> ownership is not transferred when passing instances.</p>
+        </td>
+        <td>
+          <p>When passing the <code>GraphNode</code> instances to functions, ownership is not transferred.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Task 4: Moving Smart Pointers</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p><code>GraphNode</code>s exclusively own the outgoing <code>GraphEdges</code> and hold non-owning references to incoming <code>GraphEdges</code>.</p>
+        </td>
+        <td>
+          <p>In files <code>chatlogic.h</code> / <code>chatlogic.cpp</code> and <code>graphnodes.h</code> / <code>graphnodes.cpp</code> all instances of <code>GraphEdge</code> are changed in a way such that each instance of <code>GraphNode</code> exclusively owns the outgoing <code>GraphEdges</code> and holds non-owning references to incoming <code>GraphEdges</code>. Appropriate smart pointers are used to do this. Where required, changes are made to the code such that data structures and function parameters reflect the changes.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Move semantics are used when transferring ownership from class <code>ChatLogic</code> into instances of <code>GraphNode</code>.</p>
+        </td>
+        <td>
+          <p>In files <code>chatlogic.h</code> / <code>chatlogic.cpp</code> and <code>graphnodes.h</code> / <code>graphnodes.cpp</code>, move semantics are used when transferring ownership from class <code>ChatLogic</code>, where all instances of <code>GraphEdge</code> are created, into instances of <code>GraphNode</code>.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Task 5: Moving the ChatBot</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Move semantics are used correctly with <code>ChatBot</code>.</p>
+        </td>
+        <td>
+          <p>In file <code>chatlogic.cpp</code>, a local <code>ChatBot</code> instance is created on the stack at the bottom of function <code>LoadAnswerGraphFromFile</code> and move semantics are used to pass the <code>ChatBot</code> instance into the root node.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p><code>ChatLogic</code> has no ownership relation to the <code>ChatBot</code> instance.</p>
+        </td>
+        <td>
+          <p><code>ChatLogic</code> has no ownership relation to the <code>ChatBot</code> instance and thus is no longer responsible for memory allocation and deallocation.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The <code>Chatbot</code> prints output to indicate Rule of Five components.</p>
+        </td>
+        <td>
+          <p>When the program is executed, messages are printed to the console indicating which Rule of Five component of <code>ChatBot</code> is being called.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Memory Management Chatbot')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

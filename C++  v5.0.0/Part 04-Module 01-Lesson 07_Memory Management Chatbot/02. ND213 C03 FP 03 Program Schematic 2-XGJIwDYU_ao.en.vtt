@@ -1,0 +1,382 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.779
+On the left-hand side here, you can see the message window again which we just saw,
+
+00:00:03.779 --> 00:00:06.240
+ChatLogic with all the arrows going out and coming
+
+00:00:06.240 --> 00:00:08.880
+in and the new stuff is on the right here.
+
+00:00:08.880 --> 00:00:11.040
+So let's have a look at what we find here.
+
+00:00:11.039 --> 00:00:16.079
+ChatLogic is found in chatlogic.h of course as well as dot CPP.
+
+00:00:16.079 --> 00:00:18.704
+The old texts entries here are
+
+00:00:18.704 --> 00:00:23.244
+member variables of the respective clauses which are owned by the clauses.
+
+00:00:23.245 --> 00:00:24.929
+So we have an ownership relation here.
+
+00:00:24.929 --> 00:00:28.814
+The non-goal here are only handles to other instances,
+
+00:00:28.814 --> 00:00:30.120
+so we don't have an ownership.
+
+00:00:30.120 --> 00:00:34.215
+So ChatLogic owns a couple of nodes and the nodes here,
+
+00:00:34.215 --> 00:00:39.350
+these are the nodes in the antigraph which you just saw on the previous slide,
+
+00:00:39.350 --> 00:00:45.140
+through which the chatbot moves and which is constructed from this antigraph.txt of file.
+
+00:00:45.140 --> 00:00:49.234
+The method which is responsible for constructing this entire network,
+
+00:00:49.234 --> 00:00:52.354
+this is called Load Answer Graph from file.
+
+00:00:52.354 --> 00:00:56.484
+This basically sets up the entire network and connects nodes with edges.
+
+00:00:56.484 --> 00:00:59.089
+Apart from that, we have a pointer to a current node,
+
+00:00:59.090 --> 00:01:04.355
+so when we make the walk through the existing code we will see what this is all about.
+
+00:01:04.355 --> 00:01:07.520
+We have a pointer or a handle to the chatbot and we
+
+00:01:07.519 --> 00:01:11.329
+have a handle to the panel dialogue which is this one here.
+
+00:01:11.329 --> 00:01:13.310
+So ChatLogic so to speak,
+
+00:01:13.310 --> 00:01:17.180
+serves as an intermediary class between the graphical user interface on
+
+00:01:17.180 --> 00:01:21.270
+the left side and the chatbot on the far right side,
+
+00:01:21.269 --> 00:01:24.239
+from which the answer has to be retrieved.
+
+00:01:24.239 --> 00:01:26.129
+The messaging functions are called,
+
+00:01:26.129 --> 00:01:32.149
+send a message to user this basically takes the reply that chatbots has generated,
+
+00:01:32.150 --> 00:01:35.270
+sends it back to the user and then the answer is displayed
+
+00:01:35.269 --> 00:01:38.450
+here as yellow box in the graphical user interface.
+
+00:01:38.450 --> 00:01:41.180
+When you enter a question and post it to the chatbot,
+
+00:01:41.180 --> 00:01:45.665
+this is sent to the chatbot by the method sent message to chatbot.
+
+00:01:45.665 --> 00:01:48.830
+In order to retrieve the information as well
+
+00:01:48.829 --> 00:01:51.649
+as to send the new information to the chat box,
+
+00:01:51.650 --> 00:01:53.940
+you need to handle to the chatbot too.
+
+00:01:53.939 --> 00:01:56.120
+One-shot info with regard to the structure.
+
+00:01:56.120 --> 00:02:01.370
+This is the structure as it is supposed to be after you have made the changes.
+
+00:02:01.370 --> 00:02:02.980
+When you look at the student version of the code,
+
+00:02:02.980 --> 00:02:05.600
+you will find a few differences here and there,
+
+00:02:05.599 --> 00:02:08.810
+especially with regard to the edges which we will shortly talk about.
+
+00:02:08.810 --> 00:02:11.750
+But this is the structure as it's supposed to be after you have
+
+00:02:11.750 --> 00:02:15.770
+successfully implemented all the tasks which I will shortly layout to you.
+
+00:02:15.770 --> 00:02:19.040
+But before we do this, let's move on to the rest of the structure.
+
+00:02:19.039 --> 00:02:21.724
+We have a couple of nodes, graphnode.h.
+
+00:02:21.724 --> 00:02:26.389
+In a node, we have a number of edges which are the edges leading to child nodes.
+
+00:02:26.389 --> 00:02:30.679
+So all the nodes which come after a certain note has been reached for example,
+
+00:02:30.680 --> 00:02:32.405
+I want to know more about pointers,
+
+00:02:32.405 --> 00:02:35.060
+then the chatbot moves to the respective node.
+
+00:02:35.060 --> 00:02:37.610
+Based on my position at node pointers,
+
+00:02:37.610 --> 00:02:38.750
+I have various options.
+
+00:02:38.750 --> 00:02:40.280
+For example, ask about smart pointers,
+
+00:02:40.280 --> 00:02:44.585
+ask about the null pointer and these subsequent questions are
+
+00:02:44.585 --> 00:02:47.030
+the children of the current node and the edges leading
+
+00:02:47.030 --> 00:02:49.729
+to those children are stored in child edges.
+
+00:02:49.729 --> 00:02:51.849
+As you can see, it's printed in bold.
+
+00:02:51.849 --> 00:02:54.379
+So this means we have an ownership relation here.
+
+00:02:54.379 --> 00:02:56.750
+Graph node owns the edges which are
+
+00:02:56.750 --> 00:03:00.199
+leading to its children as opposed to the parent edges.
+
+00:03:00.199 --> 00:03:03.469
+So of course, a graph node also has preceding edges.
+
+00:03:03.469 --> 00:03:06.139
+For example, when I move to the node pointers,
+
+00:03:06.139 --> 00:03:10.534
+I started at the root node and the root note is the parent node to
+
+00:03:10.534 --> 00:03:13.219
+the node which I'm currently at and it's connected
+
+00:03:13.219 --> 00:03:16.729
+to the current node by an edge and this is the parent edge.
+
+00:03:16.729 --> 00:03:23.000
+We have handles for parent edges but node does not own the edges which led to it.
+
+00:03:23.000 --> 00:03:26.514
+Another very important handle here is the chatbot handle.
+
+00:03:26.514 --> 00:03:31.849
+As you saw, the chatbot was represented by the red circle and it moved from node to node.
+
+00:03:31.849 --> 00:03:34.819
+So we have a passing of ownership here.
+
+00:03:34.819 --> 00:03:37.354
+When the chatbot moves away from a certain node,
+
+00:03:37.354 --> 00:03:38.929
+it forfeit its ownership,
+
+00:03:38.930 --> 00:03:42.890
+the node from which it moves away loses ownership of the chatbot.
+
+00:03:42.889 --> 00:03:46.789
+It moves to the next node and this node accepts the ownership of
+
+00:03:46.789 --> 00:03:50.840
+the chatbot and the chatbot handle at the previous node gets invalidated.
+
+00:03:50.840 --> 00:03:55.594
+So the chatbot moves through this network just as we have seen in the animation.
+
+00:03:55.594 --> 00:03:57.770
+The edges are not that much.
+
+00:03:57.770 --> 00:03:59.629
+We have a couple of keywords,
+
+00:03:59.628 --> 00:04:03.079
+so based on the keywords which are contained in an edge,
+
+00:04:03.080 --> 00:04:06.560
+we can decide in which direction the user might want to move forward to.
+
+00:04:06.560 --> 00:04:09.050
+So if I have an edge associated with
+
+00:04:09.050 --> 00:04:14.830
+a keyword smart pointers and we detect the term smart pointers in the user query,
+
+00:04:14.830 --> 00:04:18.259
+it's highly probable that the user wants to mobile smart pointers.
+
+00:04:18.259 --> 00:04:20.990
+Then this edge which has that certain keyword
+
+00:04:20.990 --> 00:04:24.470
+get selected and we move along this edge to the next node.
+
+00:04:24.470 --> 00:04:26.660
+What I forgot to say, in graph nodes,
+
+00:04:26.660 --> 00:04:32.090
+also the answers which the chat bot can give are contained here in this variable answer.
+
+00:04:32.089 --> 00:04:36.904
+So the answers you saw in the blue rectangles in the graphical user interface,
+
+00:04:36.904 --> 00:04:39.679
+this text which was printed to the chatbot way,
+
+00:04:39.680 --> 00:04:43.750
+this was contained in answers and this is owned by each node.
+
+00:04:43.750 --> 00:04:45.360
+Okay, but back to the edges.
+
+00:04:45.360 --> 00:04:48.020
+Apart from those two items here which an edge owns,
+
+00:04:48.019 --> 00:04:49.209
+keywords and an ID,
+
+00:04:49.209 --> 00:04:50.899
+we also have a handle to
+
+00:04:50.899 --> 00:04:54.424
+the subsequent node and the preceding node which is the parent node.
+
+00:04:54.425 --> 00:04:57.170
+Finally, before we finish with the structure,
+
+00:04:57.170 --> 00:04:58.795
+we have the chatbot itself.
+
+00:04:58.795 --> 00:05:01.280
+The chatbot is responsible for
+
+00:05:01.279 --> 00:05:04.750
+handling an image and the image which is printed on board here,
+
+00:05:04.750 --> 00:05:09.319
+this is the image you can see on the left side of the chatbot itself.
+
+00:05:09.319 --> 00:05:14.000
+So for the sake of showing you how memory handling on the heap works,
+
+00:05:14.000 --> 00:05:16.954
+which was one major item which we covered in this course,
+
+00:05:16.954 --> 00:05:20.675
+the chatbot will be responsible for handling its own image.
+
+00:05:20.675 --> 00:05:24.629
+So the image you see here has been allocated on the heap and
+
+00:05:24.629 --> 00:05:28.610
+it's only within this chatbot structure which moves through the entire network.
+
+00:05:28.610 --> 00:05:31.850
+So we always have to make sure that when the chatbot moves,
+
+00:05:31.850 --> 00:05:34.220
+the handle to this heap allocated image is not
+
+00:05:34.220 --> 00:05:36.650
+lost but saved in a meaningful manner for example,
+
+00:05:36.649 --> 00:05:40.879
+base move semantics so that the chatbot image gets displayed here with
+
+00:05:40.879 --> 00:05:45.860
+each new answer despite the chatbot having been moved from one node to the next.
+
+00:05:45.860 --> 00:05:48.410
+Apart from this, we have a pointer to the current node,
+
+00:05:48.410 --> 00:05:50.480
+a pointer to the root node because once we
+
+00:05:50.480 --> 00:05:53.120
+reach a node which has no children leading a way,
+
+00:05:53.120 --> 00:05:58.160
+the chatbot is reset to the start of the network again and in order to do this,
+
+00:05:58.160 --> 00:06:00.955
+we have to keep a handle of the root node here.
+
+00:06:00.954 --> 00:06:05.389
+Apart from this, we have a pointer to the ChatLogic instance.
+
+00:06:05.389 --> 00:06:09.589
+This is a requirement for being able to pass messages back to
+
+00:06:09.589 --> 00:06:14.404
+the graphical user interface and this method here receive message from user.
+
+00:06:14.404 --> 00:06:18.139
+This is important for generating the response which
+
+00:06:18.139 --> 00:06:22.039
+the chatbot gets from the user and which has to be sent back to the ChatLogic.
+
+00:06:22.040 --> 00:06:25.430
+So as soon as we have received a message by this method here,
+
+00:06:25.430 --> 00:06:27.019
+send a message to chatbot,
+
+00:06:27.019 --> 00:06:31.370
+a certain reply is generated according to the chatbot's current position in
+
+00:06:31.370 --> 00:06:35.899
+the network and sent back to the user via this method here.
+
+00:06:35.899 --> 00:06:37.279
+So that's the basic structure.
+
+00:06:37.279 --> 00:06:39.259
+So we have a couple of major classes.
+
+00:06:39.259 --> 00:06:41.240
+We have ChatLogic, we have graph node,
+
+00:06:41.240 --> 00:06:44.165
+we have graph edge and we have the chatbot.edge.
+
+00:06:44.165 --> 00:06:50.240
+Everything GUI related is inside the clause or the file chatgui.h which
+
+00:06:50.240 --> 00:06:53.329
+actually contains a couple of classes but which are proprietary to
+
+00:06:53.329 --> 00:06:57.509
+wxWidgets which we do not have to discuss at length here.
+

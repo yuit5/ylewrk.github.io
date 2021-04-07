@@ -1,0 +1,430 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Processes and Threads</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction and Running Threads</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Processes and Threads.html">02. Processes and Threads</a>
+    </li>
+    <li class="">
+      <a href="03. Running a Single Thread.html">03. Running a Single Thread</a>
+    </li>
+    <li class="">
+      <a href="04. Starting a Thread with Function Objects.html">04. Starting a Thread with Function Objects</a>
+    </li>
+    <li class="">
+      <a href="05. Starting a Thread with Variadic Templates &amp; Member Functions.html">05. Starting a Thread with Variadic Templates &amp; Member Functions</a>
+    </li>
+    <li class="">
+      <a href="06. Running Multiple Threads.html">06. Running Multiple Threads</a>
+    </li>
+    <li class="">
+      <a href="07. Lesson 1 Exercise.html">07. Lesson 1 Exercise</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Processes and Threads</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="processes-and-threads">Processes and Threads</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C04 L01 C1.2-Atom1</p></h3>
+  <video controls>
+  <source src="02. ND213 C04 L01 C1.2-Atom1-V4YyCCELd4M.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C04 L01 C1.2-Atom1-V4YyCCELd4M.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="processes-and-threads">Processes and Threads</h2>
+<p>In this lesson, you will learn how to start and manage your first parallel path of execution, which runs concurrently with the main program and is thus asynchronous. In contrast to synchronous programs, the main program can continue with its line of execution without the need to wait for the parallel task to complete. The following figure illustrates this difference.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c2-2-a2a.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Before we start writing a first asynchronous program in C++, let us take a look at the differences between two important concepts : processes and threads.</p>
+<p>A <em>process</em> (also called a task) is a computer program at runtime. It is comprised of the runtime environment provided by the operating system (OS), as well as of the embedded binary code of the program during execution. A process is controlled by the OS through certain actions with which it sets the process into one of several carefully defined states:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c2-2-a2b.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li><strong>Ready</strong> : After its creation, a process enters the ready state and is loaded into main memory. The process now is ready to run and is waiting for CPU time to be executed. Processes that are ready for execution by the CPU are stored in a queue managed by the OS.</li>
+<li><strong>Running</strong> : The operating system has selected the process for execution and the instructions within the process are executed on one or more of the available CPU cores.</li>
+<li><strong>Blocked</strong> : A process that is blocked is one that is waiting for an event (such as a system resource becoming available) or the completion of an I/O operation.</li>
+<li><strong>Terminated</strong> : When a process completes its execution or when it is being explicitly killed, it changes to the "terminated" state. The underlying program is no longer executing, but the process remains in the process table as a "zombie process". When it is finally removed from the process table, its lifetime ends.</li>
+<li><strong>Ready suspended</strong> : A process that was initially in ready state but has been swapped out of main memory and placed onto external storage is said to be in suspend ready state. The process will transition back to ready state whenever it is moved to main memory again.</li>
+<li><strong>Blocked suspended</strong> : A process that is blocked may also be swapped out of main memory. It may be swapped back in again under the same conditions as a "ready suspended" process. In such a case, the process will move to the blocked state, and may still be waiting for a resource to become available.</li>
+</ul>
+<p>Processes are managed by the <em>scheduler</em> of the OS. The scheduler can either let a process run until it ends or blocks (non-interrupting scheduler), or it can ensure that the currently running process is interrupted after a short period of time. The scheduler can switch back and forth between different active processes (interrupting scheduler), alternately assigning them CPU time. The latter is the typical scheduling strategy of any modern operating system.</p>
+<p>Since the administration of processes is computationally taxing, operating systems support a more resource-friendly way of realizing concurrent operations: the threads.</p>
+<p>A <em>thread</em> represents a concurrent execution unit within a process. In contrast to full-blown processes as described above, threads are characterized as light-weight processes (LWP). These are significantly easier to create and destroy: In many systems the creation of a thread is up to 100 times faster than the creation of a process. This is especially advantageous in situations, when the need for concurrent operations changes dynamically.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c2-2-a2c.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Threads exist within processes and share their resources. As illustrated by the figure above, a process can contain several threads or - if no parallel processing is provided for in the program flow - only a single thread.</p>
+<p>A major difference between a process and a thread is that each process has its own address space, while a thread does not require a new address space to be created. All the threads in a process can access its shared memory. Threads also share other OS dependent resources such as processors, files, and network connections. As a result, the management overhead for threads is typically less than for processes. Threads, however, are not protected against each other and must carefully synchronize when accessing the shared process resources to avoid conflicts.</p>
+<p>Similar to processes, threads exist in different states, which are illustrated in the figure below:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/c2-2-a2d.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li><strong>New</strong> : A thread is in this state once it has been created. Until it is actually running, it will not take any CPU resources.</li>
+<li><strong>Runnable</strong> : In this state, a thread might actually be running or it might be ready to run at any instant of time. It is the responsibility of the thread scheduler to assign CPU time to the thread.</li>
+<li><strong>Blocked</strong> : A thread might be in this state, when it is waiting for I/O operations to complete. When blocked, a thread cannot continue its execution any further until it is moved to the runnable state again. It will not consume any CPU time in this state. The thread scheduler is responsible for reactivating the thread.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="the-system-task-manager">The System Task Manager</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C04 L01 C1.2-Atom3 SC</p></h3>
+  <video controls>
+  <source src="02. ND213 C04 L01 C1.2-Atom3 SC-QdXCdZdGBwM.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C04 L01 C1.2-Atom3 SC-QdXCdZdGBwM.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="differences-between-processes-and-threads">Differences Between Processes And Threads</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>In the following, a number of statements is made. Please decide for each statement whether the blanks apply to processes or threads.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>Process, Threads</p></button>
+  <button class="btn btn-primary"><p>Process, Threads, Process</p></button>
+  <button class="btn btn-primary"><p>Thread, Process</p></button>
+  <button class="btn btn-primary"><p>Threads, Threads</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Statements</p>
+      </th>
+      <th>
+        <p>Solution</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p>In a concurrent program, <strong><em><strong><em>________</em></strong></em></strong> share memory. Thus, many <strong><em><strong><em>________</em></strong></em></strong> can access and modify the same memory.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Creating a <strong><em><strong><em></strong></em></strong> is fairly resource-intensive. It is generally more efficient to use several <strong><em><strong>_________</em></strong></em></strong> within a <strong><em><strong><em>________</em></strong></em></strong>.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>In contrast to a <strong><em><strong><em>________</em></strong></em></strong>, <strong><em><strong><em>________</em></strong></em></strong> are characterized as light-weight. They are significantly easier to create and destroy.</p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>Inter-<strong><em><strong><em>________</em></strong></em></strong> communication can be faster than inter-<strong><em><strong><em>________</em></strong></em></strong> communication.</p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Statements</p>
+        </th>
+        <th>
+          <p>Solution</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p>In contrast to a <strong><em><strong><em>________</em></strong></em></strong>, <strong><em><strong><em>________</em></strong></em></strong> are characterized as light-weight. They are significantly easier to create and destroy.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Process, Threads</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Creating a <strong><em><strong><em></strong></em></strong> is fairly resource-intensive. It is generally more efficient to use several <strong><em><strong>_________</em></strong></em></strong> within a <strong><em><strong><em>________</em></strong></em></strong>.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Process, Threads, Process</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Inter-<strong><em><strong><em>________</em></strong></em></strong> communication can be faster than inter-<strong><em><strong><em>________</em></strong></em></strong> communication.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Thread, Process</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>In a concurrent program, <strong><em><strong><em>________</em></strong></em></strong> share memory. Thus, many <strong><em><strong><em>________</em></strong></em></strong> can access and modify the same memory.</p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>Threads, Threads</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C04 L01 C1.2-Atom5</p></h3>
+  <video controls>
+  <source src="02. ND213 C04 L01 C1.2-Atom5-9XuSTdkxgOE.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="02. ND213 C04 L01 C1.2-Atom5-9XuSTdkxgOE.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Running a Single Thread.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Processes and Threads')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

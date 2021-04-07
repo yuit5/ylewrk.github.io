@@ -1,0 +1,190 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.950
+Let's look at chatgui.cpp.
+
+00:00:01.950 --> 00:00:04.528
+We have on it at the top, from ChatBotApp,
+
+00:00:04.528 --> 00:00:08.820
+and as you can see here, this instantiates the frame, which is then shown.
+
+00:00:08.820 --> 00:00:10.589
+This is the constructor of the frame.
+
+00:00:10.589 --> 00:00:12.320
+There's nothing very interesting in here.
+
+00:00:12.320 --> 00:00:14.964
+We instantiate the ChatBotPanelDialogue.
+
+00:00:14.964 --> 00:00:16.189
+We add some spaces,
+
+00:00:16.189 --> 00:00:17.760
+and we add some GUI elements.
+
+00:00:17.760 --> 00:00:19.335
+This is all not very interesting here.
+
+00:00:19.335 --> 00:00:23.519
+This is basically a boilerplate code to construct the graphical user interface.
+
+00:00:23.519 --> 00:00:25.050
+Then it gets a bit more interesting.
+
+00:00:25.050 --> 00:00:26.460
+This is the opener capture,
+
+00:00:26.460 --> 00:00:31.109
+and when we press the Enter key after we have entered some text into the text control,
+
+00:00:31.109 --> 00:00:32.835
+this userText gets captured,
+
+00:00:32.835 --> 00:00:36.660
+it gets added to a dialogue item in the panel dialogue,
+
+00:00:36.659 --> 00:00:41.069
+and then we send the user text to the chatbot via this line here.
+
+00:00:41.070 --> 00:00:42.420
+In that panel dialogue,
+
+00:00:42.420 --> 00:00:45.344
+we get the handle to the ChatLogic instance,
+
+00:00:45.344 --> 00:00:50.339
+and then we call it SentMessageToChatbot function in this ChatLogic instance,
+
+00:00:50.340 --> 00:00:52.680
+and we simply send the string to it.
+
+00:00:52.679 --> 00:00:57.034
+We have to convert this proprietary string here to an stl string.
+
+00:00:57.034 --> 00:00:58.609
+This is what this line is about.
+
+00:00:58.609 --> 00:01:04.375
+This mb_str is the wx widgets onboard function which we are simply using here.
+
+00:01:04.375 --> 00:01:09.974
+Apart from that, let's scroll down a little bit to a more interesting place.
+
+00:01:09.974 --> 00:01:14.309
+Here, this is when the ChatBotPanelDialogue gets instantiated.
+
+00:01:14.310 --> 00:01:16.799
+The student called it a wrapper here,
+
+00:01:16.799 --> 00:01:19.679
+so between these and closing tags; you, obviously,
+
+00:01:19.680 --> 00:01:20.790
+in one of your tasks,
+
+00:01:20.790 --> 00:01:22.715
+you obviously have to change something.
+
+00:01:22.715 --> 00:01:26.750
+In this case, we are instantiating the ChatLogic instance on the heap.
+
+00:01:26.750 --> 00:01:30.284
+We us then setting the handle to the panel dialogue,
+
+00:01:30.284 --> 00:01:33.170
+this is the pointer to the current instance of the panel dialog,
+
+00:01:33.170 --> 00:01:35.659
+and then we are loading the answer graph from the file.
+
+00:01:35.659 --> 00:01:37.099
+We talked about this at length in
+
+00:01:37.099 --> 00:01:40.069
+the introduction during your view through the slide deck.
+
+00:01:40.069 --> 00:01:42.739
+You know how the answer graph is structured,
+
+00:01:42.739 --> 00:01:45.199
+and for more details on all the nodes inside,
+
+00:01:45.200 --> 00:01:46.880
+you can simply open up this file here,
+
+00:01:46.879 --> 00:01:50.924
+it contains all the necessary information on nodes and edges.
+
+00:01:50.924 --> 00:01:55.204
+That's basically what's happening here at dialogue item PrintChatBotResponse.
+
+00:01:55.204 --> 00:02:00.439
+These are all helper functions which do not have to concern yourselves with so much.
+
+00:02:00.439 --> 00:02:03.304
+This line here, the ChatBotPanel dialogue item,
+
+00:02:03.305 --> 00:02:07.220
+this is one answer from the chatbot or one query from the user.
+
+00:02:07.219 --> 00:02:08.629
+At this position here,
+
+00:02:08.629 --> 00:02:10.849
+we have to decide what we want to do with it.
+
+00:02:10.849 --> 00:02:13.849
+Do we want to load the image from the chatbot in
+
+00:02:13.849 --> 00:02:17.719
+case the message is from the chatbot when this is false,
+
+00:02:17.719 --> 00:02:23.194
+or do we want to use a proprietary image which displays the user icon here?
+
+00:02:23.194 --> 00:02:28.340
+This query is about when the message is from the user use a proprietary bitmap,
+
+00:02:28.340 --> 00:02:29.569
+if it's not from the user,
+
+00:02:29.569 --> 00:02:33.379
+if it's from the chatbot use the data behind this handle,
+
+00:02:33.379 --> 00:02:36.069
+which directly leads through the image,
+
+00:02:36.069 --> 00:02:38.894
+which is managed by the moving chatbot,
+
+00:02:38.895 --> 00:02:40.890
+which is somewhere in the graph network.
+
+00:02:40.889 --> 00:02:44.149
+These are the two interesting items here in the ChatBotPanelDialogue item.
+
+00:02:44.150 --> 00:02:47.000
+Apart from this, I know this is a lot of code here,
+
+00:02:47.000 --> 00:02:50.824
+but it's not the code which you must look into to solve the tasks.
+
+00:02:50.824 --> 00:02:52.054
+As I told you before,
+
+00:02:52.055 --> 00:02:53.344
+the positions in the code,
+
+00:02:53.344 --> 00:02:54.469
+which you have to think about,
+
+00:02:54.469 --> 00:02:55.745
+where you have to add something,
+
+00:02:55.745 --> 00:03:00.879
+are always very easily spottable by these enclosing wrappers here.
+

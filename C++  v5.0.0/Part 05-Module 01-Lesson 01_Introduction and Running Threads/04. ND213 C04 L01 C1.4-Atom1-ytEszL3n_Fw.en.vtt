@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.580
+Now in the previous section, we have created
+
+00:00:02.580 --> 00:00:05.700
+our first thread by passing it a function to execute.
+
+00:00:05.700 --> 00:00:08.265
+In this section, we want to build on this and pass
+
+00:00:08.265 --> 00:00:11.310
+a function object instance which is basically an instance
+
+00:00:11.310 --> 00:00:14.669
+of a class that implements the function call operator.
+
+00:00:14.669 --> 00:00:17.399
+Now this can be very useful for passing data through threats
+
+00:00:17.399 --> 00:00:19.839
+which is one of the major things we want to do in this course,
+
+00:00:19.839 --> 00:00:22.589
+pass data safely between different threads.
+
+00:00:22.589 --> 00:00:26.000
+Another way to do this to pass data and also start a thread with
+
+00:00:26.000 --> 00:00:29.464
+a very small code footprint is to use a so-called Lambda function.
+
+00:00:29.464 --> 00:00:30.859
+Since the C+ 11,
+
+00:00:30.859 --> 00:00:34.369
+this is a very useful language feature that allows us to define a function at
+
+00:00:34.369 --> 00:00:38.009
+an almost arbitrary position in our code right where we needed to be.
+
+00:00:38.009 --> 00:00:41.239
+This spares us from having to formally define a function somewhere else in
+
+00:00:41.240 --> 00:00:43.550
+our code file which can be very cumbersome and
+
+00:00:43.549 --> 00:00:46.344
+also inflate our code totally unnecessarily.
+
+00:00:46.344 --> 00:00:49.429
+Lambdas are super useful not only in concurrent programming.
+
+00:00:49.429 --> 00:00:51.214
+So if you're not already familiar with them,
+
+00:00:51.215 --> 00:00:53.510
+try to experiment a little especially,
+
+00:00:53.509 --> 00:00:56.045
+with various options for passing parameters to them.
+
+00:00:56.045 --> 00:00:58.560
+Let's go ahead and take a look.
+

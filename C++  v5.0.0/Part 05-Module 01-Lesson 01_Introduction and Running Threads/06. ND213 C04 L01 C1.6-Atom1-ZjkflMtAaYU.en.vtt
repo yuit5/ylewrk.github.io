@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.910
+Now in this section, we will take a look at how to start several threads at once.
+
+00:00:03.910 --> 00:00:07.380
+To do this, you need to understand the fork-join parallelism,
+
+00:00:07.379 --> 00:00:09.150
+as well as the concept of threat barriers.
+
+00:00:09.150 --> 00:00:11.580
+Also you will learn how to properly store
+
+00:00:11.580 --> 00:00:14.595
+thread handles in a vector to manage them more easily.
+
+00:00:14.595 --> 00:00:16.650
+Last but definitely not least,
+
+00:00:16.649 --> 00:00:19.099
+you will meet your first official concurrency ban,
+
+00:00:19.100 --> 00:00:21.395
+k and I promise you, it will not be the last,
+
+00:00:21.394 --> 00:00:25.120
+either official or unofficial. Now let's take a look.
+

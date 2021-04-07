@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.270
+So you now know how to pass arguments to threat using one of your templates,
+
+00:00:03.270 --> 00:00:04.890
+and how to start them with a member function of
+
+00:00:04.889 --> 00:00:07.229
+an existing object as the thread function.
+
+00:00:07.230 --> 00:00:10.380
+Let's call it a selection of ways you can choose from to start your own threads.
+
+00:00:10.380 --> 00:00:11.900
+In the last section of this lesson,
+
+00:00:11.900 --> 00:00:17.440
+let's now take a look at how to start multiple threads all at once. See you there.
+

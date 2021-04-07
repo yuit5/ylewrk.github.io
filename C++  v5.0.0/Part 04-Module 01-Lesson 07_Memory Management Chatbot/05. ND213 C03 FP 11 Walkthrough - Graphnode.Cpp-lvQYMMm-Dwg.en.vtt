@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.334
+Let's take a look into graphnode.cpp to see how this works.
+
+00:00:04.334 --> 00:00:08.009
+So as you can see at the top we have the constructor which assigns the ID,
+
+00:00:08.009 --> 00:00:11.550
+we have the destructor which deletes the chat bot
+
+00:00:11.550 --> 00:00:16.350
+once it moves away from the graph node or once the graph node is destroyed.
+
+00:00:16.350 --> 00:00:17.910
+Then we add a token here,
+
+00:00:17.910 --> 00:00:19.289
+we add an edge to the parent node,
+
+00:00:19.289 --> 00:00:23.129
+we add an edge to the child node which is setting up the graph structure which
+
+00:00:23.129 --> 00:00:27.929
+happens only a single time during load antigraph from file is executed.
+
+00:00:27.929 --> 00:00:31.699
+Then here is the student code for actually moving the chat bot
+
+00:00:31.699 --> 00:00:35.674
+here and also for moving the chat bot to the new node.
+
+00:00:35.674 --> 00:00:36.934
+Moving chat bot here,
+
+00:00:36.935 --> 00:00:40.490
+this requires us to pass the chatbot's handle to a current node.
+
+00:00:40.490 --> 00:00:43.969
+So we'll have a node, we call the function move
+
+00:00:43.969 --> 00:00:47.570
+chat bot here on the node and we pass it the handle of the chat bot.
+
+00:00:47.570 --> 00:00:50.924
+So this is actually called from another position.
+
+00:00:50.924 --> 00:00:54.679
+When we want to move to a new node we call this function on the node,
+
+00:00:54.679 --> 00:00:56.284
+we pass the chat bot handle,
+
+00:00:56.284 --> 00:01:01.009
+then the chat bot is sent to the internal handle underscore chat bot which
+
+00:01:01.009 --> 00:01:03.890
+redirects the handle to the heap allocated incidence of
+
+00:01:03.890 --> 00:01:07.204
+chat bot and then it sets the current node.
+
+00:01:07.204 --> 00:01:09.280
+This one here is closely related to it,
+
+00:01:09.280 --> 00:01:10.760
+move chat bot to new node.
+
+00:01:10.760 --> 00:01:13.280
+This one moves the chat bot away from
+
+00:01:13.280 --> 00:01:16.340
+a certain node and these are very closely intertwined here.
+
+00:01:16.340 --> 00:01:17.750
+So from another node,
+
+00:01:17.750 --> 00:01:20.105
+you would call a move chat bot to new node,
+
+00:01:20.105 --> 00:01:23.750
+you would tell the function which new node you want to move it to,
+
+00:01:23.750 --> 00:01:26.480
+then here inside we actually call the function
+
+00:01:26.480 --> 00:01:29.359
+move chat bot here which we just discussed.
+
+00:01:29.359 --> 00:01:32.189
+We pass it the chat bot and after the chat bot has
+
+00:01:32.189 --> 00:01:35.989
+been passed when we finish here and before we start here,
+
+00:01:35.989 --> 00:01:37.519
+we have two pointers pointing to
+
+00:01:37.519 --> 00:01:41.899
+the same chat bot instance at least for a very brief moment in time.
+
+00:01:41.900 --> 00:01:43.910
+Once we execute this line here,
+
+00:01:43.909 --> 00:01:46.534
+we invalidate the chat bot pointer
+
+00:01:46.534 --> 00:01:49.729
+which is at the node which we are currently leaving with a chat bot.
+
+00:01:49.730 --> 00:01:54.255
+So the chat bot moves through the network and as soon as it leaves the node,
+
+00:01:54.254 --> 00:01:56.449
+the chat bot pointer of the node which is left is
+
+00:01:56.450 --> 00:02:00.019
+invalidated and the chat bot pointer at the node to
+
+00:02:00.019 --> 00:02:02.929
+which the chat bot moves gets assigned
+
+00:02:02.930 --> 00:02:06.340
+the handle of the heap memory or the chat bot instance lives.
+
+00:02:06.340 --> 00:02:08.960
+This one here, it gets child edge at index
+
+00:02:08.960 --> 00:02:11.820
+as a helper function which plays a role in one of the tasks,
+
+00:02:11.819 --> 00:02:16.019
+but I won't go into too many details for now here.
+

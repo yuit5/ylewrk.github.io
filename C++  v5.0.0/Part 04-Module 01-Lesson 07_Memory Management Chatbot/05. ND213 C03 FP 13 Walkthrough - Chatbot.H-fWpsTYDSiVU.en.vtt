@@ -1,0 +1,187 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.860
+We have to look at chat bot,
+
+00:00:01.860 --> 00:00:05.759
+and the chat bot basically is the thing which we talked about all the time,
+
+00:00:05.759 --> 00:00:08.730
+the class instance which is moved around through the network.
+
+00:00:08.730 --> 00:00:12.345
+So let's open this one up and see what's inside.
+
+00:00:12.345 --> 00:00:14.580
+We have an owned data handle which is the image of
+
+00:00:14.580 --> 00:00:17.490
+the avatar image which gets displayed in the Graphical User Interface,
+
+00:00:17.489 --> 00:00:20.759
+we have some non own data handles pointed to the current node at which
+
+00:00:20.760 --> 00:00:24.929
+the chat bot currently is a pointer to the root node which the chat bot
+
+00:00:24.929 --> 00:00:28.379
+needs and all of that once he reaches a dead end in the graph where
+
+00:00:28.379 --> 00:00:32.214
+no answers lead away from to get reassigned to the root node and
+
+00:00:32.215 --> 00:00:34.740
+we have a pointer to that chat logic which we need in order to
+
+00:00:34.740 --> 00:00:37.340
+establish the communication interface Then we have
+
+00:00:37.340 --> 00:00:40.880
+this proprietary function here which helps us to compute
+
+00:00:40.880 --> 00:00:44.929
+the similarity between a user query and the available keywords in an edge.
+
+00:00:44.929 --> 00:00:47.719
+So the Levenshtein distance is a measure
+
+00:00:47.719 --> 00:00:50.710
+which looks at the similarity between two strings.
+
+00:00:50.710 --> 00:00:53.285
+We won't to look into this implementation here because
+
+00:00:53.284 --> 00:00:57.709
+it's nothing which is related to memory management.
+
+00:00:57.710 --> 00:01:01.250
+Of course you're invited to research into it by yourselves but it
+
+00:01:01.250 --> 00:01:04.760
+doesn't play a role in the task which you have to do here.
+
+00:01:04.760 --> 00:01:10.380
+Let it suffice to be said that the outputs of the Levenshtein distance computation
+
+00:01:10.379 --> 00:01:12.890
+is the number of characters which needs to be
+
+00:01:12.890 --> 00:01:16.144
+changed to convert string number one into string number two.
+
+00:01:16.144 --> 00:01:17.629
+So If I have two strings,
+
+00:01:17.629 --> 00:01:19.640
+let's say the user says something,
+
+00:01:19.640 --> 00:01:22.549
+I want to know more about smart pointers and
+
+00:01:22.549 --> 00:01:26.194
+an available keyword in an edge is smart pointers.
+
+00:01:26.194 --> 00:01:28.189
+Then it takes I want to know more,
+
+00:01:28.189 --> 00:01:32.359
+this is the number of strings which differ between the two strings and the number
+
+00:01:32.359 --> 00:01:36.650
+of characters inside this first half which is not contained in the second string,
+
+00:01:36.650 --> 00:01:38.150
+this is going to be return.
+
+00:01:38.150 --> 00:01:40.850
+So if two strings differ by let's
+
+00:01:40.849 --> 00:01:44.149
+say eight characters to convert one string into the other,
+
+00:01:44.150 --> 00:01:48.020
+the output the return value of compute Levenshtein distance is going to be eight.
+
+00:01:48.019 --> 00:01:51.649
+Obviously if two strings are identical the output is going to be zero.
+
+00:01:51.650 --> 00:01:56.810
+If you have various options let's say you want to choose the string which is closest to
+
+00:01:56.810 --> 00:01:59.090
+a user query as we will have to do when
+
+00:01:59.090 --> 00:02:02.450
+selecting the edge along which to proceed to the next node,
+
+00:02:02.450 --> 00:02:06.079
+let's say you have three edges which basically are
+
+00:02:06.079 --> 00:02:09.935
+an option where you have to pick one from,we have a user query and then
+
+00:02:09.935 --> 00:02:12.580
+all the keywords and all the edges are inputed
+
+00:02:12.580 --> 00:02:15.320
+to this compute Levenshtein distance function here and
+
+00:02:15.319 --> 00:02:18.349
+the one with the smallest Levenshtein distance
+
+00:02:18.349 --> 00:02:21.889
+is the one which is chosen with regard to the best-fitting edge.
+
+00:02:21.889 --> 00:02:23.819
+So we are looking for similarities here,
+
+00:02:23.819 --> 00:02:26.539
+and this is why I also can say something like, ''Hi,
+
+00:02:26.539 --> 00:02:30.094
+my name is Andreas,'' or my name is, let's use your name.
+
+00:02:30.094 --> 00:02:32.389
+This actually doesn't matter because even though
+
+00:02:32.389 --> 00:02:36.169
+this surplus in characters leads to a higher Levenshtein distance,
+
+00:02:36.169 --> 00:02:39.530
+it will nonetheless enable the program to discriminate
+
+00:02:39.530 --> 00:02:42.830
+between do you want to know more about smart pointers or do you
+
+00:02:42.830 --> 00:02:46.490
+want to know more about the null pointer because even though the Levenshtein distance in
+
+00:02:46.490 --> 00:02:50.750
+both cases might be pretty higher let's say 25 and 27,
+
+00:02:50.750 --> 00:02:55.789
+this difference in two enables it to choose the answer which is fitting better.
+
+00:02:55.789 --> 00:02:58.849
+Here is a place where something is missing,
+
+00:02:58.849 --> 00:03:00.650
+at least not in the current implementation but at
+
+00:03:00.650 --> 00:03:02.900
+least when we get to the implementation of the tasks.
+
+00:03:02.900 --> 00:03:04.939
+So here is something which you should enter at
+
+00:03:04.939 --> 00:03:07.789
+some point during your progress through the final project.
+
+00:03:07.789 --> 00:03:10.639
+Then we have the getters and setters and we have
+
+00:03:10.639 --> 00:03:15.729
+the communication interface which receives the message from the user.
+

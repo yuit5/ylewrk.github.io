@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.910
+Now, in the last section, you have learned how to pass arguments
+
+00:00:02.910 --> 00:00:05.550
+to threads using the function collaborator and lambdas.
+
+00:00:05.549 --> 00:00:08.474
+In this section, you will be looking at two additional ways
+
+00:00:08.474 --> 00:00:11.820
+which are variadic templates and member functions.
+
+00:00:11.820 --> 00:00:14.339
+Let's start briefly with variadic templates.
+
+00:00:14.339 --> 00:00:18.535
+Since the introduction of the C++ 11 Standard variadic templates,
+
+00:00:18.535 --> 00:00:22.519
+they allow the definition of functions that take a varying number of arguments,
+
+00:00:22.519 --> 00:00:26.419
+which is exceptionally handy in many applications and also in concurrency,
+
+00:00:26.420 --> 00:00:30.730
+because we can use them to pass several arguments to a thread.
+
+00:00:30.730 --> 00:00:32.509
+Let's briefly talk about member functions as well.
+
+00:00:32.509 --> 00:00:35.945
+As you have seen already, we can pass arguments to a thread by reference.
+
+00:00:35.945 --> 00:00:39.424
+But what if we wish to run a function other than the function call operator.
+
+00:00:39.424 --> 00:00:42.529
+Now that's what the second part of this section is going to be about,
+
+00:00:42.530 --> 00:00:45.755
+running member functions of an already existing objects.
+
+00:00:45.755 --> 00:00:47.405
+Now please go ahead and take a look.
+
+00:00:47.405 --> 00:00:49.620
+See you down below.
+

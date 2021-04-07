@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.710
+Now in this section, we have looked at
+
+00:00:01.710 --> 00:00:04.740
+the major differences between threads and processes.
+
+00:00:04.740 --> 00:00:08.250
+The low overhead, and the ease of use is the main reason why threads are
+
+00:00:08.250 --> 00:00:12.719
+the concurrency tool of choice in most major languages, including C++.
+
+00:00:12.720 --> 00:00:15.030
+This is despite the potential problems caused by
+
+00:00:15.029 --> 00:00:17.684
+accessing shared memory, as you will soon learn.
+
+00:00:17.684 --> 00:00:20.279
+In the next section, you will learn how to start a thread,
+
+00:00:20.280 --> 00:00:24.820
+and how to perform some work in parallel to the main thread. See you there.
+

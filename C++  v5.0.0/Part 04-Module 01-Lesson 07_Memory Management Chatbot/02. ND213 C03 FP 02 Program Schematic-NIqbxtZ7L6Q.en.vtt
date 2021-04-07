@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.330
+So what you can see here is a layout of the chatbot window.
+
+00:00:03.330 --> 00:00:05.625
+Basically, we have four major items.
+
+00:00:05.625 --> 00:00:07.589
+The first item is the chatbot app,
+
+00:00:07.589 --> 00:00:11.250
+which basically encapsulates the main method of the program
+
+00:00:11.250 --> 00:00:15.250
+in WX widgets which we are using as a graphical user interface,
+
+00:00:15.250 --> 00:00:16.364
+you don't have a main method.
+
+00:00:16.364 --> 00:00:17.639
+This is encapsulated in
+
+00:00:17.640 --> 00:00:21.539
+an internal simulation loop and what the framework gives you is access
+
+00:00:21.539 --> 00:00:26.759
+to the program itself which is already running in a loop which holds for keyboard events,
+
+00:00:26.760 --> 00:00:30.390
+mouse events, which refresh the graphics and so on and so forth.
+
+00:00:30.390 --> 00:00:34.890
+I do not want to spend so much time on telling you how WX widgets works.
+
+00:00:34.890 --> 00:00:39.634
+So WX widgets is one among many different ways of creating
+
+00:00:39.634 --> 00:00:42.484
+a graphical user interface for your C++ program
+
+00:00:42.484 --> 00:00:45.679
+and you don't have to learn anything about it in this course,
+
+00:00:45.679 --> 00:00:47.464
+we will focus on memory management.
+
+00:00:47.465 --> 00:00:49.850
+This is why we are giving you the chatbot
+
+00:00:49.850 --> 00:00:52.700
+including the graphical user interface as is and you of
+
+00:00:52.700 --> 00:00:55.100
+course may look into it but I won't go into
+
+00:00:55.100 --> 00:00:58.115
+many of the details surrounding this framework.
+
+00:00:58.115 --> 00:01:02.230
+What I want to say is we have the chatbot app which encapsulates main,
+
+00:01:02.229 --> 00:01:06.349
+we have a chatbot frame which represents the anti window which is
+
+00:01:06.349 --> 00:01:11.149
+refreshed every couple of milliseconds to redraw the content and inside chatbot frame,
+
+00:01:11.150 --> 00:01:12.290
+there are two items.
+
+00:01:12.290 --> 00:01:17.430
+The first is the chatbot panel dialogue which is the inner red frame here,
+
+00:01:17.430 --> 00:01:18.810
+the inner red rectangle,
+
+00:01:18.810 --> 00:01:22.850
+and below the rectangle there's a text box where the user can
+
+00:01:22.849 --> 00:01:27.099
+entry his questions he wants to ask to the chatbot.
+
+00:01:27.099 --> 00:01:30.044
+This is both encapsulated in chatbot frame.
+
+00:01:30.045 --> 00:01:33.980
+The upper item here which is also inside chatbot frame is called chatbot panel
+
+00:01:33.980 --> 00:01:38.840
+dialogue and this basically manages the onset of the chatbot and your answers.
+
+00:01:38.840 --> 00:01:40.909
+So every time you enter something here,
+
+00:01:40.909 --> 00:01:42.994
+it will appear as the yellow box inside
+
+00:01:42.995 --> 00:01:45.890
+the chatbot panel dialogue and one such item here.
+
+00:01:45.890 --> 00:01:47.180
+For example this one here,
+
+00:01:47.180 --> 00:01:50.075
+which is denoted with a text fourth answer.
+
+00:01:50.075 --> 00:01:53.075
+This is a chatbot panel dialogue item.
+
+00:01:53.075 --> 00:01:55.715
+You don't have to look into all those classes,
+
+00:01:55.715 --> 00:02:02.299
+the entire logic surrounding the chatbot is completely encapsulated in a member variable
+
+00:02:02.299 --> 00:02:05.569
+which is called chat logic and this basically is
+
+00:02:05.569 --> 00:02:08.939
+the messaging interface between user and chatbot.
+
+00:02:08.939 --> 00:02:12.590
+You can see all the arrows going away from the chat logic,
+
+00:02:12.590 --> 00:02:15.575
+this one here as well and one coming back to chat logic.
+
+00:02:15.574 --> 00:02:17.974
+What's missing here will come on the next slide.
+
+00:02:17.974 --> 00:02:23.060
+This is how the program which you have to concentrate on is going to work.
+
+00:02:23.060 --> 00:02:25.830
+So let's move on and have a look.
+

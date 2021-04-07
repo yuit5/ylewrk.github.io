@@ -1,0 +1,466 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.379
+Okay. Now this code here shows how you can use the Lambda function as
+
+00:00:04.379 --> 00:00:09.120
+well as how you can use a closure to execute the Lambda at a later point in time.
+
+00:00:09.119 --> 00:00:12.929
+Let's start from the top. Now what we have here is an integer code ID,
+
+00:00:12.929 --> 00:00:16.230
+which, initially when the program starts is set to 0.
+
+00:00:16.230 --> 00:00:19.574
+Then we have the first Lambda usage here.
+
+00:00:19.574 --> 00:00:24.855
+It's overwritten with capture by reference and it's going to be an immutable call,
+
+00:00:24.855 --> 00:00:31.125
+that means what is passed to the Lambda is not going to be changed by the Lambda itself.
+
+00:00:31.125 --> 00:00:33.929
+So let's look at this line here carefully.
+
+00:00:33.929 --> 00:00:38.549
+So we are going to let the compiler determine the type of f0,
+
+00:00:38.549 --> 00:00:39.974
+which is the return value,
+
+00:00:39.975 --> 00:00:41.024
+returned by the Lambda.
+
+00:00:41.024 --> 00:00:46.054
+This is basically the closure which we can use later on.
+
+00:00:46.054 --> 00:00:48.454
+Then we have the first block of code here.
+
+00:00:48.454 --> 00:00:56.750
+This is making a reference to our integer ID available to the inside of the Lambda.
+
+00:00:56.750 --> 00:00:58.774
+We're not going to pass any parameters.
+
+00:00:58.774 --> 00:01:00.979
+The reference is going to be passed immutable.
+
+00:01:00.979 --> 00:01:05.734
+That means we're not going to change the reference to this memory address here,
+
+00:01:05.734 --> 00:01:07.819
+where the ID is.
+
+00:01:07.819 --> 00:01:10.794
+Within here, we're going to simply print
+
+00:01:10.795 --> 00:01:14.415
+a ID in Lambda and then we're going to print the ID itself,
+
+00:01:14.415 --> 00:01:18.275
+then we will see some output at the console.
+
+00:01:18.275 --> 00:01:20.635
+That's the first thing which we do here.
+
+00:01:20.635 --> 00:01:23.160
+Now then second thing, second line,
+
+00:01:23.159 --> 00:01:28.009
+we're also going to create a second Lambda using auto and then f1.
+
+00:01:28.010 --> 00:01:31.850
+Now we are passing ID by value.
+
+00:01:31.849 --> 00:01:33.769
+That means we're going to make a copy of it.
+
+00:01:33.769 --> 00:01:37.084
+We're not going to change the original ID.
+
+00:01:37.084 --> 00:01:39.829
+But nonetheless, we are defining it as mutable.
+
+00:01:39.829 --> 00:01:43.879
+That means ID can be changed within the Lambda itself.
+
+00:01:43.879 --> 00:01:45.724
+Accordingly inside the Lambda,
+
+00:01:45.724 --> 00:01:52.039
+we are printing ID in Lambda and we're going to increment ID by 1.
+
+00:01:52.040 --> 00:01:57.190
+So instead of 0 it's supposed to be 1 when we print it.
+
+00:01:57.189 --> 00:02:02.810
+Afterwards, we're going to call the closure and execute the code within the Lambda.
+
+00:02:02.810 --> 00:02:06.185
+Now after calling the closure and executing this code here,
+
+00:02:06.185 --> 00:02:08.629
+we're printing ID in main again,
+
+00:02:08.629 --> 00:02:11.495
+and ID in main is also outputting id.
+
+00:02:11.495 --> 00:02:16.145
+The question here is, and this is going to be what we will be looking at in the output,
+
+00:02:16.145 --> 00:02:17.630
+what's going to be printed here?
+
+00:02:17.629 --> 00:02:22.924
+Now my personal expectation would be we are setting ID to 0 here.
+
+00:02:22.925 --> 00:02:28.920
+Then we are copying ID into the Lambda incrementing the copy by one,
+
+00:02:28.919 --> 00:02:30.884
+giving us ID Lambda equals one.
+
+00:02:30.884 --> 00:02:35.810
+Then here, ID in main as this ID should not have been changed,
+
+00:02:35.810 --> 00:02:39.409
+because we have passed this one here by value and not by reference.
+
+00:02:39.409 --> 00:02:41.509
+We should still have the 0 here,
+
+00:02:41.509 --> 00:02:42.919
+but let's wait and see.
+
+00:02:42.919 --> 00:02:45.049
+Now the next one is captured by a reference,
+
+00:02:45.050 --> 00:02:47.255
+but now a mutable reference.
+
+00:02:47.254 --> 00:02:48.884
+So auto f2.
+
+00:02:48.884 --> 00:02:56.194
+F2 is also the closure which is executed right after defining the Lambda,
+
+00:02:56.194 --> 00:02:59.944
+also is mutable, and we are outputting the ID here,
+
+00:02:59.944 --> 00:03:02.894
+also incrementing it by 1.
+
+00:03:02.895 --> 00:03:05.880
+Then the question is when we do this an output ID in
+
+00:03:05.879 --> 00:03:09.935
+Lambda equals the ID at that point in time to the console,
+
+00:03:09.935 --> 00:03:12.995
+what's going to be the output of ID in main here?
+
+00:03:12.995 --> 00:03:15.814
+Well, it's also output the ID.
+
+00:03:15.814 --> 00:03:18.259
+Will reflect the change we performed here or would it
+
+00:03:18.259 --> 00:03:20.870
+not reflect the change which we performed here?
+
+00:03:20.870 --> 00:03:24.995
+Lastly, but before we finish by calling f0 at the end,
+
+00:03:24.995 --> 00:03:27.844
+we are passing a parameter.
+
+00:03:27.844 --> 00:03:31.090
+Now we are not transferring ID in the squared brackets here,
+
+00:03:31.090 --> 00:03:35.719
+but we're passing it as a constant parameter to the Lambda.
+
+00:03:35.719 --> 00:03:38.030
+Then again, we're outputting it here.
+
+00:03:38.030 --> 00:03:40.699
+The reason I included this example here
+
+00:03:40.699 --> 00:03:43.864
+is the call to the closure is a bit different now.
+
+00:03:43.865 --> 00:03:45.980
+Instead of calling it without any arguments,
+
+00:03:45.979 --> 00:03:50.594
+we are now inputting ID again into the Lambda.
+
+00:03:50.594 --> 00:03:52.270
+But before we pass it into it,
+
+00:03:52.270 --> 00:03:55.420
+we're also incrementing it by 1,
+
+00:03:55.419 --> 00:03:58.609
+which has to reflect here inside the Lambda.
+
+00:03:58.610 --> 00:04:00.455
+Afterwards, at the end,
+
+00:04:00.455 --> 00:04:02.090
+we're going to execute f0,
+
+00:04:02.090 --> 00:04:05.030
+which is the Lambda we defined right at the start.
+
+00:04:05.030 --> 00:04:06.740
+So a lot of incrementing,
+
+00:04:06.740 --> 00:04:09.990
+a lot of passing by a value,
+
+00:04:09.990 --> 00:04:12.379
+by reference, by mutable reference.
+
+00:04:12.379 --> 00:04:15.769
+So let's take a look at the output to see what's going on
+
+00:04:15.770 --> 00:04:19.129
+and to maybe explain the different results we're going to see.
+
+00:04:19.129 --> 00:04:22.339
+Let's start up the program.
+
+00:04:22.339 --> 00:04:25.009
+Let's take a look at the debug console.
+
+00:04:25.009 --> 00:04:26.680
+Here's the output.
+
+00:04:26.680 --> 00:04:29.290
+Let's look at what's going to happen here.
+
+00:04:29.290 --> 00:04:34.280
+So the first output which we can find here that maybe- I can't scroll up.
+
+00:04:34.279 --> 00:04:35.929
+Let me see if I can resize this,
+
+00:04:35.930 --> 00:04:38.600
+not without including the rest. Let's do it in here.
+
+00:04:38.600 --> 00:04:40.715
+So ID in Lambda equals 1.
+
+00:04:40.714 --> 00:04:42.739
+So b has been executed first.
+
+00:04:42.740 --> 00:04:44.780
+Lets move up here to find b.
+
+00:04:44.779 --> 00:04:47.509
+So this is the first code that has been executed.
+
+00:04:47.509 --> 00:04:52.634
+That makes sense because only defining the Lambda here didn't start the Lambda.
+
+00:04:52.634 --> 00:04:54.709
+We only started the code,
+
+00:04:54.709 --> 00:04:56.944
+the closure at the end of the main function.
+
+00:04:56.944 --> 00:05:00.259
+That's the reason why we do not see a here.
+
+00:05:00.259 --> 00:05:02.300
+So the first thing to see is b.
+
+00:05:02.300 --> 00:05:06.310
+Because we incremented ID here before outputting it to the console,
+
+00:05:06.310 --> 00:05:09.175
+it says ID in Lambda equals 1.
+
+00:05:09.175 --> 00:05:10.860
+We have passed it by value,
+
+00:05:10.860 --> 00:05:12.254
+that means we made a copy,
+
+00:05:12.254 --> 00:05:15.259
+and this is also the reason why here in c,
+
+00:05:15.259 --> 00:05:17.689
+ID in main equals, let's go down,
+
+00:05:17.689 --> 00:05:19.910
+0 is to be found on the console,
+
+00:05:19.910 --> 00:05:24.410
+because the change which has been performed inside the Lambda
+
+00:05:24.410 --> 00:05:29.105
+has not been performed on the original ID integer but on its copy.
+
+00:05:29.105 --> 00:05:32.330
+So this is why we can see ID in main equals 0 here.
+
+00:05:32.329 --> 00:05:37.500
+Now let's move on to the next line which is this one here d is called next.
+
+00:05:37.500 --> 00:05:40.699
+Here, we are capturing it by reference.
+
+00:05:40.699 --> 00:05:44.879
+That means we are passing ID as reference into this one here.
+
+00:05:44.879 --> 00:05:46.504
+We're incrementing it.
+
+00:05:46.504 --> 00:05:51.019
+The output here in d is- let's look at the console below,
+
+00:05:51.019 --> 00:05:53.529
+ID in Lambda equals 1.
+
+00:05:53.529 --> 00:05:56.984
+Because the variable has been passed by reference,
+
+00:05:56.985 --> 00:06:01.655
+the change is reflecting to the original version of ID,
+
+00:06:01.654 --> 00:06:04.519
+and this is why in the next line, line number 18,
+
+00:06:04.519 --> 00:06:06.995
+ID in main where we output ID,
+
+00:06:06.995 --> 00:06:09.889
+the change has been reflected to the original.
+
+00:06:09.889 --> 00:06:13.904
+So we have been working on the original ID in our Lambda function.
+
+00:06:13.904 --> 00:06:18.059
+Okay. Let's move on. The next call is F ID in Lambda.
+
+00:06:18.060 --> 00:06:20.134
+We pass it as a parameter,
+
+00:06:20.134 --> 00:06:24.289
+as a constant parameter to be honest here.
+
+00:06:24.290 --> 00:06:25.700
+So ID in Lambda,
+
+00:06:25.699 --> 00:06:27.110
+let's take a look at f,
+
+00:06:27.110 --> 00:06:29.090
+f equals 2 now.
+
+00:06:29.089 --> 00:06:30.514
+So why is this the case?
+
+00:06:30.514 --> 00:06:33.740
+Let's take a look at one line further, further down.
+
+00:06:33.740 --> 00:06:37.310
+So this is the point where we call the closure f3.
+
+00:06:37.310 --> 00:06:40.100
+But before passing ID into it,
+
+00:06:40.100 --> 00:06:42.320
+we are incrementing ID by 1,
+
+00:06:42.319 --> 00:06:44.553
+which is the reason why at the console,
+
+00:06:44.553 --> 00:06:47.459
+we see the output ID and Lambda equals 2.
+
+00:06:47.459 --> 00:06:49.314
+After all this passing,
+
+00:06:49.314 --> 00:06:55.100
+all this transferring variables into the Lambdas and taking them out again,
+
+00:06:55.100 --> 00:06:58.355
+we are now calling our original closure f0,
+
+00:06:58.355 --> 00:07:00.425
+which at this point in time,
+
+00:07:00.425 --> 00:07:02.689
+because, let's scroll up again,
+
+00:07:02.689 --> 00:07:05.810
+it has been given a reference to ID,
+
+00:07:05.810 --> 00:07:07.819
+and now it's accessing the reference,
+
+00:07:07.819 --> 00:07:11.800
+but the data at the reference has changed by all the operations here.
+
+00:07:11.800 --> 00:07:15.710
+This is why when we call the closure at this point in time,
+
+00:07:15.709 --> 00:07:18.019
+shortly before returning from the main program,
+
+00:07:18.019 --> 00:07:20.479
+we see the original Lambda,
+
+00:07:20.480 --> 00:07:22.939
+sorry, the original ID changed to 2.
+
+00:07:22.939 --> 00:07:24.214
+So at the end,
+
+00:07:24.214 --> 00:07:27.799
+the original closure is called accessing
+
+00:07:27.800 --> 00:07:33.620
+the changed value of ID and this is why we see ID in Lambda equals 2 at the end.
+
+00:07:33.620 --> 00:07:37.879
+So you have been very careful with what you passed to a Lambda. Is it a reference?
+
+00:07:37.879 --> 00:07:40.055
+Is it passed by value?
+
+00:07:40.055 --> 00:07:41.300
+Is it mutable?
+
+00:07:41.300 --> 00:07:42.875
+Is it non-mutable?
+
+00:07:42.875 --> 00:07:45.050
+Is it even maybe a function parameter?
+
+00:07:45.050 --> 00:07:47.000
+So taking all this into account,
+
+00:07:47.000 --> 00:07:53.240
+you can clearly see that Lambdas help you make your life with concurrency much easier,
+
+00:07:53.240 --> 00:07:55.775
+but also it's a great source for error,
+
+00:07:55.774 --> 00:07:59.810
+because including one ampersand or forgetting an ampersand,
+
+00:07:59.810 --> 00:08:05.240
+can greatly influence how your program works and how it sees different variables.
+
+00:08:05.240 --> 00:08:08.040
+So take care when using Lambda.
+

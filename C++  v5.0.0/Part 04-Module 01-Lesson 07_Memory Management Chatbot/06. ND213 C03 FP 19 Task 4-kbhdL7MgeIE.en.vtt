@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.710
+In this exercise, we will change the ownership model behind the graph edge instances.
+
+00:00:04.710 --> 00:00:08.879
+Until now they are owned by Chat-Logic and the changes we want to apply now transfer
+
+00:00:08.880 --> 00:00:13.155
+this ownership to the graph node instances to which the graph edges are connected.
+
+00:00:13.154 --> 00:00:15.989
+Please note that we do not want to use SharePoint as yet.
+
+00:00:15.990 --> 00:00:20.129
+Please limit yourself to the use of unique pointers and implement the ownership in
+
+00:00:20.129 --> 00:00:25.274
+a way that the graph node only owns the outgoing edges leading to children in the graph.
+
+00:00:25.274 --> 00:00:27.179
+Now, the incoming edges are owned by
+
+00:00:27.179 --> 00:00:30.039
+the preceding nodes which are parents to the current node.
+
+00:00:30.039 --> 00:00:33.975
+Please make sure to use move semantics when transferring ownership
+
+00:00:33.975 --> 00:00:39.039
+from class chat logic into instances of graph node.
+

@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.145
+Let's take a look at the edges.
+
+00:00:02.145 --> 00:00:03.464
+The edges are here,
+
+00:00:03.464 --> 00:00:05.445
+and we don't have too much inside the edges.
+
+00:00:05.445 --> 00:00:07.724
+We have non node data handles,
+
+00:00:07.724 --> 00:00:09.240
+child node, parent node.
+
+00:00:09.240 --> 00:00:11.609
+Actually, we don't have any owned data handles.
+
+00:00:11.609 --> 00:00:14.160
+So edges don't take on ownership of anything.
+
+00:00:14.160 --> 00:00:17.760
+They are simply intermediaries between two nodes, child node,
+
+00:00:17.760 --> 00:00:20.640
+and parent node, and we have some proprietary members,
+
+00:00:20.640 --> 00:00:23.310
+though we have an ID as for the graph nodes.
+
+00:00:23.309 --> 00:00:27.599
+We have in a list of keywords which is associated with the current edge,
+
+00:00:27.600 --> 00:00:32.280
+which helps us decide whether we want to move along this edge or along another edge,
+
+00:00:32.280 --> 00:00:36.615
+depending on the query which is posed to the chat bod by the user.
+
+00:00:36.615 --> 00:00:39.510
+We want look into the implementation right now.
+
+00:00:39.509 --> 00:00:41.519
+It's very similar to graph node,
+
+00:00:41.520 --> 00:00:44.390
+apart from a few small differences here and there,
+
+00:00:44.390 --> 00:00:46.250
+with regard to student tasks.
+
+00:00:46.250 --> 00:00:49.340
+Let's open it up very briefly to show that it's
+
+00:00:49.340 --> 00:00:54.560
+a very small function actually and it doesn't have any student tasks inside.
+
+00:00:54.560 --> 00:00:57.080
+So you won't deal very much with graph edges,
+
+00:00:57.079 --> 00:00:59.670
+at least not with the implementation.
+

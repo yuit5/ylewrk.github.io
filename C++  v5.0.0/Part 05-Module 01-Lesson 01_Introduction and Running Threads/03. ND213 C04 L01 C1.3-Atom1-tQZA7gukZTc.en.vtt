@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.419
+Now in this section, you will write your first multi-threaded program
+
+00:00:03.419 --> 00:00:06.570
+using the concurrency support or c plus plus 11.
+
+00:00:06.570 --> 00:00:12.030
+Also, you will find out just how many hardware threats your system has to offer.
+
+00:00:12.029 --> 00:00:15.869
+And even though the code to do this as available in your virtual environment,
+
+00:00:15.869 --> 00:00:19.050
+I would like to encourage you to run it on your native hardware.
+
+00:00:19.050 --> 00:00:21.780
+If you have several computers and laptop or desktop,
+
+00:00:21.780 --> 00:00:23.820
+try them all and look at the differences
+
+00:00:23.820 --> 00:00:26.100
+with regard to the number of hardware thread supported.
+
+00:00:26.100 --> 00:00:28.890
+For me on my MacBook Pro it's four hardware threads,
+
+00:00:28.890 --> 00:00:30.885
+on my iMac Pro it's 20.
+
+00:00:30.885 --> 00:00:33.960
+Further down in this section we will be using the thread function from
+
+00:00:33.960 --> 00:00:36.030
+the standard library to call a function and
+
+00:00:36.030 --> 00:00:38.835
+perform some work in parallel to the main thread.
+
+00:00:38.835 --> 00:00:40.469
+Before we quit the program, however,
+
+00:00:40.469 --> 00:00:42.859
+we need to wait for a worker thread to finish
+
+00:00:42.859 --> 00:00:45.890
+his work which is what the command join is going to be used for.
+
+00:00:45.890 --> 00:00:48.545
+So please go ahead and write your first concurrent program.
+
+00:00:48.545 --> 00:00:51.090
+See you at the end of this section.
+

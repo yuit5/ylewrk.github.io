@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.430
+Have you noticed that the program crashed when
+
+00:00:02.430 --> 00:00:05.144
+I closed the window when leaving the program?
+
+00:00:05.144 --> 00:00:07.740
+Well, obviously, there is a small bug hidden somewhere.
+
+00:00:07.740 --> 00:00:09.210
+It's a memory management bug,
+
+00:00:09.210 --> 00:00:12.540
+which has something to do with improper maybe allocation,
+
+00:00:12.539 --> 00:00:14.654
+maybe geo location. You will find out.
+
+00:00:14.654 --> 00:00:17.339
+Your first task, and it's a warm up task,
+
+00:00:17.339 --> 00:00:19.739
+will be to find this bug and remove it.
+
+00:00:19.739 --> 00:00:22.589
+This should familiarize you with the code and set you up for
+
+00:00:22.589 --> 00:00:26.759
+the rest of the upcoming tasks 1-5 in the final project.
+
+00:00:26.760 --> 00:00:28.960
+Have fun debugging.
+

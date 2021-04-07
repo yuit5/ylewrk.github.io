@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.860
+So now you know about Lambda functions,
+
+00:00:01.860 --> 00:00:03.120
+and I hope you agree that they are
+
+00:00:03.120 --> 00:00:06.689
+a super valuable tool which every programmer should have in his toolbox.
+
+00:00:06.690 --> 00:00:09.210
+They're convenient and they are versatile,
+
+00:00:09.210 --> 00:00:13.455
+and they can be used for many purposes also outside of concurrent programming.
+
+00:00:13.455 --> 00:00:16.949
+In the next section, we will take a look at two additional ways of starting up
+
+00:00:16.949 --> 00:00:20.774
+threads with periodic templates and with member functions.
+
+00:00:20.774 --> 00:00:22.079
+Once you have mastered these,
+
+00:00:22.079 --> 00:00:25.049
+you can choose from four ways and total for launching the thread,
+
+00:00:25.050 --> 00:00:27.539
+and the last section of this lesson we will then focus on
+
+00:00:27.539 --> 00:00:30.689
+launching threads and several threads all at once.
+
+00:00:30.690 --> 00:00:33.700
+So see you there in the next section.
+

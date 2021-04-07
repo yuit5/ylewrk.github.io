@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.435
+Let's look at chatlogic, in chatlogic.h.
+
+00:00:03.435 --> 00:00:06.870
+We have a very important distinction between data handles.
+
+00:00:06.870 --> 00:00:11.070
+We have owned data handles and we have non owned data handles,
+
+00:00:11.070 --> 00:00:15.359
+and the data handles which the student version of chatlogic owns
+
+00:00:15.359 --> 00:00:19.934
+are a vector of graph nodes or pointers to graph nodes and graph edges.
+
+00:00:19.934 --> 00:00:22.544
+This is going to change while you traverse to
+
+00:00:22.545 --> 00:00:25.155
+the final project the final version of the code.
+
+00:00:25.155 --> 00:00:28.500
+Now the ownership of edges lies with the chatlogic and you will
+
+00:00:28.500 --> 00:00:32.100
+change this and one of the tasks who will come to this pointers.
+
+00:00:32.100 --> 00:00:36.855
+So where the ownership of edges is moved into some of the nodes here,
+
+00:00:36.854 --> 00:00:39.134
+but for now chatlogic owns them both.
+
+00:00:39.134 --> 00:00:43.504
+Apart from that we have some handles to currentNodes, ChatBot and panelDialogue.
+
+00:00:43.505 --> 00:00:47.135
+We have some helper stuff here a proprietary type definition,
+
+00:00:47.134 --> 00:00:52.250
+a token list which you will see shortly when we look at load answer graph from file.
+
+00:00:52.250 --> 00:00:54.049
+Also some Helper functions,
+
+00:00:54.049 --> 00:00:59.390
+the templatized helper function and the proprietary functions for this class here
+
+00:00:59.390 --> 00:01:02.240
+load autograph from file which is the main function which loads
+
+00:01:02.240 --> 00:01:05.795
+the text file and converts it into this very elaborate graph structure.
+
+00:01:05.795 --> 00:01:08.609
+Then we have the function which sends a message to the ChatBot
+
+00:01:08.609 --> 00:01:11.269
+and we have the function which sends a message to the user
+
+00:01:11.269 --> 00:01:16.189
+from the ChatBot and we have this function here which retrieves the handle
+
+00:01:16.189 --> 00:01:18.409
+to the image which is managed by the ChatBot
+
+00:01:18.409 --> 00:01:22.109
+so it can be displayed in the graphical user interface
+

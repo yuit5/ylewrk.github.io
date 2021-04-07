@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.770
+You have five tasks in total.
+
+00:00:01.770 --> 00:00:04.620
+The first task is about exclusive ownership.
+
+00:00:04.620 --> 00:00:09.009
+You have an introduction to the tasks in the upcoming videos.
+
+00:00:14.269 --> 00:00:17.550
+You can read this in the appropriate documentation,
+
+00:00:17.550 --> 00:00:20.734
+or you can watch the video leading up to each task here.
+
+00:00:20.734 --> 00:00:22.894
+The first is about exclusive ownership,
+
+00:00:22.894 --> 00:00:26.214
+the second is about implementing the rule of five,
+
+00:00:26.214 --> 00:00:29.070
+the third task is about ownership again.
+
+00:00:29.070 --> 00:00:31.750
+It's again an exclusive ownership relation here,
+
+00:00:31.750 --> 00:00:36.890
+where you have to adapt a vector called nodes inside your graph nodes class.
+
+00:00:36.890 --> 00:00:39.859
+You also have to choose an appropriate type of smart pointer
+
+00:00:39.859 --> 00:00:42.695
+to achieve the goal which is posted on this task.
+
+00:00:42.695 --> 00:00:46.689
+Then task number 4 is about moving smart pointers.
+
+00:00:46.689 --> 00:00:48.839
+A smart pointer could be a sharp pointer,
+
+00:00:48.840 --> 00:00:50.445
+it could be a unique pointer,
+
+00:00:50.445 --> 00:00:51.945
+it can be moved around.
+
+00:00:51.945 --> 00:00:57.454
+So we are copying an instance of a smart pointer which lives on the stack by
+
+00:00:57.454 --> 00:01:03.244
+smartly redirecting handles to heap allocated objects as we saw it in the course.
+
+00:01:03.244 --> 00:01:07.489
+The pointer can be moved with minimal cost between different parts of your program.
+
+00:01:07.489 --> 00:01:12.829
+Again, here you have to use appropriate smart pointers where required to make changes
+
+00:01:12.829 --> 00:01:15.140
+to the code such that all the data structures and
+
+00:01:15.140 --> 00:01:18.290
+the function parameters reflect these changes.
+
+00:01:18.290 --> 00:01:22.220
+But again, you can read up the documentation which we have in the slide set here,
+
+00:01:22.219 --> 00:01:26.620
+also in the appropriate documentation which you find in your course material.
+
+00:01:26.620 --> 00:01:30.545
+The last task here is to really move the ChatBot around.
+
+00:01:30.545 --> 00:01:32.810
+We saw in the short animation leading up to
+
+00:01:32.810 --> 00:01:36.260
+this video here that the red circle representing the ChatBot
+
+00:01:36.260 --> 00:01:41.960
+had been moving between the nodes and this moving will actually be implemented here.
+
+00:01:41.959 --> 00:01:44.809
+So by using move semantics before we
+
+00:01:44.810 --> 00:01:47.900
+apply the rule of five to the ChatBot clause and the second task,
+
+00:01:47.900 --> 00:01:51.719
+and now we really have to move the ChatBot between the nodes so
+
+00:01:51.719 --> 00:01:55.700
+that the ChatBot can draw the appropriate answer from the nodes which is currently,
+
+00:01:55.700 --> 00:01:58.704
+is that, send it to the user and the graphical user interface.
+
+00:01:58.704 --> 00:02:01.364
+Yeah, that's basically what you have to do here,
+
+00:02:01.364 --> 00:02:02.914
+five tasks in total.
+
+00:02:02.915 --> 00:02:06.710
+In addition to the five tasks as you will see in the course material,
+
+00:02:06.709 --> 00:02:10.894
+there is a bug hidden in the student version of the project.
+
+00:02:10.895 --> 00:02:12.875
+This is an intentional bug, it's a small bug,
+
+00:02:12.875 --> 00:02:17.370
+and it will not hinder you from starting up the program and seeing how it works.
+
+00:02:17.370 --> 00:02:21.530
+But when you click on the close button of the graphical user interface,
+
+00:02:21.530 --> 00:02:24.460
+you will note that the program crashes at the end.
+
+00:02:24.460 --> 00:02:27.349
+This is caused by a memory management problem,
+
+00:02:27.348 --> 00:02:31.264
+and it's your first task or maybe task zero or the warm-up task.
+
+00:02:31.264 --> 00:02:33.379
+If you will try to find this bug,
+
+00:02:33.379 --> 00:02:35.240
+by looking for this bug,
+
+00:02:35.240 --> 00:02:38.710
+you will also be able to familiarize yourself with the program itself.
+
+00:02:38.710 --> 00:02:40.300
+So it's an intentional bug,
+
+00:02:40.300 --> 00:02:42.950
+but of course if you find any other bug,
+
+00:02:42.949 --> 00:02:44.359
+this might not be intentional,
+
+00:02:44.360 --> 00:02:47.300
+don't hesitate to reach out to us and tell us about
+
+00:02:47.300 --> 00:02:51.219
+it so we can fix it in future versions in the [inaudible].
+

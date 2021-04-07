@@ -1,0 +1,352 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.975
+Now, welcome to this course on concurrency in the C++ language.
+
+00:00:03.975 --> 00:00:07.019
+So far, you have learned a lot about the language basics,
+
+00:00:07.019 --> 00:00:09.945
+about object orientation, and about memory management.
+
+00:00:09.945 --> 00:00:12.540
+Now, the common ground in all those areas has always
+
+00:00:12.539 --> 00:00:15.160
+been that one step in your program followed the other,
+
+00:00:15.160 --> 00:00:18.524
+and you could rely on the execution order of the code you wrote.
+
+00:00:18.524 --> 00:00:21.179
+This is going to change now with concurrency.
+
+00:00:21.179 --> 00:00:22.530
+Now, before we dive into this,
+
+00:00:22.530 --> 00:00:24.420
+let me briefly introduce myself to you so you
+
+00:00:24.420 --> 00:00:26.970
+know who your instructor is going to be over the next weeks.
+
+00:00:26.969 --> 00:00:30.015
+My name is [inaudible] and I'm an engineering professor in Germany.
+
+00:00:30.015 --> 00:00:34.094
+I have spent several years of my career with companies such as Bosch and Volkswagen,
+
+00:00:34.094 --> 00:00:37.170
+building autonomous vehicle components such as a stereo vision camera,
+
+00:00:37.170 --> 00:00:39.480
+such as autonomous braking systems and so on.
+
+00:00:39.479 --> 00:00:44.125
+Also, I have created the computer vision part of the sensor fusion cause for Udacity.
+
+00:00:44.125 --> 00:00:47.270
+When there is one area in autonomous vehicles that benefits from
+
+00:00:47.270 --> 00:00:50.660
+concurrent processing and exploiting multi-core architectures,
+
+00:00:50.659 --> 00:00:52.264
+it is sensor fusion.
+
+00:00:52.265 --> 00:00:53.990
+But there are countless other industries and
+
+00:00:53.990 --> 00:00:57.200
+applications where concurrent programming is absolutely essential.
+
+00:00:57.200 --> 00:00:59.075
+So let's take a look at the details here.
+
+00:00:59.075 --> 00:01:01.685
+Let's take a look at what this course is about.
+
+00:01:01.685 --> 00:01:04.909
+This course is about writing programs in C++ that use
+
+00:01:04.909 --> 00:01:09.509
+multiple paths of execution that have the potential to run in parallel.
+
+00:01:09.510 --> 00:01:14.395
+One such path is called a thread and using several threads is called multi-threading.
+
+00:01:14.394 --> 00:01:17.589
+Programs using multiple threads are called concurrent.
+
+00:01:17.590 --> 00:01:19.969
+In the following lessons, we will take a close look at
+
+00:01:19.969 --> 00:01:21.620
+the most important features in
+
+00:01:21.620 --> 00:01:25.010
+the C++ standards that make concurrent programming possible.
+
+00:01:25.010 --> 00:01:28.960
+Now, let's take a look at the definition of concurrency a bit more closely.
+
+00:01:28.959 --> 00:01:33.589
+Now, the computer system concurrency means or concurrent behavior means that
+
+00:01:33.590 --> 00:01:35.060
+a single system is performing
+
+00:01:35.060 --> 00:01:39.530
+multiple independent tasks in parallel rather than sequentially as before.
+
+00:01:39.530 --> 00:01:42.260
+Such a system is called a multi-tasking system,
+
+00:01:42.260 --> 00:01:44.605
+and they have been around for quite some time now.
+
+00:01:44.605 --> 00:01:47.630
+A multi-tasking operating system, or short OS,
+
+00:01:47.629 --> 00:01:49.399
+allows us to run multiple applications at
+
+00:01:49.400 --> 00:01:52.280
+once with the ability to switch between tasks as needed.
+
+00:01:52.280 --> 00:01:57.379
+Interestingly, multi-tasking does not require multiple processes or multiple cores,
+
+00:01:57.379 --> 00:02:00.439
+but inviting a program execution into many small bits and pieces and
+
+00:02:00.439 --> 00:02:03.590
+by interleaving them with a bits of pieces of other programs,
+
+00:02:03.590 --> 00:02:05.795
+we get the illusion of parallelism,
+
+00:02:05.795 --> 00:02:07.930
+which is maintained by the operating system.
+
+00:02:07.930 --> 00:02:12.750
+Under the hood however, we are only witnessing an extremely fast switching of tasks.
+
+00:02:12.750 --> 00:02:14.960
+But true concurrency where tasks are running at
+
+00:02:14.960 --> 00:02:17.570
+the same time or the same moment in time however,
+
+00:02:17.569 --> 00:02:19.914
+they require a parallel architecture.
+
+00:02:19.914 --> 00:02:22.215
+This might mean having multiple processors,
+
+00:02:22.215 --> 00:02:26.569
+or multiple cores, or maybe both multiple cores within a processor.
+
+00:02:26.569 --> 00:02:30.169
+Such systems are capable of truly running more than one task in parallel.
+
+00:02:30.169 --> 00:02:32.944
+This concept is called hardware concurrency.
+
+00:02:32.944 --> 00:02:36.109
+What makes this course so important is the fact that the prevalence of
+
+00:02:36.110 --> 00:02:39.910
+such architecture has increased exponentially over the last years.
+
+00:02:39.909 --> 00:02:42.560
+Today, we have a large number of everyday devices
+
+00:02:42.560 --> 00:02:45.694
+from smart phones and tablets to automotive products,
+
+00:02:45.694 --> 00:02:48.685
+they have all processors with several cores.
+
+00:02:48.685 --> 00:02:50.900
+An important measure which helps to gauge
+
+00:02:50.900 --> 00:02:53.735
+how many independent tasks can be run in parallel,
+
+00:02:53.735 --> 00:02:55.654
+that means have genuine concurrency,
+
+00:02:55.653 --> 00:02:58.599
+this is the number of hardware threads of a system.
+
+00:02:58.599 --> 00:03:02.104
+We also will take a look at the number of hardware threads in your systems.
+
+00:03:02.104 --> 00:03:05.060
+It's easy to have more tasks that the hardware can run in
+
+00:03:05.060 --> 00:03:08.555
+parallel as soon as all hardware threads are used up in a system.
+
+00:03:08.555 --> 00:03:10.700
+When it's reach this point,
+
+00:03:10.699 --> 00:03:12.534
+it will revert to task switching.
+
+00:03:12.534 --> 00:03:14.240
+For many years, the mantra of
+
+00:03:14.240 --> 00:03:17.675
+chip manufacturers was to increase performance by pushing up a G,
+
+00:03:17.675 --> 00:03:21.355
+for example, the clock rate with each new generation of processes.
+
+00:03:21.354 --> 00:03:24.560
+Programmers could sit back and expect their programs to run fast and
+
+00:03:24.560 --> 00:03:28.009
+faster with the next hardware generation without doing anything.
+
+00:03:28.009 --> 00:03:30.019
+In recent years however, this is changing.
+
+00:03:30.020 --> 00:03:32.900
+Chip manufacturers favor multi-core designs with 2,
+
+00:03:32.900 --> 00:03:35.890
+4, 16 or more processes on a single chip.
+
+00:03:35.889 --> 00:03:37.709
+If a program, and that's the programmer,
+
+00:03:37.710 --> 00:03:40.860
+that means you wants to take advantage of this increased computing power,
+
+00:03:40.860 --> 00:03:44.615
+it must be designed with appropriate concurrency mechanisms in mind.
+
+00:03:44.615 --> 00:03:49.100
+For you this means that you have to add concurrency to your programming toolbox if
+
+00:03:49.099 --> 00:03:50.479
+you want to take full advantage of
+
+00:03:50.479 --> 00:03:53.859
+the high-performance hardware that is quickly becoming the standard.
+
+00:03:53.860 --> 00:03:56.995
+Luckily, with the introduction of the C++11 standard,
+
+00:03:56.995 --> 00:03:59.719
+there have been some awesome additions to the language which make it
+
+00:03:59.719 --> 00:04:02.719
+easier for programmers to create good concurrent software.
+
+00:04:02.719 --> 00:04:05.764
+But before we take a look at the content we will cover in this course,
+
+00:04:05.764 --> 00:04:08.449
+let me state that all the techniques, all the functions,
+
+00:04:08.449 --> 00:04:11.839
+all the concepts we cover can be used whether your application is running on
+
+00:04:11.840 --> 00:04:15.819
+a machine with a single core or with the many multi-core processors.
+
+00:04:15.819 --> 00:04:17.295
+But as you may imagine,
+
+00:04:17.295 --> 00:04:20.660
+how you make use of concurrency in your application will
+
+00:04:20.660 --> 00:04:24.770
+most probably depend on your target system and its hardware architecture.
+
+00:04:24.769 --> 00:04:28.629
+Now, let's take a look at the content we will cover in this course.
+
+00:04:28.629 --> 00:04:33.545
+In lesson 1, you will learn the difference between processes and between threads.
+
+00:04:33.545 --> 00:04:38.004
+We will take a look in depth at various ways how threads can be started,
+
+00:04:38.004 --> 00:04:39.649
+and also, you will write
+
+00:04:39.649 --> 00:04:43.294
+your first concurrent program running multiple threads at the same time.
+
+00:04:43.295 --> 00:04:46.790
+At the end of lesson 1, there will be a detailed introduction in the code base
+
+00:04:46.790 --> 00:04:50.660
+of the course project which is a concurrent traffic simulation.
+
+00:04:50.660 --> 00:04:55.640
+Now, lesson 2, we will take a look at ways to share data between threads.
+
+00:04:55.639 --> 00:04:58.819
+This includes the concept of promises and futures in C++.
+
+00:04:58.819 --> 00:05:01.129
+The difference between threads and tasks as well as
+
+00:05:01.129 --> 00:05:03.719
+several strategies to avoid data races,
+
+00:05:03.720 --> 00:05:07.525
+which is a major source for errors in concurrent programming as you will soon see.
+
+00:05:07.524 --> 00:05:10.129
+Now, lesson 3, you will learn how to safely share
+
+00:05:10.129 --> 00:05:13.730
+data between threads without having data races all over the place.
+
+00:05:13.730 --> 00:05:16.910
+This involves the concept of mutexes and locks,
+
+00:05:16.910 --> 00:05:19.765
+which is among the most important concepts of this course.
+
+00:05:19.764 --> 00:05:22.430
+In lesson 4, we will expand on mutexes and
+
+00:05:22.430 --> 00:05:25.745
+locks and take a close look at condition variables.
+
+00:05:25.745 --> 00:05:29.120
+Also, we will be developing a super useful mechanisms for
+
+00:05:29.120 --> 00:05:33.949
+safe concurrent data exchange between multiple threads using a message queue concept.
+
+00:05:33.949 --> 00:05:36.409
+Finally, you will be using all your knowledge
+
+00:05:36.410 --> 00:05:38.660
+to expand the concurrent traffic simulation to add
+
+00:05:38.660 --> 00:05:41.360
+traffic lights to the intersections which carefully
+
+00:05:41.360 --> 00:05:44.300
+guided vehicles through an intersection who are all,
+
+00:05:44.300 --> 00:05:47.884
+of course, running in parallel each one and its own thread.
+
+00:05:47.884 --> 00:05:52.250
+So please go ahead now and dive into this course on concurrent programming in C++.
+
+00:05:52.250 --> 00:05:55.949
+Have fun, and see you soon in the first lesson.
+

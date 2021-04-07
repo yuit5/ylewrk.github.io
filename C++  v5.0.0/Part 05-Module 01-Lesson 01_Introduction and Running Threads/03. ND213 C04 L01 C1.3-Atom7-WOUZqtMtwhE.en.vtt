@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.040
+So welcome to the end of this section.
+
+00:00:02.040 --> 00:00:05.490
+I assume that your impression of writing a first concurrent program might have been,
+
+00:00:05.490 --> 00:00:07.935
+now that was easy. Yes, you're right.
+
+00:00:07.934 --> 00:00:10.094
+Introducing concurrency is not hard,
+
+00:00:10.095 --> 00:00:12.510
+thanks to the C++11 Standard.
+
+00:00:12.509 --> 00:00:16.469
+Also, putting a thread to sleep for some time is easy as well as waiting
+
+00:00:16.469 --> 00:00:20.445
+for it at the end of your program using a thread barrier using Join.
+
+00:00:20.445 --> 00:00:24.609
+However, you have already caught a first glimpse of the randomness of events,
+
+00:00:24.609 --> 00:00:26.399
+which is one of the primary sources of
+
+00:00:26.399 --> 00:00:29.429
+error in concurrent programming, as we will shortly see.
+
+00:00:29.429 --> 00:00:31.969
+So after this first brush with concurrency,
+
+00:00:31.969 --> 00:00:35.310
+please feel free to move on to the next section which will be about starting
+
+00:00:35.310 --> 00:00:39.969
+threads with something called a function object. See you there.
+

@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.245
+Now, let's look into the structure of the graphnodes,
+
+00:00:04.245 --> 00:00:06.405
+let's open up graphnode.h.
+
+00:00:06.405 --> 00:00:09.929
+Again, we have a distinction between data handles which are
+
+00:00:09.929 --> 00:00:13.410
+owned and which are not owned and for these data handles,
+
+00:00:13.410 --> 00:00:17.219
+the node will be responsible in terms of allocating memory and de-allocating memory.
+
+00:00:17.219 --> 00:00:22.439
+So childEdges, this is something which is responsible for and parentEdges,
+
+00:00:22.440 --> 00:00:25.890
+this is something which is not going to be responsible for.
+
+00:00:25.890 --> 00:00:28.140
+As I see it now in the student version,
+
+00:00:28.140 --> 00:00:31.380
+the Edges are owned absolutely by chatlogic,
+
+00:00:31.379 --> 00:00:35.399
+and chatlogic is storing the Edges as well as the nodes in a vector.
+
+00:00:35.399 --> 00:00:38.390
+Later on when you have finished the final version of the project,
+
+00:00:38.390 --> 00:00:39.740
+the Edges will or some Edges,
+
+00:00:39.740 --> 00:00:41.179
+the childEdges at least,
+
+00:00:41.179 --> 00:00:43.310
+they will be owned by a graphnode.
+
+00:00:43.310 --> 00:00:47.240
+This comment already relates to this future relationship but for now,
+
+00:00:47.240 --> 00:00:49.420
+Edges are managed in chatlogic.
+
+00:00:49.420 --> 00:00:51.745
+Okay, what else? We have a handle to the chatBot.
+
+00:00:51.744 --> 00:00:53.989
+This is going to be null or null pointer if
+
+00:00:53.990 --> 00:00:56.945
+the chatBot is not currently residing within this node.
+
+00:00:56.945 --> 00:00:59.210
+As soon as it is assigned to this node,
+
+00:00:59.210 --> 00:01:01.745
+this is going to be a valid memory address and when
+
+00:01:01.744 --> 00:01:04.575
+chatBot moves away, it's invalidated again.
+
+00:01:04.575 --> 00:01:07.870
+Apart from that, we have some proprietary numbers here.
+
+00:01:07.870 --> 00:01:12.385
+We have an id which is also loaded from the answergraph.txt file,
+
+00:01:12.385 --> 00:01:15.380
+and we have a list of answers which comes from the same file.
+
+00:01:15.379 --> 00:01:17.509
+Actually, we allow for multiple answers.
+
+00:01:17.510 --> 00:01:21.440
+In the current example, we only have a single answer per node but you can easily add,
+
+00:01:21.439 --> 00:01:25.370
+let's say two or three or more answers and you could randomize what the chatBot,
+
+00:01:25.370 --> 00:01:29.090
+for example, say it says to make it not so predictable.
+
+00:01:29.090 --> 00:01:30.480
+So just for the fun of it,
+
+00:01:30.480 --> 00:01:34.285
+you could try to add a few more answers and see what happens.
+
+00:01:34.284 --> 00:01:36.289
+We have some getter and setter functions.
+
+00:01:36.290 --> 00:01:38.720
+We have, of course, constructor destructor for this class,
+
+00:01:38.719 --> 00:01:40.670
+and we have some proprietary functions here.
+
+00:01:40.670 --> 00:01:44.659
+We can add a token which has a helper function to add a new token to this element here.
+
+00:01:44.659 --> 00:01:46.504
+A token would be an answer.
+
+00:01:46.504 --> 00:01:48.589
+We can add an Edge to the parent node.
+
+00:01:48.590 --> 00:01:50.270
+We can add an Edge to the child node,
+
+00:01:50.269 --> 00:01:54.334
+and this is enclosed by a student code indicator.
+
+00:01:54.334 --> 00:01:56.269
+We can move the chatBot here.
+
+00:01:56.269 --> 00:01:59.584
+So we pass a handle to the chatBot and we move it here,
+
+00:01:59.584 --> 00:02:01.459
+and we will shortly see how this is going to
+
+00:02:01.459 --> 00:02:04.379
+work in the current student version of the code.
+

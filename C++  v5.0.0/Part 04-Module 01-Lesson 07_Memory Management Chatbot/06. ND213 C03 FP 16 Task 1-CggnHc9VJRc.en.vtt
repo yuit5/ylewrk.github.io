@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.685
+Now in this exercise, we will start with a task of
+
+00:00:02.685 --> 00:00:06.675
+replacing some of the raw pointers in the project with smart pointers.
+
+00:00:06.674 --> 00:00:09.359
+You could in theory replace all the pointers and function
+
+00:00:09.359 --> 00:00:12.839
+handles with smart pointers, especially shared pointers.
+
+00:00:12.839 --> 00:00:16.019
+This would not be very efficient though because smart pointers,
+
+00:00:16.019 --> 00:00:18.809
+they carry some overhead as you already know caused by
+
+00:00:18.809 --> 00:00:21.149
+the reference counting mechanism which makes them
+
+00:00:21.149 --> 00:00:23.849
+much less efficient than for example unique pointers.
+
+00:00:23.850 --> 00:00:27.080
+Also in cases where you only want to access the data within
+
+00:00:27.079 --> 00:00:31.864
+a smart pointer without changing the ownership of using smart point of functions,
+
+00:00:31.864 --> 00:00:34.954
+it is best to use raw pointers or references.
+
+00:00:34.954 --> 00:00:37.369
+Now the C plus plus guidelines and the best practices
+
+00:00:37.369 --> 00:00:39.689
+we looked at in the last section on smart pointers,
+
+00:00:39.689 --> 00:00:43.820
+they can help you with deciding when and where to use smart pointers.
+
+00:00:43.820 --> 00:00:46.759
+Now we will start by making chat logic in files,
+
+00:00:46.759 --> 00:00:49.849
+chat GUI and dot h and CPP and
+
+00:00:49.850 --> 00:00:51.350
+an exclusive resource to
+
+00:00:51.350 --> 00:00:55.810
+the class chat bot panel dialogue using an appropriate smart pointer.
+
+00:00:55.810 --> 00:00:59.719
+Where required, you will need to make changes to the code such that data structures
+
+00:00:59.719 --> 00:01:04.590
+and function parameters reflect the new structure. So let's go.
+

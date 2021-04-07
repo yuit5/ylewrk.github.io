@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.520
+So you made it to the end of this section and now you know
+
+00:00:02.520 --> 00:00:05.205
+some basic concepts of concurrency such as threads,
+
+00:00:05.205 --> 00:00:07.769
+multi-threading, thread management as in barriers,
+
+00:00:07.769 --> 00:00:10.289
+passing arguments as a threat at the time of the creation,
+
+00:00:10.289 --> 00:00:14.099
+and you have encountered your first and not last concurrency bug,
+
+00:00:14.099 --> 00:00:16.439
+which came from accessing a shared memory location.
+
+00:00:16.440 --> 00:00:19.935
+This is going to happen quite often in this course, accessing shared resources.
+
+00:00:19.934 --> 00:00:21.809
+But before we move on to the next lesson,
+
+00:00:21.809 --> 00:00:24.059
+I would like to introduce you to the lesson project
+
+00:00:24.059 --> 00:00:26.789
+which is going to be a concurrent traffic simulation.
+
+00:00:26.789 --> 00:00:29.969
+So please move on to the last part of this lesson to take a close look and, yes,
+
+00:00:29.969 --> 00:00:33.030
+there will also be some tasks for you to do where you can directly
+
+00:00:33.030 --> 00:00:36.630
+apply your knowledge and see if you understand threading already.
+
+00:00:36.630 --> 00:00:38.830
+So see you soon.
+

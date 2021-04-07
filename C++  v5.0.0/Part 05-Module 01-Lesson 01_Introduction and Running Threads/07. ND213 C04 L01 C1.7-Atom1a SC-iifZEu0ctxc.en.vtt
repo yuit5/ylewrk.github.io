@@ -1,0 +1,514 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.150
+Let's take a first look at our course project which is a concurrent traffic simulation.
+
+00:00:05.150 --> 00:00:09.118
+And with each new lesson you're going to add a few new features and the first lesson,
+
+00:00:09.118 --> 00:00:13.695
+it's all about giving you an overview of the entire project. Let's start.
+
+00:00:13.695 --> 00:00:17.865
+Okay. So, basically the purpose of the program is to simulate
+
+00:00:17.864 --> 00:00:22.064
+traffic in a city grid with vehicles, streets and intersections.
+
+00:00:22.065 --> 00:00:24.359
+And the default behavior is that,
+
+00:00:24.359 --> 00:00:28.410
+vehicles that drive around randomly in the street grid and they
+
+00:00:28.410 --> 00:00:32.659
+change direction every time they reach an intersection where two streets cross.
+
+00:00:32.659 --> 00:00:37.369
+And each object in the city grid will run independently in its own thread.
+
+00:00:37.369 --> 00:00:39.614
+So it's a concurrent simulation,
+
+00:00:39.615 --> 00:00:43.325
+and we have to carefully manage all those threads and
+
+00:00:43.325 --> 00:00:47.329
+carefully synchronize them in the entire project to avoid crashes,
+
+00:00:47.329 --> 00:00:51.859
+to avoid undetermined behavior and to avoid concurrency errors in general.
+
+00:00:51.859 --> 00:00:56.269
+But let's start slowly with the first few tasks which you will shortly see here.
+
+00:00:56.270 --> 00:01:01.220
+Okay, your task in this lesson here is to first understand the code-base and then
+
+00:01:01.219 --> 00:01:06.909
+complete it where needed to get the first running a version of the traffic simulation.
+
+00:01:06.909 --> 00:01:10.325
+Now before we do this, let's take a quick look at
+
+00:01:10.325 --> 00:01:13.469
+the layout of a program at its basic structure.
+
+00:01:13.469 --> 00:01:15.719
+What you can see here is an overview on
+
+00:01:15.719 --> 00:01:19.310
+the right-hand side is an overview of the different classes which we have.
+
+00:01:19.310 --> 00:01:22.100
+So, we have an intersection, we have a vehicle,
+
+00:01:22.099 --> 00:01:25.369
+and we have a street, that's the basic structure of the program,
+
+00:01:25.370 --> 00:01:30.050
+the basic objects with which we will deal and there are
+
+00:01:30.049 --> 00:01:35.340
+some default behaviors which all these these classes share.
+
+00:01:35.340 --> 00:01:36.885
+They all have a position,
+
+00:01:36.885 --> 00:01:40.310
+they all have a certain behavior when it comes to a painting them,
+
+00:01:40.310 --> 00:01:41.570
+and so on and so forth,
+
+00:01:41.569 --> 00:01:48.064
+and this is why I encapsulated all this default behavior in a base class traffic object.
+
+00:01:48.064 --> 00:01:51.649
+That's not going to be an instance of traffic object itself,
+
+00:01:51.650 --> 00:01:53.630
+that's going to be a virtual class,
+
+00:01:53.629 --> 00:01:57.019
+and every class here intersection vehicles
+
+00:01:57.019 --> 00:02:00.744
+street is going to be a child class of traffic object.
+
+00:02:00.745 --> 00:02:02.650
+On the left-hand side here,
+
+00:02:02.650 --> 00:02:06.859
+you can see all the files which belong to the project in its current state.
+
+00:02:06.859 --> 00:02:08.960
+We have intersections, we have streets,
+
+00:02:08.960 --> 00:02:13.370
+we have the traffic objects and we have traffic simulator L1 which is
+
+00:02:13.370 --> 00:02:18.425
+the main code file in which everything is started.
+
+00:02:18.425 --> 00:02:20.800
+Last but not least, we have the vehicle class.
+
+00:02:20.800 --> 00:02:24.079
+What I did not mentioned until now is the graphics class,
+
+00:02:24.079 --> 00:02:27.879
+this class here takes a vector filled with traffic objects,
+
+00:02:27.879 --> 00:02:29.769
+everything there is in the simulation,
+
+00:02:29.770 --> 00:02:34.310
+and it's going to be painted to a real city grid which is
+
+00:02:34.310 --> 00:02:38.990
+basically a screen shot from a top view perspective on some cities.
+
+00:02:38.990 --> 00:02:40.100
+We have New York City,
+
+00:02:40.099 --> 00:02:44.245
+we have Paris and that's where the vehicle simulation is going to be run.
+
+00:02:44.245 --> 00:02:49.520
+Now here, you can see the basic structure of the program absolve lesson one.
+
+00:02:49.520 --> 00:02:52.969
+This is going to be enhanced later on but for now it's basically
+
+00:02:52.969 --> 00:02:57.830
+consisting of two major flows of execution here.
+
+00:02:57.830 --> 00:02:59.030
+Now on the left-hand side,
+
+00:02:59.030 --> 00:03:01.699
+what you can see is the flow of execution in the main function,
+
+00:03:01.699 --> 00:03:05.194
+and the first thing, we're going to look at the code really shortly.
+
+00:03:05.194 --> 00:03:07.159
+The first thing which is going to happen is,
+
+00:03:07.159 --> 00:03:12.469
+we're going to create and connect to each other the intersections and the streets.
+
+00:03:12.469 --> 00:03:16.879
+We have one street between two intersections and they have to know about
+
+00:03:16.879 --> 00:03:21.484
+each other to manage the flow of vehicles through the traffic layout here.
+
+00:03:21.485 --> 00:03:23.270
+Second thing which is going to happen is,
+
+00:03:23.270 --> 00:03:27.409
+we're going to add a street and a target intersection to a vehicle,
+
+00:03:27.409 --> 00:03:30.049
+so each vehicle needs the street on which it can
+
+00:03:30.050 --> 00:03:33.290
+drive and also it needs the destination to which it can go to,
+
+00:03:33.289 --> 00:03:35.514
+and this is the target intersection.
+
+00:03:35.514 --> 00:03:39.529
+Then, we will have a simulation start of
+
+00:03:39.530 --> 00:03:43.520
+all the vehicles and the green line here indicates that for each vehicle,
+
+00:03:43.520 --> 00:03:47.210
+there will be an own proprietary thread which is started up,
+
+00:03:47.210 --> 00:03:50.150
+which basically codes the vehicle drive function,
+
+00:03:50.150 --> 00:03:51.905
+but first let's stay in the main function.
+
+00:03:51.905 --> 00:03:53.960
+So once the thread has been started up,
+
+00:03:53.960 --> 00:03:56.314
+let's say we have five vehicles or four.
+
+00:03:56.314 --> 00:04:00.469
+We will have four threads running in parallel and once they're fired up,
+
+00:04:00.469 --> 00:04:02.705
+the main function is free to execute and
+
+00:04:02.705 --> 00:04:05.420
+then we are going into the visualization part here,
+
+00:04:05.419 --> 00:04:07.009
+and it's an infinite loop here,
+
+00:04:07.009 --> 00:04:10.564
+which is indicated by this cycle here,
+
+00:04:10.564 --> 00:04:11.930
+and in this infinite loop,
+
+00:04:11.930 --> 00:04:15.230
+there is a visualization of all the traffic objects where
+
+00:04:15.229 --> 00:04:18.993
+the position is going to be updated every few milliseconds,
+
+00:04:18.994 --> 00:04:22.025
+I think it's run at 30 hertz currently in its current setting,
+
+00:04:22.024 --> 00:04:26.389
+so this function here ensures that everything apart from being simulated,
+
+00:04:26.389 --> 00:04:28.399
+is also visualized nicely.
+
+00:04:28.399 --> 00:04:31.669
+But let's now move to the vehicle of drive functioning are so similar,
+
+00:04:31.670 --> 00:04:36.295
+vehicles takes as a thread function drive,
+
+00:04:36.295 --> 00:04:40.580
+and drive is basically responsible for managing the entire traffic here.
+
+00:04:40.579 --> 00:04:44.599
+We start in drive by initializing a stopwatch,
+
+00:04:44.600 --> 00:04:46.100
+once we have done so,
+
+00:04:46.100 --> 00:04:48.230
+we are entering a loop,
+
+00:04:48.230 --> 00:04:50.270
+the loop basically can be seen here,
+
+00:04:50.269 --> 00:04:51.664
+if you follow my mouse cursor,
+
+00:04:51.665 --> 00:04:55.520
+this is the main simulation loop of the vehicle which also never finishes,
+
+00:04:55.519 --> 00:04:58.504
+it's running within an infinite loop.
+
+00:04:58.504 --> 00:05:00.725
+The first thing which happens in each cycle
+
+00:05:00.725 --> 00:05:03.140
+of the loop is we are computing the time difference to
+
+00:05:03.139 --> 00:05:05.779
+the stopwatch to see how much time has passed
+
+00:05:05.779 --> 00:05:08.964
+between now and the last call of this thread function here.
+
+00:05:08.964 --> 00:05:11.179
+Based on the time having passed,
+
+00:05:11.180 --> 00:05:13.475
+we are updating the vehicle position on the street.
+
+00:05:13.475 --> 00:05:16.850
+Behind this is a constant velocity motion model,
+
+00:05:16.850 --> 00:05:19.805
+we are going to take a look at this in the college very soon.
+
+00:05:19.805 --> 00:05:23.944
+But now we have an updated vehicle position based on its final position and
+
+00:05:23.944 --> 00:05:28.339
+the speed of the vehicle as well as its heading its destination.
+
+00:05:28.339 --> 00:05:29.810
+The next thing which happens is,
+
+00:05:29.810 --> 00:05:32.420
+we are checking if the vehicle has reached the end of
+
+00:05:32.420 --> 00:05:35.069
+the street because the default behavior we want to see is,
+
+00:05:35.069 --> 00:05:38.930
+we want the vehicle to slow down for it reaches an intersection,
+
+00:05:38.930 --> 00:05:42.754
+and then drive very carefully at reduced speed one tenth
+
+00:05:42.754 --> 00:05:46.894
+of its former speed to be honest into the intersection.
+
+00:05:46.894 --> 00:05:48.599
+So, in order to do this,
+
+00:05:48.600 --> 00:05:51.470
+to find this point in time where it has reached,
+
+00:05:51.470 --> 00:05:55.355
+I think the parameters that you 90 percent of the street lengths,
+
+00:05:55.355 --> 00:05:56.930
+and once it has reached this point,
+
+00:05:56.930 --> 00:06:00.530
+it's going to slow down and drive carefully into the intersection and then
+
+00:06:00.529 --> 00:06:04.984
+it changes direction into a new target destination on a new street,
+
+00:06:04.985 --> 00:06:07.069
+and this is meant by this last block here.
+
+00:06:07.069 --> 00:06:11.149
+A vehicle picks a new destination once it's within the intersection and then
+
+00:06:11.149 --> 00:06:15.424
+crosses intersection to drive along towards it's new intersection.
+
+00:06:15.425 --> 00:06:19.069
+Afterwards, we reset the stopwatch and enter the cycle again.
+
+00:06:19.069 --> 00:06:20.764
+Before we take a look at the code,
+
+00:06:20.764 --> 00:06:24.964
+let's see how the simulation looks in the final result.
+
+00:06:24.964 --> 00:06:32.069
+This is what's going to be the workflow at the end of lesson one, right now,
+
+00:06:32.069 --> 00:06:35.134
+in the student version of the code will not perform like this,
+
+00:06:35.134 --> 00:06:36.904
+there will be nothing moving,
+
+00:06:36.904 --> 00:06:40.609
+and it's your job to fulfill a few tasks and
+
+00:06:40.610 --> 00:06:45.830
+the output once you have finished your tasks is supposed to look exactly like this.
+
+00:06:45.829 --> 00:06:47.224
+So let's take a look here.
+
+00:06:47.225 --> 00:06:50.050
+So, the green dots are the intersections,
+
+00:06:50.050 --> 00:06:52.470
+in-between two green dots, there's a street.
+
+00:06:52.470 --> 00:06:56.420
+The street is currently not visualize because it's positioned in a way that
+
+00:06:56.420 --> 00:07:00.970
+it corresponds to a street in the photograph, in the background,
+
+00:07:00.970 --> 00:07:03.405
+and the large circles,
+
+00:07:03.404 --> 00:07:04.709
+these are the vehicles,
+
+00:07:04.709 --> 00:07:07.049
+and as you can see, a vehicle approaches and intersection,
+
+00:07:07.050 --> 00:07:08.610
+slows down a little bit,
+
+00:07:08.610 --> 00:07:11.430
+then once it's in the intersection,
+
+00:07:11.430 --> 00:07:14.990
+it accelerates towards a new destination and so on and so forth.
+
+00:07:14.990 --> 00:07:20.030
+Also, you can see that the vehicles are at some points in time,
+
+00:07:20.029 --> 00:07:23.584
+there are two vehicles in an intersection and one of the next lessons,
+
+00:07:23.584 --> 00:07:25.039
+we will try to avoid this,
+
+00:07:25.040 --> 00:07:27.455
+for example here, two vehicles in the intersection,
+
+00:07:27.454 --> 00:07:30.620
+and the job in the next lesson will be to make sure that
+
+00:07:30.620 --> 00:07:33.800
+only a single vehicle can enter intersection at the same time.
+
+00:07:33.800 --> 00:07:35.240
+But right now, in lesson one,
+
+00:07:35.240 --> 00:07:36.710
+it's about understanding code-base,
+
+00:07:36.709 --> 00:07:44.399
+and also managing this basic flow vehicles through the city grid.
+
+00:07:44.399 --> 00:07:49.250
+Now task L1.1, is going to be the following in the base class traffic object,
+
+00:07:49.250 --> 00:07:51.620
+set up a thread barrier in its destructor that
+
+00:07:51.620 --> 00:07:54.170
+ensures that all thread objects at the point
+
+00:07:54.170 --> 00:07:59.120
+of destruction of the traffic object will be joined by all the threads.
+
+00:07:59.120 --> 00:08:00.860
+I mean all the threads which have been
+
+00:08:00.860 --> 00:08:04.360
+stored in the private member on these code threads.
+
+00:08:04.360 --> 00:08:07.855
+Task L1.2, we are going to fill this vector,
+
+00:08:07.855 --> 00:08:12.949
+because the job will be in the vehicle class which is a child class of traffic object,
+
+00:08:12.949 --> 00:08:16.444
+to start a thread with a member function drive and the object,
+
+00:08:16.444 --> 00:08:21.014
+this has the launch parameters at the appropriate position in the code.
+
+00:08:21.014 --> 00:08:25.969
+Also, add the created thread into the underscore thread vector of the parent class.
+
+00:08:25.970 --> 00:08:30.305
+So, basically after adding the vectors in task L1.2,
+
+00:08:30.305 --> 00:08:34.700
+the completion of tasks L1.1 ensures that every thread which has been
+
+00:08:34.700 --> 00:08:39.320
+started will also be joined again before everything is quit.
+
+00:08:39.320 --> 00:08:41.555
+Okay, the last task L1.3,
+
+00:08:41.554 --> 00:08:44.779
+please vary the number of similar vehicles and use
+
+00:08:44.779 --> 00:08:49.414
+the top function on the terminal as we have seen in the first section of this lesson.
+
+00:08:49.414 --> 00:08:51.829
+On the terminal or the task manager,
+
+00:08:51.830 --> 00:08:53.615
+if you're using Windows of your system,
+
+00:08:53.615 --> 00:08:56.360
+to observe the number of threads used by the simulation.
+
+00:08:56.360 --> 00:08:57.769
+So your job is to find out
+
+00:08:57.769 --> 00:09:02.759
+how many threads are run by the current version of the simulation.
+
+00:09:02.759 --> 00:09:03.960
+Also, I don't know,
+
+00:09:03.960 --> 00:09:06.075
+take two vehicles, take 20 vehicles,
+
+00:09:06.075 --> 00:09:10.090
+take five vehicles, see how the function profile performs,
+
+00:09:10.090 --> 00:09:14.180
+and also look at the CPU load which it takes to
+
+00:09:14.179 --> 00:09:19.264
+simulate this number of vehicles and see how the number of threat difference.
+
+00:09:19.264 --> 00:09:22.330
+That's the last task L1.3, and now,
+
+00:09:22.330 --> 00:09:27.300
+let's take a look at the code to see where those changes have to be performed.
+
