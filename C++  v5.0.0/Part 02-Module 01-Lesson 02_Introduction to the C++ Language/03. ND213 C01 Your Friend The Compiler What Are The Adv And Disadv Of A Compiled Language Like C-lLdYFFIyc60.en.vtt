@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.150 --> 00:00:10.080
+If you want to build software
+
+00:00:10.080 --> 00:00:16.500
+that is stable and as close to error-free as you can get it,
+
+00:00:16.500 --> 00:00:19.004
+the compiler is your best friend,
+
+00:00:19.004 --> 00:00:25.799
+because the compiler is a program that checks that you have followed
+
+00:00:25.800 --> 00:00:32.609
+your own rules and the languages rule even one that's very tedious and difficult.
+
+00:00:32.609 --> 00:00:38.033
+With a dynamically checked language,
+
+00:00:38.033 --> 00:00:43.729
+you have to rely on having completely tested your program and that never happens.
+
+00:00:43.729 --> 00:00:45.829
+So last bulk is an old joke.
+
+00:00:45.829 --> 00:00:48.409
+I mean you never get it but if you have
+
+00:00:48.409 --> 00:00:51.829
+a systematic set of rules which is what a language is,
+
+00:00:51.829 --> 00:00:54.019
+then you're going to have a machine shake it for you.
+
+00:00:54.020 --> 00:00:56.700
+It doesn't ball and it's much faster.
+
+00:00:56.700 --> 00:01:02.510
+That comes together with the idea of the abstraction mechanisms in C++.
+
+00:01:02.509 --> 00:01:08.015
+If everything you do is sort of hardware level, pointers, arrays,
+
+00:01:08.015 --> 00:01:11.510
+built-in types like integers and floating point,
+
+00:01:11.510 --> 00:01:16.109
+it limits what a compiler can do for you except for generating code.
+
+00:01:16.109 --> 00:01:19.549
+If you abstract so that you have
+
+00:01:19.549 --> 00:01:27.314
+hash tables and complex numbers in dimensional matrices or whatever,
+
+00:01:27.314 --> 00:01:33.359
+graphical shapes with manipulation of the graphics and things like that,
+
+00:01:33.359 --> 00:01:40.530
+then the compiler can start helping you to avoid stupid things.
+
+00:01:40.849 --> 00:01:46.094
+In a runtime, check language at an empty check language.
+
+00:01:46.094 --> 00:01:48.694
+You have an IO stream,
+
+00:01:48.694 --> 00:01:53.119
+a stream that goes out and imagery and you try to
+
+00:01:53.120 --> 00:01:59.550
+rotate it with an operation that is meant to rotate the shapes on your screen.
+
+00:01:59.920 --> 00:02:03.454
+In a dynamically type language,
+
+00:02:03.454 --> 00:02:08.800
+it will find the problem and gives you an error and since you are into the debug.
+
+00:02:08.800 --> 00:02:14.460
+In a compiled language it will say this program will never run, you have an error.
+
+00:02:14.460 --> 00:02:19.189
+This is important because a lot of the application I'm thinking a lot about
+
+00:02:19.189 --> 00:02:24.125
+is going to run places where there won't be a programmer.
+
+00:02:24.125 --> 00:02:27.590
+So sending something into an error,
+
+00:02:27.590 --> 00:02:30.969
+hand low or debug it's not going to help at all.
+
+00:02:30.969 --> 00:02:33.389
+There won't be a programmer in the house.
+
+00:02:33.389 --> 00:02:42.274
+I mean if that camera decided that the program was wrong and it's done something bad,
+
+00:02:42.275 --> 00:02:44.750
+the only thing you could do was to stop.
+
+00:02:44.750 --> 00:02:48.949
+You don't want to telephone switch to stop just because there's not a programmer
+
+00:02:48.949 --> 00:02:53.014
+in the house or the engine of your plane or something like that.
+
+00:02:53.014 --> 00:02:56.599
+So the first reason the compiler is
+
+00:02:56.599 --> 00:03:00.574
+your best friend is that it catches errors systematically and early.
+
+00:03:00.574 --> 00:03:04.984
+This by the way means that you have to think a little bit harder when you write the code.
+
+00:03:04.985 --> 00:03:08.405
+Because you really have to get it correct.
+
+00:03:08.405 --> 00:03:11.780
+You can't just be sloppy and it works most of the time,
+
+00:03:11.780 --> 00:03:14.870
+that's not what a compiled language does.
+
+00:03:14.870 --> 00:03:18.039
+The second thing is it generates much better code.
+
+00:03:18.039 --> 00:03:22.159
+So something like C++ it's not uncommon
+
+00:03:22.159 --> 00:03:26.555
+to find it runs 10 or 50 times faster than alternatives.
+
+00:03:26.555 --> 00:03:34.439
+To put the first level of defense in the compiler is simply to get the code correct.
+

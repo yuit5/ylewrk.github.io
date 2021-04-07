@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.950 --> 00:00:08.265
+You saw that a language is strongly typed
+
+00:00:08.265 --> 00:00:13.900
+if an object can only be used according to its definition.
+
+00:00:15.560 --> 00:00:23.609
+By that definition, C++ is mostly strongly statically typed.
+
+00:00:23.609 --> 00:00:26.100
+However, to deal with hardware,
+
+00:00:26.100 --> 00:00:28.965
+sometimes you have to weaken
+
+00:00:28.964 --> 00:00:33.200
+the type checking because a lot of hardware is just a bag of bits.
+
+00:00:33.200 --> 00:00:35.500
+You want to allocate memory,
+
+00:00:35.500 --> 00:00:38.765
+it's just memory till you save what type it is.
+
+00:00:38.765 --> 00:00:43.460
+In this in-between time where you grab some memory say from
+
+00:00:43.460 --> 00:00:48.844
+the operating system or straight from the hardware until you make it of a given type.
+
+00:00:48.844 --> 00:00:53.344
+Well, it's a bag of bits and we wouldn't call that strongly typed.
+
+00:00:53.344 --> 00:00:59.914
+Similarly, there are ways of suppressing the type checking in C++.
+
+00:00:59.914 --> 00:01:03.769
+For instance, you have an integer and you want to make
+
+00:01:03.770 --> 00:01:08.070
+it into a pointer to a device register.
+

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.139 --> 00:00:12.884
+Comments should be used to say things that you cannot do well in code.
+
+00:00:12.884 --> 00:00:16.995
+Obviously, the code tells you how something is done.
+
+00:00:16.995 --> 00:00:21.990
+It doesn't tell you what at a high level it's been done,
+
+00:00:21.989 --> 00:00:24.089
+or why it's being done.
+
+00:00:24.089 --> 00:00:28.109
+So you have some code and it does a sort,
+
+00:00:28.109 --> 00:00:32.519
+you'd like a comment that says,
+
+00:00:32.520 --> 00:00:35.670
+"This is supposed to be a Shellsort."
+
+00:00:35.670 --> 00:00:39.539
+Now, you can look it up in the book and see,
+
+00:00:39.539 --> 00:00:42.129
+and check the code to see if it really does a Shellsort.
+
+00:00:42.130 --> 00:00:44.260
+But without that comment,
+
+00:00:44.259 --> 00:00:48.089
+you don't really know what the code is supposed to do.
+
+00:00:48.189 --> 00:00:53.390
+So for things that you can't say well in code,
+
+00:00:53.390 --> 00:00:55.890
+if there's a complicated piece of code,
+
+00:00:55.890 --> 00:00:58.689
+explain what it's supposed to do.
+

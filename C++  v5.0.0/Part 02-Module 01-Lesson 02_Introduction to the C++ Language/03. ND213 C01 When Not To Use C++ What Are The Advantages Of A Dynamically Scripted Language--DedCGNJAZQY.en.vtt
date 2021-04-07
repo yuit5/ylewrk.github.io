@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.439 --> 00:00:08.189
+Well, the advanced future of dynamic language is
+
+00:00:08.189 --> 00:00:13.064
+exactly the mirror image of the advantage of a compiled language.
+
+00:00:13.064 --> 00:00:15.059
+You can get to run quickly,
+
+00:00:15.060 --> 00:00:21.585
+and you can run all kinds of things even if they're not completely correct.
+
+00:00:21.585 --> 00:00:25.605
+So say, if you're doing a series of experiments with some data,
+
+00:00:25.605 --> 00:00:28.964
+generate some data, display it, generate data,
+
+00:00:28.964 --> 00:00:32.835
+change the algorithm, run it with a smaller dataset;
+
+00:00:32.835 --> 00:00:37.109
+it doesn't matter if it's 10 times or 50 times slower.
+
+00:00:37.109 --> 00:00:41.479
+But it is really nice that you don't have to go through the compiler step and
+
+00:00:41.479 --> 00:00:49.564
+wait 30 seconds or half an hour to get the optimal code completely checked.
+
+00:00:49.564 --> 00:00:54.594
+So if you're doing sort of interactive experimental stuff;
+
+00:00:54.594 --> 00:00:58.359
+a dynamically checked language,
+
+00:00:58.359 --> 00:01:01.429
+JavaScript or Python or something like that,
+
+00:01:01.429 --> 00:01:05.135
+has an obvious and simple advantage.
+
+00:01:05.135 --> 00:01:08.340
+On the other hand, implement something like JavaScript.
+
+00:01:08.340 --> 00:01:10.335
+You want to write a JavaScript engine,
+
+00:01:10.334 --> 00:01:13.134
+where do you write it in? C++ of course.
+
+00:01:13.135 --> 00:01:19.330
+So you don't actually ever use a system that only uses one language.
+
+00:01:19.329 --> 00:01:25.084
+For big systems, that time went 30 or 40 years ago.
+
+00:01:25.084 --> 00:01:28.009
+You use combinations of languages,
+
+00:01:28.010 --> 00:01:30.980
+and professionals know more than one language
+
+00:01:30.980 --> 00:01:33.125
+so they can pick the right one for the task.
+
+00:01:33.125 --> 00:01:34.415
+Trend is getting hard,
+
+00:01:34.415 --> 00:01:35.960
+but as you get older,
+
+00:01:35.959 --> 00:01:37.609
+you pick them up anyway.
+
+00:01:37.609 --> 00:01:45.180
+But let's start out with 3-5 and then you may feel that you can do something.
+

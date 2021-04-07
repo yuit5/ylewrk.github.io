@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.429 --> 00:00:09.989
+The core of most applications are some datatypes,
+
+00:00:09.990 --> 00:00:12.570
+and you start with a really simple one.
+
+00:00:12.570 --> 00:00:15.300
+The default one C++ is the vector.
+
+00:00:15.300 --> 00:00:21.554
+It's simply a linear sequence of contiguously allocated memory.
+
+00:00:21.554 --> 00:00:25.079
+That's most useful data structure there is.
+
+00:00:25.079 --> 00:00:28.574
+They are linked lists which people overuse.
+
+00:00:28.574 --> 00:00:32.265
+Sometimes they are necessary.
+
+00:00:32.265 --> 00:00:40.649
+Then, you have the hash tables and the maps for collections of data that's kept sorted,
+
+00:00:40.649 --> 00:00:46.719
+so that lookup is much faster than lookup in other data structures.
+

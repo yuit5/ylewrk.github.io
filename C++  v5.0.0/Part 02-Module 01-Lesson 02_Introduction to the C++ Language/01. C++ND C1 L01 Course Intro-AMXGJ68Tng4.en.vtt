@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.250
+Welcome to the first coding lesson,
+
+00:00:02.250 --> 00:00:04.500
+an introduction to the C++ language.
+
+00:00:04.500 --> 00:00:07.290
+The goal of this lesson is to get you up and running with
+
+00:00:07.290 --> 00:00:10.080
+the basics of C++ including how to compile and
+
+00:00:10.080 --> 00:00:15.629
+run a simple C++ program and how to write code with correct C++ language syntax.
+
+00:00:15.630 --> 00:00:18.600
+In this lesson, you'll see the following concepts.
+
+00:00:18.600 --> 00:00:21.330
+To get started, you will write and run
+
+00:00:21.329 --> 00:00:26.909
+your first C++ program and you'll also learn how to send output to the console.
+
+00:00:26.910 --> 00:00:33.119
+Then you'll learn about variables and containers including different variable types,
+
+00:00:33.119 --> 00:00:37.019
+vectors, using the auto keyword,
+
+00:00:37.020 --> 00:00:40.055
+and then we'll move to functions and control structures.
+
+00:00:40.054 --> 00:00:41.839
+So you'll learn about for loops,
+
+00:00:41.840 --> 00:00:44.630
+how to write your own C++ functions,
+
+00:00:44.630 --> 00:00:47.390
+you'll learn about if statements and while loops,
+
+00:00:47.390 --> 00:00:50.454
+and then last we'll learn about data input,
+
+00:00:50.454 --> 00:00:55.099
+where you will read data from a file and parse data and process strings.
+
+00:00:55.100 --> 00:00:59.550
+There's one more thing, which is to define your own types with enums.
+
+00:00:59.689 --> 00:01:01.729
+By the end of this lesson,
+
+00:01:01.729 --> 00:01:04.295
+you'll be able to read a text file representing a maze
+
+00:01:04.295 --> 00:01:07.189
+into your program and you'll be able to store the maze data.
+
+00:01:07.189 --> 00:01:10.129
+You'll also be able to output a basic map of the maze with
+
+00:01:10.129 --> 00:01:13.979
+nice formatting and ASCII characters to represent obstacles.
+
