@@ -1,0 +1,313 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snake Game Code Walkthrough</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Capstone</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Capstone Intro.html">01. Capstone Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Steps to Complete the Capstone.html">02. Steps to Complete the Capstone</a>
+    </li>
+    <li class="">
+      <a href="03. Game Programming.html">03. Game Programming</a>
+    </li>
+    <li class="">
+      <a href="04. The SDL Library.html">04. The SDL Library</a>
+    </li>
+    <li class="">
+      <a href="05. Snake Game Code Walkthrough.html">05. Snake Game Code Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Capstone Workspace.html">06. Capstone Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - C++ Capstone Project.html">Project Description - C++ Capstone Project</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - C++ Capstone Project.html">Project Rubric - C++ Capstone Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Snake Game Code Walkthrough</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="snake-game-code-walkthrough">Snake Game Code Walkthrough</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/images.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The Snake game code consists of four main classes: <code>Game</code>, <code>Snake</code>, <code>Controller</code>, and <code>Renderer</code>. The image above shows how the code functions:</p>
+<ol>
+<li>To begin, <code>main</code> creates a <code>Controller</code>, a <code>Game</code>, and a <code>Renderer</code> object. <code>Game</code> stores a <code>Snake</code> object as part of the state.</li>
+<li><code>main</code> calls <code>Game::Run</code> to start the game loop.</li>
+</ol>
+<p>The next videos walk through each of the files in the Snake game repository in more detail.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="maincpp"><code>main.cpp</code></h2>
+<p>This is the entrypoint for the program. The <code>main</code> function in this file sets variables such as the window height and width and the number of frames per second at which the game will be played. The <code>main</code> also creates <code>Renderer</code>, <code>Controller</code>, and <code>Game</code> objects, and calls the <code>Game::Run</code> method to start the game loop.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Main</p></h3>
+  <video controls>
+  <source src="05. Main-8BkjScSOJR8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. Main-8BkjScSOJR8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="snakeh-and-snakecpp"><code>snake.h</code> and <code>snake.cpp</code></h2>
+<p>These files define the <code>Snake</code> class which contains attributes to keep track of the <code>Snake</code> speed, size, and location. Additionally, there are methods to update the snake state, which are called from the <code>Game::Update</code> method. The <code>Snake</code> head and body are treated separately; the head is stored using float coordinates, and the body is stored using a vector of int cell coordinates. The <code>Snake::UpdateHead</code> method updates the head location using the snake's speed. If the head has passed into a new cell, then the body is updated with the <code>Snake::UpdateBody</code>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Snake H And Cpp</p></h3>
+  <video controls>
+  <source src="05. Snake H And Cpp-21kpACl2F_M.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. Snake H And Cpp-21kpACl2F_M.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="gameh-and-gamecpp"><code>game.h</code> and <code>game.cpp</code></h2>
+<p>These files define the <code>Game</code> class and the game loop: <code>Game::Run</code>. The <code>Game</code> class stores the state of the game, including an instance of a <code>Snake</code> object, the game score, and the location of "food" in the game. Aside from the game loop, the <code>Game</code> class also contains methods to update the state of the game (Game::Update), get the size of the snake, get the total score in the game, and place new food in the game if the food has been eaten by the snake. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Game H And Game Cpp</p></h3>
+  <video controls>
+  <source src="05. Game H And Game Cpp-ixgsdCjcqn8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. Game H And Game Cpp-ixgsdCjcqn8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="renderh-and-rendercpp"><code>render.h</code> and <code>render.cpp</code></h2>
+<p>These files define the <code>Renderer</code> class which uses the SDL library to render the game to the screen. The <code>Renderer</code> class constructor creates the SDL window and an SDL renderer object that can draw in the window. The <code>Renderer::Render</code> method draws the food and the snake in the window using the SDL renderer.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Render H And Cpp</p></h3>
+  <video controls>
+  <source src="05. Render H And Cpp-27N1MkVCwXw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. Render H And Cpp-27N1MkVCwXw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li>### <code>controller.h</code> and <code>controller.cpp</code><br />
+These files define the <code>Controller</code> class. This class handles keyboard input using the SDL libary, and it sets the snake's direction based on the input.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Controller H And Cpp Take 2</p></h3>
+  <video controls>
+  <source src="05. Controller H And Cpp Take 2-LtTAwBU654Q.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. Controller H And Cpp Take 2-LtTAwBU654Q.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://wiki.libsdl.org/APIByCategory" rel="noopener noreferrer" target="_blank">The SDL API</a>, organized by category.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Capstone Workspace.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Snake Game Code Walkthrough')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

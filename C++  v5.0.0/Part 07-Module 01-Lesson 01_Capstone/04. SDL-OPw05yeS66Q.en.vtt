@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.879
+In the project repo code that we provide,
+
+00:00:02.879 --> 00:00:08.355
+we will be using the SDL or Simple DirectMedia Layer game development library.
+
+00:00:08.355 --> 00:00:11.775
+The SDL library is used to abstract the hardware
+
+00:00:11.775 --> 00:00:14.699
+so that you don't need to worry about interacting directly with the hardware,
+
+00:00:14.699 --> 00:00:16.454
+as you're writing your code.
+
+00:00:16.454 --> 00:00:20.429
+SDL manages video, audio,
+
+00:00:20.429 --> 00:00:22.980
+input devices, and other components.
+
+00:00:22.980 --> 00:00:27.940
+It provides you with a simple library interface to interact with these components.
+
+00:00:29.269 --> 00:00:35.070
+SDL is widely used for game development and it can be used to develop games for Android,
+
+00:00:35.070 --> 00:00:38.429
+iOS, Windows, OSX, Linux,
+
+00:00:38.429 --> 00:00:40.234
+and various other devices.
+
+00:00:40.234 --> 00:00:42.825
+Note that SDL is not a game engine,
+
+00:00:42.825 --> 00:00:44.810
+so it doesn't have the full development environment
+
+00:00:44.810 --> 00:00:47.060
+that you might find with Unity or Unreal.
+
+00:00:47.060 --> 00:00:49.550
+However, building games for the library first will
+
+00:00:49.549 --> 00:00:51.979
+give you a better understanding of how games work,
+
+00:00:51.979 --> 00:00:56.509
+and provide you with a fine-grained control of the language and game features.
+
+00:00:56.509 --> 00:01:01.009
+Additionally, the SDL library has been used to build thousands of games,
+
+00:01:01.009 --> 00:01:05.230
+including the popular Angry Birds and many games from Valve and Humble Bundle.
+
+00:01:05.230 --> 00:01:07.460
+So let's get in started with installing SDL,
+
+00:01:07.459 --> 00:01:10.349
+so that you'll be able to build the project code.
+

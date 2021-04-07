@@ -1,0 +1,525 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>C++ Capstone Project</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Capstone</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Capstone Intro.html">01. Capstone Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Steps to Complete the Capstone.html">02. Steps to Complete the Capstone</a>
+    </li>
+    <li class="">
+      <a href="03. Game Programming.html">03. Game Programming</a>
+    </li>
+    <li class="">
+      <a href="04. The SDL Library.html">04. The SDL Library</a>
+    </li>
+    <li class="">
+      <a href="05. Snake Game Code Walkthrough.html">05. Snake Game Code Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Capstone Workspace.html">06. Capstone Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - C++ Capstone Project.html">Project Description - C++ Capstone Project</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - C++ Capstone Project.html">Project Rubric - C++ Capstone Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">C++ Capstone Project</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>README (All Rubric Points REQUIRED)</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>A README with instructions is included with the project</p>
+        </td>
+        <td>
+          <p>The README is included with the project and has instructions for building/running the project.</p>
+<p>If any additional libraries are needed to run the project, these are indicated with cross-platform installation instructions.</p>
+<p>You can submit your writeup as markdown or pdf.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The README indicates which project is chosen.</p>
+        </td>
+        <td>
+          <p>The README describes the project you have built. </p>
+<p>The README also indicates the file and class structure, along with the expected behavior or output of the program.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The README includes information about each rubric point addressed.</p>
+        </td>
+        <td>
+          <p>The README indicates which rubric points are addressed. The README also indicates where in the code (i.e. files and line numbers) that the rubric points are addressed.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Compiling and Testing (All Rubric Points REQUIRED)</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The submission must compile and run.</p>
+        </td>
+        <td>
+          <p>The project code must compile  and run without errors. </p>
+<p>We strongly recommend using <code>cmake</code> and <code>make</code>, as provided in the starter repos. If you choose another build system, the code must compile on any reviewer platform.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Loops, Functions, I/O</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project demonstrates an understanding of C++ functions and control structures.</p>
+        </td>
+        <td>
+          <p>A variety of control structures are used in the project.</p>
+<p>The project code is clearly organized into functions.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project reads data from a file and process the data, or the program writes data to a file.</p>
+        </td>
+        <td>
+          <p>The project reads data from an external file or writes data to a file as part of the necessary operation of the program.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project accepts user input and processes the input.</p>
+        </td>
+        <td>
+          <p>The project accepts input from a user as part of the necessary operation of the program.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Object Oriented Programming</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project uses Object Oriented Programming techniques.</p>
+        </td>
+        <td>
+          <p>The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Classes use appropriate access specifiers for class members.</p>
+        </td>
+        <td>
+          <p>All class data members are explicitly specified as public, protected, or private.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Class constructors utilize member initialization lists.</p>
+        </td>
+        <td>
+          <p>All class members that are set to argument values are initialized through member initialization lists.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Classes abstract implementation details from their interfaces.</p>
+        </td>
+        <td>
+          <p>All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Classes encapsulate behavior.</p>
+        </td>
+        <td>
+          <p>Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user. State is accessed via member functions.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Classes follow an appropriate inheritance hierarchy.</p>
+        </td>
+        <td>
+          <p>Inheritance hierarchies are logical. Composition is used instead of inheritance when appropriate. Abstract classes are composed of pure virtual functions. Override functions are specified.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Overloaded functions allow the same function to operate on different parameters.</p>
+        </td>
+        <td>
+          <p>One function is overloaded with different signatures for the same function name.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Derived class functions override virtual base class functions.</p>
+        </td>
+        <td>
+          <p>One member function in an inherited class overrides a virtual base class member function.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Templates generalize functions in the project.</p>
+        </td>
+        <td>
+          <p>One function is declared with a template that allows it to accept a generic parameter.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Memory Management</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project makes use of references in function declarations.</p>
+        </td>
+        <td>
+          <p>At least two variables are defined as references, or two functions use pass-by-reference in the project code.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project uses destructors appropriately.</p>
+        </td>
+        <td>
+          <p>At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate.</p>
+        </td>
+        <td>
+          <p>The project follows the Resource Acquisition Is Initialization pattern where appropriate, by allocating objects at compile-time, initializing objects when they are declared, and utilizing scope to ensure their automatic destruction.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project follows the Rule of 5.</p>
+        </td>
+        <td>
+          <p>For all classes, if any one of the copy constructor, copy assignment operator, move constructor, move assignment operator, and destructor are defined, then all of these functions are defined.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project uses move semantics to move data, instead of copying it, where possible.</p>
+        </td>
+        <td>
+          <p>For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object. </p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>The project uses smart pointers instead of raw pointers.</p>
+        </td>
+        <td>
+          <p>The project uses at least one smart pointer: <code>unique_ptr</code>, <code>shared_ptr</code>, or <code>weak_ptr</code>. The project does not use raw pointers.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Concurrency</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The project uses multithreading.</p>
+        </td>
+        <td>
+          <p>The project uses multiple threads in the execution.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>A promise and future is used in the project.</p>
+        </td>
+        <td>
+          <p>A promise and future is used to pass data from a worker thread to a parent thread in the project code.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>A mutex or lock is used in the project.</p>
+        </td>
+        <td>
+          <p>A mutex or lock (e.g. <code>std::lock_guard</code> or `std::unique_lock)  is used to protect data that is shared across multiple threads in the project code.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>A condition variable is used in the project.</p>
+        </td>
+        <td>
+          <p>A <code>std::condition_variable</code> is used in the project code to synchronize thread execution.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('C++ Capstone Project')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

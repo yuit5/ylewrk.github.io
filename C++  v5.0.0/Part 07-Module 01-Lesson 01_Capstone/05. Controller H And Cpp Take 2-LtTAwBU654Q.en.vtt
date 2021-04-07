@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.754
+Now let's have a look at controller.h and controller.cpp.
+
+00:00:04.754 --> 00:00:07.679
+In controller.h, we include the snake header,
+
+00:00:07.679 --> 00:00:11.044
+since we'll be modifying a snake object in this class,
+
+00:00:11.044 --> 00:00:13.544
+and we have methods for handling input
+
+00:00:13.544 --> 00:00:16.949
+and changing the direction of the snake depending on that input.
+
+00:00:16.949 --> 00:00:21.074
+We'll look at how these methods are defined over in controller.cpp.
+
+00:00:21.074 --> 00:00:24.044
+Let's have a look at handleinput first.
+
+00:00:24.045 --> 00:00:27.600
+To start handleinput, we declare an SDL_ Event
+
+00:00:27.600 --> 00:00:32.370
+e. If we go look at the documentation for SDL_Event it says,
+
+00:00:32.369 --> 00:00:37.229
+the SDL_Event is union that contains structures for the different event types.
+
+00:00:37.229 --> 00:00:41.765
+We can see that different event types include Window Events,
+
+00:00:41.765 --> 00:00:44.450
+Keyboard Events, Mouse Motion Events.
+
+00:00:44.450 --> 00:00:48.969
+So these are all different kinds of events that you might want to process in your game.
+
+00:00:48.969 --> 00:00:51.445
+Once we've declared that event e,
+
+00:00:51.445 --> 00:00:56.600
+we pass the event as a reference into the function SDL_PollEvent.
+
+00:00:56.600 --> 00:01:00.350
+We can look at what SDL_PollEvent does and it says in
+
+00:01:00.350 --> 00:01:05.835
+the documentation that SDL_PollEvent is used to poll currently pending events.
+
+00:01:05.834 --> 00:01:09.140
+So basically, when a user has any sort
+
+00:01:09.140 --> 00:01:12.484
+of input into the game like a keypress or a Mouse Event,
+
+00:01:12.484 --> 00:01:18.420
+SDL_PollEvent is called and that event is assigned to
+
+00:01:18.420 --> 00:01:25.844
+the SDL_Event e. So in this while loop we check if the event type is an SDL_Quit,
+
+00:01:25.844 --> 00:01:28.215
+in which case we declare running,
+
+00:01:28.215 --> 00:01:30.420
+we set running equal to false.
+
+00:01:30.420 --> 00:01:35.195
+We also check if the event type is a keypress or SDL_KeyDown.
+
+00:01:35.194 --> 00:01:37.114
+If it is an SDL_ KeyDown,
+
+00:01:37.114 --> 00:01:40.379
+we determine which key is pressed using a switch,
+
+00:01:40.379 --> 00:01:43.284
+so we call e.key.keysym.sym
+
+00:01:43.284 --> 00:01:46.744
+and you can look at the documentation to see exactly what's going on here.
+
+00:01:46.745 --> 00:01:51.475
+But in the case that the keypress was an SDLK _UP,
+
+00:01:51.474 --> 00:01:54.559
+we want to change the direction of the snake to go up.
+
+00:01:54.560 --> 00:01:57.769
+If the case was SDLK_ DOWN,
+
+00:01:57.769 --> 00:02:00.399
+similarly we want to change the direction to go down
+
+00:02:00.400 --> 00:02:04.510
+and the same holds for left and right.
+
+00:02:04.510 --> 00:02:06.875
+So in the change direction function,
+
+00:02:06.875 --> 00:02:12.069
+we pass in a reference to the snake and we also pass in the case
+
+00:02:12.069 --> 00:02:17.275
+SDLK_UP the direction of keypress and the opposite direction.
+
+00:02:17.275 --> 00:02:22.939
+Similarly, in SDLK_ LEFT we pass in the keypress direction which is
+
+00:02:22.939 --> 00:02:26.650
+kLeft and we also pass in the opposite direction
+
+00:02:26.650 --> 00:02:31.675
+kRright and we'll go look at the definition of change directions to see why that is.
+
+00:02:31.675 --> 00:02:35.500
+So here we have the direction which is
+
+00:02:35.500 --> 00:02:39.784
+the key direction input and the opposite direction.
+
+00:02:39.784 --> 00:02:43.060
+We'll look at the if statement here,
+
+00:02:43.060 --> 00:02:47.064
+so if the snake size is equal to one,
+
+00:02:47.064 --> 00:02:50.780
+so if the snake has no body basically,
+
+00:02:50.780 --> 00:02:56.390
+then we can change the direction to be the input direction without any further concern.
+
+00:02:56.389 --> 00:02:58.399
+If the snake has a body,
+
+00:02:58.400 --> 00:03:00.560
+in other words if the snake size is bigger than one,
+
+00:03:00.560 --> 00:03:03.784
+we cannot turn around and go at exactly in the opposite direction,
+
+00:03:03.784 --> 00:03:06.469
+otherwise we run into the snake's body,
+
+00:03:06.469 --> 00:03:09.469
+the snake will run into its own body and the game will be over.
+
+00:03:09.469 --> 00:03:12.590
+So we basically want to check the current direction of
+
+00:03:12.590 --> 00:03:19.830
+the snake direction and make sure that it's not equal to the opposite direction.
+
+00:03:20.229 --> 00:03:23.449
+If the current direction of
+
+00:03:23.449 --> 00:03:26.619
+the snake is not equal to the opposite direction of the input,
+
+00:03:26.620 --> 00:03:31.230
+then we can set the snake direction equal to the input and we're done.
+

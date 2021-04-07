@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.560
+Welcome to the Capstone project of the C++ Nanodegree Program.
+
+00:00:04.560 --> 00:00:10.740
+By now, you're able to write C++ code using solid object-oriented structure,
+
+00:00:10.740 --> 00:00:14.505
+efficient memory management, and concurrent techniques.
+
+00:00:14.505 --> 00:00:18.675
+This Capstone project will demonstrate your ability to
+
+00:00:18.675 --> 00:00:23.220
+independently create applications using a wide range of C++ features,
+
+00:00:23.220 --> 00:00:26.730
+and the project you create will become an important part of
+
+00:00:26.730 --> 00:00:31.785
+your portfolio to share with current and future colleagues and employers.
+
+00:00:31.785 --> 00:00:36.020
+You can choose from two options to create the Capstone project.
+
+00:00:36.020 --> 00:00:40.130
+The first option is to build a project of your choice.
+
+00:00:40.130 --> 00:00:43.820
+This is the most flexible option and this will allow you to
+
+00:00:43.820 --> 00:00:47.975
+focus on the type of application that interests you the most.
+
+00:00:47.975 --> 00:00:53.239
+There are a wide variety of applications you could choose: a chatbot,
+
+00:00:53.239 --> 00:00:55.240
+a neural network deployment,
+
+00:00:55.240 --> 00:00:57.580
+a text-based solitaire game,
+
+00:00:57.580 --> 00:01:00.645
+a microcontroller for an embedded system,
+
+00:01:00.645 --> 00:01:03.540
+a ROS Node simulated in Gazebo,
+
+00:01:03.540 --> 00:01:07.945
+a networking protocol, a Mandelbrot or Fractal creator,
+
+00:01:07.945 --> 00:01:12.285
+a hot dog detector using OpenCV or a video game.
+
+00:01:12.285 --> 00:01:14.270
+There are a number of
+
+00:01:14.270 --> 00:01:17.810
+different projects and tutorials online that can help you get started,
+
+00:01:17.810 --> 00:01:19.930
+and we'll provide some links below.
+
+00:01:19.930 --> 00:01:26.480
+We'll also provide a code repository with a CMakeLists.txt file and a "Hello, World!"
+
+00:01:26.480 --> 00:01:28.865
+application that you can use to start.
+
+00:01:28.865 --> 00:01:31.820
+You can build from this repository if you wish,
+
+00:01:31.820 --> 00:01:33.635
+but you aren't required to use it.
+
+00:01:33.635 --> 00:01:36.005
+We're excited to see what you can create.
+
+00:01:36.005 --> 00:01:41.000
+The second option for the Capstone project is to add features to a video game.
+
+00:01:41.000 --> 00:01:45.095
+We'll provide you with a simple two-dimensional Snake game.
+
+00:01:45.095 --> 00:01:48.440
+We adapted this game from a Stack Overflow post on
+
+00:01:48.440 --> 00:01:52.790
+beginning game development with the SDL game programming library.
+
+00:01:52.790 --> 00:01:58.475
+The game code provides a solid foundation for you to extend with additional features,
+
+00:01:58.475 --> 00:02:04.070
+or you're welcome to use the code as a framework to build your own game from scratch.
+
+00:02:04.070 --> 00:02:06.800
+If you decide to build your own game,
+
+00:02:06.800 --> 00:02:10.505
+cloning a classic 2D game is a great way to get started.
+
+00:02:10.505 --> 00:02:14.580
+Some possible games you might clone include Asteroids,
+
+00:02:14.580 --> 00:02:17.770
+Pacman, Space Invaders, or Pong.
+
+00:02:17.770 --> 00:02:22.460
+The game you create doesn't need to be a fully featured clone of the original,
+
+00:02:22.460 --> 00:02:25.730
+but there should be enough of a game for a user to play.
+
+00:02:25.730 --> 00:02:30.230
+Both project options require a solid effort from you,
+
+00:02:30.230 --> 00:02:36.090
+but I am confident that you will be successful and we can't wait to see what you create.
+

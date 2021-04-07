@@ -1,0 +1,385 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.290 --> 00:00:05.895
+Now, let's have a look at the Snake class, snake.h and snake.cpp.
+
+00:00:05.894 --> 00:00:08.115
+To start off snake.h,
+
+00:00:08.115 --> 00:00:10.859
+we include the SDL library.
+
+00:00:10.859 --> 00:00:16.875
+We have an enum class Direction which has directions up,
+
+00:00:16.875 --> 00:00:18.614
+down, left, and right,
+
+00:00:18.614 --> 00:00:21.134
+which are the directions that the snake can be traveling.
+
+00:00:21.135 --> 00:00:24.630
+The snake constructor stores the grid width,
+
+00:00:24.629 --> 00:00:28.979
+the grid height that are passed in and sets
+
+00:00:28.980 --> 00:00:31.155
+an the initial position for the head
+
+00:00:31.155 --> 00:00:34.469
+in the X coordinate and the head in the Y coordinate.
+
+00:00:34.469 --> 00:00:38.429
+It's basically starting off the snake in the middle of the screen.
+
+00:00:38.429 --> 00:00:42.244
+We have a method for updating the snake.
+
+00:00:42.244 --> 00:00:44.059
+Each pass through the game loop.
+
+00:00:44.060 --> 00:00:46.280
+We have a method to grow the body of the snake.
+
+00:00:46.280 --> 00:00:49.310
+So once the snake eats some food it's body will grow.
+
+00:00:49.310 --> 00:00:53.900
+We have a boolean that tells us if some integers that
+
+00:00:53.899 --> 00:00:59.129
+are passed in are part of the snake in the grid.
+
+00:01:00.009 --> 00:01:03.439
+We have a direction that the snake is traveling.
+
+00:01:03.439 --> 00:01:08.009
+So initially, we set the direction of travel to be up.
+
+00:01:08.049 --> 00:01:13.924
+We have the speed of the snake which is starting off as 0.1,
+
+00:01:13.924 --> 00:01:17.144
+the size of the snake which is starting off as one,
+
+00:01:17.144 --> 00:01:21.099
+a boolean which represents whether the snakes is alive or not in the game,
+
+00:01:21.099 --> 00:01:22.549
+we set that to true.
+
+00:01:22.549 --> 00:01:27.329
+We have float coordinates for the X and Y position of the snake's head.
+
+00:01:27.329 --> 00:01:31.114
+Then we have a vector of SDL points for the body of the snake.
+
+00:01:31.114 --> 00:01:38.129
+Now, an SDL point is just a struct that has int X and Y coordinates.
+
+00:01:38.129 --> 00:01:41.039
+We also have some private methods,
+
+00:01:41.040 --> 00:01:43.965
+UpdateHead, which when we call update,
+
+00:01:43.965 --> 00:01:47.310
+it will call update head and each pass through the game loop,
+
+00:01:47.310 --> 00:01:49.840
+it will update the coordinates of the head.
+
+00:01:49.840 --> 00:01:52.320
+We also have UpdateBody which will
+
+00:01:52.319 --> 00:01:58.519
+update the vector body here with the new coordinates of the body.
+
+00:01:58.519 --> 00:02:02.224
+We have a boolean which tells us whether the snake is growing.
+
+00:02:02.224 --> 00:02:05.064
+So once the snake eats some food,
+
+00:02:05.064 --> 00:02:09.659
+we store whether the snake is growing.
+
+00:02:09.659 --> 00:02:13.905
+Then the next pass through the game loop, the snake grows.
+
+00:02:13.905 --> 00:02:19.419
+We also have an int grid width and an int grid height that we store.
+
+00:02:21.469 --> 00:02:27.145
+Over in snake.cpp, we have the definition of the update method.
+
+00:02:27.145 --> 00:02:31.030
+So let's have a look and see what's going on here.
+
+00:02:31.030 --> 00:02:36.550
+The first thing that we do is capture the head cell before updating.
+
+00:02:36.550 --> 00:02:39.685
+The reasons for this will become apparent in just a second.
+
+00:02:39.685 --> 00:02:44.310
+But we store an SDL point called the previous cell,
+
+00:02:44.310 --> 00:02:46.080
+and we take the float,
+
+00:02:46.080 --> 00:02:51.910
+head_X and head_Y coordinates of the snake's head and we static cast them to int.
+
+00:02:51.909 --> 00:02:55.750
+So we store those in this SDL point previous cell.
+
+00:02:55.750 --> 00:02:59.659
+Then we update the head which we'll go look at it in a second.
+
+00:02:59.659 --> 00:03:03.435
+Then we have the current cell of the head,
+
+00:03:03.435 --> 00:03:05.060
+also stored as an SDL point.
+
+00:03:05.060 --> 00:03:08.300
+So basically we're keeping the cell
+
+00:03:08.300 --> 00:03:12.020
+of the head before updating and the cell of the head after updating.
+
+00:03:12.020 --> 00:03:18.800
+Now, we only need to update the body of the snake if the head has moved to a new cell.
+
+00:03:18.800 --> 00:03:22.730
+So that's sort of the way that the snake gets updated in the game.
+
+00:03:22.729 --> 00:03:27.590
+So we can check if the previous cell is equal to the current cell by just checking if
+
+00:03:27.590 --> 00:03:30.590
+the current cell and previous cell X coordinates are the same and
+
+00:03:30.590 --> 00:03:34.129
+the current cell Y and previous cell Y coordinates are the same.
+
+00:03:34.129 --> 00:03:36.829
+If either of these are not the same,
+
+00:03:36.830 --> 00:03:39.265
+then we need to update the body.
+
+00:03:39.264 --> 00:03:45.279
+So we'll go look at how UpdateHead and UpdateBody work down below.
+
+00:03:46.610 --> 00:03:52.840
+So snake UpdateHead has the direction of the snake.
+
+00:03:52.840 --> 00:03:55.784
+If the direction of the snake is up,
+
+00:03:55.784 --> 00:03:57.689
+so we have a switch with some cases,
+
+00:03:57.689 --> 00:03:59.460
+we pass in direction.
+
+00:03:59.460 --> 00:04:09.629
+If the direction of the snake is up then we decrease the heads Y by the speed.
+
+00:04:09.629 --> 00:04:12.299
+So head_Y minus equals speed.
+
+00:04:12.300 --> 00:04:15.650
+Now, remember that in SDL,
+
+00:04:15.650 --> 00:04:18.905
+the origin is in the upper left corner.
+
+00:04:18.904 --> 00:04:22.339
+So if the snake is heading up in the game,
+
+00:04:22.339 --> 00:04:26.239
+the Y coordinate is headed down.
+
+00:04:26.240 --> 00:04:30.634
+So head_Y is minus equals speed if we're going up,
+
+00:04:30.634 --> 00:04:34.004
+if we're going down head_Y is plus equals speed,
+
+00:04:34.004 --> 00:04:36.899
+if we're going left head_X is minus equals
+
+00:04:36.899 --> 00:04:40.639
+the speed and if we're going right head_X is plus equals speed.
+
+00:04:40.639 --> 00:04:46.169
+So this will update the float X and Y position of the head.
+
+00:04:46.170 --> 00:04:49.879
+Now, we want the snake to wrap around the window.
+
+00:04:49.879 --> 00:04:52.310
+So if we go off the top or the bottom of the window,
+
+00:04:52.310 --> 00:04:55.009
+we want to reappear on the opposite.
+
+00:04:55.009 --> 00:04:58.699
+So if we go off the top of the window we want the snake to reappear on the bottom.
+
+00:04:58.699 --> 00:05:01.939
+If we go off the left side of the window we want to reappear on the right.
+
+00:05:01.939 --> 00:05:06.709
+So we have a few lines
+
+00:05:06.709 --> 00:05:09.649
+here that wrap the snake around to the beginning if we're going off the screen.
+
+00:05:09.649 --> 00:05:17.359
+Basically, what this does is we add head_X to the grid width and
+
+00:05:17.360 --> 00:05:20.435
+head Y to the grid width and then we modulo by
+
+00:05:20.435 --> 00:05:24.990
+the grid width and we store that value as head_X and head_Y.
+
+00:05:24.990 --> 00:05:31.185
+So essentially, if head_X is bigger than the grid,
+
+00:05:31.185 --> 00:05:39.069
+we will modulo by the grid width and wrap around beginning and similarly for head_Y.
+
+00:05:42.889 --> 00:05:46.579
+The reason for adding head_X to grid width here is to
+
+00:05:46.579 --> 00:05:50.269
+ensure that head_X isn't negative and head_Y is not negative.
+
+00:05:50.269 --> 00:05:52.849
+It's possible that in this updating,
+
+00:05:52.850 --> 00:05:55.180
+we might get a negative value for head_X.
+
+00:05:55.180 --> 00:05:57.509
+If we just modulo by the grid width,
+
+00:05:57.509 --> 00:06:02.329
+then we end up with a negative value which is [inaudible].
+
+00:06:02.329 --> 00:06:04.984
+So in the next method, we're going to update the body.
+
+00:06:04.985 --> 00:06:09.569
+So we pass in the current head cell and the previous head cell.
+
+00:06:12.339 --> 00:06:22.114
+The snake updates by making the previous location of the head as part of the body.
+
+00:06:22.115 --> 00:06:24.920
+This might be a little bit difficult to think about
+
+00:06:24.920 --> 00:06:27.230
+until you've watched how the snake game works.
+
+00:06:27.230 --> 00:06:30.925
+But basically, the body follows the previous location of the head.
+
+00:06:30.925 --> 00:06:32.855
+So if the head goes up and then goes right,
+
+00:06:32.855 --> 00:06:35.420
+all the body's cells go through that same path.
+
+00:06:35.420 --> 00:06:37.670
+So as the head moves forward,
+
+00:06:37.670 --> 00:06:41.165
+the previous location of the head becomes a body cell.
+
+00:06:41.165 --> 00:06:42.635
+To update the snake,
+
+00:06:42.634 --> 00:06:45.319
+we basically turn the previous location of the head into
+
+00:06:45.319 --> 00:06:50.524
+a body cell and we remove the tail of the body.
+
+00:06:50.524 --> 00:06:54.484
+So that's exactly what we're doing in these next lines.
+
+00:06:54.485 --> 00:06:57.215
+If the snake is not growing,
+
+00:06:57.214 --> 00:07:03.389
+we erase the very end of the snake; The tail.
+
+00:07:04.730 --> 00:07:07.330
+If the snake is growing,
+
+00:07:07.329 --> 00:07:12.500
+then what happens is the head moves forward and the cell where the head was,
+
+00:07:12.500 --> 00:07:13.805
+becomes part of the body,
+
+00:07:13.805 --> 00:07:19.709
+but we don't remove the tail because the body is increasing by one cell in length.
+
+00:07:20.060 --> 00:07:22.905
+So if the head is growing,
+
+00:07:22.904 --> 00:07:30.844
+we're done growing and we set growing equal to false and we increase the size basically.
+
+00:07:30.845 --> 00:07:34.175
+These next lines check if the snake has died.
+
+00:07:34.175 --> 00:07:36.439
+So for each item in the body,
+
+00:07:36.439 --> 00:07:43.670
+we check if the head cells
+
+00:07:43.670 --> 00:07:47.740
+coordinates are equal to one of the bodies coordinates.
+
+00:07:47.740 --> 00:07:54.449
+If that happens, the snake has run into its own body and we set alive equal to false.
+
+00:07:55.449 --> 00:08:00.439
+There's a GrowBody here which is called, in the game class,
+
+00:08:00.439 --> 00:08:03.764
+we'll see that in another video,
+
+00:08:03.764 --> 00:08:08.894
+but if GrowBody is called then we set growing equal to true.
+
+00:08:08.894 --> 00:08:12.169
+Finally, there's a method here at the end which is
+
+00:08:12.170 --> 00:08:14.855
+used to check if a cell is occupied by a snake.
+
+00:08:14.855 --> 00:08:17.270
+We use this when placing food in the game
+
+00:08:17.269 --> 00:08:19.805
+because we don't want to place food on top of the snake.
+
+00:08:19.805 --> 00:08:26.929
+So this basically checks if the food coordinates are in the same cell as the head,
+
+00:08:26.928 --> 00:08:30.449
+or if they're in the same cell as any of the body.
+

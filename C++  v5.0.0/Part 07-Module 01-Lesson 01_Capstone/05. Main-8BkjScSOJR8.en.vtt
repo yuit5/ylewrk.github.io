@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:02.120 --> 00:00:05.400
+After you clone the snake game from the GitHub repo,
+
+00:00:05.400 --> 00:00:07.755
+you should have the following files and directories.
+
+00:00:07.754 --> 00:00:09.929
+There's a CMake directory which contains
+
+00:00:09.929 --> 00:00:13.259
+some files that helps CMake find the STL to library.
+
+00:00:13.259 --> 00:00:15.765
+There's a CMakeLists.txt.
+
+00:00:15.765 --> 00:00:19.019
+A ReadMe.markdown, a snake game
+
+00:00:19.019 --> 00:00:22.559
+GIF which is used in the ReadMe, and the source directory.
+
+00:00:22.559 --> 00:00:24.059
+Over in the source directory,
+
+00:00:24.059 --> 00:00:27.614
+there are files to define four main classes used in this game.
+
+00:00:27.614 --> 00:00:30.494
+There's controller.js and controller.CPP.
+
+00:00:30.495 --> 00:00:32.295
+These handle user input.
+
+00:00:32.295 --> 00:00:35.445
+There's game.h and game.CPP.
+
+00:00:35.445 --> 00:00:40.734
+The game class stores the game state and also runs the game loop.
+
+00:00:40.734 --> 00:00:46.564
+Here's renderer.h and renderer.CPP and this renders a snake game to the screen,
+
+00:00:46.564 --> 00:00:51.979
+and they're snake.h and snake.CPP which defines the snake object used in the game.
+
+00:00:51.979 --> 00:00:54.969
+Let's have a look in main.CCP.
+
+00:00:54.969 --> 00:00:57.890
+At the beginning of main.CCP, we defined
+
+00:00:57.890 --> 00:01:01.145
+some constant expressions which will be useful for the rest of the game.
+
+00:01:01.145 --> 00:01:04.685
+In particular, we define the number of frames per second.
+
+00:01:04.685 --> 00:01:06.019
+So key-frames per second.
+
+00:01:06.019 --> 00:01:08.450
+The game is running at 60 frames per second.
+
+00:01:08.450 --> 00:01:12.740
+We also compute the milliseconds per frame because we'll be using this later.
+
+00:01:12.739 --> 00:01:18.140
+So that's 1,000 milliseconds per second divided by the number of frames per second.
+
+00:01:18.140 --> 00:01:22.099
+We define the screen width and screen height to be 640 pixels,
+
+00:01:22.099 --> 00:01:24.530
+and then the snake game runs on a grid.
+
+00:01:24.530 --> 00:01:27.695
+So we define a grid of 32 cells.
+
+00:01:27.694 --> 00:01:32.164
+So grid width is 32 and grid height of 32 as well.
+
+00:01:32.165 --> 00:01:37.070
+Then in main, we create a renderer object with the screen width,
+
+00:01:37.069 --> 00:01:39.504
+screen height, grid width and grid height.
+
+00:01:39.504 --> 00:01:42.064
+We create a controller object.
+
+00:01:42.064 --> 00:01:45.890
+We create a game object with the grid width and grid height,
+
+00:01:45.890 --> 00:01:50.469
+and then in main, we call game.run which starts the game loop.
+
+00:01:50.469 --> 00:01:53.545
+In game out run we pass him the controller,
+
+00:01:53.545 --> 00:01:57.769
+the renderer, and the milliseconds per frame.
+
+00:01:57.769 --> 00:01:59.854
+Finally, at the end of main,
+
+00:01:59.855 --> 00:02:01.730
+we have some printout that prints
+
+00:02:01.730 --> 00:02:05.549
+the score and the size of the snake once the game is done.
+

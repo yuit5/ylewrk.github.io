@@ -1,0 +1,473 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game Programming</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Capstone</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Capstone Intro.html">01. Capstone Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Steps to Complete the Capstone.html">02. Steps to Complete the Capstone</a>
+    </li>
+    <li class="">
+      <a href="03. Game Programming.html">03. Game Programming</a>
+    </li>
+    <li class="">
+      <a href="04. The SDL Library.html">04. The SDL Library</a>
+    </li>
+    <li class="">
+      <a href="05. Snake Game Code Walkthrough.html">05. Snake Game Code Walkthrough</a>
+    </li>
+    <li class="">
+      <a href="06. Capstone Workspace.html">06. Capstone Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - C++ Capstone Project.html">Project Description - C++ Capstone Project</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - C++ Capstone Project.html">Project Rubric - C++ Capstone Project</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Game Programming</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="game-programming">Game Programming</h1>
+<p>Game programming is a vast topic, and there are many approaches to writing and organizing game code. Additionally, there an enormous number of libraries, platforms, tools, and languages that you can use to build a professional-quality game. While this might seem overwhelming at first, this <em>should not</em> deter you from getting started with building your own game. The core tenets of game programming are nearly universal, and you will learn about the fundamental structure of game code in this concept. By the time you finish the next few concepts, you will be ready to write basic games in C++.</p>
+<h2 id="the-game-loop-input-update-render">The Game Loop: Input, Update, Render</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>GameLoop</p></h3>
+  <video controls>
+  <source src="03. GameLoop-q4Y3UMkVImc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. GameLoop-q4Y3UMkVImc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="the-game-loop-overview">The Game Loop Overview</h2>
+<p>The game loop is a while loop that runs continuously in your code and has three steps:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/the-game-loop.jpg" alt="The Game Loop: Input, Update, Render" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>The Game Loop: Input, Update, Render</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li><p><strong>Input</strong>: This step handles user input from a keyboard, joystick, game controller, or other input device.</p></li>
+<li><p><strong>Update</strong>: This step uses the input to update the internal state of the game. The game state might include:</p>
+<ul>
+<li>positions of characters in the game world</li>
+<li>the speed, health, or inventory of characters in the game</li>
+<li>how many points have been scored in the game so far</li>
+<li>any other attributes or data in the game</li></ul>
+<p>Each part of the game state might be updated independently of the input as well. For example, if a character is moving forward in the game with a given velocity, the update step might change the character's position without any additional input.</p></li>
+<li><p><strong>Render</strong>: This step takes the game state and renders the state to the screen according to fixed rules. For example, a character might be rendered with a particular image or "<a href="https://en.wikipedia.org/wiki/Sprite_%28computer_graphics%29" rel="noopener noreferrer" target="_blank">sprite</a>", or a texture might be applied to the background of the game window.</p></li>
+</ul>
+<p>One major benefit of using this design pattern in a game is that each part of the game loop can be implemented separately in the code. If you want to change the appearance of your game without making major changes to how the game works, you can just update the Rendering code. Similarly, you are free to modify how the gameplay works without changing the rendering or input portion of the code at all.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="game-loop-example-snake-game">Game Loop Example: Snake Game</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/snake-game.gif" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The project code that we provide is an implementation of the classic "Snake" game, which is shown above. This implementation was inspired by code found in <a href="https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl" rel="noopener noreferrer" target="_blank">this</a> StackOverflow post. </p>
+<p>In this game, you control a snake using the keyboard, and the snake grows in speed and length each time it eats the food on the screen. Internally, the game state includes:</p>
+<ul>
+<li>the speed of the snake</li>
+<li>the current direction the snake is travelling</li>
+<li>the <code>float</code> position of the snake's head</li>
+<li>a <code>vector</code> of int coordinates representing the snake's body</li>
+<li>the position of the food</li>
+<li>other state data needed to make the game function</li>
+</ul>
+<p>At each pass through the game loop, the steps </p>
+<ol>
+<li><strong>Input:</strong> the keyboard input is handled and used to set the future direction of the snake.</li>
+<li><strong>Update:</strong> The snake's position, length, and velocity are updated. If the snake has just eaten the food, a new food item is created.</li>
+<li><strong>Render:</strong> The game state is drawn to the screen. The entire game loop happens approximately 60 times per second, so the rendering and motion look fairly smooth, even though every update is a discrete change to the game state.</li>
+</ol>
+<p>Note that the positions of the snake head and snake body are not stored in a 2D array in the current implementation, even though would also be a reasonable way to store some of the game state. However, the game is still rendered according to a 2D grid, and not using continuous coordinates. This happens even though the head coordinates are stored and updated with floats. By storing the head coordinates with floats, we can update the head position according to a fixed velocity. By rendering according to a grid, the vintage, grid-based aesthetic of the game can be maintained. </p>
+<p>To make sure that you understand the game loop in the context of the Snake game, give the next few quizzes a try.</p>
+<h2 id="snake-game-quizzes">Snake Game Quizzes</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>The Render Loop</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following likely falls into the "Render" step in the Snake game?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1562628563664" name="899057" id="a1562628563664">
+        <label for="a1562628563664"><p>Changing the x and y position attributes of the snake object's head</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1562630613791" name="899057" id="a1562630613791">
+        <label for="a1562630613791"><p>Drawing the snake's body on the screen</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1562630672438" name="899057" id="a1562630672438">
+        <label for="a1562630672438"><p>Accepting "up" and "down" commands from the keyboard</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Drawing the snake's body on the screen
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>The Update Loop</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following might be updated in "Update" step of the Snake game loop?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1562632114990" name="899078" id="a1562632114990">
+      <label for="a1562632114990"><p>The x and y position attributes of the snake object's head</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1562632696062" name="899078" id="a1562632696062">
+      <label for="a1562632696062"><p>The user's score in the game</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1562632698216" name="899078" id="a1562632698216">
+      <label for="a1562632698216"><p>The location of the food for the snake</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1562632699617" name="899078" id="a1562632699617">
+      <label for="a1562632699617"><p>The speed of the snake</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>The x and y position attributes of the snake object's head</li>
+      <li>The user's score in the game</li>
+      <li>The location of the food for the snake</li>
+      <li>The speed of the snake</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="improving-the-game-loop-time-control">Improving the Game Loop: Time Control</h2>
+<p>Now that you have an idea of the basic structure of the game loop, there's one additional step that you will see in the final project code: time control. If we let the while loop run as fast as the computer processor will allow, the game may be unplayable on a very fast machine, and it will play at different speeds depending on where it is run.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ImprovedGameLoop</p></h3>
+  <video controls>
+  <source src="03. ImprovedGameLoop-nhYzyAdHkCA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ImprovedGameLoop-nhYzyAdHkCA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Game Loop Pseudocode</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the pseudocode examples down below represents a correctly implemented game loop with time control?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1562633470038" name="899080" id="a1562633470038">
+        <label for="a1562633470038"><p>A)</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1562633602562" name="899080" id="a1562633602562">
+        <label for="a1562633602562"><p>B)</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1562633605868" name="899080" id="a1562633605868">
+        <label for="a1562633605868"><p>C)</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    B)
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>A)</p>
+<pre><code class="cpp language-cpp">Uint32 frame_end;
+Uint23 frame_duration = 0;
+float target_frame_duration = 1000/60; // milliseconds per frame at 60 frames per second.
+
+while (true) {
+    Input();
+    Update();
+    Render();
+    frame_end = get_current_time_in_ms(); // Current time in milliseconds
+
+    frame_duration += frame_end;
+
+    if (frame_duration &lt; target_frame_duration ) {
+        Sleep(target_frame_duration - frame_ms);
+        frame_ms = 0;
+    }
+}</code></pre>
+<p>B)</p>
+<pre><code class="cpp language-cpp">Uint32 frame_start;
+Uint32 frame_end;
+Uint32 frame_duration;
+float target_frame_duration = 1000/60; // milliseconds per frame at 60 frames per second.
+
+while (true) {
+    frame_start = GetCurrentTimeMS(); // Current time in milliseconds
+    Input();
+    Update();
+    Render();
+    frame_end = get_current_time_in_ms();
+
+    frame_duration = frame_end - frame_start;
+
+    if (frame_duration &lt; target_frame_duration ) {
+        Sleep(target_frame_duration - frame_duration);
+    }
+}</code></pre>
+<p>C)</p>
+<pre><code class="cpp language-cpp">Uint32 frame_end = GetCurrentTimeMS();
+float target_frame_duration = 1000/60; // milliseconds per frame at 60 frames per second.
+
+while (true) {
+    Input();
+    Update();
+    Render();
+    after = get_current_time_in_ms() - frame_end;
+
+    if (frame_end &lt; target_frame_duration ) {
+        Sleep(target_frame_duration - frame_end);
+    }
+}</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>Excellent work on completing this concept! You know have a solid understanding of one of the core concepts of game programming: the game loop. With the addition of a library to handle input and render output from your code, you are now fully prepared to write your own games in C++.</p>
+<p>In the next concept, we will introduce the SDL2 library that you can use to handle input and render, so you will be ready to begin your Capstone project.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="resources">Resources</h2>
+<ul>
+<li>The <a href="https://gameprogrammingpatterns.com/" rel="noopener noreferrer" target="_blank">Game Programming Patterns Book</a> is an <em>excellent</em> resource for understanding how games work. In particular, <a href="https://gameprogrammingpatterns.com/game-loop.html" rel="noopener noreferrer" target="_blank">here</a> is a section of the book which discusses the game loop.</li>
+<li><a href="http://www.informit.com/articles/article.aspx?p=2928180&seqNum=4" rel="noopener noreferrer" target="_blank">Here</a> is another useful article on the game loop. This one uses the SDL library, which is the same library used in the Snake game repository.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. The SDL Library.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Game Programming')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

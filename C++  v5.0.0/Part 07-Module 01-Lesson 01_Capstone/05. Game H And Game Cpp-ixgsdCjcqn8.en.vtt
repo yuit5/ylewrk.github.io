@@ -1,0 +1,373 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.170 --> 00:00:04.379
+Now, let's have a look at game.h and game.cpp.
+
+00:00:04.379 --> 00:00:07.529
+In game.h, we include the SDL_library,
+
+00:00:07.530 --> 00:00:11.830
+the controller header, the renderer header , and the snake header.
+
+00:00:12.019 --> 00:00:15.269
+We have methods for running the game.
+
+00:00:15.269 --> 00:00:18.285
+This is basically calling the game loop to get started.
+
+00:00:18.285 --> 00:00:21.135
+We have methods to get the score,
+
+00:00:21.135 --> 00:00:23.325
+methods to get the size of the snake,
+
+00:00:23.324 --> 00:00:25.500
+and then some private attributes,
+
+00:00:25.500 --> 00:00:28.109
+we store a snake in the game,
+
+00:00:28.109 --> 00:00:30.554
+an SDL_point for the food.
+
+00:00:30.554 --> 00:00:36.039
+I remembered that SDL_point is just a struct that has integer x and y coordinates.
+
+00:00:36.039 --> 00:00:39.469
+Then we have some code here,
+
+00:00:39.469 --> 00:00:43.269
+which will provide us with random numbers,
+
+00:00:43.270 --> 00:00:44.720
+which we use to place the food.
+
+00:00:44.719 --> 00:00:47.240
+We'll talk about this in just a second.
+
+00:00:47.240 --> 00:00:51.289
+Then we also have the score of the game which is initialized to zero,
+
+00:00:51.289 --> 00:00:55.280
+a method to place food which we use after the snake has eaten the food,
+
+00:00:55.280 --> 00:00:57.170
+and the game update method.
+
+00:00:57.170 --> 00:01:02.150
+Now, let's have a look again at this random number generating code.
+
+00:01:02.149 --> 00:01:07.659
+So the first part here is a standard random device called dev,
+
+00:01:07.659 --> 00:01:12.409
+and this is a random number generator. Let's go look.
+
+00:01:12.409 --> 00:01:15.560
+Standard random device is
+
+00:01:15.560 --> 00:01:18.109
+a uniformly distributed integer random number generator
+
+00:01:18.109 --> 00:01:21.569
+that produces non-deterministic random numbers.
+
+00:01:22.700 --> 00:01:28.159
+This is basically used as a seed for a random_device.
+
+00:01:28.159 --> 00:01:31.399
+So it says, the performance of
+
+00:01:31.400 --> 00:01:36.234
+many implementations of random device degrade sharply once the entropy pool is exhausted.
+
+00:01:36.234 --> 00:01:40.829
+For practical use, random_devices are generally only used to
+
+00:01:40.829 --> 00:01:47.140
+seed a pseudorandom number generator such as MT19937.
+
+00:01:47.239 --> 00:01:50.119
+That's actually how we're going to use it.
+
+00:01:50.120 --> 00:01:53.600
+So we have a pseudorandom number generator,
+
+00:01:53.599 --> 00:01:56.254
+an MT19937 called engine.
+
+00:01:56.254 --> 00:01:58.250
+Let's go look at that.
+
+00:01:58.250 --> 00:02:07.194
+So this MT19937 is a Mersenne Twister engine,
+
+00:02:07.194 --> 00:02:11.180
+which is a random number engine based on the Mersenne Twister algorithm.
+
+00:02:11.180 --> 00:02:15.990
+It produces high-quality unsigned integer random numbers.
+
+00:02:16.330 --> 00:02:22.400
+So we use this dev to seed our engine and then the engine produces random numbers,
+
+00:02:22.400 --> 00:02:26.930
+but we basically want random numbers for the x and y coordinates on the grid.
+
+00:02:26.930 --> 00:02:33.784
+So we have a standard uniform distribution random_w and random_h.
+
+00:02:33.784 --> 00:02:40.009
+We will initialize those
+
+00:02:40.009 --> 00:02:46.024
+with the uniform distribution between zero in the grid_width and zero in the grid_height.
+
+00:02:46.025 --> 00:02:49.010
+So in the class constructor for game here,
+
+00:02:49.009 --> 00:02:52.405
+we initialize the snake with the grid_width and grid_height,
+
+00:02:52.405 --> 00:02:55.189
+we initialize our engine with our seed,
+
+00:02:55.189 --> 00:02:56.629
+and then we initialize
+
+00:02:56.629 --> 00:02:59.659
+this uniform distribution to be
+
+00:02:59.659 --> 00:03:03.365
+between zero in the grid_width and zero at the grid_height,
+
+00:03:03.365 --> 00:03:07.290
+and we place food on the screen.
+
+00:03:07.490 --> 00:03:11.580
+The next method in game.cpp.
+
+00:03:11.580 --> 00:03:14.040
+So switched over to game.cpp from game.h.
+
+00:03:14.039 --> 00:03:18.104
+But the next method in game.cpp is the game run.
+
+00:03:18.104 --> 00:03:20.629
+This is the game loop that you should be familiar
+
+00:03:20.629 --> 00:03:25.150
+with from a previous part of this lesson.
+
+00:03:25.400 --> 00:03:31.405
+So to start, we have the title_timestamp SDL GetTicks.
+
+00:03:31.405 --> 00:03:34.039
+We'll talk about what that's used for in a second.
+
+00:03:34.039 --> 00:03:42.449
+Then we have a uint32 for frame_start and frame_end and uint32 for farme_duration.
+
+00:03:42.449 --> 00:03:48.769
+We also keep frame_counts and Boolean which tells us if the game is running.
+
+00:03:48.770 --> 00:03:50.659
+So while the game is running,
+
+00:03:50.659 --> 00:03:53.479
+we record the start of the frame.
+
+00:03:53.479 --> 00:03:56.974
+So this is the timestamp of the start of the frame,
+
+00:03:56.974 --> 00:04:00.245
+and we have the core of the game loop here,
+
+00:04:00.245 --> 00:04:02.539
+input, update, and render.
+
+00:04:02.539 --> 00:04:07.329
+So we have our controller HandleInput.
+
+00:04:08.650 --> 00:04:14.030
+We pass in the Boolean whether or not the game is running and the snake,
+
+00:04:14.030 --> 00:04:18.189
+because we change the snake depending on the input.
+
+00:04:18.189 --> 00:04:21.029
+Then we update the game.
+
+00:04:21.029 --> 00:04:24.319
+Then we render the game with the snake and the food.
+
+00:04:24.319 --> 00:04:25.879
+Then at the end of that,
+
+00:04:25.879 --> 00:04:28.189
+we get the timestamp for the frame_end.
+
+00:04:28.189 --> 00:04:32.014
+So basically, this is one frame of our video game.
+
+00:04:32.014 --> 00:04:35.370
+There's the frame_start and the frame_end.
+
+00:04:35.370 --> 00:04:38.504
+So in the next part of this code,
+
+00:04:38.504 --> 00:04:41.319
+we increase the frame_count.
+
+00:04:41.319 --> 00:04:44.959
+So we want to keep track of how long each loop through the input,
+
+00:04:44.959 --> 00:04:46.764
+update, render cycle takes.
+
+00:04:46.764 --> 00:04:51.704
+So the duration of this frame is the frame_end minus the frame_start.
+
+00:04:51.704 --> 00:04:55.504
+Every one second or so we want to update the window title.
+
+00:04:55.504 --> 00:04:58.115
+We don't want to update it every pass through
+
+00:04:58.115 --> 00:05:03.555
+the game loop because that would be very resource intensive.
+
+00:05:03.555 --> 00:05:11.545
+So we say, the frame_end minus the timestamp of the last time we updated the title.
+
+00:05:11.545 --> 00:05:15.215
+So we set the title_timestamp here.
+
+00:05:15.214 --> 00:05:20.659
+If the timestamp of the end of the frame minus the timestamp of
+
+00:05:20.660 --> 00:05:26.765
+the title is bigger than or equal to 1,000 milliseconds or basically one second,
+
+00:05:26.764 --> 00:05:29.524
+then we update the window title,
+
+00:05:29.524 --> 00:05:31.939
+we reset the frame_count to zero.
+
+00:05:31.939 --> 00:05:37.514
+So we update the window title with the number of frames per second and the score,
+
+00:05:37.514 --> 00:05:39.615
+we reset the frame_count to zero,
+
+00:05:39.615 --> 00:05:49.199
+and we set the timestamp of the last time we updated the window through the frame_end.
+
+00:05:49.610 --> 00:05:54.155
+The last part of this game loop is the time control.
+
+00:05:54.154 --> 00:05:56.269
+So if the duration of this frame,
+
+00:05:56.269 --> 00:06:03.699
+the amount of time it took to do our input, update, and render loop,
+
+00:06:03.699 --> 00:06:10.175
+if the amount of time that it took to do that is less than our target farme_duration,
+
+00:06:10.175 --> 00:06:12.920
+so in other words, if the game is running too fast,
+
+00:06:12.920 --> 00:06:17.180
+then we want to delay the game so that we have a consistent gameplay.
+
+00:06:17.180 --> 00:06:21.470
+So we call SDL_Delay with the target farme_duration
+
+00:06:21.470 --> 00:06:28.530
+minus this farme_duration and we delay before passing through the game loop again.
+
+00:06:29.300 --> 00:06:33.930
+The next method in game.cpp is place food.
+
+00:06:33.930 --> 00:06:37.160
+This is where we use those random numbers.
+
+00:06:37.160 --> 00:06:42.305
+So we have a wire loop that is basically producing some random numbers.
+
+00:06:42.305 --> 00:06:47.870
+It checks if those random numbers are in the location of the snake.
+
+00:06:47.870 --> 00:06:52.595
+If those random numbers are not in the location of the snake,
+
+00:06:52.595 --> 00:06:57.430
+then we set food.x equal that x and food.y equal to the y.
+
+00:06:57.430 --> 00:07:01.459
+Otherwise, we pass through the random number again and we keep doing this.
+
+00:07:01.459 --> 00:07:05.614
+So here we have our uniform distribution,
+
+00:07:05.615 --> 00:07:10.525
+we pass in that Mersenne Twister pseudo-random number generator.
+
+00:07:10.524 --> 00:07:13.739
+We get an x value and the same for y.
+
+00:07:13.930 --> 00:07:18.545
+For game.update, we first check if the snake is alive.
+
+00:07:18.545 --> 00:07:19.640
+If the snake is not alive,
+
+00:07:19.639 --> 00:07:21.354
+we're done and we can return.
+
+00:07:21.355 --> 00:07:29.210
+Otherwise, we call snake.update which is defined in the snake class and then we get
+
+00:07:29.209 --> 00:07:33.239
+the new cell for the x-coordinate of
+
+00:07:33.240 --> 00:07:39.824
+the snake head and the new cell for the y-coordinate of the snake head.
+
+00:07:39.824 --> 00:07:45.789
+We check if the snake head is in the same cell as the food.
+
+00:07:45.790 --> 00:07:50.810
+If the snake head isn't the same cell as the food then we increase our score.
+
+00:07:50.810 --> 00:07:52.339
+We call place food,
+
+00:07:52.339 --> 00:07:55.279
+which places a new food item in the game.
+
+00:07:55.279 --> 00:08:00.319
+We'd tell the snake's body to grow because once the snake eats food, it's body grows.
+
+00:08:00.319 --> 00:08:02.959
+In this case, to make the game a little bit more challenging,
+
+00:08:02.959 --> 00:08:05.495
+we increase the snake speed just a little bit.
+
+00:08:05.495 --> 00:08:07.685
+Then there are two methods down below,
+
+00:08:07.685 --> 00:08:09.935
+game GetScore and GetSize,
+
+00:08:09.935 --> 00:08:13.280
+which can be used by the window or other parts of the game.
+
+00:08:13.279 --> 00:08:18.359
+We use these in main to return the score and the size of the snake.
+

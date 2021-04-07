@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.459 --> 00:00:04.290
+There's one additional step that you will see in
+
+00:00:04.290 --> 00:00:06.644
+the game loop given in the final project code,
+
+00:00:06.644 --> 00:00:09.219
+and that is time control.
+
+00:00:09.740 --> 00:00:14.894
+If we let the while loop shown here run as fast as the computer processor will allow,
+
+00:00:14.894 --> 00:00:17.939
+the game maybe unplayable on a very fast machine,
+
+00:00:17.940 --> 00:00:21.015
+and we'll play at different speeds depending on where it is run.
+
+00:00:21.015 --> 00:00:22.830
+Each pass through the while loop,
+
+00:00:22.829 --> 00:00:26.789
+will only be limited by the power of the processor running the game.
+
+00:00:26.789 --> 00:00:28.695
+To fix this problem,
+
+00:00:28.695 --> 00:00:31.214
+we just need to add a timer to the game loop.
+
+00:00:31.214 --> 00:00:35.908
+The timer will sleep if the input update and render steps happen too quickly,
+
+00:00:35.908 --> 00:00:38.429
+so that you can maintain a consistent gameplay during
+
+00:00:38.429 --> 00:00:41.670
+the course of the game and across all devices.
+
+00:00:41.670 --> 00:00:43.255
+In the next exercise,
+
+00:00:43.255 --> 00:00:45.469
+you will see three code snippets demonstrating
+
+00:00:45.469 --> 00:00:48.320
+possible candidates for a game loop with a timer.
+
+00:00:48.320 --> 00:00:51.259
+Think carefully about the code and each snippet,
+
+00:00:51.259 --> 00:00:53.195
+and choose the one that you think represents
+
+00:00:53.195 --> 00:00:56.579
+a correctly functioning game loop with time control.
+

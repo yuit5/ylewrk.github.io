@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.029
+In this video, we will go over the steps that you need to
+
+00:00:03.029 --> 00:00:06.314
+follow in order to complete your Capstone project.
+
+00:00:06.315 --> 00:00:10.620
+Step 1 is to identify the project you want to build.
+
+00:00:10.619 --> 00:00:14.099
+We recommend keeping the functionality as simple as possible
+
+00:00:14.099 --> 00:00:17.684
+to start with so that the project doesn't become too big to complete.
+
+00:00:17.684 --> 00:00:20.609
+Note that it is fine to reuse code from
+
+00:00:20.609 --> 00:00:23.429
+any of the courses in the Nanodegree as a starting point,
+
+00:00:23.429 --> 00:00:26.789
+and you're also welcome to use the Snake game sample code to
+
+00:00:26.789 --> 00:00:30.989
+extend with additional features or to build an entirely different game.
+
+00:00:30.989 --> 00:00:34.559
+Step 2 is to scope the project.
+
+00:00:34.560 --> 00:00:38.655
+You should sketch an outline of how you think your application will work,
+
+00:00:38.655 --> 00:00:41.250
+and then have a look at the rubric.
+
+00:00:41.250 --> 00:00:44.854
+You want to ensure that your application will satisfy
+
+00:00:44.854 --> 00:00:49.029
+all the criteria for the "README" and "Compiling and Testing" sections,
+
+00:00:49.030 --> 00:00:51.995
+and you also want to ensure that the application will satisfy
+
+00:00:51.994 --> 00:00:56.099
+at least five total criteria from the rest of the rubric.
+
+00:00:56.200 --> 00:01:01.505
+Not all rubric items need to be satisfied in order to pass this project.
+
+00:01:01.505 --> 00:01:05.850
+You're free to choose the rubric items that you want to focus on.
+
+00:01:06.290 --> 00:01:10.395
+Step 3, and this part should be fairly self-explanatory,
+
+00:01:10.394 --> 00:01:11.924
+is to build your application.
+
+00:01:11.924 --> 00:01:14.829
+Hopefully, this part will be the most fun.
+
+00:01:15.590 --> 00:01:19.515
+Step 4 is to document your work.
+
+00:01:19.515 --> 00:01:24.165
+You'll need to write a short "README" indicating which project option you chose.
+
+00:01:24.165 --> 00:01:28.645
+The "README" should also include instructions for running the project,
+
+00:01:28.644 --> 00:01:31.734
+an overview of your code structure,
+
+00:01:31.734 --> 00:01:37.219
+and an explanation of how your submission satisfies the necessary rubric items.
+
+00:01:37.219 --> 00:01:41.900
+Your "README" can be submitted as a markdown file or a PDF file.
+
+00:01:41.900 --> 00:01:44.630
+If you plan on putting your project up on GitHub,
+
+00:01:44.629 --> 00:01:48.199
+it's probably a good idea to make the "README" as a markdown file.
+
+00:01:48.200 --> 00:01:52.829
+Since then, that can be displayed on your repo homepage.
+
