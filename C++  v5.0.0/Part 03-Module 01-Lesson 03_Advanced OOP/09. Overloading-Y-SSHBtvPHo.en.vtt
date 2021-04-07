@@ -1,0 +1,232 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.769
+Overloading is a type of polymorphism that allows us to pass different arguments
+
+00:00:07.769 --> 00:00:10.679
+to the same function name and
+
+00:00:10.679 --> 00:00:15.480
+have different implementations of that function that respond to the different arguments.
+
+00:00:15.480 --> 00:00:19.000
+So let's imagine that we have a class human,
+
+00:00:19.000 --> 00:00:23.524
+and let's say that this class human has
+
+00:00:23.524 --> 00:00:32.399
+a condition and the condition will default to happy.
+
+00:00:35.140 --> 00:00:42.200
+We can say human David and we can
+
+00:00:42.200 --> 00:00:50.905
+assert that david.condition equals happy,
+
+00:00:50.905 --> 00:00:53.700
+we need to make this a public member
+
+00:00:53.700 --> 00:01:00.405
+variable and
+
+00:01:00.405 --> 00:01:04.739
+if we pile this,
+
+00:01:04.739 --> 00:01:09.039
+we need to include string.
+
+00:01:15.640 --> 00:01:20.790
+Now if we run this David is happy, everything's great.
+
+00:01:22.099 --> 00:01:29.224
+Now, let's say that we have a function drink.
+
+00:01:29.224 --> 00:01:33.289
+So void drink and let's say we can drink water.
+
+00:01:33.290 --> 00:01:34.984
+If we drink water,
+
+00:01:34.983 --> 00:01:41.489
+then our condition becomes hydrated, and so now,
+
+00:01:41.489 --> 00:01:45.969
+if we have david.drinkwater,
+
+00:01:48.250 --> 00:01:55.370
+we should be able to assert that David's condition is hydrated.
+
+00:01:55.370 --> 00:01:59.660
+Now of course one thing we haven't done here is create a class water,
+
+00:01:59.659 --> 00:02:01.534
+so we're going to have to do that,
+
+00:02:01.534 --> 00:02:06.965
+a class water and this class isn't actually going to do anything.
+
+00:02:06.965 --> 00:02:14.099
+It's just going to allow us to have David drink water,
+
+00:02:14.099 --> 00:02:18.530
+and we'll create the water inside the function argument actually.
+
+00:02:18.530 --> 00:02:22.419
+So let's compile this,
+
+00:02:22.419 --> 00:02:27.639
+we have two semicolon after a class.
+
+00:02:35.419 --> 00:02:39.629
+Let's create an object that way,
+
+00:02:39.629 --> 00:02:44.549
+and now, David is drinking water and my condition is hydrated.
+
+00:02:44.550 --> 00:02:47.830
+I say me because my name is David.
+
+00:02:47.830 --> 00:02:51.050
+But now we're finally going to get to the overloading.
+
+00:02:51.050 --> 00:02:53.120
+So far we've just been setting up this class.
+
+00:02:53.120 --> 00:02:55.730
+Here's where we're actually going to overload the class.
+
+00:02:55.729 --> 00:03:01.144
+Now let's say that David can drink
+
+00:03:01.145 --> 00:03:08.670
+alcohol and if I drink alcohol or if a human it's not David,
+
+00:03:08.669 --> 00:03:15.544
+if the class human can drink alcohol our condition shifts to impaired.
+
+00:03:15.544 --> 00:03:21.919
+So if we instead of drinking water,
+
+00:03:21.919 --> 00:03:28.839
+drink alcohol then we want to verify that our condition has shifted to impaired,
+
+00:03:28.840 --> 00:03:31.530
+let's actually reformat that,
+
+00:03:31.530 --> 00:03:36.469
+and we haven't created class alcohol just like we created class water.
+
+00:03:36.469 --> 00:03:39.270
+We're going to have to create class alcohol.
+
+00:03:42.740 --> 00:03:47.510
+Now we see we've gone from happy to hydrated to
+
+00:03:47.509 --> 00:03:52.069
+impaired and we've successfully overloaded the drink method.
+
+00:03:52.069 --> 00:03:53.269
+Let's keep overloading it.
+
+00:03:53.270 --> 00:03:56.010
+What else can we drink? We can drink coffee,
+
+00:03:56.270 --> 00:04:00.075
+and if we drink coffee,
+
+00:04:00.074 --> 00:04:09.969
+our condition will change to alert, and down here,
+
+00:04:18.800 --> 00:04:21.139
+oh, same problem as before.
+
+00:04:21.139 --> 00:04:30.544
+We've got to declare a class coffee but now we should be able to compile.
+
+00:04:30.545 --> 00:04:36.620
+David.alert failed because I cut and pasted and didn't update alcohol.
+
+00:04:36.620 --> 00:04:39.480
+So we drink water and we're hydrated,
+
+00:04:39.480 --> 00:04:40.890
+we drink alcohol and we're impaired,
+
+00:04:40.889 --> 00:04:42.659
+and we drink coffee and then we are alert.
+
+00:04:42.660 --> 00:04:45.610
+So now this should compile.
+
+00:04:45.740 --> 00:04:48.875
+What else can we drink? We could drink soda.
+
+00:04:48.875 --> 00:04:51.689
+I mean, we could keep going all day.
+
+00:04:51.689 --> 00:04:54.620
+We'll make this one our last one.
+
+00:04:56.089 --> 00:04:58.784
+If we drink soda,
+
+00:04:58.785 --> 00:05:04.930
+our condition will become cavities.
+
+00:05:04.930 --> 00:05:07.129
+I'm going to have to go to the dentist not because I actually
+
+00:05:07.129 --> 00:05:09.889
+drink that much soda but I guess I didn't brush my teeth enough,
+
+00:05:09.889 --> 00:05:12.634
+you get that filling in a few days.
+
+00:05:12.634 --> 00:05:20.089
+So we'll have a class soda and if we will overload the drink function so that if we drink
+
+00:05:20.089 --> 00:05:27.259
+soda then our condition will become cavities.
+
+00:05:27.259 --> 00:05:30.439
+Now this is a pretty simplified version of function overloading.
+
+00:05:30.439 --> 00:05:34.219
+In particular, you'll notice that really all the function or
+
+00:05:34.220 --> 00:05:38.990
+all the argument type or parameter type
+
+00:05:38.990 --> 00:05:44.060
+is doing here is allowing us to switch to different versions of the function.
+
+00:05:44.060 --> 00:05:47.899
+We're not actually using the parameter inside of the function itself.
+
+00:05:47.899 --> 00:05:49.609
+You could certainly do that.
+
+00:05:49.610 --> 00:05:53.030
+We could also pass system defined types instead of
+
+00:05:53.029 --> 00:05:56.059
+user-defined types like the classes we've created.
+
+00:05:56.060 --> 00:05:58.889
+There are all sorts of ways to do function overloading but this
+
+00:05:58.889 --> 00:06:02.899
+is an example of how you can use function overloading
+
+00:06:02.899 --> 00:06:06.574
+to have different versions of a function that behave differently depending
+
+00:06:06.574 --> 00:06:10.519
+on what type of parameters you set up for the function,
+
+00:06:10.519 --> 00:06:12.719
+what arguments you pass in.
+

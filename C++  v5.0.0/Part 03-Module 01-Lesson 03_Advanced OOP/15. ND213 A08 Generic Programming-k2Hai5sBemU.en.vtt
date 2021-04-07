@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.700
+Generic Programming is an example of
+
+00:00:02.700 --> 00:00:07.290
+polymorphism that generalizes the parameters of classes and functions.
+
+00:00:07.290 --> 00:00:11.054
+By using a C++ facility called a template,
+
+00:00:11.054 --> 00:00:15.780
+you can build classes and functions that work with many different types of data.
+
+00:00:15.779 --> 00:00:19.109
+Think about the vector class from the Standard Library.
+
+00:00:19.109 --> 00:00:22.454
+This is an example of generic programming.
+
+00:00:22.454 --> 00:00:24.809
+We can create a vector of ints,
+
+00:00:24.809 --> 00:00:26.250
+a vector of strings,
+
+00:00:26.250 --> 00:00:29.730
+a vector of some user-defined class that we create.
+
+00:00:29.730 --> 00:00:32.625
+We can have a vector of almost anything actually.
+
+00:00:32.625 --> 00:00:36.509
+You're going to learn more about templates and how to use them in
+
+00:00:36.509 --> 00:00:40.379
+generic programming to make your code more generalizable.
+
+00:00:40.380 --> 00:00:45.570
+That way, you can reuse the same code in many different situations.
+

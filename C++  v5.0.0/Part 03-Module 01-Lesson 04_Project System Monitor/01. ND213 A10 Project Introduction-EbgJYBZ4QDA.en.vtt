@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.334
+Now that you've practiced building and instantiating classes,
+
+00:00:04.334 --> 00:00:07.769
+it's time to put your C++ skills to work.
+
+00:00:07.769 --> 00:00:10.875
+The final project for this course is to build
+
+00:00:10.875 --> 00:00:14.279
+a process manager for the Linux operating system.
+
+00:00:14.279 --> 00:00:20.309
+Linux stores data about the processes running on the system in lots of different files.
+
+00:00:20.309 --> 00:00:23.954
+You'll read from those files, structure the data,
+
+00:00:23.954 --> 00:00:28.469
+process it, and then format it for output to the terminal.
+
+00:00:28.469 --> 00:00:32.129
+This program will require many different classes to
+
+00:00:32.130 --> 00:00:35.730
+handle different types of data and different tasks.
+
+00:00:35.729 --> 00:00:40.459
+Some of these classes are related through composition and inheritance.
+
+00:00:40.460 --> 00:00:45.049
+Some of these classes can be merged by practicing generic programming.
+
+00:00:45.049 --> 00:00:48.140
+This project is a perfect opportunity to
+
+00:00:48.140 --> 00:00:50.960
+demonstrate your object oriented programming skills
+
+00:00:50.960 --> 00:00:53.840
+in C++ and to use what you've
+
+00:00:53.840 --> 00:00:58.250
+learned to extend the process manager and really make it your own.
+
+00:00:58.250 --> 00:01:02.465
+I really hope you enjoy this project because once you're done,
+
+00:01:02.465 --> 00:01:05.520
+it's going to be awesome.
+

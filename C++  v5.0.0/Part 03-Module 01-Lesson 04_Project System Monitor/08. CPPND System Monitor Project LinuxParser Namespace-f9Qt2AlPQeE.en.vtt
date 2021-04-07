@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.690
+In order to capture data about a Linux system,
+
+00:00:03.690 --> 00:00:06.945
+it turns out that what we need to do is read the file system.
+
+00:00:06.945 --> 00:00:10.365
+Most of the data about the status of
+
+00:00:10.365 --> 00:00:15.929
+a Linux system is stored in the file system often in the proc directory.
+
+00:00:15.929 --> 00:00:20.850
+So if we look at what's going on in the proc directory here on the terminal,
+
+00:00:20.850 --> 00:00:23.054
+we see lots of different sub-directories.
+
+00:00:23.054 --> 00:00:25.634
+There are directories with integral names.
+
+00:00:25.635 --> 00:00:28.540
+These directories correspond to different processes,
+
+00:00:28.539 --> 00:00:31.349
+and the processes map to process IDs.
+
+00:00:31.350 --> 00:00:36.719
+So the directory name is the process ID of each process,
+
+00:00:36.719 --> 00:00:38.570
+and then there are other directories that correspond to
+
+00:00:38.570 --> 00:00:40.715
+more general information about the system,
+
+00:00:40.715 --> 00:00:43.910
+and most of the information that we're looking for about
+
+00:00:43.909 --> 00:00:48.244
+the status of our Linux system is here within the proc directory.
+
+00:00:48.244 --> 00:00:52.879
+So in order to capture this information for our system monitor,
+
+00:00:52.880 --> 00:00:56.660
+we've created a Linux parser header and source file,
+
+00:00:56.659 --> 00:01:01.024
+and an interesting thing about the Linux parser is it's not actually a class.
+
+00:01:01.024 --> 00:01:04.849
+There's not really any object level data or
+
+00:01:04.849 --> 00:01:08.629
+member level data that needs to be persisted within Linux parser.
+
+00:01:08.629 --> 00:01:11.209
+So instead, it's defined as a namespace.
+
+00:01:11.209 --> 00:01:16.359
+There are some constant strings basically some file system path
+
+00:01:16.359 --> 00:01:19.519
+variables that are constants of
+
+00:01:19.519 --> 00:01:21.049
+the namespace and then there are lots of
+
+00:01:21.049 --> 00:01:23.480
+different functions that live within the namespace.
+
+00:01:23.480 --> 00:01:27.170
+But this is not a class for which we instantiate objects.
+
+00:01:27.170 --> 00:01:33.150
+This is just a namespace within which we have represented different functions,
+
+00:01:33.150 --> 00:01:35.780
+and if you look at the source file,
+
+00:01:35.780 --> 00:01:39.799
+then some of these functions we've given examples of how to implement,
+
+00:01:39.799 --> 00:01:42.739
+and some of these functions we've given dummy implementations
+
+00:01:42.739 --> 00:01:47.429
+that you'll need to go replace in order to get the project to work.
+

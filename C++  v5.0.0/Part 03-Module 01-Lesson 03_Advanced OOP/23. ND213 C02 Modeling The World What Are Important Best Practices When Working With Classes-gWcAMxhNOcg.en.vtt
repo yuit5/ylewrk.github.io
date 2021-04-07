@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.519 --> 00:00:09.914
+You want to map to the user's concepts.
+
+00:00:09.914 --> 00:00:14.160
+And listening to them and have them explain their problems and
+
+00:00:14.160 --> 00:00:19.259
+solutions on a white board is an excellent way of learning that,
+
+00:00:19.260 --> 00:00:23.880
+possibly reading a sort of simplified book about a topic.
+
+00:00:23.879 --> 00:00:25.318
+If you're helping historians,
+
+00:00:25.318 --> 00:00:27.599
+it would be a good idea to read a little bit of art history.
+
+00:00:27.600 --> 00:00:29.235
+If you're helping biologists,
+
+00:00:29.234 --> 00:00:33.899
+you probably want to learn something about the kind of biology you are doing;
+
+00:00:33.899 --> 00:00:37.229
+genes, or protein folding,
+
+00:00:37.229 --> 00:00:39.859
+or cells, things like that.
+
+00:00:39.859 --> 00:00:43.100
+So you have to learn a bit so that you get the fundamental concepts.
+
+00:00:43.100 --> 00:00:46.505
+Now, once you've gotten that,
+
+00:00:46.505 --> 00:00:48.425
+you should start simple.
+
+00:00:48.424 --> 00:00:52.894
+A lot of people try to build the perfect model of
+
+00:00:52.895 --> 00:00:57.830
+the users of the customers world that never works.
+
+00:00:57.829 --> 00:01:02.344
+What you have to do is to build the simplest version of
+
+00:01:02.344 --> 00:01:07.745
+a few cases that you think you understand and then see if they work.
+
+00:01:07.745 --> 00:01:11.120
+They won't work, not the first time.
+
+00:01:11.120 --> 00:01:14.525
+What do you then do is you learn from this experience.
+
+00:01:14.525 --> 00:01:17.389
+You have the customers,
+
+00:01:17.388 --> 00:01:19.174
+users, whatever you call them,
+
+00:01:19.174 --> 00:01:23.390
+tell you what you got slightly wrong and then you extend them
+
+00:01:23.390 --> 00:01:27.844
+a little bit with the right facilities or fix them if they were wrong.
+
+00:01:27.844 --> 00:01:31.219
+So basically, this is basic engineering.
+
+00:01:31.219 --> 00:01:33.620
+You build something, you try it out,
+
+00:01:33.620 --> 00:01:34.984
+you rely on feedback,
+
+00:01:34.984 --> 00:01:39.789
+and then you evolve the system based on that.
+
+00:01:39.790 --> 00:01:43.895
+Working perfectly the first time is an old joke.
+
+00:01:43.894 --> 00:01:46.969
+It's a good joke and it's well worth remembering and
+
+00:01:46.969 --> 00:01:50.789
+I'm reminding people of that and the last bug.
+

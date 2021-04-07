@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.140 --> 00:00:08.054
+The friend keyword grants access to the private members of a class.
+
+00:00:08.054 --> 00:00:10.050
+So in this class heart,
+
+00:00:10.050 --> 00:00:13.740
+if we want heart to make
+
+00:00:13.740 --> 00:00:18.179
+its private members accessible to the class human within the class heart,
+
+00:00:18.179 --> 00:00:22.995
+we'll say that class human is a friend of class heart.
+
+00:00:22.995 --> 00:00:27.450
+That way, class human can access private members of class heart.
+
+00:00:27.449 --> 00:00:28.890
+So imagine we have a heart,
+
+00:00:28.890 --> 00:00:33.450
+and the only thing heart has is a private member rate which is initialized to 80.
+
+00:00:33.450 --> 00:00:35.090
+This is a human heart so,
+
+00:00:35.090 --> 00:00:39.315
+80 beats per minute is its resting rate.
+
+00:00:39.314 --> 00:00:44.009
+There's no way to directly change the rate of a heart.
+
+00:00:44.009 --> 00:00:47.030
+That's something that changes in response to things humans do,
+
+00:00:47.030 --> 00:00:49.490
+but you can't just think your way
+
+00:00:49.490 --> 00:00:52.625
+to a better heart rate or command your heart rate to change.
+
+00:00:52.625 --> 00:00:54.520
+So how can your heart rate change?
+
+00:00:54.520 --> 00:00:56.690
+Well, if the human exercises,
+
+00:00:56.689 --> 00:01:01.589
+then the heart rate may go up to 150 beats per minute.
+
+00:01:01.590 --> 00:01:04.575
+So if we exercise, we want to be able to set the rate.
+
+00:01:04.575 --> 00:01:07.519
+But because rate is a private member of heart,
+
+00:01:07.519 --> 00:01:12.229
+the human class has to be a friend of class heart in order to be able to set that rate.
+
+00:01:12.230 --> 00:01:15.200
+The same if we want to return what the heart rate is
+
+00:01:15.200 --> 00:01:18.439
+through say an accessor function like heart rate,
+
+00:01:18.439 --> 00:01:21.155
+then we need to be friends with
+
+00:01:21.155 --> 00:01:24.515
+the heart class in order to return that private member heart rate.
+
+00:01:24.515 --> 00:01:31.954
+Because human is a friend of class heart or heart declares class human to be its friend,
+
+00:01:31.954 --> 00:01:36.739
+class human is able to access the rate member variable and
+
+00:01:36.739 --> 00:01:42.199
+any other private member data or functions that might be present in heart.
+
+00:01:42.200 --> 00:01:45.140
+So if we compile this and run it,
+
+00:01:45.140 --> 00:01:47.909
+we see that it works
+

@@ -1,0 +1,155 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Part 03-Module 01-Lesson 03_Advanced OOP</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="">
+
+    <div id="">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+
+                <h1 style="">Part 03-Module 01-Lesson 03_Advanced OOP</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <ul>
+  <li><a href="01. Polymorphism and Inheritance.html">01. Polymorphism and Inheritance</a></li>
+  <li><a href="02. Bjarne on Inheritance.html">02. Bjarne on Inheritance</a></li>
+  <li><a href="03. Inheritance.html">03. Inheritance</a></li>
+  <li><a href="04. Access Specifiers.html">04. Access Specifiers</a></li>
+  <li><a href="05. Exercise Animal Class.html">05. Exercise: Animal Class</a></li>
+  <li><a href="06. Composition.html">06. Composition</a></li>
+  <li><a href="07. Exercise Class Hierarchy.html">07. Exercise: Class Hierarchy</a></li>
+  <li><a href="08. Exercise Friends.html">08. Exercise: Friends</a></li>
+  <li><a href="09. Polymorphism Overloading.html">09. Polymorphism: Overloading</a></li>
+  <li><a href="10. Polymorphism Operator Overloading.html">10. Polymorphism: Operator Overloading</a></li>
+  <li><a href="11. Virtual Functions.html">11. Virtual Functions</a></li>
+  <li><a href="12. Polymorphism Overriding.html">12. Polymorphism: Overriding</a></li>
+  <li><a href="13. Override.html">13. Override</a></li>
+  <li><a href="14. Multiple Inheritance.html">14. Multiple Inheritance</a></li>
+  <li><a href="15. Generic Programming.html">15. Generic Programming</a></li>
+  <li><a href="16. Bjarne on Generic Programming.html">16. Bjarne on Generic Programming</a></li>
+  <li><a href="17. Templates.html">17. Templates</a></li>
+  <li><a href="18. Bjarne on Templates.html">18. Bjarne on Templates</a></li>
+  <li><a href="19. Exercise Comparison Operation.html">19. Exercise: Comparison Operation</a></li>
+  <li><a href="20. Deduction.html">20. Deduction</a></li>
+  <li><a href="21. Exercise Class Template.html">21. Exercise: Class Template</a></li>
+  <li><a href="22. Summary.html">22. Summary</a></li>
+  <li><a href="23. Bjarne on Best Practices with Classes.html">23. Bjarne on Best Practices with Classes</a></li>
+
+
+</ul>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Part 03-Module 01-Lesson 03_Advanced OOP')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

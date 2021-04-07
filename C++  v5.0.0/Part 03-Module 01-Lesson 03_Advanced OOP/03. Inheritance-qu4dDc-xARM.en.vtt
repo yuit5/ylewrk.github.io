@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.045
+Inheritance is a really important topic in object oriented programming and it refers to
+
+00:00:06.045 --> 00:00:11.880
+a hierarchical structure of classes where one class inherits from another.
+
+00:00:11.880 --> 00:00:16.035
+We often call the top class,
+
+00:00:16.035 --> 00:00:19.860
+the base class or the parent class and
+
+00:00:19.860 --> 00:00:22.410
+then the class that inherits from
+
+00:00:22.410 --> 00:00:25.125
+that is sometimes called the derived class with the child class.
+
+00:00:25.125 --> 00:00:29.520
+So imagine we have this program here and it has a class,
+
+00:00:29.520 --> 00:00:35.835
+the class is class Animal and animals talk and if we compile this program and run it,
+
+00:00:35.835 --> 00:00:38.145
+the animal talks which is great.
+
+00:00:38.145 --> 00:00:42.870
+What we can do with inheritance is build a class,
+
+00:00:42.870 --> 00:00:46.220
+call this class human that inherits from
+
+00:00:46.220 --> 00:00:51.065
+class animal in that this is the syntax here to inherit from class animal,
+
+00:00:51.065 --> 00:01:00.870
+and what we can do now is add an object of type human
+
+00:01:00.870 --> 00:01:05.870
+and we can ask the human to talk and what we'll see is that the human can talk just like
+
+00:01:05.870 --> 00:01:11.180
+the animal talks because class human inherits from class animal.
+
+00:01:11.180 --> 00:01:14.770
+So first, the animal is talking and the human is talking.
+
+00:01:14.770 --> 00:01:18.410
+Of course, we might want the human to talk differently than the animal.
+
+00:01:18.410 --> 00:01:21.439
+In which case, we can create
+
+00:01:21.439 --> 00:01:25.485
+a different class talk and
+
+00:01:25.485 --> 00:01:30.710
+that class can talk differently because humans talk differently,
+
+00:01:30.710 --> 00:01:33.360
+say, "Hello",
+
+00:01:36.160 --> 00:01:43.010
+and now if we compile our program and run it,
+
+00:01:43.010 --> 00:01:45.470
+the animal talks and the human says, "Hello",
+
+00:01:45.470 --> 00:01:48.860
+which is great and we can even go further and add may be
+
+00:01:48.860 --> 00:01:52.775
+a new member function to class Human which is walk.
+
+00:01:52.775 --> 00:01:58.615
+In this case, all walk will do simply output, I'm walking,
+
+00:01:58.615 --> 00:02:03.770
+but you could imagine a more sophisticated implementation these classes where may
+
+00:02:03.770 --> 00:02:10.039
+be the class Animal has a position and by walking that human changes its position.
+
+00:02:10.039 --> 00:02:16.040
+For now, we'll just compile and run this and see that a human can walk and talk,
+
+00:02:16.040 --> 00:02:18.245
+we forgot to ask the human to walk,
+
+00:02:18.245 --> 00:02:20.840
+so we tell the human to walk.
+
+00:02:20.840 --> 00:02:23.840
+So we'll add a command for the human to walk,
+
+00:02:23.840 --> 00:02:29.420
+we'll compile the program and now the animal talks then the human talks,
+
+00:02:29.420 --> 00:02:31.280
+and then the human walks.
+
+00:02:31.280 --> 00:02:35.720
+What we see of course is that if we ask the animal to walk,
+
+00:02:35.720 --> 00:02:39.095
+it won't be able to do it because in inheritance,
+
+00:02:39.095 --> 00:02:41.810
+the derived class, the child class
+
+00:02:41.810 --> 00:02:45.020
+human inherits everything from its parent from the base class.
+
+00:02:45.020 --> 00:02:46.430
+So it inherits talk,
+
+00:02:46.430 --> 00:02:48.950
+but the inheritance doesn't go in the other direction.
+
+00:02:48.950 --> 00:02:50.855
+So animals don't get all of
+
+00:02:50.855 --> 00:02:54.650
+the different member data and member functions that humans have,
+
+00:02:54.650 --> 00:02:57.500
+animals have the base member data,
+
+00:02:57.500 --> 00:03:01.130
+and member functions than humans and other child classes can build on that.
+
+00:03:01.130 --> 00:03:05.430
+So if we try and compile this function that's asking the animal to walk,
+
+00:03:05.430 --> 00:03:09.095
+we'll get an error that says animal has no member walk.
+
+00:03:09.095 --> 00:03:12.300
+Did you mean talk? That you could guess.
+

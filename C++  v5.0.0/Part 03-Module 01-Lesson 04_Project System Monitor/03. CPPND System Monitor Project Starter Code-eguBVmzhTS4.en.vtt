@@ -1,0 +1,178 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.094
+So I'm going to close htop because we're not going to build exactly that.
+
+00:00:04.094 --> 00:00:05.955
+Instead we're going to build
+
+00:00:05.955 --> 00:00:10.515
+a system monitor program that is roughly like htop though a little simpler.
+
+00:00:10.515 --> 00:00:12.240
+To show you where we're going to start,
+
+00:00:12.240 --> 00:00:14.955
+I'm going to open Visual Studio Code.
+
+00:00:14.955 --> 00:00:19.530
+This is a Microsoft open-source coding editor.
+
+00:00:19.530 --> 00:00:24.880
+I'm going to close some of the default files that open here.
+
+00:00:25.190 --> 00:00:32.234
+I'm going to clone in the starter code for this project.
+
+00:00:32.234 --> 00:00:36.810
+I'm going to hit "Control Shift P" which brings up the command palette.
+
+00:00:36.810 --> 00:00:42.995
+I'm going to say the command that we want is to clone a repository and then I'm going to
+
+00:00:42.994 --> 00:00:51.274
+copy the repository link for the starter code and I'm going to paste it here.
+
+00:00:51.274 --> 00:00:52.640
+Oh, but nothing Pastes.
+
+00:00:52.640 --> 00:00:55.549
+That's because with VNC in order to get
+
+00:00:55.549 --> 00:00:58.459
+something to paste in we actually have to go to the sidebar over
+
+00:00:58.460 --> 00:01:04.769
+here and we have to add what we want to paste it into our system-wide clipboard.
+
+00:01:04.769 --> 00:01:10.280
+So now that we've added that in when I come back to Visual Studio Code,
+
+00:01:10.280 --> 00:01:13.204
+I can paste in that repository link.
+
+00:01:13.204 --> 00:01:15.739
+I can hit "Return" for some reason, well,
+
+00:01:15.739 --> 00:01:19.879
+not for some reason but we're logged in as root right now.
+
+00:01:19.879 --> 00:01:21.439
+So our home directory is root.
+
+00:01:21.439 --> 00:01:23.989
+That's a bit of an odd place to do software development.
+
+00:01:23.989 --> 00:01:32.509
+So I'm actually going to ask to do software development in slash home slash workspace.
+
+00:01:32.510 --> 00:01:36.785
+I'll say, "Put our GitHub repository there."
+
+00:01:36.784 --> 00:01:42.814
+Visual Studio Code asked if it would like me to open the clone repository.
+
+00:01:42.814 --> 00:01:45.185
+I say, "Open the repository."
+
+00:01:45.185 --> 00:01:50.825
+Now here we have the repository for our starter code.
+
+00:01:50.825 --> 00:01:56.609
+I'm going to open up a terminal in Visual Studio Code.
+
+00:01:56.609 --> 00:01:59.429
+It says, "Don't run code as root user."
+
+00:01:59.430 --> 00:02:06.660
+I understand it's a little bit of an exception because we're in our Udacity workspace.
+
+00:02:06.829 --> 00:02:11.300
+So I'm going to pull a little bit of a slight of hand here because we're in
+
+00:02:11.300 --> 00:02:15.005
+the process right now of updating the starter code for this project.
+
+00:02:15.004 --> 00:02:17.284
+So I'm actually going to check out
+
+00:02:17.284 --> 00:02:20.469
+a different branch by the time you're working on this code,
+
+00:02:20.469 --> 00:02:24.740
+all of this code should be in the master branch that you pull down by default.
+
+00:02:24.740 --> 00:02:27.659
+But right now I'm going to check out the update branch.
+
+00:02:27.659 --> 00:02:29.870
+Update here is just the name of a branch.
+
+00:02:29.870 --> 00:02:31.009
+We could have named it anything.
+
+00:02:31.009 --> 00:02:34.049
+We named it update because we're updating the code.
+
+00:02:34.849 --> 00:02:39.349
+Now, we've switched to the update branch and you can see over here all of a
+
+00:02:39.349 --> 00:02:43.460
+sudden we have lots of different directories
+
+00:02:43.460 --> 00:02:52.770
+and a slightly more robust project organizational structure.
+
+00:02:52.770 --> 00:02:58.260
+So now that we have the new starter code,
+
+00:02:58.259 --> 00:03:00.030
+I'm going to run make build,
+
+00:03:00.030 --> 00:03:02.025
+which should build our starter code,
+
+00:03:02.025 --> 00:03:06.390
+and we'll see it's getting everything compiled.
+
+00:03:06.389 --> 00:03:09.500
+The starter code should build out of the box although as you'll see,
+
+00:03:09.500 --> 00:03:10.819
+even though it builds,
+
+00:03:10.819 --> 00:03:13.129
+it doesn't work all that well.
+
+00:03:13.129 --> 00:03:19.294
+Once it builds, it should create an executable in slash build slash monitor.
+
+00:03:19.294 --> 00:03:21.109
+That's here.
+
+00:03:21.110 --> 00:03:23.615
+So it's in the build directory and then there's
+
+00:03:23.615 --> 00:03:26.780
+a monitor program that's the name of the executable.
+
+00:03:26.780 --> 00:03:28.370
+When we run that,
+
+00:03:28.370 --> 00:03:32.435
+we get something that looks a little bit like htop
+
+00:03:32.435 --> 00:03:37.849
+but not as robust and nothing seems to actually be working.
+
+00:03:37.849 --> 00:03:39.754
+We have the system date on the top.
+
+00:03:39.754 --> 00:03:43.715
+Then we have this process data on the bottom but everything's blank.
+
+00:03:43.715 --> 00:03:47.890
+So that's the starter code and what the starter code will look
+

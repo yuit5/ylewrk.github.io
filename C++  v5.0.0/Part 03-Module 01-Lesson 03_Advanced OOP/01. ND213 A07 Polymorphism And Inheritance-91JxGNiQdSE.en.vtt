@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.224
+Inheritance and polymorphism are important principles of object-oriented programming.
+
+00:00:06.224 --> 00:00:10.919
+Inheritance is one way that classes can relate to each other.
+
+00:00:10.919 --> 00:00:15.929
+Two classes might have a parent-child relationship such that
+
+00:00:15.929 --> 00:00:21.074
+the child inherits members from the parent. Here's an example.
+
+00:00:21.074 --> 00:00:26.535
+We might have an apple class that is the child of a fruit class.
+
+00:00:26.535 --> 00:00:30.510
+Apples have their own varieties and other members,
+
+00:00:30.510 --> 00:00:36.524
+but they also inherit members from the parent fruit class like seeds, for example.
+
+00:00:36.524 --> 00:00:42.449
+Going further, the fruit class might be a child of the plant class.
+
+00:00:42.450 --> 00:00:46.880
+The fruit class might inherit some members from the plant class,
+
+00:00:46.880 --> 00:00:49.385
+maybe mass, for example.
+
+00:00:49.384 --> 00:00:53.083
+The plant class has a mass, so its child,
+
+00:00:53.084 --> 00:00:57.415
+the fruit class inherits this mass member, and therefore,
+
+00:00:57.414 --> 00:01:00.289
+the apple class which is the child of
+
+00:01:00.289 --> 00:01:05.325
+the fruit class also inherits the mass member from the plant class,
+
+00:01:05.325 --> 00:01:06.625
+through the fruit class,
+
+00:01:06.625 --> 00:01:08.239
+to the apple class.
+
+00:01:08.239 --> 00:01:11.929
+Polymorphism is a related concept that
+
+00:01:11.930 --> 00:01:15.545
+allows an interface to work with several different types.
+
+00:01:15.545 --> 00:01:17.750
+To extend our analogy,
+
+00:01:17.750 --> 00:01:22.010
+we might have a cut function that can work with the plant,
+
+00:01:22.010 --> 00:01:24.395
+the fruit, or the apple class.
+
+00:01:24.394 --> 00:01:29.194
+In fact, the cut function might accept totally different types of objects,
+
+00:01:29.194 --> 00:01:32.269
+like a rope or a paper object.
+
+00:01:32.269 --> 00:01:34.339
+On the other hand, we might have
+
+00:01:34.340 --> 00:01:38.960
+a bruise function that works with fruits and with apples,
+
+00:01:38.959 --> 00:01:40.579
+but not with plants.
+
+00:01:40.579 --> 00:01:42.590
+The fact that a function can work with
+
+00:01:42.590 --> 00:01:47.120
+multiple different types of data is an example of polymorphism.
+
+00:01:47.120 --> 00:01:54.245
+Coming up, you're going to learn even more about inheritance and polymorphism in C++.
+
+00:01:54.245 --> 00:01:57.439
+As always, you'll get to practice these topics in
+
+00:01:57.439 --> 00:02:02.280
+several different examples and exercises. Let's get to it.
+

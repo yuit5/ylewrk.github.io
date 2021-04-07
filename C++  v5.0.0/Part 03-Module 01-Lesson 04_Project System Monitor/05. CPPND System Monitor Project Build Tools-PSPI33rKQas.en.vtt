@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.950 --> 00:00:07.230
+This project uses make in this Makefile to build the project.
+
+00:00:07.230 --> 00:00:10.455
+The Makefile has a few different targets.
+
+00:00:10.455 --> 00:00:14.879
+I will pull up a terminal so we can try out the different targets.
+
+00:00:14.880 --> 00:00:19.620
+So there's an all target which runs the format test and build targets.
+
+00:00:19.620 --> 00:00:21.795
+Then there's a format target, a build target,
+
+00:00:21.795 --> 00:00:24.225
+a debug target, and a clean target.
+
+00:00:24.225 --> 00:00:27.240
+So if we look at it each of these targets,
+
+00:00:27.239 --> 00:00:30.209
+make clean is pretty straightforward.
+
+00:00:30.210 --> 00:00:32.070
+All it does is remove the build directory,
+
+00:00:32.070 --> 00:00:35.920
+and since all of the build artifacts are tored in the build directory,
+
+00:00:35.920 --> 00:00:39.920
+removing the build directory removes all of the build artifacts and
+
+00:00:39.920 --> 00:00:45.150
+cleans up the project takes it back to its original state.
+
+00:00:46.000 --> 00:00:49.445
+Make build actually builds the project.
+
+00:00:49.445 --> 00:00:51.649
+So you can see we make a build directory,
+
+00:00:51.649 --> 00:00:54.679
+and then what you might be able to catch here is we're actually running CMake.
+
+00:00:54.679 --> 00:01:02.314
+So it's a little unusual that the Build Target in the MakeFile actually run CMake.
+
+00:01:02.314 --> 00:01:03.799
+We make the build directory,
+
+00:01:03.799 --> 00:01:06.924
+we enter the build directory and then we run CMake,
+
+00:01:06.924 --> 00:01:12.739
+and then we call make on the new make file that CMake creates within the build directory.
+
+00:01:12.739 --> 00:01:19.209
+So there's a little bit of a make to CMake back to make roundabout here.
+
+00:01:19.209 --> 00:01:21.244
+You don't need to worry about that too much.
+
+00:01:21.245 --> 00:01:24.230
+CMake might actually be a little bit of overkill here,
+
+00:01:24.230 --> 00:01:28.880
+but we added it in case at some point you'd like to
+
+00:01:28.879 --> 00:01:34.310
+go extend this project to run on Windows or some other operating system.
+
+00:01:34.310 --> 00:01:36.740
+But for the purposes of making this project,
+
+00:01:36.739 --> 00:01:39.439
+you can just run make build and that should run everything.
+
+00:01:39.439 --> 00:01:40.984
+Now that we've run make build,
+
+00:01:40.984 --> 00:01:44.825
+I'll just run make clean which will remove the build directory.
+
+00:01:44.825 --> 00:01:48.484
+Some of the other targets here are make format which runs
+
+00:01:48.484 --> 00:01:53.299
+the clang-formatter or clang-format which is a nice tool
+
+00:01:53.299 --> 00:01:57.200
+for organizing and formatting your code so
+
+00:01:57.200 --> 00:02:02.435
+that it looks good and follows a set of stylistic rules.
+
+00:02:02.435 --> 00:02:04.129
+Then make debug if you want to
+
+00:02:04.129 --> 00:02:07.129
+compile your code or
+
+00:02:07.129 --> 00:02:11.060
+build your code with the debug symbols so you can apply a debugger to it.
+
+00:02:11.060 --> 00:02:15.724
+So there's a little bit of complexity here.
+
+00:02:15.724 --> 00:02:20.944
+But hopefully, the actual MakeFile itself is pretty straightforward and easy to follow.
+
+00:02:20.944 --> 00:02:23.329
+You basically have four options; make format.
+
+00:02:23.330 --> 00:02:25.610
+If you want to format the files, make build.
+
+00:02:25.610 --> 00:02:27.140
+If you want to build, them make debug.
+
+00:02:27.139 --> 00:02:30.829
+If you want to build them with debug symbols so that you can run a debugger,
+
+00:02:30.830 --> 00:02:34.830
+and then make clean if you want to clean everything up.
+

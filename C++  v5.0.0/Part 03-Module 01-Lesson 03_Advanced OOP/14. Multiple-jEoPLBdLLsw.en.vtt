@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.559
+Multiple inheritance allows us to create a derived class from two different base classes.
+
+00:00:07.559 --> 00:00:11.714
+In this example, we have a class car and a class boat.
+
+00:00:11.714 --> 00:00:16.605
+Now imagine that we want to create a class amphibious car.
+
+00:00:16.605 --> 00:00:20.429
+This is like one of those duck cars that you might have seen that can drive on
+
+00:00:20.429 --> 00:00:25.140
+the street and then drive into the water and float on the water.
+
+00:00:25.140 --> 00:00:28.949
+So what we might do is we might create a new class,
+
+00:00:28.949 --> 00:00:38.310
+AmphibiousCar, and that class will inherit from public boat and from public car.
+
+00:00:39.649 --> 00:00:42.859
+Imagine we actually don't have that class do anything.
+
+00:00:42.859 --> 00:00:47.344
+It's just a class that inherits from both car and boat.
+
+00:00:47.344 --> 00:00:53.629
+One way we might test this is we might declare an object of type car and
+
+00:00:53.630 --> 00:01:00.155
+an object of type boat and an object of type AmphibiousCar and we might call that doc.
+
+00:01:00.155 --> 00:01:07.390
+Then we're going to assert that duck.Drive is equal to
+
+00:01:07.390 --> 00:01:14.795
+car.Drive because both duck and car have access to this method drive.
+
+00:01:14.795 --> 00:01:22.144
+It's a method within the car class but because AmphibiousCar inherits from class car,
+
+00:01:22.144 --> 00:01:25.219
+users of amphibious car are able to
+
+00:01:25.219 --> 00:01:31.789
+call the drive method on the object of the amphibious car class.
+
+00:01:31.790 --> 00:01:34.695
+The same thing with cruise.
+
+00:01:34.694 --> 00:01:44.399
+We would say duck.Cruise is equal to boat.Cruise.
+
+00:01:45.260 --> 00:01:50.760
+That will call the method cruise that is in the boat class.
+
+00:01:50.760 --> 00:01:55.650
+Now, if we compile and run this class,
+
+00:01:55.650 --> 00:01:57.045
+we see that it works.
+
+00:01:57.045 --> 00:02:02.180
+Our AmphibiousCar object which we've named duck is able to both
+
+00:02:02.180 --> 00:02:09.939
+drive and cruise just like the car and the boat.
+

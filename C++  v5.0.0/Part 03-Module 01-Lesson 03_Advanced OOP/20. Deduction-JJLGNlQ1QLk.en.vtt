@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.560 --> 00:00:05.730
+Template deduction is when the compiler determines
+
+00:00:05.730 --> 00:00:11.685
+the type for a template automatically without us having to specify it.
+
+00:00:11.685 --> 00:00:12.839
+So in this example,
+
+00:00:12.839 --> 00:00:14.640
+we have a max function,
+
+00:00:14.640 --> 00:00:19.545
+and we tell the compiler that we're going to pass in a type int,
+
+00:00:19.545 --> 00:00:22.365
+type double, and type char.
+
+00:00:22.364 --> 00:00:29.369
+But what we could do is simply delete those types and
+
+00:00:29.370 --> 00:00:32.850
+the compiler would deduce from the arguments that
+
+00:00:32.850 --> 00:00:36.375
+in this case we're calling max with type int,
+
+00:00:36.375 --> 00:00:38.789
+in this case we're calling max with type double,
+
+00:00:38.789 --> 00:00:42.164
+and in this case we're calling max with type character.
+
+00:00:42.164 --> 00:00:49.780
+When we compile and run that code, it all works.
+
+00:00:49.780 --> 00:00:56.554
+Now you might wonder if you can do the same thing with standard vector.
+
+00:00:56.554 --> 00:00:59.914
+Normally, we would call standard vector int,
+
+00:00:59.914 --> 00:01:03.769
+we might call named the vector variable v,
+
+00:01:03.770 --> 00:01:07.060
+and we would initialize it to say, 1, 2, 3,
+
+00:01:07.060 --> 00:01:13.265
+and then we might want to assert that v.size is equal to three.
+
+00:01:13.265 --> 00:01:17.540
+So we're telling the compiler that we want to create a vector of
+
+00:01:17.540 --> 00:01:23.469
+type int and we can compile that and run it and everything works great.
+
+00:01:23.469 --> 00:01:27.500
+So can we eliminate the int
+
+00:01:27.500 --> 00:01:32.000
+and have the compiler deduce that we want a vector of integers?
+
+00:01:32.000 --> 00:01:34.359
+When we compile this code,
+
+00:01:34.359 --> 00:01:37.954
+it errors out and says we're missing template arguments.
+
+00:01:37.954 --> 00:01:41.510
+But in fact, what we can do is we can compile it
+
+00:01:41.510 --> 00:01:46.265
+again and we can set the standard to C++17,
+
+00:01:46.265 --> 00:01:49.450
+the most recent C++ standard.
+
+00:01:49.450 --> 00:01:51.850
+Now when we compile the code,
+
+00:01:51.849 --> 00:01:55.084
+in fact it works and the compiler does deduce
+
+00:01:55.084 --> 00:01:59.849
+the type from the initialization list and the code compiles and runs,
+
+00:01:59.849 --> 00:02:05.109
+and this is an example of template deduction.
+

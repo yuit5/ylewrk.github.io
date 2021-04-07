@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.964
+Composition is an alternative to inheritance as a way to relate classes to each other.
+
+00:00:07.964 --> 00:00:09.300
+In this program here,
+
+00:00:09.300 --> 00:00:15.525
+we have a class Car and a car is simply composed of wheels.
+
+00:00:15.525 --> 00:00:19.910
+There are by default in the constructor four wheels,
+
+00:00:19.910 --> 00:00:27.530
+a vector of four wheels and then the class Wheel simply has a member diameter and
+
+00:00:27.530 --> 00:00:29.929
+the default constructor sets the diameter to
+
+00:00:29.929 --> 00:00:37.700
+50 maybe 30 centimeters but diameters of public members so we could change it later.
+
+00:00:37.700 --> 00:00:40.760
+In this case, car is composed of wheels.
+
+00:00:40.759 --> 00:00:43.009
+Wheels don't inherit from car,
+
+00:00:43.009 --> 00:00:44.689
+car doesn't inherit from wheels.
+
+00:00:44.689 --> 00:00:46.710
+A car isn't a type of wheel,
+
+00:00:46.710 --> 00:00:48.575
+a wheel isn't a type of car.
+
+00:00:48.575 --> 00:00:50.060
+A car simply has wheels.
+
+00:00:50.060 --> 00:00:51.740
+It's composed of wheels.
+
+00:00:51.740 --> 00:00:56.660
+We could also imagine adding seats or a steering wheel or
+
+00:00:56.659 --> 00:01:03.064
+other elements that can comprise a car or a better set of of which a car is composed.
+
+00:01:03.064 --> 00:01:05.599
+But at a base level,
+
+00:01:05.599 --> 00:01:10.069
+a car has wheels and so we create or instantiate
+
+00:01:10.069 --> 00:01:15.500
+an object of type car and then we check that car has at least one wheel.
+
+00:01:15.500 --> 00:01:18.109
+We could also in this case set it equal to
+
+00:01:18.109 --> 00:01:22.280
+four but just to make it more generic let's say a car at base has to
+
+00:01:22.280 --> 00:01:25.609
+have at least one wheel and if we compile that and run
+
+00:01:25.609 --> 00:01:31.620
+it everything works and a car is composed of wheels. That's composition.
+

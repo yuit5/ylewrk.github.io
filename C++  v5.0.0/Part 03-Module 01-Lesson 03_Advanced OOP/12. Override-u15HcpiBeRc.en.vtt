@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.209
+This program has a class Animal that has a pure virtual function, Talk.
+
+00:00:08.269 --> 00:00:11.669
+Well, its virtual because it has a virtual keyword and its
+
+00:00:11.669 --> 00:00:15.390
+pure because it has this equal 0 at the end,
+
+00:00:15.390 --> 00:00:19.905
+which means that the function is declared, but not defined.
+
+00:00:19.905 --> 00:00:26.804
+Let's say that we want to create a derived class of class Animal,
+
+00:00:26.804 --> 00:00:33.269
+and we want that derived class to define the virtual function, Talk.
+
+00:00:33.270 --> 00:00:39.180
+Let's imagine we have a class Cat that derives from public Animal,
+
+00:00:39.179 --> 00:00:42.960
+and that class Cat has
+
+00:00:42.960 --> 00:00:48.049
+a function string that has
+
+00:00:48.049 --> 00:00:54.309
+the same function signature as the base class.
+
+00:00:54.310 --> 00:01:02.560
+Let's actually define that Talk function for Cat.
+
+00:01:03.619 --> 00:01:11.289
+It's the Talk function on the Cat class and it will return "Meow".
+
+00:01:12.560 --> 00:01:14.969
+Let's test it down here,
+
+00:01:14.969 --> 00:01:25.090
+we'll have an object of type Cat and we will assert the (cat.Talk() equals equals "Meow".
+
+00:01:25.430 --> 00:01:34.250
+In order to make that work we're going to have to include &lt;cassert&gt;,
+
+00:01:34.250 --> 00:01:39.299
+and let's try compiling this.
+
+00:01:41.299 --> 00:01:44.905
+If we run it, we see that it works,
+
+00:01:44.905 --> 00:01:46.640
+and in fact we can even go a step further.
+
+00:01:46.640 --> 00:01:48.680
+We could add another class,
+
+00:01:48.680 --> 00:01:50.645
+let's call this Lion,
+
+00:01:50.644 --> 00:01:53.000
+that inherits not from public Animal,
+
+00:01:53.000 --> 00:01:54.625
+but from public Cat.
+
+00:01:54.625 --> 00:02:00.859
+Now, we are adding yet another layer of inheritance and we're going
+
+00:02:00.859 --> 00:02:07.385
+to override the function Talk from the Cat class,
+
+00:02:07.385 --> 00:02:17.659
+and in the Lion class we're going to have a function Talk,
+
+00:02:17.659 --> 00:02:20.629
+and we'll have the same function signature,
+
+00:02:20.629 --> 00:02:24.689
+and we'll return "Roar".
+
+00:02:27.099 --> 00:02:31.699
+You have to make sure to put a semicolon properly. All right.
+
+00:02:31.699 --> 00:02:36.964
+Now, lets clear our terminal and compile our program,
+
+00:02:36.965 --> 00:02:39.259
+but before we program,
+
+00:02:39.259 --> 00:02:43.109
+we're going to have to add another layer here.
+
+00:02:43.110 --> 00:02:51.210
+We'll have a lion of class Lion and will assert that (lion.Talk() equals equals "Roar".
+
+00:02:53.990 --> 00:02:56.890
+Now, if we compile the program,
+
+00:02:56.889 --> 00:03:03.119
+we see that it runs and it passes and a cat meows and a lion roars.
+

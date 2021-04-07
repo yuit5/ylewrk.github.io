@@ -1,0 +1,187 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.140 --> 00:00:05.489
+One of the components of the system class is the processor.
+
+00:00:05.490 --> 00:00:07.595
+The system has a processor,
+
+00:00:07.594 --> 00:00:09.839
+that processor is the CPU.
+
+00:00:09.839 --> 00:00:11.869
+The processor is a pretty simple class.
+
+00:00:11.869 --> 00:00:14.774
+All it does is return its utilization.
+
+00:00:14.775 --> 00:00:16.695
+In fact, as of right now,
+
+00:00:16.695 --> 00:00:19.050
+it doesn't have any private member variables,
+
+00:00:19.050 --> 00:00:21.539
+although you could certainly create some and some might be
+
+00:00:21.539 --> 00:00:26.129
+useful as you're determining the processor's utilization.
+
+00:00:26.129 --> 00:00:30.059
+How do we figure out what the processor's utilization is?
+
+00:00:30.059 --> 00:00:33.509
+The answer is actually you go to the Linux Filesystem.
+
+00:00:33.509 --> 00:00:37.829
+In this case, if we go to /proc/stat,
+
+00:00:37.829 --> 00:00:43.549
+we see that there is data on the different CPUs on the system.
+
+00:00:43.549 --> 00:00:47.729
+This system actually has four CPUs,
+
+00:00:47.729 --> 00:00:49.799
+so they're CPU0, 1,2, and 3,
+
+00:00:49.799 --> 00:00:53.669
+and then there is an aggregate CPU line up top.
+
+00:00:53.670 --> 00:00:55.420
+If you run htop,
+
+00:00:55.420 --> 00:00:59.380
+actually you'll see information about each of the four CPUs.
+
+00:00:59.380 --> 00:01:01.609
+But for the purposes of our system monitor,
+
+00:01:01.609 --> 00:01:03.070
+which is going to be a little simpler,
+
+00:01:03.070 --> 00:01:06.439
+we'll just output the aggregate CPU information.
+
+00:01:06.439 --> 00:01:15.469
+Each of these numbers following the CPU tag represents units of time.
+
+00:01:15.469 --> 00:01:18.429
+On Linux, they're are sometimes called Jiffies,
+
+00:01:18.430 --> 00:01:21.080
+which are like clock ticks.
+
+00:01:21.079 --> 00:01:24.484
+We'll include a little more textual information around
+
+00:01:24.484 --> 00:01:27.739
+how to work with each of these numbers.
+
+00:01:27.739 --> 00:01:30.409
+But essentially, what we want to do is add up
+
+00:01:30.409 --> 00:01:34.250
+the amount of time or the number of Jiffies that
+
+00:01:34.250 --> 00:01:37.400
+the system is actually working and then divide that by
+
+00:01:37.400 --> 00:01:41.270
+the total number of Jiffies or the total amount of time that's passed.
+
+00:01:41.269 --> 00:01:43.265
+So of all the time that's passed,
+
+00:01:43.265 --> 00:01:46.670
+how much time has the CPU actually been active?
+
+00:01:46.670 --> 00:01:51.040
+If we can read in this information and store it as integers,
+
+00:01:51.040 --> 00:01:55.160
+and then do the division or I guess floating point values,
+
+00:01:55.159 --> 00:01:58.444
+so we get a percentage result from the division.
+
+00:01:58.444 --> 00:02:01.489
+Then we'll have our number.
+
+00:02:01.489 --> 00:02:06.079
+One of the things that you might realize as you do this is
+
+00:02:06.079 --> 00:02:10.879
+that these numbers represent information about the CPU from the beginning of time.
+
+00:02:10.879 --> 00:02:14.389
+So particularly if the system has been up for a long time,
+
+00:02:14.389 --> 00:02:18.619
+the CPU utilization might not change
+
+00:02:18.620 --> 00:02:22.670
+very much over the period of time that you're running your system monitor.
+
+00:02:22.669 --> 00:02:28.084
+So for example, if the system has been pretty dormant for a long time,
+
+00:02:28.085 --> 00:02:32.930
+the CPU utilization will come across as low even if the CPU,
+
+00:02:32.930 --> 00:02:38.420
+this instant actually happens to be running at full utilization or red lining,
+
+00:02:38.419 --> 00:02:42.859
+because what we're doing is dividing the all-time number
+
+00:02:42.860 --> 00:02:47.000
+of active time units by the all-time number of total time units,
+
+00:02:47.000 --> 00:02:49.250
+which gives us a all time utilization,
+
+00:02:49.250 --> 00:02:52.939
+but not a good measure of the current utilization right now.
+
+00:02:52.939 --> 00:02:54.949
+So if you wanted to take this project a little bit
+
+00:02:54.949 --> 00:02:57.500
+further and do something a little more sophisticated,
+
+00:02:57.500 --> 00:03:04.909
+you could actually capture a more recent measurement of how active the CPU is.
+
+00:03:04.909 --> 00:03:07.625
+You might look at how active the CPU was a second ago,
+
+00:03:07.625 --> 00:03:09.680
+and how active the CPU is now,
+
+00:03:09.680 --> 00:03:13.430
+and then try and figure out how heavily
+
+00:03:13.430 --> 00:03:17.480
+utilized has the CPU been in the last second or the last 100 milliseconds.
+
+00:03:17.479 --> 00:03:20.599
+That would give you a more active measurement
+
+00:03:20.599 --> 00:03:24.710
+of how heavily utilized the CPU is right now,
+
+00:03:24.710 --> 00:03:28.460
+as opposed to how heavily utilized the CPU has been over
+
+00:03:28.460 --> 00:03:32.540
+its entire lifetime or the up-time of the system.
+
+00:03:32.539 --> 00:03:35.209
+In fact, that's what htop does as well,
+
+00:03:35.210 --> 00:03:40.080
+is it gives you a more current measurement of how active the system is.
+

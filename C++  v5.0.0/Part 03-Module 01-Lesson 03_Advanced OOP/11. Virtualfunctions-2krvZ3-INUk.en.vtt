@@ -1,0 +1,163 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.825
+Virtual functions allow us to define
+
+00:00:03.825 --> 00:00:06.150
+an abstract class that can function as
+
+00:00:06.150 --> 00:00:09.644
+an interface from which other classes can be derived.
+
+00:00:09.644 --> 00:00:13.154
+So imagine a class animal,
+
+00:00:13.154 --> 00:00:18.759
+and that animal has a function talk.
+
+00:00:19.010 --> 00:00:21.450
+Now how does an animal talk?
+
+00:00:21.449 --> 00:00:22.530
+It's not really clear.
+
+00:00:22.530 --> 00:00:25.650
+We know how humans talk and we know how cows talk,
+
+00:00:25.649 --> 00:00:29.939
+they moo and horses nay and dogs bark and cats meow.
+
+00:00:29.940 --> 00:00:32.189
+But how does just a generic animal talk?
+
+00:00:32.189 --> 00:00:33.765
+It's not totally clear.
+
+00:00:33.765 --> 00:00:39.784
+So what we might do is declare the talk function on the animal to be a virtual function.
+
+00:00:39.784 --> 00:00:44.629
+We'll even make it a pure virtual function which is what this equals zero does.
+
+00:00:44.630 --> 00:00:50.900
+What a virtual function means is that derived classes can override the talk function.
+
+00:00:50.899 --> 00:00:58.894
+What the equals zero means is that we're not even going to define how an animal talks.
+
+00:00:58.895 --> 00:01:02.180
+We're never going to be able to create an object of type animal.
+
+00:01:02.179 --> 00:01:07.415
+We're simply creating an interface and other classes that inherit from
+
+00:01:07.415 --> 00:01:13.535
+the base class animal are going to have to implement this talk method or talk function.
+
+00:01:13.534 --> 00:01:16.444
+But the animal class itself is not going to implement it.
+
+00:01:16.444 --> 00:01:23.384
+So let's create a class human that inherits from public animal,
+
+00:01:23.385 --> 00:01:27.920
+and this class human has to implement the talk function.
+
+00:01:27.920 --> 00:01:31.879
+In fact, if we don't implement the talk function,
+
+00:01:31.879 --> 00:01:35.689
+we'll get an error and let's just verify that that in fact does happen.
+
+00:01:35.689 --> 00:01:44.060
+So let's try and create an object of type human here and let's compile and we'll see.
+
+00:01:44.060 --> 00:01:47.090
+We get this issue with an abstract type human and that's
+
+00:01:47.090 --> 00:01:51.920
+because we are not defining the virtual function talk.
+
+00:01:51.920 --> 00:01:54.920
+So if we can solve that by defining
+
+00:01:54.920 --> 00:01:58.430
+the function talk within human and we can say that humans
+
+00:01:58.430 --> 00:02:04.695
+have a talk function just like in the function signature of the abstract base class,
+
+00:02:04.694 --> 00:02:07.834
+it's a void function that is a constant.
+
+00:02:07.834 --> 00:02:12.694
+But we're actually going to define it here and we're going to say in type human,
+
+00:02:12.694 --> 00:02:19.549
+the talk function has the effect of outputting Hello.
+
+00:02:19.550 --> 00:02:25.115
+That means we're going to have to include the iostream library.
+
+00:02:25.115 --> 00:02:29.740
+Now not only can we create an object of type human,
+
+00:02:29.740 --> 00:02:32.415
+we can have that object talk.
+
+00:02:32.414 --> 00:02:34.620
+If we compile this now,
+
+00:02:34.620 --> 00:02:36.150
+oh, we forgot to,
+
+00:02:36.150 --> 00:02:37.319
+as so often happens,
+
+00:02:37.319 --> 00:02:42.319
+I forgot to add the semi-colons after my class definition.
+
+00:02:42.319 --> 00:02:44.810
+Now when we run the function,
+
+00:02:44.810 --> 00:02:48.180
+we get Hello, the human is talking.
+
+00:02:48.180 --> 00:02:50.040
+The extra thing we can do here,
+
+00:02:50.039 --> 00:02:51.629
+just to see how this works,
+
+00:02:51.629 --> 00:02:56.724
+let's try and create an object of type animal.
+
+00:02:56.724 --> 00:02:59.359
+If we now try and compile this code,
+
+00:02:59.360 --> 00:03:06.300
+we will get again this error that we can't declare a variable animal to be of
+
+00:03:06.300 --> 00:03:09.140
+type Animal and that's because
+
+00:03:09.139 --> 00:03:13.939
+the following virtual functions are pure within animal, the talk function.
+
+00:03:13.939 --> 00:03:17.030
+Because we declared talk to the a pure virtual function,
+
+00:03:17.030 --> 00:03:18.504
+that means animal is
+
+00:03:18.504 --> 00:03:23.909
+purely abstract class and we're not able to create objects of type animal,
+
+00:03:23.909 --> 00:03:26.389
+it nearly serves as an interface for
+
+00:03:26.389 --> 00:03:30.089
+subsequent derived classes that will inherit from it.
+

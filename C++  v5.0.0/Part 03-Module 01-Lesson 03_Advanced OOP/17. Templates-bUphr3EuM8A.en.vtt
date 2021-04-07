@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.799
+Templates are a tool for generic programming in C++.
+
+00:00:04.799 --> 00:00:09.164
+Templates allow us to specify a generic type,
+
+00:00:09.164 --> 00:00:12.269
+in this example we'll call that type T,
+
+00:00:12.269 --> 00:00:18.239
+and then use that generic type for the function signature and even within the function.
+
+00:00:18.239 --> 00:00:22.049
+So we have here a max function which is maybe
+
+00:00:22.050 --> 00:00:27.780
+the canonical example of using a template and this max function takes two arguments of
+
+00:00:27.780 --> 00:00:32.130
+type T. The first argument is called A and the second argument is called B and that
+
+00:00:32.130 --> 00:00:38.440
+returns a value of type T. You can think of this T here as maybe being int,
+
+00:00:38.439 --> 00:00:42.949
+so it returns an int and it takes two arguments of type int
+
+00:00:42.950 --> 00:00:47.915
+or it could be a double takes two arguments of type double and returns a double,
+
+00:00:47.914 --> 00:00:52.670
+or a float, or one of many other types of values.
+
+00:00:52.670 --> 00:00:57.140
+In fact, when we call max in the main function we specify,
+
+00:00:57.140 --> 00:01:00.585
+first that we're going to select int,
+
+00:01:00.585 --> 00:01:07.515
+or pass an int as the template type and so we pass in values of type Int, two and four.
+
+00:01:07.515 --> 00:01:12.319
+Then in the next call to max we specify that we're going to set
+
+00:01:12.319 --> 00:01:17.464
+the template type to double and we pass some values of negative 1.0 and negative 2.3.
+
+00:01:17.465 --> 00:01:20.450
+In the next called a max we set the template type to
+
+00:01:20.450 --> 00:01:24.475
+character and we pass in the character A and the character B.
+
+00:01:24.474 --> 00:01:29.780
+When we compile and run this it all works and that's great.
+
+00:01:29.780 --> 00:01:33.620
+We can have one function that accepts many different types of
+
+00:01:33.620 --> 00:01:38.215
+arguments just depending on how we specify the type.
+
+00:01:38.215 --> 00:01:41.975
+If this looks familiar it's because it's the same syntax
+
+00:01:41.974 --> 00:01:45.739
+as you might see for some of the containers in C++.
+
+00:01:45.739 --> 00:01:48.379
+So things like standard vector use
+
+00:01:48.379 --> 00:01:52.354
+this syntax in order to specify whether we're creating a vector, ints vector,
+
+00:01:52.355 --> 00:01:56.520
+doubles are vector of some type of object and that's
+
+00:01:56.519 --> 00:02:00.920
+how containers work as they use templates to create
+
+00:02:00.920 --> 00:02:04.984
+generic programming so that they can take
+
+00:02:04.984 --> 00:02:11.219
+many different types all using the same code for the vector class.
+

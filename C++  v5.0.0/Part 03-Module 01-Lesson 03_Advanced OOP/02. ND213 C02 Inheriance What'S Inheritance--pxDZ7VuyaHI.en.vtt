@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.529 --> 00:00:05.969
+What's inheritance?
+
+00:00:05.969 --> 00:00:13.664
+That was the really hot thing in the 60s, 70s, and 80s.
+
+00:00:13.664 --> 00:00:16.049
+It's also very cool in the 90s,
+
+00:00:16.050 --> 00:00:17.820
+when Java came along.
+
+00:00:17.820 --> 00:00:24.375
+Its the basic idea that you build on top of something else.
+
+00:00:24.375 --> 00:00:30.030
+So, I believe the first example of the user inheritance was in
+
+00:00:30.030 --> 00:00:36.450
+some modelling of emergency services in Oslo.
+
+00:00:36.450 --> 00:00:39.825
+You want to read or write a simulation
+
+00:00:39.825 --> 00:00:44.900
+that allows you to estimate where you put your emergency services.
+
+00:00:44.899 --> 00:00:46.339
+Here is a fire station,
+
+00:00:46.340 --> 00:00:48.785
+here's a police station, things like that.
+
+00:00:48.784 --> 00:00:52.909
+For that, you have to built a model of the CT with streets,
+
+00:00:52.909 --> 00:00:55.509
+and you have to have things moving on them.
+
+00:00:55.509 --> 00:00:57.989
+You have vehicles moving on them.
+
+00:00:57.990 --> 00:01:02.115
+Before inheritance, the way people were writing their code is,
+
+00:01:02.115 --> 00:01:04.829
+here comes a bicycle, it turns right.
+
+00:01:04.829 --> 00:01:07.829
+Here comes a car, it turns right.
+
+00:01:07.829 --> 00:01:10.700
+You can't actually organize things like that.
+
+00:01:10.700 --> 00:01:13.835
+What you actually want to say is here comes a vehicle,
+
+00:01:13.834 --> 00:01:17.824
+and it turns right the way it wants to turn right.
+
+00:01:17.825 --> 00:01:20.299
+Car turns right in one way,
+
+00:01:20.299 --> 00:01:23.045
+a fire engine turns right another way,
+
+00:01:23.045 --> 00:01:26.480
+police car may go through for red, and things like that.
+
+00:01:26.480 --> 00:01:30.875
+So, the idea is that you build hierarchy of concepts,
+
+00:01:30.875 --> 00:01:35.359
+starting from the most general and then more and more specialized.
+
+00:01:35.359 --> 00:01:39.409
+So, a fire engine is a kind of a truck,
+
+00:01:39.409 --> 00:01:43.189
+that's a kind of a car,
+
+00:01:43.189 --> 00:01:45.799
+that's a kind of a vehicle.
+
+00:01:45.799 --> 00:01:49.609
+We can argue about whether a truck is a car,
+
+00:01:49.609 --> 00:01:51.984
+but that depends on the design.
+
+00:01:51.984 --> 00:01:54.450
+So you build up these hierarchies,
+
+00:01:54.450 --> 00:01:57.365
+and the typical thing is in graphics.
+
+00:01:57.364 --> 00:02:00.170
+You have a smiley face which is a circle,
+
+00:02:00.170 --> 00:02:04.030
+which is a general shape,
+
+00:02:04.030 --> 00:02:07.189
+and you built up like that.
+
+00:02:07.189 --> 00:02:11.270
+This is one way of organizing your data,
+
+00:02:11.270 --> 00:02:15.665
+and it's somewhat less popular now than it used to be.
+
+00:02:15.664 --> 00:02:21.739
+Because it turns out that a lot of our ideas aren't all that hierarchical.
+
+00:02:21.740 --> 00:02:23.840
+There are some great examples,
+
+00:02:23.840 --> 00:02:25.745
+and I think I just mentioned two of them,
+
+00:02:25.745 --> 00:02:28.550
+but people were using it.
+
+00:02:28.550 --> 00:02:31.685
+They thought everything should be a class hierarchy.
+
+00:02:31.685 --> 00:02:37.754
+Most things aren't as hierarchical as they might think they were.
+
+00:02:37.754 --> 00:02:41.498
+A book has missed a lot of chapters,
+
+00:02:41.498 --> 00:02:45.759
+it gets a little bit more complicated.
+

@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.140 --> 00:00:03.510
+Interesting implementation question is,
+
+00:00:03.509 --> 00:00:09.059
+what the relationship between the system class and the Linux parser namespace should be?
+
+00:00:09.060 --> 00:00:11.040
+So for example in the system class,
+
+00:00:11.039 --> 00:00:16.214
+we want to have a function that returns the uptime of the system.
+
+00:00:16.214 --> 00:00:20.609
+In fact, in the Linux parser namespace,
+
+00:00:20.609 --> 00:00:23.675
+we have a function that returns the uptime of the system.
+
+00:00:23.675 --> 00:00:26.195
+So there are a few different ways you might approach this.
+
+00:00:26.195 --> 00:00:33.424
+The system class might have a member function uptime that simply is a passthrough,
+
+00:00:33.424 --> 00:00:38.149
+and the member function uptime within the system class
+
+00:00:38.149 --> 00:00:43.564
+might just call the function of the same name within the Linux parser class.
+
+00:00:43.564 --> 00:00:47.614
+If you did that, then the system would store no data
+
+00:00:47.615 --> 00:00:52.640
+or the system class might cache or otherwise saved data.
+
+00:00:52.640 --> 00:00:55.759
+Maybe when a system object is instantiated
+
+00:00:55.759 --> 00:00:59.599
+or when an update function is called or at some other time,
+
+00:00:59.600 --> 00:01:08.118
+the uptime function of the system class object might call Linux parsers uptime function,
+
+00:01:08.118 --> 00:01:11.105
+store the return value of this function,
+
+00:01:11.105 --> 00:01:16.090
+and then whenever a system object has uptime called on it,
+
+00:01:16.090 --> 00:01:18.020
+instead of going all the way through and parsing
+
+00:01:18.019 --> 00:01:20.579
+the whole Linux file system in order to get the uptime,
+
+00:01:20.579 --> 00:01:25.099
+you might just return the locally saved or cached uptime value.
+
+00:01:25.099 --> 00:01:29.899
+You could do it at least one of those two ways and probably some other ways too.
+
+00:01:29.900 --> 00:01:36.140
+It's really up to you how you want to implement the system object or the system class,
+
+00:01:36.140 --> 00:01:38.900
+I mean how you want the system class to work together
+
+00:01:38.900 --> 00:01:42.719
+with the Linux parser namespace functions.
+

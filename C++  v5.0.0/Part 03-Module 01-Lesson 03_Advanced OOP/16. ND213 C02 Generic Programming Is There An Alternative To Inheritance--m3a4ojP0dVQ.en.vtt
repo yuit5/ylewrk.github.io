@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.129 --> 00:00:07.605
+That's where generic programming comes in.
+
+00:00:07.605 --> 00:00:09.359
+You have a bunch of classes,
+
+00:00:09.359 --> 00:00:11.699
+you don't want to organize them in a hierarchy.
+
+00:00:11.699 --> 00:00:13.139
+What you want to say is,
+
+00:00:13.140 --> 00:00:17.609
+this algorithm works for anything that you can draw.
+
+00:00:17.609 --> 00:00:20.100
+So you don't want to build a hierarchy so that
+
+00:00:20.100 --> 00:00:22.609
+you can have in the interface at all function.
+
+00:00:22.609 --> 00:00:27.433
+You just say that anything that you can draw you can use with this algorithm,
+
+00:00:27.434 --> 00:00:29.775
+and so you get parameterization.
+
+00:00:29.774 --> 00:00:34.049
+You have an algorithm that's parameterized with the element types,
+
+00:00:34.049 --> 00:00:41.699
+and it will work provided the element type has the required properties,
+
+00:00:41.700 --> 00:00:44.295
+like draw and rotate.
+
+00:00:44.295 --> 00:00:48.445
+So, the hierarchy disappears, the inheritance disappears,
+
+00:00:48.445 --> 00:00:55.685
+but the ability to operate on anything that has the right interface stays.
+
+00:00:55.685 --> 00:01:02.880
+That's where C++ languages have moved to a more generic style of coding.
+

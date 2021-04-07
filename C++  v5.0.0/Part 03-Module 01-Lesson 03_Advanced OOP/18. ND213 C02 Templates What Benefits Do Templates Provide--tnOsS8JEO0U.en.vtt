@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.629 --> 00:00:11.759
+Templates in C++ is support for generic programming.
+
+00:00:11.759 --> 00:00:17.370
+Basically, a template is something you can parameterize with types or values.
+
+00:00:19.059 --> 00:00:23.765
+Classical example is you start with a vector of element types.
+
+00:00:23.765 --> 00:00:25.609
+These days we can have a vector,
+
+00:00:25.609 --> 00:00:27.079
+and then you have an allocator,
+
+00:00:27.079 --> 00:00:29.779
+which is an operation that parameterize with this,
+
+00:00:29.780 --> 00:00:32.289
+so, how it can get memory.
+
+00:00:32.289 --> 00:00:35.045
+Then once you have parameterized types,
+
+00:00:35.045 --> 00:00:37.505
+you need parameterized algorithms,
+
+00:00:37.505 --> 00:00:42.320
+because you want to work both as at this vector and another vector,
+
+00:00:42.320 --> 00:00:51.109
+or you want to find if to work both for vector of strings and for a list of integers,
+
+00:00:51.109 --> 00:00:54.030
+for instance, that worked beautifully.
+
+00:00:55.149 --> 00:01:02.750
+There's actually two parts of the support for generic programming in C++ now.
+
+00:01:02.750 --> 00:01:07.730
+There's templates which we've had for many, many years,
+
+00:01:07.730 --> 00:01:11.930
+which gives us the ability to express just about anything,
+
+00:01:11.930 --> 00:01:15.395
+and to manipulate things at compile-time,
+
+00:01:15.394 --> 00:01:19.134
+and do it really efficiently,
+
+00:01:19.135 --> 00:01:21.920
+but it has had lousy interfaces.
+
+00:01:21.920 --> 00:01:28.835
+I could not actually say what are the requirements of the elements of a vector.
+
+00:01:28.834 --> 00:01:32.974
+Well, it at least has to be copied.
+
+00:01:32.974 --> 00:01:35.359
+Otherwise, you can't do it in C++.
+
+00:01:35.359 --> 00:01:42.859
+What is requirement of something that you can draw is used that it has a draw operation.
+
+00:01:42.859 --> 00:01:45.049
+If you want to manipulate let's say shape,
+
+00:01:45.049 --> 00:01:47.435
+it has draw and rotate and things like that,
+
+00:01:47.435 --> 00:01:49.835
+we weren't able to express that.
+
+00:01:49.834 --> 00:01:53.839
+It's always been the idea that we would like to be able to express it,
+
+00:01:53.840 --> 00:01:55.670
+but we haven't been able to until now,
+
+00:01:55.670 --> 00:01:59.450
+C++20 will have something called concepts that allows you to
+
+00:01:59.450 --> 00:02:05.430
+precisely specify a template's requirements on its arguments.
+

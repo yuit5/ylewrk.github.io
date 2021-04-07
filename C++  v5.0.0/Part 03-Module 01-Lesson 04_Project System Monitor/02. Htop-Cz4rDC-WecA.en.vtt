@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.320
+In this project, you're going to build a system monitor that resembles the program htop,
+
+00:00:07.320 --> 00:00:11.370
+which is a standard program for monitoring Linux systems.
+
+00:00:11.369 --> 00:00:14.969
+So we'll start here with our project workspace.
+
+00:00:14.970 --> 00:00:17.339
+You can also build this on your local computer if you
+
+00:00:17.339 --> 00:00:20.969
+have access to a Linux system on your local computer.
+
+00:00:20.969 --> 00:00:23.699
+I'm going to launch go to desktop here,
+
+00:00:23.699 --> 00:00:25.230
+although you actually don't have to do that.
+
+00:00:25.230 --> 00:00:27.839
+You could build the project within the workspace editor.
+
+00:00:27.839 --> 00:00:31.690
+But I'm going to launch my desktop.
+
+00:00:31.940 --> 00:00:37.245
+I'm first going to open the terminator.
+
+00:00:37.244 --> 00:00:41.834
+Let's just take a look at htop and what htop looks like. This is htop.
+
+00:00:41.835 --> 00:00:44.250
+It's a Linux system monitor.
+
+00:00:44.250 --> 00:00:47.030
+There are a bunch of different things going on in htop.
+
+00:00:47.030 --> 00:00:52.130
+The top half of the screen is monitoring the CPU,
+
+00:00:52.130 --> 00:00:55.445
+and memory, and some system-wide data.
+
+00:00:55.445 --> 00:00:57.799
+So there are actually four CPUs on this machine,
+
+00:00:57.799 --> 00:01:01.445
+and you can tell that the load on each of them is fairly low.
+
+00:01:01.445 --> 00:01:05.030
+There's also a fair bit of memory,
+
+00:01:05.030 --> 00:01:08.415
+and you can see the memory usage.
+
+00:01:08.415 --> 00:01:10.430
+Then in the bottom half of the screen,
+
+00:01:10.430 --> 00:01:14.690
+you can see different processes that are running on the system.
+
+00:01:14.689 --> 00:01:19.879
+The most intense processes at the moment have to do with VNC,
+
+00:01:19.879 --> 00:01:26.899
+which is the tunneling program that allows us to connect a Linux desktop to your browser.
+
+00:01:26.900 --> 00:01:28.340
+So it makes sense that
+
+00:01:28.340 --> 00:01:34.415
+VNC program would be putting the most strain on the system resources right now.
+
+00:01:34.415 --> 00:01:39.965
+This console output is using a library called ncurses,
+
+00:01:39.965 --> 00:01:43.969
+which is a type of graphical display output,
+
+00:01:43.969 --> 00:01:45.814
+but for the terminal.
+
+00:01:45.814 --> 00:01:48.049
+We'll also use that for the project.
+
+00:01:48.049 --> 00:01:55.174
+In the project, we've done all of the ncurses display interface work for you.
+
+00:01:55.174 --> 00:01:58.879
+But if you want to extend the project from what we've given you,
+
+00:01:58.879 --> 00:02:01.799
+you can do your own work in ncurses.
+

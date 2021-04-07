@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.634
+The system class is composed in part of a container of processes,
+
+00:00:07.634 --> 00:00:12.974
+and each process is in fact a little bit like its own little system.
+
+00:00:12.974 --> 00:00:15.480
+Each process has a process ID,
+
+00:00:15.480 --> 00:00:18.050
+it has a user that instantiated the process,
+
+00:00:18.050 --> 00:00:21.644
+it has a command that was used to kick off the process.
+
+00:00:21.644 --> 00:00:24.009
+Each process has its own CPU utilization,
+
+00:00:24.010 --> 00:00:27.290
+the same way that the system has its own CPU utilization,
+
+00:00:27.289 --> 00:00:30.000
+each process has its own memory utilization,
+
+00:00:30.000 --> 00:00:31.484
+has its own uptime.
+
+00:00:31.484 --> 00:00:34.920
+We actually define a sort function so it's easy to
+
+00:00:34.920 --> 00:00:39.160
+sort the processes by which is the most active.
+
+00:00:39.500 --> 00:00:44.509
+If we look at the implementation of the process,
+
+00:00:44.509 --> 00:00:46.384
+you can see right now we have
+
+00:00:46.384 --> 00:00:51.289
+entirely dummy implementations of all these member functions for the process.
+
+00:00:51.289 --> 00:00:55.039
+But you would look up data for the process largely
+
+00:00:55.039 --> 00:00:58.549
+the same way that you would look up data for the system,
+
+00:00:58.549 --> 00:00:59.869
+or at least in a very similar way.
+
+00:00:59.869 --> 00:01:05.280
+So if we look for example at the directories within proc,
+
+00:01:05.280 --> 00:01:10.549
+we see that 1460 is a directory.
+
+00:01:10.549 --> 00:01:13.619
+So if we look within /proc/1460,
+
+00:01:14.260 --> 00:01:20.674
+we see a whole bunch of subdirectories including things like stat and status,
+
+00:01:20.674 --> 00:01:27.540
+and if we cat /proc/1460/stat,
+
+00:01:28.400 --> 00:01:36.950
+that will give us some information about CPU utilization of the process.
+
+00:01:36.950 --> 00:01:39.454
+If we look at /status,
+
+00:01:39.454 --> 00:01:43.159
+that will give us some information about memory,
+
+00:01:43.159 --> 00:01:49.045
+and other utilization of the process if we look at let's see,
+
+00:01:49.045 --> 00:01:54.615
+/command line,
+
+00:01:54.614 --> 00:02:00.379
+that will tell us that this process got kicked off by this particular command line.
+
+00:02:00.379 --> 00:02:07.489
+So a lot of what we're going to do in order to get information about the process is very
+
+00:02:07.489 --> 00:02:09.319
+similar to the type of
+
+00:02:09.319 --> 00:02:14.150
+file parsing that we have done to get information about the system,
+
+00:02:14.150 --> 00:02:17.689
+and then we can store that information in the process object,
+
+00:02:17.689 --> 00:02:23.645
+or just like we decided to do with the system we might decide to
+
+00:02:23.645 --> 00:02:26.909
+have the process member functions simply be
+
+00:02:26.909 --> 00:02:30.909
+parse throughs to functions within the Linux parser namespace.
+
+00:02:30.909 --> 00:02:33.305
+It's really up to you as you implement
+
+00:02:33.305 --> 00:02:37.250
+the process class whether you want to store data within the process class,
+
+00:02:37.250 --> 00:02:38.419
+or how much data to store,
+
+00:02:38.419 --> 00:02:40.909
+and how much to simply parse through and
+
+00:02:40.909 --> 00:02:43.745
+parse the file system every time you want to get more data.
+
+00:02:43.745 --> 00:02:47.835
+But each process should have its own set of information,
+
+00:02:47.835 --> 00:02:52.935
+and particularly around CPU utilization and RAM memory usage,
+
+00:02:52.935 --> 00:02:56.979
+we want to be able to sort the process so that we can list
+
+00:02:56.979 --> 00:03:00.858
+the processes that are either using the most RAM or the most CPU utilization,
+
+00:03:00.859 --> 00:03:04.010
+it's up to you how exactly you want to sort the processes.
+
+00:03:04.009 --> 00:03:11.504
+But by overloading the less than operator,
+
+00:03:11.504 --> 00:03:14.930
+we're able to core sort on the container of
+
+00:03:14.930 --> 00:03:19.080
+processes and return the processes in sorted order.
+

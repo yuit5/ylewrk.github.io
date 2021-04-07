@@ -1,0 +1,211 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.030
+I'm going to show you an error that I made while I was programming these exercises,
+
+00:00:06.030 --> 00:00:10.050
+and I want to see if you can spot it and then we'll talk about how
+
+00:00:10.050 --> 00:00:14.714
+the override keyword can actually help catch these kind of errors.
+
+00:00:14.714 --> 00:00:17.910
+So we have a class animal,
+
+00:00:17.910 --> 00:00:23.879
+and this class has a pure virtual function talk and I'm going to create
+
+00:00:23.879 --> 00:00:31.184
+a class dog that inherits from class animal,
+
+00:00:31.184 --> 00:00:39.564
+and this class dog is going to have a function talk.
+
+00:00:39.564 --> 00:00:44.059
+It's going to have the same function signature as the base class,
+
+00:00:44.060 --> 00:00:48.890
+and then we'll define
+
+00:00:48.890 --> 00:00:56.554
+the function and we will return woof.
+
+00:00:56.554 --> 00:01:00.984
+Then here in main,
+
+00:01:00.984 --> 00:01:09.290
+we'll create an object dog of of type dog and we will assert that
+
+00:01:09.290 --> 00:01:18.180
+dog.Talk equals equals woof.
+
+00:01:18.180 --> 00:01:21.790
+Let's compile and run this.
+
+00:01:26.989 --> 00:01:29.909
+I don't have to namespace,
+
+00:01:29.909 --> 00:01:39.064
+a Talk function and the function compiles and runs and dog.talk equals woof.
+
+00:01:39.064 --> 00:01:41.090
+Everything's great, but there's an error in
+
+00:01:41.090 --> 00:01:42.799
+this function and I wonder if you can spot it.
+
+00:01:42.799 --> 00:01:46.009
+This would be a good place to pause and pour over
+
+00:01:46.010 --> 00:01:50.850
+these 19 lines of code and see if you can figure out where the error is.
+
+00:01:51.109 --> 00:01:53.879
+Are you ready? All right.
+
+00:01:53.879 --> 00:01:56.549
+So if you've spotted the error, congratulations.
+
+00:01:56.549 --> 00:02:00.200
+It took me a couple go rounds to realize the error I was making.
+
+00:02:00.200 --> 00:02:04.920
+The error is that class dog does not actually inherit from class animal.
+
+00:02:04.920 --> 00:02:08.104
+Class dog is totally separate from class animal.
+
+00:02:08.104 --> 00:02:13.299
+In fact, what we need to do is say that dog inherits from animal,
+
+00:02:13.300 --> 00:02:15.990
+could inherit from public animal or private animal,
+
+00:02:15.990 --> 00:02:17.790
+just inherit from animal.
+
+00:02:17.789 --> 00:02:22.289
+Now, when we compile and run the code,
+
+00:02:22.289 --> 00:02:24.074
+again everything works, it's fine.
+
+00:02:24.074 --> 00:02:25.750
+You might ask yourself,
+
+00:02:25.750 --> 00:02:27.155
+does it even matter?
+
+00:02:27.155 --> 00:02:29.599
+For the purposes of this sample code,
+
+00:02:29.599 --> 00:02:31.069
+it actually does not really matter.
+
+00:02:31.069 --> 00:02:33.799
+I was trying to demonstrate overriding
+
+00:02:33.800 --> 00:02:38.094
+a virtual function and when dog fails to inherit from animal,
+
+00:02:38.094 --> 00:02:40.759
+then Talk is not overriding anything.
+
+00:02:40.759 --> 00:02:45.199
+It has no relationship to the function Talk in the animal class.
+
+00:02:45.199 --> 00:02:48.949
+But still, the code works and there's not much to complain about.
+
+00:02:48.949 --> 00:02:50.655
+In larger programs though,
+
+00:02:50.655 --> 00:02:53.030
+you might run into issues if you think you're
+
+00:02:53.030 --> 00:02:57.094
+overriding some other function and in fact you're not overriding it.
+
+00:02:57.094 --> 00:03:01.759
+A way we might have actually caught this error is if I hit
+
+00:03:01.759 --> 00:03:06.424
+"Follow best practices" and used the override keyword.
+
+00:03:06.425 --> 00:03:11.210
+These types of errors are actually a good reason to use the override keyword.
+
+00:03:11.210 --> 00:03:14.765
+The override keyword specifies that this function talk
+
+00:03:14.764 --> 00:03:19.089
+is actually going to be overriding a virtual function somewhere.
+
+00:03:19.090 --> 00:03:21.360
+It's not strictly required.
+
+00:03:21.360 --> 00:03:24.650
+As you saw, we changed dog a second ago to inherit from
+
+00:03:24.650 --> 00:03:28.050
+animal and compiled and run the program and and everything was fine.
+
+00:03:28.050 --> 00:03:33.695
+Talk in that case actually did override the talk function in the animal base class.
+
+00:03:33.694 --> 00:03:38.389
+But now we've specified that dog should have a function talk that
+
+00:03:38.389 --> 00:03:43.309
+override something and we've reverted dog so it again does not inherit from animal.
+
+00:03:43.310 --> 00:03:47.520
+So what we'll see when we compile
+
+00:03:47.520 --> 00:03:52.939
+the program is that we get this error that that the function is marked override,
+
+00:03:52.939 --> 00:03:55.474
+but it doesn't override anything.
+
+00:03:55.474 --> 00:03:58.009
+Essentially, what this keyword is doing is
+
+00:03:58.009 --> 00:04:00.349
+providing a little bit of compiler protection for us.
+
+00:04:00.349 --> 00:04:03.784
+It saying, "Hey, you said that this function was going to override something.
+
+00:04:03.784 --> 00:04:05.509
+It's not overriding anything."
+
+00:04:05.509 --> 00:04:08.524
+That would cause me to say, "Oh,
+
+00:04:08.524 --> 00:04:13.219
+It's not overriding anything because I forgot to have dog inherit from animal."
+
+00:04:13.219 --> 00:04:16.129
+Now, I can compile
+
+00:04:16.129 --> 00:04:20.045
+the program and now everything to compile is fine and it runs and it's great.
+
+00:04:20.045 --> 00:04:23.283
+So in general, it's best practice to have
+
+00:04:23.283 --> 00:04:30.594
+the override keyword attached to a function signature that's meant to override
+
+00:04:30.595 --> 00:04:36.230
+a function from a base class and that's because the override keyword will
+
+00:04:36.230 --> 00:04:39.140
+help the compiler understand what's going on and help
+
+00:04:39.139 --> 00:04:43.459
+catch for any errors as the code is compiled.
+

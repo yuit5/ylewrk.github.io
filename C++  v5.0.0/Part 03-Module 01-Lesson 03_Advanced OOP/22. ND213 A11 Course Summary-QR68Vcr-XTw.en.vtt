@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.674
+Over the course of this course,
+
+00:00:03.674 --> 00:00:07.934
+you've learned so many important features of C++.
+
+00:00:07.934 --> 00:00:12.599
+Classes are how C++ groups information.
+
+00:00:12.599 --> 00:00:17.129
+Members of those classes store data and provide functions.
+
+00:00:17.129 --> 00:00:21.390
+Constructors instantiate objects of the class.
+
+00:00:21.390 --> 00:00:26.865
+Classes encapsulate data and abstract how that data is used.
+
+00:00:26.864 --> 00:00:30.854
+Users of the class only need to know about its interface,
+
+00:00:30.855 --> 00:00:36.119
+not about the details of how the data is stored or how the functions are implemented.
+
+00:00:36.119 --> 00:00:40.070
+Inheritance hierarchies define how classes are
+
+00:00:40.070 --> 00:00:44.005
+related to each other and any members they might inherit.
+
+00:00:44.005 --> 00:00:47.673
+Generic programming and polymorphism in particular,
+
+00:00:47.673 --> 00:00:53.810
+allow the same code to work with multiple different system defined in user-defined types.
+
+00:00:53.810 --> 00:00:59.359
+This makes the code more reusable and saves you from having to repeat yourself.
+
+00:00:59.359 --> 00:01:03.379
+You have learned so much about object-oriented programming,
+
+00:01:03.380 --> 00:01:10.510
+this is part of what makes modern C++ really modern and surprisingly easy to use.
+

@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.825
+Let's look at how this project is structured.
+
+00:00:03.825 --> 00:00:06.945
+There are a few different elements to think about here.
+
+00:00:06.945 --> 00:00:08.820
+The first thing to consider are
+
+00:00:08.820 --> 00:00:12.419
+the conceptual objects around which the project is organized.
+
+00:00:12.419 --> 00:00:16.574
+What is the model that we're using for building this project?
+
+00:00:16.574 --> 00:00:20.099
+Then we can look at how the code itself is organized,
+
+00:00:20.100 --> 00:00:23.370
+what files exist and how do they relate to each other.
+
+00:00:23.370 --> 00:00:26.339
+We can look specifically at the starter code that's
+
+00:00:26.339 --> 00:00:30.120
+given for this project and figure out what elements of
+
+00:00:30.120 --> 00:00:33.270
+the project come pre-populated and which
+
+00:00:33.270 --> 00:00:37.050
+elements remain for you as the student to complete.
+
+00:00:37.049 --> 00:00:42.289
+We can also look at some of the semantic markers that we've left in the code comments,
+
+00:00:42.289 --> 00:00:47.240
+essentially telling you which functions and classes remained to be
+
+00:00:47.240 --> 00:00:49.730
+implemented and which things have already been done and what are
+
+00:00:49.729 --> 00:00:52.954
+some opportunities for bonus extra credit.
+
+00:00:52.954 --> 00:00:57.349
+So let's start with the conceptual objects.
+
+00:00:57.350 --> 00:01:04.040
+The project starts with a main function and that main function instantiates a system.
+
+00:01:04.040 --> 00:01:08.270
+That system represents the underlying Linux operating system
+
+00:01:08.269 --> 00:01:10.810
+or the computer itself you might say.
+
+00:01:10.810 --> 00:01:18.454
+That system is actually composed of a few different other classes or objects.
+
+00:01:18.454 --> 00:01:21.364
+There is a container of threads.
+
+00:01:21.364 --> 00:01:24.289
+So within that container are many different threads.
+
+00:01:24.290 --> 00:01:26.480
+There's also a processor.
+
+00:01:26.480 --> 00:01:33.250
+We represent the processor in this project as its own class or its own object.
+
+00:01:33.250 --> 00:01:35.909
+All of these different objects,
+
+00:01:35.909 --> 00:01:38.384
+the system, the threads, the processor,
+
+00:01:38.385 --> 00:01:42.260
+they all call these functions that exist in
+
+00:01:42.260 --> 00:01:45.965
+the Linux parser namespace and those functions go out
+
+00:01:45.965 --> 00:01:50.299
+and parse data from the Linux file system
+
+00:01:50.299 --> 00:01:55.280
+that provide information about the status of all these different objects.
+
+00:01:55.280 --> 00:02:00.079
+So the main function has access to this system object that it creates and
+
+00:02:00.079 --> 00:02:05.569
+within the system object are these other objects that comprise the system object.
+
+00:02:05.569 --> 00:02:12.914
+The main function can parse that system object to the NCursesDisplay namespace,
+
+00:02:12.914 --> 00:02:17.629
+which takes the system and displays it out to the screen.
+
+00:02:17.629 --> 00:02:22.159
+You could imagine having many different types of displays where we're using NCurses here,
+
+00:02:22.159 --> 00:02:25.789
+but you could use a more formal windowing system.
+
+00:02:25.789 --> 00:02:29.599
+You could actually just use a standard output.
+
+00:02:29.599 --> 00:02:36.469
+There are lots of different ways you could output the system data to the user.
+
+00:02:36.469 --> 00:02:40.210
+In this case, we're going to use the NCursesDisplay function.
+
+00:02:40.210 --> 00:02:46.189
+So now we can dive into the code and see what the code itself looks like,
+
+00:02:46.189 --> 00:02:48.500
+now that we understand the high level
+
+00:02:48.500 --> 00:02:52.800
+conceptual objects around which the project is modeled.
+

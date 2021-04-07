@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.050 --> 00:00:06.359
+The central object of this project or class is the system class.
+
+00:00:06.360 --> 00:00:08.220
+So let's open up system got h,
+
+00:00:08.220 --> 00:00:10.335
+which defines the interface for this class.
+
+00:00:10.335 --> 00:00:14.490
+The system has a processor that we call CPU.
+
+00:00:14.490 --> 00:00:20.789
+It also has a container or a vector of processes,
+
+00:00:20.789 --> 00:00:29.024
+and it has functions to return memory utilization,
+
+00:00:29.024 --> 00:00:31.559
+up time, the total number of processes,
+
+00:00:31.559 --> 00:00:33.524
+the number of running processes,
+
+00:00:33.524 --> 00:00:35.460
+the kernel of the operating system,
+
+00:00:35.460 --> 00:00:37.340
+the name of the operating system itself.
+
+00:00:37.340 --> 00:00:43.880
+The actual CPU and processes are kept as private member variables,
+
+00:00:43.880 --> 00:00:47.750
+and then there are these public accessor functions that return
+
+00:00:47.750 --> 00:00:53.030
+references to those private member variables.
+
+00:00:53.030 --> 00:00:56.780
+So that's the system class.
+
+00:00:56.780 --> 00:01:01.549
+If we want to look at the implementation of that class,
+
+00:01:01.549 --> 00:01:06.319
+we can open up system.cpp in the source file,
+
+00:01:06.319 --> 00:01:16.969
+and you'll see we have some fairly straightforward accessor functions.
+
+00:01:16.969 --> 00:01:20.209
+Then all of these functions have a definition,
+
+00:01:20.209 --> 00:01:25.030
+even though the definition is often zeroed out or it's an empty string.
+
+00:01:25.030 --> 00:01:28.549
+So all of these to-dos tell you what you
+
+00:01:28.549 --> 00:01:31.939
+need to complete in order to get the project to actually work.
+
+00:01:31.939 --> 00:01:36.439
+So for example, the memory utilization function here should return the systems actual
+
+00:01:36.439 --> 00:01:43.259
+memory utilization instead of just 0.0 which is hard-coded in right now.
+

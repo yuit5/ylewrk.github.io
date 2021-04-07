@@ -1,0 +1,400 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.419
+Operator overloading allows us to assign our own logic to operators,
+
+00:00:06.419 --> 00:00:10.650
+so that we can do things like add two classes together or multiply them,
+
+00:00:10.650 --> 00:00:15.405
+or apply braces, or parentheses or brackets to them.
+
+00:00:15.404 --> 00:00:16.905
+So for an example,
+
+00:00:16.905 --> 00:00:20.450
+let's create a class matrix.
+
+00:00:20.449 --> 00:00:26.269
+C plus plus does not have its own matrix class even in the standard library.
+
+00:00:26.269 --> 00:00:29.429
+If you were to actually try and use a matrix,
+
+00:00:29.429 --> 00:00:35.840
+I would strongly recommend using a library like Eigen or some other pre-defined library,
+
+00:00:35.840 --> 00:00:38.840
+to take advantage of code somebody else has written,
+
+00:00:38.840 --> 00:00:41.820
+but if we want to for example purposes,
+
+00:00:41.820 --> 00:00:47.719
+create our own matrix and imagine we want to create a main function,
+
+00:00:47.719 --> 00:00:49.550
+and in that main function,
+
+00:00:49.549 --> 00:00:51.769
+we're going to create a matrix,
+
+00:00:51.770 --> 00:00:54.125
+and we'll make it a two by two matrix.
+
+00:00:54.125 --> 00:01:03.119
+We want to set the value,
+
+00:01:03.329 --> 00:01:07.539
+the very first element of that matrix to say four,
+
+00:01:07.539 --> 00:01:15.609
+and then we want to assert that we have indeed set that value to four.
+
+00:01:15.609 --> 00:01:20.750
+So how do we do that? Well, before we even get to operator overloading,
+
+00:01:20.750 --> 00:01:23.995
+we're going to need to think about how we want to store data in our matrix,
+
+00:01:23.995 --> 00:01:26.740
+and we could store a vector of vectors,
+
+00:01:26.739 --> 00:01:29.629
+a classic two by two square,
+
+00:01:29.629 --> 00:01:32.679
+but it will make our lives a little bit easier here if we just store
+
+00:01:32.680 --> 00:01:36.590
+everything in a single vector.
+
+00:01:36.840 --> 00:01:38.980
+We'll call that values,
+
+00:01:38.980 --> 00:01:41.090
+we'll make it private.
+
+00:01:41.430 --> 00:01:45.630
+Remember, we need to include the vector library,
+
+00:01:45.629 --> 00:01:52.459
+and then we can access elements of values by storing everything sequentially,
+
+00:01:52.459 --> 00:01:57.129
+and we'll see in a second the math we can use to access those values.
+
+00:01:57.129 --> 00:02:00.854
+So once we have those values,
+
+00:02:00.855 --> 00:02:07.920
+we'll probably need the number of rows in the matrix and the number of columns.
+
+00:02:07.920 --> 00:02:11.330
+We'll make those private because they have invariance.
+
+00:02:11.330 --> 00:02:13.219
+You don't want to just change them on the fly,
+
+00:02:13.219 --> 00:02:15.859
+otherwise weird things are gonna happen to your matrix,
+
+00:02:15.860 --> 00:02:22.680
+and we'll create a constructor matrix that takes rows and columns,
+
+00:02:22.680 --> 00:02:27.210
+and has an attribute list,
+
+00:02:27.210 --> 00:02:32.275
+and we'll say that rows get initialized to rows
+
+00:02:32.275 --> 00:02:38.145
+and columns get initialized to columns,
+
+00:02:38.145 --> 00:02:39.880
+and we'll also say that
+
+00:02:39.879 --> 00:02:45.039
+our values get initialized to the number of rows times the number of columns.
+
+00:02:45.039 --> 00:02:50.799
+So essentially, that's the total number of elements in the matrix.
+
+00:02:50.800 --> 00:02:56.650
+So now we have the data structure for a matrix and what we need to
+
+00:02:56.650 --> 00:03:02.420
+do is figure out how to first set and then access the data.
+
+00:03:02.419 --> 00:03:04.789
+In order to set the data,
+
+00:03:04.789 --> 00:03:09.179
+since we're going to store our matrix as a collection of ints,
+
+00:03:09.180 --> 00:03:15.735
+we're going to need to overload the parentheses operator,
+
+00:03:15.735 --> 00:03:19.730
+and we'll pass in a row and a column.
+
+00:03:19.729 --> 00:03:22.889
+That's what we do down here,
+
+00:03:22.889 --> 00:03:24.389
+is we pass in two values,
+
+00:03:24.389 --> 00:03:25.799
+a row and a column, and so up here,
+
+00:03:25.800 --> 00:03:27.205
+we have a row and a column,
+
+00:03:27.205 --> 00:03:30.170
+and we use the operator keyword,
+
+00:03:30.169 --> 00:03:33.544
+and then we say we want to overload this parentheses operator.
+
+00:03:33.544 --> 00:03:36.000
+You could also, if you wanted to add the matrix,
+
+00:03:36.000 --> 00:03:40.414
+you could overload the plus operator or the minus operator,
+
+00:03:40.414 --> 00:03:42.229
+or the shift operator,
+
+00:03:42.229 --> 00:03:45.394
+but in our case, we don't want to overload the parentheses operator.
+
+00:03:45.395 --> 00:03:48.844
+There's also this other funky thing going on over here,
+
+00:03:48.844 --> 00:03:50.629
+which is this ampersand,
+
+00:03:50.629 --> 00:03:53.240
+which means we're returning a reference to an integer,
+
+00:03:53.240 --> 00:03:54.650
+not the integer itself.
+
+00:03:54.650 --> 00:03:57.170
+This has to do with memory management and
+
+00:03:57.169 --> 00:04:00.484
+it's a little beyond the scope of what we're going to cover here.
+
+00:04:00.485 --> 00:04:04.620
+But essentially, what we're doing is instead of returning the value of the integer,
+
+00:04:04.620 --> 00:04:09.050
+we're returning the reference to it or the location of it,
+
+00:04:09.050 --> 00:04:13.415
+so that we can overwrite that value.
+
+00:04:13.414 --> 00:04:17.259
+So that's why when we set matrix 0,0 equals four,
+
+00:04:17.259 --> 00:04:20.839
+if we just returned the value that was being stored at 0,0,
+
+00:04:20.839 --> 00:04:23.509
+we would have something like eight equals four,
+
+00:04:23.509 --> 00:04:25.039
+which wouldn't really make sense.
+
+00:04:25.040 --> 00:04:29.790
+In this case, we're returning the address of this location in the matrix,
+
+00:04:29.790 --> 00:04:32.580
+and we can say that address should be set equal to four,
+
+00:04:32.579 --> 00:04:35.344
+which actually makes sense.
+
+00:04:35.345 --> 00:04:39.930
+So the way that we actually implement this is we say,
+
+00:04:41.810 --> 00:04:44.324
+in the values vector,
+
+00:04:44.324 --> 00:04:47.014
+since we're storing all our data in one vector,
+
+00:04:47.014 --> 00:04:53.389
+we want to take the row we're trying to access times the number of columns.
+
+00:04:53.389 --> 00:04:58.384
+I forgot to add underscore there for our private member variable,
+
+00:04:58.384 --> 00:05:08.420
+and then add in the column that we're actually trying to access.
+
+00:05:08.420 --> 00:05:10.324
+If we're trying to access the third row,
+
+00:05:10.324 --> 00:05:16.344
+we skip all the columns in the first two rows,
+
+00:05:16.345 --> 00:05:18.300
+and if we're trying to access,
+
+00:05:18.300 --> 00:05:20.160
+say, the first row,
+
+00:05:20.160 --> 00:05:23.010
+we skip all the columns in the first row,
+
+00:05:23.009 --> 00:05:30.409
+the 0th row, and then we skip to the particular column that we're looking to update.
+
+00:05:30.410 --> 00:05:32.220
+So in a two by two matrix,
+
+00:05:32.220 --> 00:05:34.890
+if we're trying to access spot 1,0,
+
+00:05:34.889 --> 00:05:38.594
+we'll skip the first row,
+
+00:05:38.595 --> 00:05:41.030
+and so the row would equal one,
+
+00:05:41.029 --> 00:05:45.094
+and the total number of columns in the matrix is equal to two.
+
+00:05:45.095 --> 00:05:50.375
+Then we're looking at the 0th spot in the in the next row.
+
+00:05:50.375 --> 00:05:56.069
+So we would be looking at the values index too,
+
+00:05:56.069 --> 00:06:01.469
+which is really the third overall element in the vector.
+
+00:06:01.470 --> 00:06:07.970
+That math is a little funky because of the fact that we started indexing from zero.
+
+00:06:07.970 --> 00:06:09.740
+But if you kind of sit down with a piece of paper and
+
+00:06:09.740 --> 00:06:11.560
+work out how all that index and works,
+
+00:06:11.560 --> 00:06:18.920
+you'll see that we can access any element in the vector through this formula.
+
+00:06:18.920 --> 00:06:24.240
+So now, we're returning our matrix,
+
+00:06:26.329 --> 00:06:33.245
+the reference to the point in the matrix that we want to return,
+
+00:06:33.245 --> 00:06:38.810
+and if we want to simply access location in the matrix,
+
+00:06:38.810 --> 00:06:42.410
+we can say int row, int column.
+
+00:06:42.410 --> 00:06:48.875
+So this is going to look very similar to our previous function.
+
+00:06:48.875 --> 00:06:51.160
+We're still overloading the parentheses operator,
+
+00:06:51.160 --> 00:06:53.240
+but now we're overloading it with a const function,
+
+00:06:53.240 --> 00:06:55.490
+and instead of returning a reference,
+
+00:06:55.490 --> 00:06:59.000
+we're returning an actual integer because in this case,
+
+00:06:59.000 --> 00:07:00.605
+we're just reading the value,
+
+00:07:00.605 --> 00:07:03.185
+and in fact, we will return the same thing.
+
+00:07:03.185 --> 00:07:08.280
+However, in the writable function,
+
+00:07:08.279 --> 00:07:10.154
+the mutator function here,
+
+00:07:10.154 --> 00:07:13.159
+we're returning a reference to that location,
+
+00:07:13.160 --> 00:07:14.330
+and then in the access function,
+
+00:07:14.329 --> 00:07:16.699
+we're just returning the value at that location.
+
+00:07:16.699 --> 00:07:18.649
+But in both instances,
+
+00:07:18.649 --> 00:07:21.919
+we are overloading the parentheses operator,
+
+00:07:21.920 --> 00:07:25.710
+and this is an example of how we would overload the parentheses operator.
+
+00:07:25.709 --> 00:07:28.919
+So if we compile and run our program,
+
+00:07:31.250 --> 00:07:35.810
+let's see if we included a couple underscores that we shouldn't have included.
+
+00:07:35.810 --> 00:07:40.370
+I think that's it, but not quite.
+
+00:07:40.370 --> 00:07:43.860
+Let's see, we didn't save it.
+
+00:07:43.970 --> 00:07:46.619
+Now we can pilot,
+
+00:07:46.619 --> 00:07:48.930
+and we can see that in fact our program runs,
+
+00:07:48.930 --> 00:07:50.990
+and then need exercise for you might be
+
+00:07:50.990 --> 00:07:54.620
+to type all this out in your own editor and get it to run,
+
+00:07:54.620 --> 00:07:59.899
+and then try and overload an operator for adding a matrix.
+
+00:07:59.899 --> 00:08:04.638
+So we could actually create a new matrix that we returned
+
+00:08:04.639 --> 00:08:05.850
+fro
+
+00:08:13.279 --> 00:08:14.819
+overloading
+
+00:08:14.819 --> 00:08:16.034
+the plus operator
+
+00:08:16.035 --> 00:08:17.630
+and adding in the second matrix,
+
+00:08:17.629 --> 00:08:22.670
+and that would allow us to do something like matrix one plus matrix
+
+00:08:22.670 --> 00:08:29.819
+two equal matrix three,
+
+00:08:29.819 --> 00:08:34.750
+is equal to matrix one plus matrix two. Something like that.
+

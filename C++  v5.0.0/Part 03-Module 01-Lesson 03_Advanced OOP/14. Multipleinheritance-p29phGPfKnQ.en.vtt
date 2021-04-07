@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.764
+Multiple inheritance is tricky and can present an issue known as the diamond problem.
+
+00:00:06.764 --> 00:00:12.823
+The diamond problem occurs when a class inherits from two base classes,
+
+00:00:12.823 --> 00:00:17.129
+both of which themselves inherit from the same abstract class,
+
+00:00:17.129 --> 00:00:19.695
+in which case, a conflict can emerge.
+
+00:00:19.695 --> 00:00:22.230
+To make the diamond problem clearer,
+
+00:00:22.230 --> 00:00:24.420
+let's look at an example.
+
+00:00:24.420 --> 00:00:26.340
+In this example, we have
+
+00:00:26.339 --> 00:00:32.609
+an abstract class vehicle which contains a pure virtual method move.
+
+00:00:32.609 --> 00:00:37.439
+Both boat and car are classes that inherit from
+
+00:00:37.439 --> 00:00:42.209
+vehicle and because vehicle is an abstract class,
+
+00:00:42.210 --> 00:00:45.950
+boat and car, each have to implement the move method.
+
+00:00:45.950 --> 00:00:48.710
+They might implement the move method differently.
+
+00:00:48.710 --> 00:00:50.119
+A boat, for example,
+
+00:00:50.119 --> 00:00:52.489
+moves differently than a car.
+
+00:00:52.490 --> 00:00:54.859
+This is actually fine so far.
+
+00:00:54.859 --> 00:00:56.545
+There are no problems here.
+
+00:00:56.545 --> 00:01:00.410
+However, imagine that we want to create a new class,
+
+00:01:00.409 --> 00:01:05.390
+amphibious car, that inherits from both boat and car.
+
+00:01:05.390 --> 00:01:10.099
+In case you're not familiar with what an amphibious car is, here's a picture.
+
+00:01:10.099 --> 00:01:12.859
+There are lots of fun photos on the internet that
+
+00:01:12.859 --> 00:01:16.310
+you can dig up about different kinds of amphibious cars.
+
+00:01:16.310 --> 00:01:19.295
+In our example, we have
+
+00:01:19.295 --> 00:01:24.484
+our class amphibious car inherit from both public boat and public car.
+
+00:01:24.484 --> 00:01:29.765
+The problem is that the amphibious car now inherits a move function
+
+00:01:29.765 --> 00:01:35.075
+from both boat and car and those two move functions are going to conflict.
+
+00:01:35.075 --> 00:01:39.484
+It's not clear which function should actually be executed
+
+00:01:39.484 --> 00:01:45.090
+if the user of an amphibious car object calls the move method.
+
