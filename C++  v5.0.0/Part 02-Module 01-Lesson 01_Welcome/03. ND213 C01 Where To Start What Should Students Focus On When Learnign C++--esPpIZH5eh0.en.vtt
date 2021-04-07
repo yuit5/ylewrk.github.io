@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.830 --> 00:00:06.120
+I think first of all,
+
+00:00:06.120 --> 00:00:09.585
+they should try and look at C++ as a modern language.
+
+00:00:09.585 --> 00:00:19.770
+Far too many have learned C++ as if it was just C or as if it was still 1985,
+
+00:00:19.769 --> 00:00:25.964
+and that pains me a lot because it's much better these days.
+
+00:00:25.964 --> 00:00:30.384
+You look at it and you see how to use the abstraction mechanisms,
+
+00:00:30.385 --> 00:00:32.445
+you use the libraries.
+
+00:00:32.445 --> 00:00:37.054
+They are the standard library which is fundamental data structures,
+
+00:00:37.054 --> 00:00:42.769
+few algorithms, timing, regular expressions, that kind of stuff.
+
+00:00:42.770 --> 00:00:48.200
+Then there are specific libraries for specific areas, the database interfaces,
+
+00:00:48.200 --> 00:00:51.900
+you have specific graphic libraries,
+
+00:00:51.899 --> 00:00:53.729
+animation libraries, and such.
+
+00:00:53.729 --> 00:00:56.354
+So I think when you start programming,
+
+00:00:56.354 --> 00:01:00.109
+you stick to the fundamentals for awhile because,
+
+00:01:00.109 --> 00:01:02.509
+well, the fundamentals are the fundamentals.
+
+00:01:02.509 --> 00:01:04.825
+You have to know your algorithms,
+
+00:01:04.825 --> 00:01:06.420
+you have to know your data structures,
+
+00:01:06.420 --> 00:01:10.730
+you have to know a little bit of machine architecture if you want to write at that level.
+
+00:01:10.730 --> 00:01:13.310
+Then, you're going to actually do something.
+
+00:01:13.310 --> 00:01:16.579
+If you're writing video game,
+
+00:01:16.579 --> 00:01:20.825
+you have to know what game's engine and the libraries that go in there.
+
+00:01:20.825 --> 00:01:26.189
+So you go through the fundamentals and then something specific to your interest.
+

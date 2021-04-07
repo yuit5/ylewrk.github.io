@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.655
+Hello. Welcome to the foundations course of the C++ Nanodegree program.
+
+00:00:05.655 --> 00:00:10.785
+I'm David Silver, and I lead the School of Autonomous Systems here at Udacity.
+
+00:00:10.785 --> 00:00:13.949
+Hi. I'm Stephen Welch and I'm a Content Developer here at Udacity.
+
+00:00:13.949 --> 00:00:17.070
+This is the first course of the C++ Nanodegree,
+
+00:00:17.070 --> 00:00:18.855
+the foundations of C++.
+
+00:00:18.855 --> 00:00:22.425
+In this course, you'll be starting out with basic C++ syntax,
+
+00:00:22.425 --> 00:00:25.380
+variables and functions, and by the end of this course,
+
+00:00:25.379 --> 00:00:28.004
+you'll be writing code in multi-file programs.
+
+00:00:28.004 --> 00:00:31.259
+Throughout the course, you'll use a number of
+
+00:00:31.260 --> 00:00:35.520
+the containers and algorithms provided by the C++ standard library.
+
+00:00:35.520 --> 00:00:40.030
+These are core tools that every C++ developer uses.
+
+00:00:40.030 --> 00:00:43.204
+I love the final project for this course.
+
+00:00:43.204 --> 00:00:45.559
+You'll use something called the A-star search
+
+00:00:45.560 --> 00:00:49.445
+algorithm to find a path between two points on a map.
+
+00:00:49.445 --> 00:00:52.310
+As you're learning the basics of C++,
+
+00:00:52.310 --> 00:00:57.620
+you will first use A-star to find a path through an ASCII grid with obstacles.
+
+00:00:57.619 --> 00:01:00.379
+Once you've mastered the basics,
+
+00:01:00.380 --> 00:01:05.900
+you'll find a path between two points on an actual map using OpenStreetMap data.
+
+00:01:05.900 --> 00:01:09.380
+If you've ever used an Internet mapping application and wondered
+
+00:01:09.379 --> 00:01:13.329
+how it builds a route from one point to another, this is how.
+
+00:01:13.329 --> 00:01:15.439
+You'll be able to show this project to
+
+00:01:15.439 --> 00:01:18.370
+your friends and family and anyone else who's interested.
+
+00:01:18.370 --> 00:01:22.400
+This first Nanodegree course has four lessons in addition to this welcome lesson.
+
+00:01:22.400 --> 00:01:25.950
+In the next lesson, you'll see an introduction to
+
+00:01:25.950 --> 00:01:30.615
+the C++ language where you'll cover C++ syntax, variables,
+
+00:01:30.614 --> 00:01:33.869
+functions and containers, and then you'll move on to
+
+00:01:33.870 --> 00:01:36.260
+A-star search which is an algorithm that
+
+00:01:36.260 --> 00:01:39.245
+you'll use to find the path between two points in your grid.
+
+00:01:39.245 --> 00:01:42.435
+You'll be writing A-star search on the ASCII grid first,
+
+00:01:42.435 --> 00:01:46.579
+and then you move onto a lesson which gives you some of the tools that you'll
+
+00:01:46.579 --> 00:01:51.140
+need to write larger programs including header files,
+
+00:01:51.140 --> 00:01:54.575
+pointers and references, build tools,
+
+00:01:54.575 --> 00:01:58.085
+and a brief introduction to classes and object-oriented programming.
+
+00:01:58.084 --> 00:02:00.019
+In the final lesson of this course,
+
+00:02:00.019 --> 00:02:02.405
+you'll build an OpenStreetMap route planner.
+
+00:02:02.405 --> 00:02:04.835
+If you have previous experience with C++,
+
+00:02:04.834 --> 00:02:07.789
+where you feel as though you already have a good grasp on a topic,
+
+00:02:07.790 --> 00:02:10.129
+feel free to skip ahead to the exercises.
+
+00:02:10.129 --> 00:02:14.030
+At the same time, if you feel like the content is difficult to understand,
+
+00:02:14.030 --> 00:02:17.555
+we encourage you to reach out to fellow classmates or mentors for help.
+
+00:02:17.555 --> 00:02:21.650
+We can't wait for you to get started with this course.
+

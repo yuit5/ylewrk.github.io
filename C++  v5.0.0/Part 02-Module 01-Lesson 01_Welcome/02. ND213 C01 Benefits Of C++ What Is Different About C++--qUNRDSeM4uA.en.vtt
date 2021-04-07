@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.629 --> 00:00:11.274
+C++ differs from most modern programming languages
+
+00:00:11.275 --> 00:00:17.464
+by working directly on the hardware and working very efficiently with the hardware.
+
+00:00:17.464 --> 00:00:19.579
+Then having done that,
+
+00:00:19.579 --> 00:00:26.504
+it provides really strong abstraction mechanisms that are very powerful, very modern.
+
+00:00:26.504 --> 00:00:28.809
+So that you don't have to deal with
+
+00:00:28.809 --> 00:00:33.379
+the low-level stuff all the time and you can still be efficient.
+

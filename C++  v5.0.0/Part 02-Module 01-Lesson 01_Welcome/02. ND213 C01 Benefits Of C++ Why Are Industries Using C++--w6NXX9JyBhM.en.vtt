@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.830 --> 00:00:06.915
+So why is C++ the choice,
+
+00:00:06.915 --> 00:00:12.330
+and even more becoming the choice in a lot of important fields?
+
+00:00:12.330 --> 00:00:16.230
+We can look at embedded systems,
+
+00:00:16.230 --> 00:00:17.760
+we can look at gaming,
+
+00:00:17.760 --> 00:00:19.765
+we can look at finance,
+
+00:00:19.765 --> 00:00:23.330
+we can look at the self-driving cars,
+
+00:00:23.329 --> 00:00:26.084
+flights controls, and things like that.
+
+00:00:26.085 --> 00:00:30.420
+The fundamental reason is this ability to work well with hardware,
+
+00:00:30.420 --> 00:00:32.910
+and the ability to handle complexity through
+
+00:00:32.909 --> 00:00:36.689
+abstraction because the programs are getting bigger these days,
+
+00:00:36.689 --> 00:00:39.179
+and you need to handle the complexity,
+
+00:00:39.179 --> 00:00:41.530
+as well as performance.
+
