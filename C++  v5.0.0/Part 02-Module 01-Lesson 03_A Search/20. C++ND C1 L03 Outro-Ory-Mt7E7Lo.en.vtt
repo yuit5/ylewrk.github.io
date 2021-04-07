@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.485
+Excellent work.
+
+00:00:01.485 --> 00:00:04.469
+You've built a maze solving algorithm that finds
+
+00:00:04.469 --> 00:00:08.699
+the path between the starting and ending points of your maze.
+
+00:00:08.699 --> 00:00:12.989
+You've done this starting from a blank slate in C++.
+
+00:00:12.990 --> 00:00:15.960
+You've implemented nearly every piece of code from
+
+00:00:15.960 --> 00:00:18.870
+start to end using the A-star algorithm.
+
+00:00:18.870 --> 00:00:22.410
+Let's do a quick review of what you've seen in this lesson.
+
+00:00:22.410 --> 00:00:27.089
+We started out with an introduction to vehicle motion planning.
+
+00:00:27.089 --> 00:00:30.884
+Sebastian explained the A-star search algorithm,
+
+00:00:30.885 --> 00:00:34.910
+then you wrote your own version of the A-star search algorithm.
+
+00:00:34.909 --> 00:00:40.509
+You broke down different parts of the algorithm over a series of exercises.
+
+00:00:40.509 --> 00:00:44.314
+Then you learned about new C++ language features
+
+00:00:44.314 --> 00:00:49.579
+including passing variables to a function by reference instead of by value,
+
+00:00:49.579 --> 00:00:52.473
+const in const expression,
+
+00:00:52.473 --> 00:00:54.549
+and arrays in C++.
+
+00:00:54.549 --> 00:00:58.669
+You're now almost ready to start the course project where you'll
+
+00:00:58.670 --> 00:01:03.530
+use what you've learned to find a path between any two points on a real map.
+
+00:01:03.530 --> 00:01:06.260
+Before you're ready to do the project,
+
+00:01:06.260 --> 00:01:08.780
+you'll need to learn a little bit about how to write
+
+00:01:08.780 --> 00:01:12.489
+larger C++ programs using multiple files.
+
+00:01:12.489 --> 00:01:14.109
+In the next lesson,
+
+00:01:14.109 --> 00:01:18.305
+you'll learn about header files and build tools to help with this.
+
+00:01:18.305 --> 00:01:22.010
+You'll also learn about pointers and references and
+
+00:01:22.010 --> 00:01:27.880
+a tiny little bit about object oriented programming. Let's get started.
+

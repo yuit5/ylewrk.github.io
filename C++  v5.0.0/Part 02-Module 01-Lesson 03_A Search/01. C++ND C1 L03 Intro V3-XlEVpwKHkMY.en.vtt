@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.835
+Welcome to the lesson on A*Search.
+
+00:00:02.835 --> 00:00:06.870
+In this lesson, you'll learn an algorithm that will allow you to
+
+00:00:06.870 --> 00:00:11.655
+quickly and efficiently find a path between two points in your grid.
+
+00:00:11.654 --> 00:00:15.209
+Essentially, you're learning a maze solving algorithm.
+
+00:00:15.210 --> 00:00:18.420
+The A*Search algorithm is an algorithm that is
+
+00:00:18.420 --> 00:00:21.929
+frequently used for path finding when working with graphs.
+
+00:00:21.929 --> 00:00:24.734
+In this context, you can think of a graph as
+
+00:00:24.734 --> 00:00:29.954
+just a collection of nodes with edges connecting some of the nodes.
+
+00:00:29.954 --> 00:00:33.149
+A*Search allows you to efficiently find a path,
+
+00:00:33.149 --> 00:00:37.109
+if one exists, between any two nodes in the graph.
+
+00:00:37.109 --> 00:00:39.850
+In the code that you've been working on up until now,
+
+00:00:39.850 --> 00:00:44.890
+it might not seem like you've been working with a graph that you could apply A*Search to.
+
+00:00:44.890 --> 00:00:50.975
+In fact, up until now you've been working with a two-dimensional grid that has obstacles.
+
+00:00:50.975 --> 00:00:54.679
+However, you can think of the grid as a graph with
+
+00:00:54.679 --> 00:00:59.460
+edges connecting each pair of nodes that aren't separated by an obstacle.
+
+00:00:59.460 --> 00:01:01.109
+Viewed from this perspective,
+
+00:01:01.109 --> 00:01:06.319
+you can see why A*Search is an excellent algorithm for finding a path through your grid.
+
+00:01:06.319 --> 00:01:11.494
+The steps that you'll take in this lesson to learn A* are as follows.
+
+00:01:11.495 --> 00:01:15.635
+We'll start out with an introduction to Search,
+
+00:01:15.635 --> 00:01:19.775
+and Sebastian Thrun will explain the A*Search algorithm.
+
+00:01:19.775 --> 00:01:22.880
+We'll move on to programming A*Search,
+
+00:01:22.879 --> 00:01:25.609
+in which the algorithm will be broken down
+
+00:01:25.609 --> 00:01:28.459
+into several different exercises that you'll perform.
+
+00:01:28.459 --> 00:01:31.069
+Then you'll look at an algorithm summary and
+
+00:01:31.069 --> 00:01:33.864
+the structure of the code for these exercises.
+
+00:01:33.864 --> 00:01:38.819
+Next, we'll look at some features of C++ that are relevant to A*Search,
+
+00:01:38.819 --> 00:01:44.209
+including pass-by-reference, const and constexpr, and arrays.
+
+00:01:44.209 --> 00:01:46.254
+By the time you finish this lesson,
+
+00:01:46.254 --> 00:01:50.359
+you'll be able to print the path connecting the starting and ending points,
+
+00:01:50.359 --> 00:01:52.760
+and that will complete your program.
+
+00:01:52.760 --> 00:01:55.070
+Along the way, you'll also add
+
+00:01:55.069 --> 00:01:58.909
+a few more special characters to clearly indicate the start point,
+
+00:01:58.909 --> 00:02:01.799
+end point, and path steps.
+

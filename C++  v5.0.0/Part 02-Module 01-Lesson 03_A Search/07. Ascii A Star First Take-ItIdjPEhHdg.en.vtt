@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.260 --> 00:00:04.110
+Now, that you've seen an overview of the A* search algorithm,
+
+00:00:04.110 --> 00:00:05.580
+let's have a look at the structure of
+
+00:00:05.580 --> 00:00:08.054
+the code you will be writing throughout this lesson.
+
+00:00:08.054 --> 00:00:11.759
+Your main function will call three functions.
+
+00:00:11.759 --> 00:00:17.324
+The first function is the ReadBoardFile function that you wrote in the last lesson.
+
+00:00:17.324 --> 00:00:19.769
+Next main will call search,
+
+00:00:19.769 --> 00:00:21.899
+which we'll discuss more in a moment.
+
+00:00:21.899 --> 00:00:24.884
+Finally, main will call PrintSolution,
+
+00:00:24.885 --> 00:00:26.700
+which you also wrote in the last lesson.
+
+00:00:26.699 --> 00:00:29.969
+So let's have a closer look at the search function.
+
+00:00:29.969 --> 00:00:34.909
+The search function keeps a list of open nodes which we'll call the open list,
+
+00:00:34.909 --> 00:00:37.309
+and search has a while loop that continues as
+
+00:00:37.310 --> 00:00:40.535
+long as there are still nodes in the open list to explore.
+
+00:00:40.534 --> 00:00:42.659
+While there are still nodes open,
+
+00:00:42.659 --> 00:00:44.269
+search will call cellsort,
+
+00:00:44.270 --> 00:00:49.205
+to sort the open list according to the sum of the heuristic and cost values.
+
+00:00:49.204 --> 00:00:51.725
+Once the open list has been sorted,
+
+00:00:51.725 --> 00:00:53.929
+the next node is popped from the list.
+
+00:00:53.929 --> 00:00:58.740
+Sort will check if this node is the goal and if it is sort returns.
+
+00:00:58.740 --> 00:01:02.900
+Otherwise, sort will call expand neighbors to loop
+
+00:01:02.899 --> 00:01:04.640
+through the neighbors of the current node and
+
+00:01:04.640 --> 00:01:07.025
+add the valid neighbors through the open list.
+
+00:01:07.025 --> 00:01:08.975
+To do this, for each neighbor,
+
+00:01:08.974 --> 00:01:10.759
+there are several steps.
+
+00:01:10.760 --> 00:01:16.189
+First, expand neighbors calls the function CheckValidCell on the neighbor.
+
+00:01:16.189 --> 00:01:18.709
+This function checks that the neighbors coordinates
+
+00:01:18.709 --> 00:01:21.084
+are on the grid and that the grid cell is empty.
+
+00:01:21.084 --> 00:01:23.629
+That is, it checks the cell has not already been
+
+00:01:23.629 --> 00:01:27.079
+visited and is not occupied by an obstacle.
+
+00:01:27.079 --> 00:01:31.159
+Next, the heuristic function has called for the neighbor,
+
+00:01:31.159 --> 00:01:36.325
+which calculates the Manhattan or taxicab distance from that neighbor to the goal.
+
+00:01:36.325 --> 00:01:39.829
+Finally, the neighbor node is added to the open list,
+
+00:01:39.829 --> 00:01:42.064
+and the grid cell is marked as closed.
+
+00:01:42.064 --> 00:01:45.114
+Don't worry if this algorithm seems complicated right now.
+
+00:01:45.114 --> 00:01:48.484
+Each of these parts will be separate exercises and as you build the code,
+
+00:01:48.484 --> 00:01:51.929
+you'll gain a better understanding of how A* works.
+

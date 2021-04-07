@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.504
+To choose the next node in the A* search,
+
+00:00:02.504 --> 00:00:05.654
+you want to find the node with the lowest overall cost.
+
+00:00:05.655 --> 00:00:08.054
+This cost, also called the F value,
+
+00:00:08.054 --> 00:00:10.154
+is the sum of two other values;
+
+00:00:10.154 --> 00:00:12.539
+the H value and the G value.
+
+00:00:12.539 --> 00:00:18.765
+The H value or heuristic gets smaller the closer node is to the goal.
+
+00:00:18.765 --> 00:00:20.219
+So incorporating this into
+
+00:00:20.219 --> 00:00:23.835
+your overall cost ensures you're searching in the right direction.
+
+00:00:23.835 --> 00:00:28.469
+The G value or distance cost increases with each step in the search.
+
+00:00:28.469 --> 00:00:32.039
+Incorporating this cost into the overall cost ensures that the search
+
+00:00:32.039 --> 00:00:36.585
+finds the most direct route possible instead of wandering around the grid.
+
+00:00:36.585 --> 00:00:38.759
+In the next exercise,
+
+00:00:38.759 --> 00:00:41.929
+you'll create a comparison function that will be used to
+
+00:00:41.929 --> 00:00:45.500
+sort nodes in order to choose the next one.
+

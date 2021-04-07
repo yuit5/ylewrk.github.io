@@ -1,0 +1,372 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lesson Code Structure</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>A* Search</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Motion Planning.html">02. Motion Planning</a>
+    </li>
+    <li class="">
+      <a href="03. Maze.html">03. Maze</a>
+    </li>
+    <li class="">
+      <a href="04. Maze 2.html">04. Maze 2</a>
+    </li>
+    <li class="">
+      <a href="05. Coding the Shortest Path Algorithm.html">05. Coding the Shortest Path Algorithm</a>
+    </li>
+    <li class="">
+      <a href="06. A Search.html">06. A* Search</a>
+    </li>
+    <li class="">
+      <a href="07. Lesson Code Structure.html">07. Lesson Code Structure</a>
+    </li>
+    <li class="">
+      <a href="08. CODE Starting A Search.html">08. CODE: Starting A* Search</a>
+    </li>
+    <li class="">
+      <a href="09. CODE Writing the A Heuristic.html">09. CODE: Writing the A* Heuristic</a>
+    </li>
+    <li class="">
+      <a href="10. Pass by Reference in C++.html">10. Pass by Reference in C++</a>
+    </li>
+    <li class="">
+      <a href="11. CODE Adding Nodes to the Open Vector.html">11. CODE: Adding Nodes to the Open Vector</a>
+    </li>
+    <li class="">
+      <a href="12. CODE Initialize the Open Vector.html">12. CODE: Initialize the Open Vector</a>
+    </li>
+    <li class="">
+      <a href="13. CODE Create a Comparison Function.html">13. CODE: Create a Comparison Function</a>
+    </li>
+    <li class="">
+      <a href="14. CODE Write a While Loop for the A Algorithm.html">14. CODE: Write a While Loop for the A* Algorithm</a>
+    </li>
+    <li class="">
+      <a href="15. CODE Check for Valid Neighbors.html">15. CODE: Check for Valid Neighbors</a>
+    </li>
+    <li class="">
+      <a href="16. Constants.html">16. Constants</a>
+    </li>
+    <li class="">
+      <a href="17. CODE Expand the A Search to Neighbors.html">17. CODE: Expand the A* Search to Neighbors</a>
+    </li>
+    <li class="">
+      <a href="18. Arrays.html">18. Arrays</a>
+    </li>
+    <li class="">
+      <a href="19. CODE Adding a Start and End to the Board.html">19. CODE: Adding a Start and End to the Board</a>
+    </li>
+    <li class="">
+      <a href="20. Congratulations!!.html">20. Congratulations!!</a>
+    </li>
+    <li class="">
+      <a href="21. How to Become More Proficient at C++.html">21. How to Become More Proficient at C++</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Lesson Code Structure</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="lesson-code-structure">Lesson Code Structure</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The next video provides an overview of the code that you will be implementing throughout the rest of the lesson. Be sure you have carefully reviewed the pseudocode from the previous concept so you'll have a better understanding of each of the functions described in the video.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Ascii A Star First Take</p></h3>
+  <video controls>
+  <source src="07. Ascii A Star First Take-ItIdjPEhHdg.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. Ascii A Star First Take-ItIdjPEhHdg.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/a-star-code-structure.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="quiz">Quiz</h2>
+<p>Below are the steps from the <code>while</code> loop in the A* pseudocode you saw previously:</p>
+<blockquote>
+  <p><strong>while</strong> the list of open nodes is nonempty:</p>
+  <ol>
+  <li>Sort the open list by f-value</li>
+  <li>Pop the optimal cell (called the <em>current</em> cell).</li>
+  <li>Mark the cell's coordinates in the grid as part of the path.</li>
+  <li><strong>if</strong> the <em>current</em> cell is the goal cell:<ul>
+  <li>return the <em>grid</em>.  </li></ul></li>
+  <li><strong>else</strong>, expand the search to the <em>current</em> node's neighbors. This includes the following steps:<ul>
+  <li>Check each neighbor cell in the <em>grid</em> to ensure that the cell is empty: it hasn't been closed and is not an obstacle.</li>
+  <li>If the cell is empty, compute the cost (g value) and the heuristic, and add to the list of open nodes.</li>
+  <li>Mark the cell as closed.</li></ul></li>
+  </ol>
+</blockquote>
+<p>In the quiz below, match the steps to the appropriate function from the A* code structure diagram.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>QUIZ QUESTION:</strong>: <p>Match the steps in the <code>while</code> loop of the pseudocode above to the functions in the code structure diagram where the code would be implemented.</p></p>
+  <p><strong>ANSWER CHOICES:</strong></p>
+  <button class="btn btn-primary"><p>5</p></button>
+  <button class="btn btn-primary"><p>1</p></button>
+  <button class="btn btn-primary"><p>4</p></button>
+
+  <br><br>
+
+  <table class="table">
+    <tr class="thead-dark table-hover">
+      <th>
+        <p>Functions</p>
+      </th>
+      <th>
+        <p>Steps</p>
+      </th>
+    </tr>
+
+    <tr>
+      <td><p><code>CellSort()</code></p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p><code>ExpandNeighbors()</code></p></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p><code>Search()</code></p></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+
+    <table class="table">
+      <tr class="thead-dark table-hover">
+        <th>
+          <p>Functions</p>
+        </th>
+        <th>
+          <p>Steps</p>
+        </th>
+      </tr>
+
+      <tr>
+        <td>
+          <p><code>ExpandNeighbors()</code></p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>5</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><code>CellSort()</code></p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>1</p></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><code>Search()</code></p>
+        </td>
+        <td>
+            <button class="btn btn-primary"><p>4</p></button>
+        </td>
+      </tr>
+    </table>
+  </details>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="summary">Summary</h2>
+<p>The code for the A* search algorithm has been broken down into the following functions:</p>
+<ul>
+<li><code>CellSort()</code> -  sorts the open list according to the sum of h + g</li>
+<li><code>ExpandNeighbors()</code> - loops through the current node's neighbors and calls appropriate functions to add neighbors to the open list</li>
+<li><code>CheckValidCell()</code> - ensures that the potential neighbor coordinates are on the grid and that the cell is open</li>
+<li><code>Heuristic()</code> - computes the distance to the goal</li>
+<li><code>AddToOpen()</code> - adds the node to the open list and marks the grid cell as closed</li>
+</ul>
+<p>You will be implementing these functions along with a few other small helper functions throughout the rest of this lesson to  complete the ASCII A* search program.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. CODE Starting A Search.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Lesson Code Structure')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

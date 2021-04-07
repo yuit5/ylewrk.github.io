@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.969 --> 00:00:12.269
+An array is a really fundamental data type that represent memory,
+
+00:00:12.269 --> 00:00:15.209
+a fixed size chunk of memory.
+
+00:00:15.210 --> 00:00:20.100
+When you declare an array in almost all contexts,
+
+00:00:20.100 --> 00:00:25.440
+it immediately turns into a pointer and forgets the amount of memory that's allocated.
+
+00:00:25.440 --> 00:00:30.330
+So you have to keep track of exactly how much memory is there.
+
+00:00:30.329 --> 00:00:33.405
+Experience shows that you don't get it right.
+
+00:00:33.405 --> 00:00:35.535
+That's a bug source.
+
+00:00:35.534 --> 00:00:37.739
+So what I do instead,
+
+00:00:37.740 --> 00:00:40.965
+I wrap the array inside a vector,
+
+00:00:40.965 --> 00:00:44.850
+and the vector operations manages the arrays,
+
+00:00:44.850 --> 00:00:47.355
+it allocates, it deallocates it.
+
+00:00:47.354 --> 00:00:50.969
+If you set your switches right, it does wrench it.
+
+00:00:50.969 --> 00:01:01.484
+So basically, get the low-level hardware close stuff out of the major uses.
+
+00:01:01.484 --> 00:01:03.659
+You need that sometimes,
+
+00:01:03.659 --> 00:01:05.129
+like when you build a vector.
+
+00:01:05.129 --> 00:01:07.364
+Can't build a good vector without an array.
+
+00:01:07.364 --> 00:01:10.640
+I don't think it belongs in application code.
+
+00:01:10.640 --> 00:01:11.870
+If you look at C and C++,
+
+00:01:11.870 --> 00:01:15.719
+you're going to see that's a fairly radical statement.
+

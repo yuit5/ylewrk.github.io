@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.250
+The big question now is,
+
+00:00:02.250 --> 00:00:07.155
+can we write a program that finds the shortest path from starts to goal.
+
+00:00:07.155 --> 00:00:09.855
+To do so, let's give the grid cell names.
+
+00:00:09.855 --> 00:00:16.245
+We have six columns named from zero to five and five rows from zero to four,
+
+00:00:16.245 --> 00:00:19.815
+and the basic idea I'll pursue is,
+
+00:00:19.815 --> 00:00:25.590
+that I keep a list of nodes that I wish to investigate further or as we call,
+
+00:00:25.589 --> 00:00:28.065
+it an search, expand.
+
+00:00:28.065 --> 00:00:29.955
+Let's call this list open.
+
+00:00:29.954 --> 00:00:32.789
+So beginning, we have only one state on this list.
+
+00:00:32.789 --> 00:00:34.469
+It's (0,0), my initial state.
+
+00:00:34.469 --> 00:00:36.659
+Just to make sure I never pick this state again,
+
+00:00:36.659 --> 00:00:38.129
+I don't want any cycles in my path.
+
+00:00:38.130 --> 00:00:39.450
+Let me just check mark,
+
+00:00:39.450 --> 00:00:42.795
+the state with a little red check.
+
+00:00:42.795 --> 00:00:47.525
+I now can test whether this state is my final goal state. Obviously, it's not.
+
+00:00:47.524 --> 00:00:48.949
+I'm not done with planning yet.
+
+00:00:48.950 --> 00:00:51.455
+So what I do next, I expand the state.
+
+00:00:51.454 --> 00:00:53.899
+So take it off my open list
+
+00:00:53.899 --> 00:00:57.664
+and look at all the successors of which there are two over here,
+
+00:00:57.664 --> 00:01:02.189
+(1,0) and (0,1), those two are now expanded.
+
+00:01:02.189 --> 00:01:04.390
+So I'll check them. One last thing,
+
+00:01:04.390 --> 00:01:08.390
+I maintain for each of these states in the open list,
+
+00:01:08.390 --> 00:01:10.945
+how many expansions it took to get there.
+
+00:01:10.944 --> 00:01:12.884
+So this was zero over here.
+
+00:01:12.885 --> 00:01:15.690
+It's one for these two states, in red.
+
+00:01:15.689 --> 00:01:17.939
+That's called my g value.
+
+00:01:17.939 --> 00:01:19.379
+When I'm done with planning,
+
+00:01:19.379 --> 00:01:21.530
+this will be the length of the optimal paths.
+
+00:01:21.530 --> 00:01:24.379
+Let's now go further and expand one of the two.
+
+00:01:24.379 --> 00:01:28.714
+We always expand the one with the smallest g value but these are equivalent.
+
+00:01:28.715 --> 00:01:29.770
+They both have a g value of one,
+
+00:01:29.769 --> 00:01:31.054
+so it doesn't make a difference.
+
+00:01:31.055 --> 00:01:32.540
+So let me expand the first one.
+
+00:01:32.540 --> 00:01:34.475
+It's this one over here.
+
+00:01:34.474 --> 00:01:36.864
+This one has three neighbors,
+
+00:01:36.864 --> 00:01:39.629
+(0,0), (1,1), and (2,0).
+
+00:01:39.629 --> 00:01:43.334
+But because (0,0) is already closed with the check mark,
+
+00:01:43.334 --> 00:01:45.000
+we don't consider it anymore,
+
+00:01:45.000 --> 00:01:48.015
+which gives me, (2,0) and (1,1),
+
+00:01:48.015 --> 00:01:51.754
+both now with a g value of two and we check those over here.
+
+00:01:51.754 --> 00:01:54.709
+I now pick the node on the open list with
+
+00:01:54.709 --> 00:01:59.389
+the smallest g value which happens to be this one over here. There's really no choice.
+
+00:01:59.390 --> 00:02:03.079
+It's the node over here and this has two neighbors,
+
+00:02:03.079 --> 00:02:05.664
+(0,0) and (1,1), but both already checked.
+
+00:02:05.665 --> 00:02:08.300
+So therefore, there's no expansion that takes place.
+
+00:02:08.300 --> 00:02:10.790
+I only expand if I find an unchecked node.
+
+00:02:10.789 --> 00:02:14.284
+So the new open list are these two nodes over here and our recurse.
+
+00:02:14.284 --> 00:02:17.780
+What's going to happen is, my nodes will expand gradually into
+
+00:02:17.780 --> 00:02:22.550
+the free space until I eventually hit the goal node and without proof,
+
+00:02:22.550 --> 00:02:25.640
+the g value of when I hit the goal node,
+
+00:02:25.639 --> 00:02:30.739
+will be exactly the number of steps it takes to go from the start state to the goal node.
+
+00:02:30.740 --> 00:02:33.980
+The secret here for that to be the case lies in the fact
+
+00:02:33.979 --> 00:02:37.375
+they'll always expand the node with the smallest g value,
+
+00:02:37.375 --> 00:02:38.860
+but we won't worry about this.
+
+00:02:38.860 --> 00:02:43.050
+What I want you to do is, to implement a piece of code that implements what I just did.
+

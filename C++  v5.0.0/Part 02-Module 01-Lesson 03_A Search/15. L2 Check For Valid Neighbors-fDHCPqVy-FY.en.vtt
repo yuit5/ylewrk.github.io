@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.930
+Great work. You're almost done with A* Search.
+
+00:00:03.930 --> 00:00:05.565
+For the last part of the search,
+
+00:00:05.565 --> 00:00:08.625
+you will be finding valid neighbors to add to the search vector.
+
+00:00:08.625 --> 00:00:13.245
+Valid in this case means that the cell is open and you haven't visited it before.
+
+00:00:13.244 --> 00:00:15.524
+That sounds good.
+
+00:00:15.525 --> 00:00:18.179
+I don't think we'd want to crash into any obstacles.
+
+00:00:18.179 --> 00:00:20.250
+I don't think so. Let's get started.
+

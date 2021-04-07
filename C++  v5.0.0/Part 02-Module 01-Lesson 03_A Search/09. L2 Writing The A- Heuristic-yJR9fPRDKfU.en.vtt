@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.160
+In the next exercise,
+
+00:00:02.160 --> 00:00:05.130
+you'll write the A* heuristic function.
+
+00:00:05.129 --> 00:00:08.429
+This function provides a score for each node that
+
+00:00:08.429 --> 00:00:11.894
+helps A* decide which node to explore next.
+
+00:00:11.894 --> 00:00:15.224
+In our implementation, the heuristic assigned to
+
+00:00:15.224 --> 00:00:19.230
+each node gets lower as the nodes get closer to the goal.
+
+00:00:19.230 --> 00:00:23.420
+That's right. If you choose the next node with the lowest overall cost,
+
+00:00:23.420 --> 00:00:28.330
+the heuristic function ensures that you will be moving towards the goal with this choice.
+
