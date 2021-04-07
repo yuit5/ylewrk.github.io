@@ -1,0 +1,558 @@
+{
+  "data": {
+    "lesson": {
+      "id": 718657,
+      "key": "d03deb6d-3aee-4331-b4ed-67b8cd2ec8bb",
+      "title": "Mentor Help, Peer Chat, and Careers",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "You are starting a challenging but rewarding journey! Take 5 minutes to read how to get help with projects and content.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 718664,
+          "key": "7b46b9c9-0d5b-4975-bab8-c6d265f06d9c",
+          "title": "What It Takes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7b46b9c9-0d5b-4975-bab8-c6d265f06d9c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 718666,
+              "key": "16a0daad-dacb-4ab3-bae0-aefdf4135fea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# What it Takes\n\nCompleting a Udacity Nanodegree program takes perseverance and dedication, but the rewards outweigh the challenges. Throughout your Nanodegree program, you will develop and demonstrate specific skills that will serve you for a lifetime. Congratulations on taking the first step towards developing the skills you need to power your career through tech education!\n \nThe videos, text lessons, and quizzes you encounter in the classroom are optional but recommended. In order to graduate, you need to pass every project. Projects will test your ability to apply the skills and strategies you have learned in the classroom to real-world problems. They will also provide tangible outputs you can use to demonstrate your skills for current and future employers.\n \nProjects are designed to be challenging. Many students initially struggle, but with a little grit they are able to learn from their mistakes and build their skills. Data from nearly 100,000 Udacity graduates show that commitment and persistence are the highest predictors of whether or not a student will graduate. \n \nAt some point, nearly every student will get stuck on a new concept or skill, and doubt may set in. Don’t panic. Don’t quit. Be patient, and work through the problem. Remember that you are not alone and the problem that you are encountering is likely one that many others have experienced as well. Whether you are stuck or simply looking for encouragement, you’ll find Udacity Mentors and students there to help.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1021285,
+          "key": "ce0fb21a-73a5-4f9b-8ffa-0335059917a7",
+          "title": "Getting Help",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ce0fb21a-73a5-4f9b-8ffa-0335059917a7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1021287,
+              "key": "68a03852-0684-47ee-a023-654b7072b33f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Getting Help ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1021286,
+              "key": "c578865e-1731-48d1-8088-0d17eb939551",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As questions come up during your Nanodegree program, click on the Help button on the left sidebar of your classroom. You’ll see four options, each for a separate type of support:   \n\n* **Technical Mentor Help**: is available on Knowledge, our expert Q&A platform, by clicking on \"Mentor Help\". You can search for answers to questions similar to yours or post new questions related to your project or lessons. Udacity’s expert technical mentors answer all new questions. \n* **Peer Chat**: Join <a href=\"https://hub.udacity.com/rooms/community:hqb2c-3f3e6a86-3abe-4fb0-bc90-d9569897fbf6?contextType=room\" target=\"_blank\">study lounge</a>, your \"virtual coffeehouse\" where every Udacity student can hang — Drop in to say hello and connect with others to share insights on your Nanodegree program.   \n* **Career Support**: is available for all students and alumni including expert feedback on your application materials profiles, and lessons on “How to Network Successfully” to “Rehearsing for Interviews” and more. Click on “Career Services” to get started.\n* **Udacity Support Community: **Receive peer support and find answers to your non-technical questions quickly through <a href=\"https://udacity.zendesk.com/hc/en-us/community/topics\" target=\"_blank\">Udacity Support Community</a>. Receive peer support from our global community of lifelong learners that help each other succeed by sharing their experience and expertise. Start a discussion <a href=\"https://udacity.zendesk.com/hc/en-us/community/topics\" target=\"_blank\">here</a>.\n* **General Account Help**: This is where you can get details on non-technical issues such as 3rd party tools, billing, deadlines, and more. You can even find additional help here via. live chat. Simply click on Account Help or visit our <a href=\"https://udacity.zendesk.com/hc\" target=\"_blank\">Help Center</a> to find answers.\n.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 782140,
+          "key": "6324e0bb-4deb-41b3-b605-99e07af894cc",
+          "title": "Mentor Help",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6324e0bb-4deb-41b3-b605-99e07af894cc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 782143,
+              "key": "b7eae8bf-cfd8-483a-94c0-5a2c42bb5085",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Mentor Help\n\n__Technical Mentor Support__: is provided through Knowledge, our expert Q&A platform. You can search for answers to questions similar to yours or post new questions related to your project or lessons. __Udacity’s expert technical mentors answer all-new questions.__   \n\n\n### How to Use Knowledge \n\nTo ensure you’re getting the quality and prompt support you need, it’s helpful to follow these best practices and guidelines for Knowledge.   ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 782153,
+              "key": "5285c5e2-ef55-449e-adc2-e371868c8d44",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5ebeb959_knowledge1/knowledge1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5285c5e2-ef55-449e-adc2-e371868c8d44",
+              "caption": "",
+              "alt": "",
+              "width": 1213,
+              "height": 674,
+              "instructor_notes": null
+            },
+            {
+              "id": 782162,
+              "key": "da55f0de-be25-4a92-affb-8cb41f7b8bb1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "- __Search for Similar Existing Questions__:\nwith tens of thousands of students enrolled in Nanodegree programs, many of your questions may have already been asked and answered. To look for existing answers to similar questions that may provide the immediate support you need, use the __filter on the left side of your screen__ to select your Nanodegree and related project or write in the key terms related to your question in the __search bar__ at the top of the page.      \n\n\n- __Ask a New Question__: \nif you want to ask a new question, select “Ask a Mentor” at the top of the page. Kindly remember that Knowledge is for technical questions only; for other types of support and feedback, please write to support at support@udacity.com.      \n\n\nWhen you ask a new question, the platform immediately assigns it to one of our expert mentors spread across the globe to ensure prompt replies. Of note, when a mentor answers your question, you will see “Mentor” next to their name to differentiate their support from comments your fellow learners may also provide.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1021276,
+              "key": "47c27989-94d3-4457-b13f-4c3906d3b788",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5ebeb9eb_k2/k2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/47c27989-94d3-4457-b13f-4c3906d3b788",
+              "caption": "",
+              "alt": "",
+              "width": 678,
+              "height": 716,
+              "instructor_notes": null
+            },
+            {
+              "id": 782144,
+              "key": "4fba6d8a-8806-404f-ba00-397c887f02d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you don't see your question, simply create a new post. You are likely to get an answer within 24 hours and you'll be helping future students who may encounter the same problem. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1021274,
+              "key": "cb7b3337-6a88-4101-a128-cf7174273be8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### How to Ask a Good Question?  \n\nStudents that follow these tips typically receive the strongest initial support and avoid back-and-forth with mentors:   \n\n- __Ask Specific Questions__: if you have closely related questions that form part of a general theme, it’s okay to ask them all together. But consider using bullet points to separately list each of the questions in your post. Keeping your questions organized helps ensure mentors provide clear answers to each specific question. If your questions are less closely connected, it’s best to submit new, separate questions for each one.        \n\n\n- __Provide Details and Links:__ explaining what (if anything) you’ve already attempted to solve the problem helps mentors know where to start when answering your question. Likewise, if your question is not related specifically to a project, but rather to an exercise, quiz, or lesson, it’s helpful to include information such as lesson or quiz name, screenshots, and classroom links.  \n\n> Overall the key to asking a good question is to imagine yourself trying to answer your own question. Imagine you were coming to it without any prior knowledge. Does the question make complete sense? Or are there gaps around the context?    \n\n\n- __Start with a Clear Question Title__: attempt to summarize your entire question in one sentence. You may even write the title at the end, just before posting the question. This will help you summarize the issue before you include details in the question itself.      \n\n\n- __Share Code Correctly__:  by using the “Code Block” option to properly format your code. If your question concerns a piece of external code, include a link to the file on Github.    \n\n> In fact, Github lets you create a link to a specific line in a file.  To do so, just click to the left of the line number, and then select _copy permalink_ in the ellipsis that appears in the margin. Paste the _permalink_ right into the Github box on your question submission form.       \n\n\n- __Figuring out Errors__: if your question is about an error message or stack trace, include the entire error message, by either formatting the error message using the “Code Block” option or creating a Gist or a Paste on Pastebin, and including a link to it in the description.    \n\n\n- __Avoid Screenshots of Code or Error Messages__: do not use screenshots of code or error messages. They are hard to read and the text cannot be copied to debug it.   \n\n\n\nIf you receive a helpful answer, kindly select it as the “accepted answer.” For questions from other students, if you see other helpful answers kindly select the “upvote” option. Conversely, if you don’t think an answer strongly answers a question, select the “downvote” option. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1021272,
+              "key": "46f5fa58-aca4-4dd9-939e-727eef2908aa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5ebeb997_image2/image2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/46f5fa58-aca4-4dd9-939e-727eef2908aa",
+              "caption": "",
+              "alt": "",
+              "width": 970,
+              "height": 474,
+              "instructor_notes": null
+            },
+            {
+              "id": 1021270,
+              "key": "9baa39bb-8719-4581-a54f-f808b0682405",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Getting Additional Support\n\nAt times, students want support from a different mentor. As everyone learns differently, we want to make this a simple process for learners like you.    \n\n\nIf you receive an answer that you are not satisfied with and want a different mentor to chime in, kindly select the option at the top of the page in Knowledge. If you reply directly in the comments section, without clicking on the link at the top of the page, your question will not be answered by another mentor.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1021269,
+              "key": "ba6a2c71-518a-4894-93fd-f0e7e36ba15a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5ebeb954_lastimage/lastimage.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ba6a2c71-518a-4894-93fd-f0e7e36ba15a",
+              "caption": "",
+              "alt": "",
+              "width": 1433,
+              "height": 408,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 1163855,
+          "key": "5f942e16-64ef-4b24-9de4-f4a8d2369c2c",
+          "title": "Submitting Classroom Feedback",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5f942e16-64ef-4b24-9de4-f4a8d2369c2c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1163856,
+              "key": "a7255906-848a-466e-b6a9-2869ccf77d94",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you would like to share feedback on your learning experience or need to report any errors in the classroom content, click the ‘Submit Feedback’ button on the upper-right corner of the classroom. This feature is available in all of your lessons and allows you to provide comments on specific sections of the lesson you’re on.\n\n\n\nNOTE: When you report feedback through the classroom, you won’t receive a direct response, but don’t worry! Your feedback will be documented and shared with the appropriate team for review. We strive to create the best learning experience for each unique individual and we’ll take your feedback into account as we continue to improve the program!\n\n\n\n**How Classroom Feedback Works**\n\n\n\nClick the ‘Submit Feedback’ button on the upper-right corner of the classroom:",
+              "instructor_notes": null
+            },
+            {
+              "id": 1163857,
+              "key": "20836298-c96f-479f-8e5e-b311e72a58a0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605e30ac_send-feedback1-/send-feedback1-.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/20836298-c96f-479f-8e5e-b311e72a58a0",
+              "caption": null,
+              "alt": null,
+              "width": 1404,
+              "height": 608,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163858,
+              "key": "1de21ac7-5ce9-418b-a462-058f38f5dc15",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This will highlight different sections on the current concept that you’re in. Click ‘Select’ on the section you would like to provide feedback on:",
+              "instructor_notes": null
+            },
+            {
+              "id": 1163859,
+              "key": "98a51130-29bf-4b03-861b-6904438b4154",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605e30e2_send-feedback2/send-feedback2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/98a51130-29bf-4b03-861b-6904438b4154",
+              "caption": null,
+              "alt": null,
+              "width": 1218,
+              "height": 984,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163860,
+              "key": "ea69d871-0e46-47d4-8d52-db518c879a51",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Once you select a section, you will see a feedback box appear on the bottom-right corner of the classroom where you can fill in additional information that you would like to share with us. Once you click ‘Send,’ you will see a confirmation message that your feedback has been sent and received.",
+              "instructor_notes": null
+            },
+            {
+              "id": 1163861,
+              "key": "7ebd22f1-1116-4f22-805f-8387d547c730",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605e3137_send-feedback3/send-feedback3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7ebd22f1-1116-4f22-805f-8387d547c730",
+              "caption": null,
+              "alt": null,
+              "width": 1104,
+              "height": 704,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163862,
+              "key": "6a988f43-5324-43c6-8d9c-b05a216d3916",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605e314c_send-feedback4/send-feedback4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6a988f43-5324-43c6-8d9c-b05a216d3916",
+              "caption": null,
+              "alt": null,
+              "width": 512,
+              "height": 197,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163863,
+              "key": "21db0bbe-e187-4f26-ba8f-47f45b394a7e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And that’s it! As a reminder, you won’t receive a direct response for classroom feedback submission, but please know that your comments have been shared with the appropriate team for review.",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 1163845,
+          "key": "445f9136-5662-43b8-bb60-a9e810310a09",
+          "title": "Help Center",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "445f9136-5662-43b8-bb60-a9e810310a09",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1163847,
+              "key": "35f3679c-1652-4ef5-852d-175e15c3f369",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Get help with your account, browse categories of FAQs, and more!\n\n\n\n**Get Account help**\n\nRead detailed help articles on account-related topics like billing, third-party tools, project deadlines, graduation, and more.\n\n\n\n**Choose the type of help you require**\n\nFor your specific questions, look through categories of Frequently Asked Questions and find answers quickly.\n\n\n\n**Get in touch with us**\n\nReach out to our Support team directly via <a href=\"https://udacity.zendesk.com/hc/en-us\" target=\"_blank\">Live Chat</a>. Click on Account Help in the Classroom or visit our <a href=\"https://udacity.zendesk.com/hc\" target=\"_blank\">Help Center</a> to get started.",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 908233,
+          "key": "6f52a708-af17-4b67-bff0-b487b048bc93",
+          "title": "Udacity Support Community",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6f52a708-af17-4b67-bff0-b487b048bc93",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1163819,
+              "key": "72d80b9e-fc51-4cc1-a798-f73b221f670b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605e2d67_udacity-support-community/udacity-support-community.jpeg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/72d80b9e-fc51-4cc1-a798-f73b221f670b",
+              "caption": null,
+              "alt": null,
+              "width": 512,
+              "height": 256,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163821,
+              "key": "0387bb6e-44e2-4493-a8d3-4b87dd8a3025",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Welcome to Udacity’s Support Community!**\n\nBecome a part of our global community of lifelong learners that help each other succeed by sharing their experience and expertise. Receive peer support and find answers to your non-technical questions quickly through Udacity Support Community.\n\n**Find answers to your questions**\n\nSearch Udacity Support Community for answers to commonly asked questions.\n\n**Receive peer support**\n\nAsk the community by posting a question and following discussions.\n\n**Share your expertise**\n\nGet recognized for sharing your insights, experiences, and tips with fellow learners.\n\n**Checkout status of your Support tickets**\n\nManage and streamline your view of the support tickets, community conversations, and people you follow in the 'My Profile' section.\n\n**Solved, helpful, and recommended posts**\n\nLet other learners know which posts solved your problem, highlight helpful responses, and get the answers you want faster with recommended posts.\n\n**Build your reputation in the community**\n\nExplore and participate in Support Community programs to earn points, levels, and badges. Have fun and unlock rewards along the way.  \n\n### Join the <a href=\"https://udacity.zendesk.com/hc/en-us/community/topics\" target=\"_blank\">Support Community</a> now",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 831981,
+          "key": "99232e4b-299c-40f5-a985-3162da96288e",
+          "title": "Career Services",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99232e4b-299c-40f5-a985-3162da96288e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 831984,
+              "key": "56b803ea-52ec-4803-99d5-41aa3fef76c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You’re probably in this Nanodegree program to advance your career - whether looking for a new job, learning new skills for your current job, or just exploring.\n\nIf you want career support during your program, career coaches provide personalized feedback on your LinkedIn profile and GitHub as optional projects. \n\nIf you are actively looking for a new role, you can also submit your resume and cover letter in the sidebar under Help > Career Services.\n\nYou'll get honest, concise feedback from career coaches, including industry professionals.\n\nThe Udacity Careers team is here to help you figure out what you're looking for, plan for it, and work with you to move forward in your career. You can always contact us at <a href=\"mailto:career-support@udacity.com\" target=\"_blank\">career-support@udacity.com</a>.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1028834,
+          "key": "d895e8dd-e35a-419b-b1ea-a2953e03d951",
+          "title": "Plagiarism",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d895e8dd-e35a-419b-b1ea-a2953e03d951",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1031765,
+              "key": "26a20094-6b5b-4ccf-85cd-64d4659615b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Plagiarism and Academic Dishonesty\n\n\n\n## Overview of Plagiarism at Udacity\n\n\n\n### Defining Plagiarism\n\n**Any act claiming or implying another person’s work as your own.**\n\nExamples:\n\n* Submitting a project you didn’t create to copying code into a program without citation. \n* Any action in which you misleadingly claim an idea or piece of work as your own, when it is not.\n\n### Copying and Combining Code\n\n**Using another person’s work in your own work **\n\nExamples:\n\n* Following a guide that someone may have created for completing a Udacity project, whether from a video or website. \n* Taking a part of someone else's project and changing some variable and function names, - regardless of whether you give the source credit or not.\n*  If you have not done the work yourself and attempt to mask it.\n\n### Using Someone Else’s Code to Inform your Solution\n\nYou should never knowingly view someone else’s work until you have completed the project yourself - nor should you share your project with someone who has not yet completed theirs. However, once you have completed your project, you are encouraged to see how other people have approached the same challenge in a different way. This allows you to compare your different strategies and ways of thinking.\n\n### Submitting Identical Works Post Collaboration\n\nIf you decide to work together with another student on a project, you are then expected to write your code separately. Submitting identical projects or submissions with identical portions is considered plagiarism as described in the Udacity <a href=\"https://www.udacity.com/legal/en-us/honor-code\" target=\"_blank\">Honor Code</a>.\n\n\n\n## Seeking Help without violating the Honor Code\n\nTo be clear, you are encouraged to seek help by talking to Mentors on Knowledge, other students, and alumni. You’re also welcome to use frameworks and libraries to assist you, as long as they aren't removing important goals from the project that you should know how to do yourself.\n\nIf you are struggling and need help, we encourage you to ask technical questions on Knowledge to explore why your approach is not the correct approach. Mentors typically provide answers within an hour of questions being posted, so you can expect quick guidance on your question.\n\nIf you’re ever in doubt as to whether or not something would be considered plagiarism, ask a  Mentor on Knowledge. Our goal is for every student to graduate armed with a toolbox of skills that they can apply across a variety of concepts and problems,. The best way to achieve this is to ensure every student does their own work and is able to demonstrate their skills in each project submission.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1163864,
+          "key": "52823ce0-8170-425d-b817-f8395f8ea77f",
+          "title": "Quiz: Plagiarism at Udacity",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "52823ce0-8170-425d-b817-f8395f8ea77f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1163865,
+              "key": "3e6d3a68-639f-419c-9f7e-eb62e322cae7",
+              "title": null,
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3e6d3a68-639f-419c-9f7e-eb62e322cae7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Select the statements that should be classified as plagiarism: \n",
+                "answers": [
+                  {
+                    "id": "e085b1bc-5fad-4ac7-a2fb-79aadf70431f",
+                    "text": "Two or more students work on a project together and end up with the identical code submission, or significant portions of their submissions show duplicated code.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "5ca7fcd5-a8d3-442e-b578-dc7647785e97",
+                    "text": "Two or more students who discuss a project together to get a general idea of implementation, then separate to each write their own code individually. \n",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "f55d5e8e-00fc-436c-a5c6-8ed86d624a46",
+                    "text": "Copying code or using code that has been provided for you and approved for use in your project by Udacity without attribution.\n",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a8ba7d02-3d86-4026-a0be-835315e0fff7",
+                    "text": "Using or adapting a code from someone else’s project and then properly attributing the source code.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "e3be8cdd-3a84-466e-b180-3df2ef081e01",
+                    "text": "Using or adapting and then properly attributing (give date and URL) a small piece of helper code. The helper code must not be directly relevant to the concepts being assessed in your assignment.\n",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1163866,
+              "key": "2789dc08-e027-461d-abc8-ec16256433e4",
+              "title": null,
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2789dc08-e027-461d-abc8-ec16256433e4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Select the statements that represent the correct choice when you need help on your projects: ",
+                "answers": [
+                  {
+                    "id": "9bd8cb63-9533-4d5b-b0df-cf613eb80462",
+                    "text": "Seek help from mentors by asking queries on knowledge",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "ba50fb6b-7ff2-4c3f-b8f2-689bfdcf9d8c",
+                    "text": "Look at examples of completed projects on the internet\n",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "909d29d0-0a30-442d-9f8c-ab7371665fb2",
+                    "text": "Ask someone else to write the code where you are blocked\n",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
