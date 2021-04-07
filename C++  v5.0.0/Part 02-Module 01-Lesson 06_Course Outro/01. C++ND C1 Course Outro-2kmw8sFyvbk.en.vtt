@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.569
+What you've just done is awesome.
+
+00:00:03.569 --> 00:00:07.410
+You built a route planner in C++ that can
+
+00:00:07.410 --> 00:00:11.565
+find a path between any two points on a real map,
+
+00:00:11.564 --> 00:00:13.230
+of a real city.
+
+00:00:13.230 --> 00:00:15.780
+Along the way, you learned about data structures
+
+00:00:15.779 --> 00:00:18.210
+and algorithms from the C++ standard library.
+
+00:00:18.210 --> 00:00:21.255
+Including variables, functions, vectors,
+
+00:00:21.254 --> 00:00:24.000
+maps, pointers, and references.
+
+00:00:24.000 --> 00:00:27.644
+You also implemented the A-star search algorithm,
+
+00:00:27.644 --> 00:00:32.954
+used build tools and weren't a little bit of object-oriented programming.
+
+00:00:32.954 --> 00:00:39.644
+These skills will be fundamental to you as a C++ engineer and the project you've built,
+
+00:00:39.645 --> 00:00:44.025
+a route planning application is something that people use every day.
+
+00:00:44.024 --> 00:00:46.469
+In the next course of this Nanodegree program,
+
+00:00:46.469 --> 00:00:49.024
+you'll see object-oriented programming in depth.
+
+00:00:49.024 --> 00:00:52.329
+Later you will learn about memory management and concurrency.
+
+00:00:52.329 --> 00:00:54.674
+There's a lot more to learn about C++.
+
+00:00:54.674 --> 00:00:57.244
+This course is really just the tip of the iceberg.
+
+00:00:57.244 --> 00:01:00.709
+Congratulations on completing this course.
+
+00:01:00.710 --> 00:01:04.320
+We hope to see you in the next course, soon.
+

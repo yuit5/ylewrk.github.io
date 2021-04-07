@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.529 --> 00:00:06.960
+Why did I create C++?
+
+00:00:06.960 --> 00:00:11.219
+I needed a language like it and it didn't exist.
+
+00:00:11.220 --> 00:00:16.789
+I was trying to build a system which might very well become the first Unix clusters,
+
+00:00:16.789 --> 00:00:20.980
+something like that, and for that I needed to manipulate hardware,
+
+00:00:20.980 --> 00:00:25.995
+I needed to do memory managers, process schedulers, networking,
+
+00:00:25.995 --> 00:00:31.089
+interfaces and such and then I needed to abstract up,
+
+00:00:31.089 --> 00:00:34.250
+so that you can say this bit runs over here and that
+
+00:00:34.250 --> 00:00:38.210
+bits run over there and they communicate in this way.
+
+00:00:38.210 --> 00:00:41.840
+What's a bit? You have to define it,
+
+00:00:41.840 --> 00:00:45.450
+that's where the classes come in and they communicate in some way,
+
+00:00:45.450 --> 00:00:47.120
+you can't just poke at memory.
+
+00:00:47.119 --> 00:00:51.329
+You have to have a protocol and they have to follow it, that's another class.
+
+00:00:51.329 --> 00:00:56.719
+So that's where it came from and I looked at what languages was available at
+
+00:00:56.719 --> 00:00:59.104
+the time and C was
+
+00:00:59.104 --> 00:01:03.724
+a good candidate for a really great language for dealing with low level stuff,
+
+00:01:03.725 --> 00:01:06.829
+hadn't been as popular as it became later,
+
+00:01:06.829 --> 00:01:09.769
+but anyway the support was great in hours on
+
+00:01:09.769 --> 00:01:13.420
+the same corridor as Brian Kernighan and Dennis Richie.
+
+00:01:13.420 --> 00:01:18.040
+The other language that could handle the top stuff was similar,
+
+00:01:18.040 --> 00:01:20.024
+could handle the abstraction,
+
+00:01:20.024 --> 00:01:22.924
+the only problem was it was far far too slow.
+
+00:01:22.924 --> 00:01:29.179
+Far far as many tens of times too slow and so I
+
+00:01:29.180 --> 00:01:36.180
+took the class concept from Simula put it into C and the rest is history as they say.
+

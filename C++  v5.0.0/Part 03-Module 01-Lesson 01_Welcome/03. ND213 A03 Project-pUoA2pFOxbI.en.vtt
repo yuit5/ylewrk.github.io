@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:00.040
+Ermine has designed a terrific final project for this course.
+
+00:00:00.040 --> 00:00:03.414
+You'll develop a process manager for Linux,
+
+00:00:03.414 --> 00:00:07.605
+in particular a version of a program called Htop.
+
+00:00:07.605 --> 00:00:10.660
+Your program just like Htop,
+
+00:00:10.660 --> 00:00:15.414
+will read and publish data about all of the processes on your system.
+
+00:00:15.414 --> 00:00:20.364
+You'll use C++ to read from files stored it into objects,
+
+00:00:20.364 --> 00:00:24.384
+manipulate those objects, and output data to the terminal.
+
+00:00:24.384 --> 00:00:27.539
+Building this program will allow you to work
+
+00:00:27.539 --> 00:00:31.009
+with all of the different topics you'll learn in this course.
+
+00:00:31.009 --> 00:00:34.609
+You'll develop classes to read and store data,
+
+00:00:34.609 --> 00:00:36.659
+you'll establish abstract in
+
+00:00:36.659 --> 00:00:40.844
+the encapsulated interfaces for objects to interact with each other.
+
+00:00:40.844 --> 00:00:43.589
+Some of the classes are related,
+
+00:00:43.589 --> 00:00:46.064
+which provides the opportunity to establish
+
+00:00:46.064 --> 00:00:49.844
+inheritance hierarchies and polymorphic class methods.
+
+00:00:49.844 --> 00:00:55.409
+You can even build generic templates to work with multiple types of data structures.
+
+00:00:55.409 --> 00:00:59.099
+This will be a pretty impressive program once you've finish
+
+00:00:59.100 --> 00:01:03.210
+and a great project to add to your portfolio.
+

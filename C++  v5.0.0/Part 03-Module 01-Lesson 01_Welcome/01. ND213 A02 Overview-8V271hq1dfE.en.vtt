@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.334
+This course has three main sections,
+
+00:00:03.334 --> 00:00:06.429
+an introduction to object oriented programming,
+
+00:00:06.429 --> 00:00:09.429
+a more advanced lesson on object oriented programming
+
+00:00:09.429 --> 00:00:13.150
+and a lesson preparing you for the course's final project.
+
+00:00:13.150 --> 00:00:16.185
+In the introduction to object oriented programming,
+
+00:00:16.184 --> 00:00:18.035
+you'll learn about classes,
+
+00:00:18.035 --> 00:00:23.164
+which are the fundamental building blocks of object-oriented programming in C++.
+
+00:00:23.164 --> 00:00:28.419
+Classes evolved from a related type called structures or structs.
+
+00:00:28.420 --> 00:00:32.395
+So you'll learn what distinguishes classes from structs.
+
+00:00:32.395 --> 00:00:35.560
+The introductory lesson will conclude with two of
+
+00:00:35.560 --> 00:00:38.094
+the most important theoretical concepts of
+
+00:00:38.094 --> 00:00:42.894
+object oriented programming, encapsulation and abstraction.
+
+00:00:42.895 --> 00:00:48.950
+You'll learn what these concepts mean and you'll practice implementing them in C++.
+
+00:00:48.950 --> 00:00:51.640
+When we move to the advanced lesson,
+
+00:00:51.640 --> 00:00:55.674
+we'll start with two more important object oriented concepts,
+
+00:00:55.674 --> 00:00:58.629
+inheritance and polymorphism.
+
+00:00:58.630 --> 00:01:03.295
+Polymorphism in particular can be implemented in several different ways
+
+00:01:03.295 --> 00:01:08.290
+and you'll build multiple approaches like overriding and overloading.
+
+00:01:08.290 --> 00:01:13.085
+We'll conclude with exercises on templates in generic programming,
+
+00:01:13.084 --> 00:01:17.394
+which help make your code reusable in many different contexts.
+
+00:01:17.394 --> 00:01:19.209
+You don't want to repeat yourself,
+
+00:01:19.209 --> 00:01:21.054
+if you don't have to.
+
+00:01:21.055 --> 00:01:24.950
+We're about to learn a lot together.
+
