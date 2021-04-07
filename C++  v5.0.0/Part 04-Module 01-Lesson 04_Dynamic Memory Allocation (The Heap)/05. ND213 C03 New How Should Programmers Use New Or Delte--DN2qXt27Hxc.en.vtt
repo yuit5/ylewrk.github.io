@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.019 --> 00:00:09.419
+In a language without garbage collection like C++,
+
+00:00:09.419 --> 00:00:13.689
+you didn't have to say 'Delete trash' to make it go away.
+
+00:00:13.699 --> 00:00:20.309
+My rule of thumb is don't use New and Delete in application code.
+
+00:00:20.309 --> 00:00:24.794
+New and Delete belongs in the implementation of your abstractions.
+
+00:00:24.795 --> 00:00:27.075
+So if you use a vector or a string,
+
+00:00:27.074 --> 00:00:30.254
+you don't use New and Delete, it's gone.
+
+00:00:30.254 --> 00:00:33.329
+It's hidden inside the abstraction.
+
+00:00:33.329 --> 00:00:35.460
+That's where the pointers live,
+
+00:00:35.460 --> 00:00:39.609
+in the part and on the fraction that actually touches hardware.
+

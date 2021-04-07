@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.359
+This has been the very last part of the memory management course.
+
+00:00:03.359 --> 00:00:06.179
+You've covered quite some ground over the last weeks,
+
+00:00:06.179 --> 00:00:08.070
+starting with memory types,
+
+00:00:08.070 --> 00:00:09.554
+the process memory model,
+
+00:00:09.554 --> 00:00:12.209
+automatic memory allocation on the stack as well as
+
+00:00:12.210 --> 00:00:15.530
+on an overview of call by value and call by reference.
+
+00:00:15.529 --> 00:00:18.660
+We have discussed dynamic memory allocation on the heap.
+
+00:00:18.660 --> 00:00:21.240
+We have used the well-worn functions,
+
+00:00:21.239 --> 00:00:23.789
+malloc and free as well as new and delete which are
+
+00:00:23.789 --> 00:00:28.500
+the object oriented counterpart in preparation for this lesson on smart pointers.
+
+00:00:28.500 --> 00:00:31.274
+You have learned a lot about copy semantics,
+
+00:00:31.274 --> 00:00:32.549
+L values, R values,
+
+00:00:32.549 --> 00:00:34.379
+as well as move semantics.
+
+00:00:34.380 --> 00:00:38.685
+Now you know what resource acquisition initialization is,
+
+00:00:38.685 --> 00:00:41.929
+it's a super powerful idiom for resource management in C plus plus
+
+00:00:41.929 --> 00:00:45.865
+and you know about smart pointers and you know that they embrace this principle.
+
+00:00:45.865 --> 00:00:47.240
+That's quite a lot.
+
+00:00:47.240 --> 00:00:49.730
+Also you know about the three smart pointer types,
+
+00:00:49.729 --> 00:00:52.294
+when to use them, and when to use raw pointers instead.
+
+00:00:52.295 --> 00:00:57.085
+Finally, we took a look at ways to pass smart pointers into functions and vice versa.
+
+00:00:57.085 --> 00:00:58.564
+Now, that really is
+
+00:00:58.564 --> 00:01:01.789
+a very large body of knowledge which we have here but there's much more to all of
+
+00:01:01.789 --> 00:01:06.545
+these topics as we were able to cover in the somewhat limited scope of this course.
+
+00:01:06.545 --> 00:01:09.260
+So when you start your career and C plus plus programming,
+
+00:01:09.260 --> 00:01:12.710
+you will continue on a super interesting learning trajectory.
+
+00:01:12.709 --> 00:01:14.289
+There's so much more to discover.
+
+00:01:14.290 --> 00:01:15.500
+But before you get there,
+
+00:01:15.500 --> 00:01:17.870
+you will have to complete the final project.
+
+00:01:17.870 --> 00:01:21.859
+This one is about applying many of the techniques you have learned so far.
+
+00:01:21.859 --> 00:01:28.289
+So let's take a look now at how to build a memory management chatbot. See you soon.
+

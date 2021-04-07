@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.089
+Now, in this section we have effectively built something similar
+
+00:00:03.089 --> 00:00:06.269
+to smart pointers using the RAII paradigm.
+
+00:00:06.269 --> 00:00:09.089
+We have taken away the responsibility of pairing new and
+
+00:00:09.089 --> 00:00:13.035
+delete from the programmer and hidden it inside our class.
+
+00:00:13.035 --> 00:00:15.780
+This is essentially what the real smart pointers in
+
+00:00:15.779 --> 00:00:19.125
+C++11 do among many other things, of course.
+
+00:00:19.125 --> 00:00:22.390
+Let's take a look at these in the next section.
+

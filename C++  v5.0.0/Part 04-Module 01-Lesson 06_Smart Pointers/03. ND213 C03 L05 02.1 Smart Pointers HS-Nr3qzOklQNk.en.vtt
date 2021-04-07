@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.625
+Now, in this section we are finally going to look at smart pointers.
+
+00:00:03.625 --> 00:00:08.620
+C++ is a very complex language with many features and many best practices to adhere to.
+
+00:00:08.619 --> 00:00:13.849
+One of the features that programmers often struggle with our pointers and references.
+
+00:00:13.849 --> 00:00:16.375
+We have seen in previous sections that you have to take
+
+00:00:16.375 --> 00:00:18.879
+care not to shoot yourself in the foot with memory leaks,
+
+00:00:18.879 --> 00:00:21.969
+with dangling pointers, with memory access,
+
+00:00:21.969 --> 00:00:23.314
+and so on, and so forth.
+
+00:00:23.315 --> 00:00:25.325
+In other languages such as Java,
+
+00:00:25.324 --> 00:00:29.589
+many of these problems are solved using a technique called garbage collection,
+
+00:00:29.589 --> 00:00:34.655
+where the system automatically deallocates memory for you when it is no longer needed.
+
+00:00:34.655 --> 00:00:37.050
+With the introduction of C++ 11 though,
+
+00:00:37.049 --> 00:00:39.599
+we now have something similar in the C world,
+
+00:00:39.600 --> 00:00:40.740
+or in the C++ word,
+
+00:00:40.740 --> 00:00:42.344
+which is called smart pointers.
+
+00:00:42.344 --> 00:00:46.629
+The main idea behind smart pointers is to wrap an object around a resource,
+
+00:00:46.630 --> 00:00:48.980
+allocate memory when the constructor is called,
+
+00:00:48.979 --> 00:00:51.844
+and automatically deallocate it when the destructor
+
+00:00:51.844 --> 00:00:55.125
+is called again as soon as the object leaves its scop.
+
+00:00:55.125 --> 00:00:57.200
+The programmer no longer has to care about
+
+00:00:57.200 --> 00:00:59.420
+finding the proper place for deallocation here.
+
+00:00:59.420 --> 00:01:03.230
+The concept behind this is called Resource Allocation Is Initialization,
+
+00:01:03.229 --> 00:01:04.969
+or RAII for short.
+
+00:01:04.969 --> 00:01:07.310
+We will look at an example in the section soon.
+
+00:01:07.310 --> 00:01:10.129
+So you will soon know what this concept is all about.
+
+00:01:10.129 --> 00:01:14.209
+Also, we will investigate the properties of the various smart pointer types,
+
+00:01:14.209 --> 00:01:15.619
+which are unique pointer,
+
+00:01:15.620 --> 00:01:17.484
+shared pointer and weak pointer.
+
+00:01:17.484 --> 00:01:20.150
+Also, we will look at a collection of guidelines and
+
+00:01:20.150 --> 00:01:23.090
+when to use them and when to stick with the old raw pointers.
+
+00:01:23.090 --> 00:01:25.740
+Let's go and have a look here.
+

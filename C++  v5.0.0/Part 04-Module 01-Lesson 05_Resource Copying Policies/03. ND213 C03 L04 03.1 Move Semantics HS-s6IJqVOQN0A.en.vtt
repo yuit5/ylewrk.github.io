@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.605
+Now, this section will all be about move semantics and the concepts surrounding it.
+
+00:00:04.605 --> 00:00:07.440
+We have already seen all your references and now we'll
+
+00:00:07.440 --> 00:00:10.950
+encounter the move constructor as well as the move assignment operator.
+
+00:00:10.950 --> 00:00:13.860
+Together with destructor, copy constructor,
+
+00:00:13.860 --> 00:00:15.930
+copy assignment operator, they form
+
+00:00:15.930 --> 00:00:18.780
+the components of the rule of five, as you will soon see.
+
+00:00:18.780 --> 00:00:23.300
+With move semantics, we cannot only use our values and save some copy operations,
+
+00:00:23.300 --> 00:00:27.090
+but we can actually pass objects around in our code,
+
+00:00:27.090 --> 00:00:30.975
+and transfer ownership of an object from one scope to the next scope.
+
+00:00:30.975 --> 00:00:33.120
+Now, that this lesson will be quite intense,
+
+00:00:33.120 --> 00:00:38.000
+but please invest the time and also the effort to grasp this important concept.
+
+00:00:38.000 --> 00:00:42.860
+That is one of the major innovations in modern C++ being introduced in C++ 11,
+
+00:00:42.860 --> 00:00:46.970
+and it's an essential part of all STL container classes such as vectors,
+
+00:00:46.970 --> 00:00:51.820
+and it forms the basis for the smart pointer types we will encounter in the next lesson.
+
+00:00:51.820 --> 00:00:56.300
+Now, one more note here. Move semantics will also play an important role in concurrency.
+
+00:00:56.300 --> 00:00:59.870
+So this is not only limited to memory management and smart pointers,
+
+00:00:59.870 --> 00:01:04.730
+but also extends to exclusive ownership management in multitrained applications.
+
+00:01:04.730 --> 00:01:08.970
+So let's start now and dive into it. See you again soon.
+

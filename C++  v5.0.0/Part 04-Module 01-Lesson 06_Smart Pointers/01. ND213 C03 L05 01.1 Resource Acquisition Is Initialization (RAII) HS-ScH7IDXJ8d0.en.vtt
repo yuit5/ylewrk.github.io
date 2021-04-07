@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.100
+Now, as we have seen "New" and "Delete" are
+
+00:00:02.100 --> 00:00:05.145
+the extensions of malloc and free in the C++ world.
+
+00:00:05.145 --> 00:00:08.190
+New and delete, they don't only allocate and deallocate memory,
+
+00:00:08.190 --> 00:00:12.115
+they also call the constructor and the destructor of an object.
+
+00:00:12.115 --> 00:00:16.260
+With all the advantages and the flexibility there comes a responsibility for you though.
+
+00:00:16.260 --> 00:00:17.550
+You have to play by the rules,
+
+00:00:17.550 --> 00:00:19.440
+that is to always delete objects,
+
+00:00:19.440 --> 00:00:21.675
+to use divide operators to do so,
+
+00:00:21.675 --> 00:00:23.670
+and to think about memory ownership,
+
+00:00:23.670 --> 00:00:28.470
+so that it's always clear who is responsible for a memory resource on the heap.
+
+00:00:28.470 --> 00:00:33.050
+This section introduces an idiom called Resource Acquisition Is Initialization,
+
+00:00:33.050 --> 00:00:34.970
+or RAII for short.
+
+00:00:34.970 --> 00:00:37.760
+This idiom has been conceived by the creator of C++,
+
+00:00:37.760 --> 00:00:42.500
+Bjarne Stroustrup, with the idea in mind to put a management class around a resource,
+
+00:00:42.500 --> 00:00:46.160
+and to manage the resource entirely within the class while providing
+
+00:00:46.160 --> 00:00:50.440
+third-party access by the programmer through well-defined interfaces only.
+
+00:00:50.440 --> 00:00:52.890
+This can be used for files, for memory,
+
+00:00:52.890 --> 00:00:55.730
+for concurrent programming, or for network connections.
+
+00:00:55.730 --> 00:00:58.955
+So it really is widespread programming paradigm.
+
+00:00:58.955 --> 00:01:01.610
+It also is something that is implemented by
+
+00:01:01.610 --> 00:01:04.550
+smart pointers as we will see in the next section.
+
+00:01:04.550 --> 00:01:08.970
+Now let's take a look at RAII and see what it is all about.
+

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.609
+Now, the problems mentioned here have given the programming language
+
+00:00:02.609 --> 00:00:05.775
+C++ a really bad reputation until about 2011.
+
+00:00:05.775 --> 00:00:07.830
+Especially, many beginners find it difficult to
+
+00:00:07.830 --> 00:00:10.199
+navigate safely through this variety of rules
+
+00:00:10.199 --> 00:00:14.699
+and best practices imposed upon them by the standard prior to C++11.
+
+00:00:14.699 --> 00:00:16.454
+But since this version,
+
+00:00:16.454 --> 00:00:19.439
+C++11, much has changed in the world of C++.
+
+00:00:19.440 --> 00:00:22.020
+The introduction of innovative concepts such as move semantics and
+
+00:00:22.019 --> 00:00:25.544
+smart pointers have made the language more modern and less error-prone.
+
+00:00:25.545 --> 00:00:28.215
+Many of the above-mentioned problems occur only rarely
+
+00:00:28.214 --> 00:00:30.975
+with modern C++ if it is used correctly.
+
+00:00:30.975 --> 00:00:32.219
+In the following two lessons,
+
+00:00:32.219 --> 00:00:34.799
+we will therefore deal in detail with move semantics and
+
+00:00:34.799 --> 00:00:39.099
+smart pointers and their correct usage. See you soon there.
+

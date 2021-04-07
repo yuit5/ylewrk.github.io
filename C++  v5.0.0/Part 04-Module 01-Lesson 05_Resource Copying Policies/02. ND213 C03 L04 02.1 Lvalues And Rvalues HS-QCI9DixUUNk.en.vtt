@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.839
+Now, when you ask some programmers with Lvalues and Rvalues are,
+
+00:00:03.839 --> 00:00:05.415
+they might often have a rough notion,
+
+00:00:05.415 --> 00:00:06.450
+but in many cases,
+
+00:00:06.450 --> 00:00:08.535
+not a really deep going understanding.
+
+00:00:08.535 --> 00:00:14.100
+When you continued on this road asking about lvalue references or even rvalue references,
+
+00:00:14.099 --> 00:00:16.364
+then it might get even more blurry and vague.
+
+00:00:16.364 --> 00:00:19.979
+But understanding the ideas behind these concepts is a key to
+
+00:00:19.980 --> 00:00:24.240
+a whole new world in modern C++, to be exact.
+
+00:00:24.239 --> 00:00:27.359
+It enables you to do things that make your code more robust,
+
+00:00:27.359 --> 00:00:29.550
+more intentional, and in many cases,
+
+00:00:29.550 --> 00:00:31.484
+faster and more efficient.
+
+00:00:31.484 --> 00:00:34.289
+Now lvalues and rvalues tell us much about
+
+00:00:34.289 --> 00:00:38.129
+the life cycle of an object in memory and about its ownership policy.
+
+00:00:38.130 --> 00:00:42.775
+We're all used to dealing with lvalues and rvalues implicitly as you will soon see,
+
+00:00:42.774 --> 00:00:45.890
+and also lvalue references is something which we
+
+00:00:45.890 --> 00:00:49.195
+have already seen and discussed and implemented in this course.
+
+00:00:49.195 --> 00:00:52.295
+Now, a new piece to the puzzle is rvalue references.
+
+00:00:52.295 --> 00:00:55.310
+They can be spotted from the double ampersand sign and allow us to
+
+00:00:55.310 --> 00:00:59.484
+access temporary objects that would otherwise be deleted very quickly.
+
+00:00:59.484 --> 00:01:01.140
+Now, our value references,
+
+00:01:01.140 --> 00:01:02.660
+they might look frightening at first,
+
+00:01:02.659 --> 00:01:06.064
+but they really are the key to more efficient programming in C++,
+
+00:01:06.064 --> 00:01:07.504
+and under the hood,
+
+00:01:07.504 --> 00:01:09.759
+all container classes in the Standard Template Library,
+
+00:01:09.760 --> 00:01:13.670
+the STL, they use rvalue references and also move semantics.
+
+00:01:13.670 --> 00:01:16.969
+Let's take a look and start with a definition of lvalues
+
+00:01:16.969 --> 00:01:21.150
+and rvalues first before we continue to move semantics.
+

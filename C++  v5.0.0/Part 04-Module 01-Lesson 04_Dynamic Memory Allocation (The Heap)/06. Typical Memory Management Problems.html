@@ -1,0 +1,357 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Typical Memory Management Problems</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Dynamic Memory Allocation (The Heap)</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Heap Memory.html">01. Heap Memory</a>
+    </li>
+    <li class="">
+      <a href="02. Bjarne on Stack and Heap.html">02. Bjarne on Stack and Heap</a>
+    </li>
+    <li class="">
+      <a href="03. Using malloc and free.html">03. Using malloc and free</a>
+    </li>
+    <li class="">
+      <a href="04. Using new and delete.html">04. Using new and delete</a>
+    </li>
+    <li class="">
+      <a href="05. Bjarne on new and delete.html">05. Bjarne on new and delete</a>
+    </li>
+    <li class="">
+      <a href="06. Typical Memory Management Problems.html">06. Typical Memory Management Problems</a>
+    </li>
+    <li class="">
+      <a href="07. Bjarne on Memory Leaks.html">07. Bjarne on Memory Leaks</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">06. Typical Memory Management Problems</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L03 04.1 Typical Memory Management Problems HS</p></h3>
+  <video controls>
+  <source src="06. ND213 C03 L03 04.1 Typical Memory Management Problems HS-FfyFNqAFlIY.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="06. ND213 C03 L03 04.1 Typical Memory Management Problems HS-FfyFNqAFlIY.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="overview-of-memory-management-problems">Overview of memory management problems</h2>
+<p>One of the primary advantages of C++ is the flexibility and control of resources such as memory it gives to the programmer. This advantage is further amplified by a significant increase in the performance of C++ programs compared to other languages such as Python or Java.</p>
+<p>However, these advantages come at a price as they demand a high level of experience from the programer. As Bjarne Stroustrup put it so elegantly: </p>
+<p><em>"C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do it blows your whole leg off".</em> </p>
+<p>In this chapter, we will look at a collection of typical errors in memory management that you need to watch out for. </p>
+<ol>
+<li><p><strong>Memory Leaks</strong><br />
+Memory leaks occur when data is allocated on the heap at runtime, but not properly deallocated. A program that forgets to clear a memory block is said to have a memory leak - this may be a serious problem or not, depending on the circumstances and on the nature of the program. <br />
+For a program that runs, computes something, and quits immediately, memory leaks are usually not a big concern. Memory leaks are mostly problematic for programs that run for a long time and/or use large data structures. In such a case, memory leaks can gradually fill the heap until allocation requests can no longer be properly met and the program stops responding or crashes completely. We will look at an example further down in this section. </p></li>
+<li><p><strong>Buffer Overruns</strong><br />
+Buffer overruns occur when memory outside the allocated limits is overwritten and thus corrupted. One of the resulting problems is that this effect may not become immediately visible. When a problem finally does occur, cause and effect are often hard to discern. It is also sometimes possible to inject malicious code into programs in this way, but this shall not be discussed here.  </p>
+<p>In this example, the allocated stack memory is too small to hold the entire string, which results in a segmentation fault: </p></li>
+</ol>
+<pre><code class="cpp language-cpp">char str[5];
+strcpy(str,"BufferOverrun");
+printf("%s",str);</code></pre>
+<ol start="3">
+<li><p><strong>Uninitialized Memory</strong><br />
+Depending on the C++ compiler, data structures are sometimes initialized (most often to zero) and sometimes not. So when allocating memory on the heap without proper initialization, it might sometimes contain garbage that can cause problems. </p>
+<p>Generally, a variable will be automatically initialized in these cases: </p>
+<ul>
+<li>it is a class instance where the default constructor initializes all primitive types</li>
+<li>array initializer syntax is used, such as int a[10] = {}</li>
+<li>it is a global or extern variable</li>
+<li>it is defined <code>static</code></li></ul>
+<p>The behavior of the following code is potentially undefined:</p></li>
+</ol>
+<pre><code class="cpp language-cpp">int a;
+int b=a*42;
+printf("%d",b);</code></pre>
+<ol start="4">
+<li><p><strong>Incorrect pairing of allocation and deallocation</strong><br />
+Freeing a block of memory more than once will cause a program to crash. This can happen when a block of memory is freed that has never been allocated or has been freed before. Such behavior could also occur when improper pairings of allocation and deallocation are used such as using <code>malloc()</code> with <code>delete</code> or <code>new</code> with <code>free()</code>.</p>
+<p>In this first example, the wrong <code>new</code> and <code>delete</code> are paired</p></li>
+</ol>
+<pre><code class="cpp language-cpp">double *pDbl=new double[5];
+delete pDbl;</code></pre>
+<p>In this second example, the pairing is correct but a double deletion is performed:</p>
+<pre><code class="cpp language-cpp">char *pChr=new char[5];
+delete[] pChr;
+delete[] pChr;</code></pre>
+<ol start="5">
+<li><p><strong>Invalid memory access</strong><br />
+This error occurs then trying to access a block of heap memory that has not yet or has already been deallocated. </p>
+<p>In this example, the heap memory has already been deallocated at the time when <code>strcpy()</code> tries to access it: </p></li>
+</ol>
+<pre><code>char *pStr=new char[25];
+delete[] pStr;
+strcpy(pStr, "Invalid Access");</code></pre>
+<h2 id="debugging-memory-leaks-with-valgrind">Debugging memory leaks with Valgrind</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L03 04.2 Typical Memory Management Problems SC</p></h3>
+  <video controls>
+  <source src="06. ND213 C03 L03 04.2 Typical Memory Management Problems SC-y0m_6V8fvzA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="06. ND213 C03 L03 04.2 Typical Memory Management Problems SC-y0m_6V8fvzA.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Even experienced developers sometimes make mistakes that cannot be discovered at first glance. Instead of spending a lot of time searching, it makes sense for C and C++ programmers to use helper tools to perform automatic analyses of their code.</p>
+<p>In this section, we will look at <em>Valgrind</em>, a free software for Linux and Mac that is able to automatically detect memory. Windows programers can for example use the Visual Studio debugger and C Run-time Library (CRT) to detect and identify memory leaks. More information on how to do this can be found here: <a href="https://docs.microsoft.com/en-us/visualstudio/debugger/finding-memory-leaks-using-the-crt-library?view=vs-2019" rel="noopener noreferrer" target="_blank">Find memory leaks with the CRT Library - Visual Studio | Microsoft Docs</a></p>
+<p>With recent versions of MacOS, occasional difficulties have been reported with installing Valgrind. A working version for MacOS Mojave can be downloaded from GitHub via Homebrew: <a href="https://github.com/sowson/valgrind" rel="noopener noreferrer" target="_blank">GitHub - sowson/valgrind: Experimental Version of Valgrind for macOS 10.14.6 Mojave</a></p>
+<p>Valgrind is a framework that facilitates the development of tools for the dynamic analysis of programs. Dynamic analysis examines the behavior of a program at runtime, in contrast to static analysis, which often checks programs for various criteria or potential errors at the source code level before, during, or after translation. More information on Valgrind can be found here: <a href="http://valgrind.org/info/" rel="noopener noreferrer" target="_blank">Valgrind: About</a></p>
+<p>The Memcheck tool within Valgrind can be used to detect typical errors in programs written in C or C++ that occur in connection with memory management. It is probably the best-known tool in the Valgrind suite, and the name Valgrind is often used as a synonym for Memcheck.</p>
+<p>The following code generates a memory leak as the integer array has been allocated on the heap but the deallocation has been forgotten by the programmer: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+    <li>
+      <strong>userCode:</strong>
+      <br>
+      <code>
+        <p>export CXX=g++-7<br />
+export CXXFLAGS=-std=c++17<br />
+sudo apt-get -y update<br />
+sudo apt-get -y install valgrind</p>
+      </code>
+    </li>
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The array of integers on the heap to which <code>pInt</code> is pointing has a size of <code>10 * sizeof(int)</code>, which is 40 bytes. Let us now use Valgrind to search for this leak. </p>
+<p>After compiling the <code>memory_leaks_debugging.cpp</code> code file on the right to <code>a.out</code>, the terminal can be used to start Valgrind with the following command:</p>
+<pre><code class="bash language-bash">valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=/home/workspace/valgrind-out.txt /home/workspace/a.out</code></pre>
+<p>Let us look at the call parameters one by one: </p>
+<ul>
+<li><p><strong>--leak-check</strong> : Controls the search for memory leaks when the client program finishes. If set to <code>summary</code>, it says how many leaks occurred. If set to <code>full</code>, each individual leak will be shown in detail.</p></li>
+<li><p><strong>--show-leak-kinds</strong> : controls the set of leak kinds to show when —leak-check=full is specified. Options are <code>definite</code>, <code>indirect</code>, <code>possible</code> <code>reachable</code>, <code>all</code> and <code>none</code></p></li>
+<li><p><strong>--track-origins</strong>  : can be used to see where uninitialised values come from.</p></li>
+</ul>
+<p>You can read the file into the terminal with:</p>
+<pre><code class="bash language-bash">cat valgrind-out.txt</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L03 04.3 Typical Memory Management Problems SC</p></h3>
+  <video controls>
+  <source src="06. ND213 C03 L03 04.3 Typical Memory Management Problems SC-K2PQTpldoIw.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="06. ND213 C03 L03 04.3 Typical Memory Management Problems SC-K2PQTpldoIw.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In the following, a (small) excerpt of the <code>valgrind-out.txt</code> log file is given: </p>
+<pre><code>==952== 40 bytes in 1 blocks are definitely lost in loss record 18 of 45
+
+...
+
+==952==    by 0x10019A377: operator new(unsigned long) (in /usr/lib/libc++abi.dylib)
+
+...
+
+==952==    by 0x100000F8A: main (memory_leaks_debugging.cpp:12)
+
+...
+
+==952== LEAK SUMMARY:
+==952==    definitely lost: 40 bytes in 1 blocks
+==952==    indirectly lost: 0 bytes in 0 blocks
+==952==      possibly lost: 72 bytes in 3 blocks
+==952==    still reachable: 200 bytes in 6 blocks
+==952==         suppressed: 18,876 bytes in 160 blocks</code></pre>
+<p>As expected, the memory leak caused by the omitted deletion of the array of 10 integers in the code sample above shows up in the leak summary. Additionally, the exact position where the leak occurs in the code (line 12) can also be seen together with the responsible call with caused the leak. </p>
+<p>This short introduction into memory leak search is only an example of how powerful analysis tools such as Valgrind can be used to detect memory-related problems in your code. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L03 04.4 Typical Memory Management Problems HS</p></h3>
+  <video controls>
+  <source src="06. ND213 C03 L03 04.4 Typical Memory Management Problems HS-IhFaPswyBJI.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="06. ND213 C03 L03 04.4 Typical Memory Management Problems HS-IhFaPswyBJI.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="07. Bjarne on Memory Leaks.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Typical Memory Management Problems')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

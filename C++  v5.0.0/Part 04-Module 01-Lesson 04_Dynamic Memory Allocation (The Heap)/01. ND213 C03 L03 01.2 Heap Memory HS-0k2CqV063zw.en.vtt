@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.569
+Now the next section is discuss the different ways to allocate memory on the heap.
+
+00:00:03.569 --> 00:00:06.889
+We will look at the malloc and free command pair from the world of C,
+
+00:00:06.889 --> 00:00:08.580
+and from there we will move on to
+
+00:00:08.580 --> 00:00:11.724
+the new and delete operators introduced with C plus plus.
+
+00:00:11.724 --> 00:00:14.160
+For a deeper understanding of memory management,
+
+00:00:14.160 --> 00:00:16.065
+it is important to look at both concepts.
+
+00:00:16.065 --> 00:00:21.520
+Therefore we will talk about malloc and free in the next section. So see you there.
+

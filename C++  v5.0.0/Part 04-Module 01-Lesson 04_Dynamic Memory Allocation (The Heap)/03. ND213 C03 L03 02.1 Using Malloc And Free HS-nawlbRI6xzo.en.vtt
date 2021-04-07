@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.759
+Now, in this section we will deal with the methods, malloc and free.
+
+00:00:02.759 --> 00:00:04.910
+Both have been taken from the old C and are
+
+00:00:04.910 --> 00:00:08.009
+an easy way to allocate and release the memory space on the heap.
+
+00:00:08.009 --> 00:00:11.039
+But although alloc and free have been around for several years,
+
+00:00:11.039 --> 00:00:15.269
+a deeper understanding of the mechanisms behind them is important for you to effectively
+
+00:00:15.269 --> 00:00:17.850
+deal with new and delete as well as smart pointers
+
+00:00:17.850 --> 00:00:20.385
+which you will hear much more about later on in this course.
+
+00:00:20.385 --> 00:00:24.110
+We will see how dynamic memory is reserved and used and also released.
+
+00:00:24.109 --> 00:00:28.109
+We will also look at how already reserved and use memory can be made smaller or
+
+00:00:28.109 --> 00:00:33.549
+larger by avoiding unnecessary data loss at the same time. Let's have a look.
+

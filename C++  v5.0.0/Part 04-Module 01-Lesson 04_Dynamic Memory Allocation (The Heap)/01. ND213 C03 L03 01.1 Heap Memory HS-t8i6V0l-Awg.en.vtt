@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.379
+Now, a big advantage of C++ is that the language is so hardware-oriented and
+
+00:00:04.379 --> 00:00:08.535
+programmers can make a lot of optimizations and manipulate low-level resources directly.
+
+00:00:08.535 --> 00:00:10.830
+But the problem is that this can lead to many errors
+
+00:00:10.830 --> 00:00:13.304
+as well that are not always easy to locate.
+
+00:00:13.304 --> 00:00:17.250
+The stack memory we have encountered so far is comparatively straightforward to manage,
+
+00:00:17.250 --> 00:00:22.015
+but the big challenges in memory management almost all concern the heap memory.
+
+00:00:22.015 --> 00:00:24.539
+These sections, therefore, provides an introduction to
+
+00:00:24.539 --> 00:00:28.349
+this flexible and dangerous memory resource and briefly addresses one
+
+00:00:28.350 --> 00:00:33.280
+of the many problems which is memory fragmentation. Let's have a look.
+

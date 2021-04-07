@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.520
+In this section, we have learned about New and Delete as
+
+00:00:02.520 --> 00:00:05.835
+powerful operators with whom we can effectively manage heap memory.
+
+00:00:05.835 --> 00:00:07.139
+Unlike malloc and free,
+
+00:00:07.139 --> 00:00:10.800
+New and Delete also called the constructors and destructors of classes,
+
+00:00:10.800 --> 00:00:14.429
+which is essential for the concept of object orientation in C++.
+
+00:00:14.429 --> 00:00:18.254
+In addition, both operators can be overloaded to accommodate their own functionality.
+
+00:00:18.254 --> 00:00:21.529
+Interestingly, malloc and delete still find an application after all,
+
+00:00:21.530 --> 00:00:23.984
+as we have seen in the examples in this section.
+
+00:00:23.984 --> 00:00:28.244
+But as flexible and powerful as New and Delete are as dangerous there are as well.
+
+00:00:28.245 --> 00:00:31.410
+The language C++ has a reputation for being difficult and
+
+00:00:31.410 --> 00:00:35.185
+sometimes even confusing with countless possibilities to make mistakes.
+
+00:00:35.185 --> 00:00:39.679
+This is not least due to the rules of dealing with new and delete and the flexibility of
+
+00:00:39.679 --> 00:00:45.899
+pointers as we will see in the next section on memory management problems. See you there.
+

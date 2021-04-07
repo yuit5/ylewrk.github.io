@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.640
+Now, this lesson on move semantics has been quite intense.
+
+00:00:02.640 --> 00:00:04.379
+It's not an easy topic to deal with,
+
+00:00:04.379 --> 00:00:07.589
+but investing the effort to understand it is time well-spent.
+
+00:00:07.589 --> 00:00:11.544
+Now move semantics is one of the major innovations brought by the C++ Standard,
+
+00:00:11.544 --> 00:00:16.170
+and it's an important tool for increasing performance by making cheap shallow copies,
+
+00:00:16.170 --> 00:00:19.965
+instead of costly deep copies when passing objects around in your program.
+
+00:00:19.964 --> 00:00:24.570
+Also, this idea of dedicated ownership is a crucial concept both for
+
+00:00:24.570 --> 00:00:27.960
+concurrent programming when dealing with protected resources as well
+
+00:00:27.960 --> 00:00:31.725
+as for smart pointers which we will look at in the next lesson.
+
+00:00:31.725 --> 00:00:33.969
+See you there finally.
+

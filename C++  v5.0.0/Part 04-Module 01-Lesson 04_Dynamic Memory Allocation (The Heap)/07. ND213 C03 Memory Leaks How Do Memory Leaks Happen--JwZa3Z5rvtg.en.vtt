@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.200 --> 00:00:12.449
+A memory leak is when I get something from the heap,
+
+00:00:12.449 --> 00:00:15.299
+as a new Int.
+
+00:00:15.300 --> 00:00:17.414
+Then I throw my pointer away.
+
+00:00:17.414 --> 00:00:22.454
+Now, nobody knows that that Int is still sitting over there and it leaks.
+
+00:00:22.454 --> 00:00:24.269
+I really don't like leaks.
+
+00:00:24.269 --> 00:00:26.954
+Nobody likes leaks, nobody likes memory corruption.
+
+00:00:26.954 --> 00:00:28.724
+If you're doing, say, a Space Probe,
+
+00:00:28.725 --> 00:00:30.675
+you better not leak because then,
+
+00:00:30.675 --> 00:00:33.329
+well, you can't send impairments in Mars.
+
+00:00:33.329 --> 00:00:36.674
+So leaks are really really bad news,
+
+00:00:36.674 --> 00:00:41.079
+and we can handle that with RAII.
+

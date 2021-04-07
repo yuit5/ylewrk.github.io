@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.459
+Now, in this last section we will take a look at how
+
+00:00:02.459 --> 00:00:05.685
+the ownership of smart pointers can be moved into another scope.
+
+00:00:05.684 --> 00:00:09.609
+Internally smart pointers adhere to the rule of five which we have seen before.
+
+00:00:09.609 --> 00:00:11.114
+Which means that they implement
+
+00:00:11.115 --> 00:00:14.250
+both the move constructor and the move assignment operator.
+
+00:00:14.250 --> 00:00:16.050
+In addition to copy constructor,
+
+00:00:16.050 --> 00:00:18.780
+copy assignment operator and the destructor and
+
+00:00:18.780 --> 00:00:22.050
+this means they can be moved around with very little effort.
+
+00:00:22.050 --> 00:00:25.925
+The internal handle is switched from one pointer to the next and that's basically it,
+
+00:00:25.925 --> 00:00:28.039
+nothing more which happens there.
+
+00:00:28.039 --> 00:00:29.919
+This makes it very effective.
+
+00:00:29.920 --> 00:00:31.940
+With sharp pointers the overhead is little
+
+00:00:31.940 --> 00:00:34.520
+higher because of the reference counting with test to be done.
+
+00:00:34.520 --> 00:00:37.580
+But that does not account for much in unless you are programming
+
+00:00:37.579 --> 00:00:40.670
+a high-performance application sharp pointer that doesn't give you
+
+00:00:40.670 --> 00:00:42.829
+much overhead and also in this section we will look
+
+00:00:42.829 --> 00:00:45.064
+at several rules from the C++ guidelines,
+
+00:00:45.064 --> 00:00:48.759
+and when to pass by value and when to pass by reference,
+
+00:00:48.759 --> 00:00:50.929
+and lastly we will look at ways to return
+
+00:00:50.929 --> 00:00:54.299
+smart pointers from functions. So let's go for it.
+

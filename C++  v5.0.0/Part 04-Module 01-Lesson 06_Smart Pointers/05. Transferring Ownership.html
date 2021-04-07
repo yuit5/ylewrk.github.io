@@ -1,0 +1,265 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transferring Ownership</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Smart Pointers</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Resource Acquisition is Initialization.html">01. Resource Acquisition is Initialization</a>
+    </li>
+    <li class="">
+      <a href="02. Bjarne on RAII.html">02. Bjarne on RAII</a>
+    </li>
+    <li class="">
+      <a href="03. Smart Pointers.html">03. Smart Pointers</a>
+    </li>
+    <li class="">
+      <a href="04. Bjarne on Smart Pointers.html">04. Bjarne on Smart Pointers</a>
+    </li>
+    <li class="">
+      <a href="05. Transferring Ownership.html">05. Transferring Ownership</a>
+    </li>
+    <li class="">
+      <a href="06. Bjarne on Importance of Scope.html">06. Bjarne on Importance of Scope</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Transferring Ownership</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L05 03.1 Transferring Ownership HS</p></h3>
+  <video controls>
+  <source src="05. ND213 C03 L05 03.1 Transferring Ownership HS-fVnLp5BOvzo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND213 C03 L05 03.1 Transferring Ownership HS-fVnLp5BOvzo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In the previous section, we have taken a look at the three smart pointer types in C++. In addition to smart pointers, you are now also familiar with move semantics, which is of particular importance in this section. In the following, we will discuss how to properly pass and return smart pointers to functions and vice-versa. In modern C++, there are various ways of doing this and in many cases, the method of choice has an impact on both performance and code robustness. The basis of this section are the C++ core guidelines on smart pointers, some of which we will be examining in the following.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="best-practices-for-passing-smart-pointers">Best-Practices for Passing Smart Pointers</h2>
+<p>This sections contains a condensed summary of when (and when not) to use smart pointers and how to properly pass them between functions. This section is intended as a guide for your future use of this important feature in modern C++ and will hopefully encourage you not to ditch raw pointers altogether but instead to think about where your code could benefit from smart pointers - and when it would most probably not.</p>
+<p>The following list contains all the variations (omitting <code>const</code>) of passing an object to a function: </p>
+<pre><code>void f( object* );  // (a)
+void f( object&amp; ); // (b)
+void f( unique_ptr&lt;object&gt; ); // (c)
+void f( unique_ptr&lt;object&gt;&amp; ); // (d)
+void f( shared_ptr&lt;object&gt; ); // (e)
+void f( shared_ptr&lt;object&gt;&amp; ); // (f)</code></pre>
+<h3 id="the-preferred-way">The Preferred Way</h3>
+<p>The preferred way of to pass object parameters is by using a) or b) : </p>
+<pre><code>void f( object* );             
+void f( object&amp; );            </code></pre>
+<p>In doing so, we do not have to worry about the lifetime policy a caller might have implemented. Using a specific smart pointer in a case where we only want to observe an object or manipulate a member might be overly restrictive. </p>
+<p>With the non-owning raw pointer <code>*</code> or the reference <code>&amp;</code> we can observe an object from which we can assume that its lifetime will exceed the lifetime of the function parameter. In concurrency however, this might not be the case, but for linear code we can safely assume this. </p>
+<p>To decide wether a * or &amp; is more appropriate, you should think about wether you need to express that there is no object. This can only be done with pointers by passing e.g. <code>nullptr</code>. In most other cases, you should use a reference instead. </p>
+<h3 id="the-object-sink">The Object Sink</h3>
+<p>The preferred way of passing an object to a function so that the function takes ownership of the object (or „consumes“ it) is by using method c) from the above list: </p>
+<p><code>void f( unique_ptr&lt;object&gt; );</code></p>
+<p>In this case, we are passing a unique pointer by value from caller to function, which then takes ownership of the the pointer and the underlying object. This is only possible using move semantics as there may be only a single reference to the object managed by the unique pointer. </p>
+<p>After the object has been passed in this way, the caller will have an invalid unique pointer and the function to which the object now belongs may destroy it or move it somewhere else. </p>
+<p>Using <code>const</code> with this particular call does not make sense as it models an ownership transfer so the source will be definitely modified. </p>
+<h3 id="in-and-out-again-1">In And Out Again 1</h3>
+<p>In some cases, we want to modify a unique pointer (not necessarily the underlying object) and re-use it in the context of the caller. In this case, method d) from the above list might be most suitable: </p>
+<p><code>void f( unique_ptr&lt;object&gt;&amp; );</code></p>
+<p>Using this call structure, the function states that it might modify the smart pointer, e.g. by redirecting it to another object. It is not recommended to use it for accepting an object only because we should avoid restricting ourselves unnecessarily to a particular object lifetime strategy on the caller side. </p>
+<p>Using <code>const</code> with this call structure is not recommendable as we would not be able to modify the <code>unique_ptr</code> in this case. In case you want to modify the underlying object, use method a) instead. </p>
+<h3 id="sharing-object-ownership">Sharing Object Ownership</h3>
+<p>In the last examples, we have looked at strategies involving unique ownership. In this example, we want to express that a function will store and share ownership of an object on the heap. This can be achieved by using method e) from the list above: </p>
+<p><code>void f( shared_ptr&lt;object&gt; )</code></p>
+<p>In this example, we are making a copy of the shared pointer passed to the function. In doing so, the internal reference counter within all shared pointers referring to the same heap object is incremented by one. </p>
+<p>This strategy can be recommended for cases where the function needs to retain a copy of the shared_ptr and thus share ownership of the object. This is of interest when we need access to smart pointer functions such as the reference count or we must make sure that the object to which the shared pointer refers is not prematurely deallocated (which might happen in concurrent programming). </p>
+<p>If the local scope of the function is not the final destination, a shared pointer can also be moved, which does not increase the reference count and is thus more effective.</p>
+<p>A disadvantage of using a shared_ptr as a function argument is that the function will be limited to using only objects that are managed by shared pointers - which limits flexibility and reusability of the code. </p>
+<h3 id="in-and-out-again-2">In And Out Again 2</h3>
+<p>As with unique pointers, the need to modify shared pointers and re-use them in the context of the caller might arise. In this case, method f) might be the right choice: </p>
+<p><code>void f( shared_ptr&lt;object&gt;&amp; );</code> </p>
+<p>This particular way of passing a shared pointer expresses that the function f will modify the pointer itself. As with method e), we will be limiting the usability of the function to cases where the object is managed by a shared_ptr and nothing else. </p>
+<h2 id="last-words">Last Words</h2>
+<p>The topic of smart pointers is a complex one. In this course, we have covered many basics and some of the more advanced concepts. However, for some cases there are more aspects to consider and features to use when integrating smart pointers into your code. The <a href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rsmart-smart-pointers" rel="noopener noreferrer" target="_blank">full set of smart pointer rules</a> in the C++ guidelines is a good start to dig deeper into one of the most powerful features of modern C++.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L05 03.3 Transferring Ownership HS</p></h3>
+  <video controls>
+  <source src="05. ND213 C03 L05 03.3 Transferring Ownership HS-cNqv8RqbuVM.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="05. ND213 C03 L05 03.3 Transferring Ownership HS-cNqv8RqbuVM.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Bjarne on Importance of Scope.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Transferring Ownership')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

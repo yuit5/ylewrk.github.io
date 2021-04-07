@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.585
+Now let us start the section on copy semantics with a small example.
+
+00:00:03.585 --> 00:00:07.230
+Imagine that you have written a class which has two data members.
+
+00:00:07.230 --> 00:00:10.160
+The first is a plain integer and it lives on the stack,
+
+00:00:10.160 --> 00:00:12.330
+and the other is a point of character and
+
+00:00:12.330 --> 00:00:14.835
+refers to a string on the heap on the other hand.
+
+00:00:14.835 --> 00:00:18.179
+After you have created an instance of your class with it's two members,
+
+00:00:18.179 --> 00:00:19.949
+you are creating a copy of it,
+
+00:00:19.949 --> 00:00:21.824
+for example, using the assignment operator.
+
+00:00:21.824 --> 00:00:24.509
+Now what happens when this copy is created, well,
+
+00:00:24.510 --> 00:00:26.580
+if you use the default assignment operator,
+
+00:00:26.579 --> 00:00:30.449
+it will duplicate all the member variables inside the object.
+
+00:00:30.449 --> 00:00:32.789
+This means that there will now be a duplicate of
+
+00:00:32.789 --> 00:00:36.244
+your integer and duplicate of your pointer to character.
+
+00:00:36.244 --> 00:00:38.959
+The potential problem here is that the pointer copy
+
+00:00:38.960 --> 00:00:41.480
+refers to the same memory on the heap,
+
+00:00:41.479 --> 00:00:44.509
+and if you change the content of this memory in one instance,
+
+00:00:44.509 --> 00:00:47.494
+the other instance will see this change as well.
+
+00:00:47.494 --> 00:00:50.719
+Maybe this is what you wanted all along but maybe it's also not.
+
+00:00:50.719 --> 00:00:54.469
+In this case, you would have to implement your own copying policy
+
+00:00:54.469 --> 00:00:58.909
+by overloading the copy constructor and the assignment operator,
+
+00:00:58.909 --> 00:01:02.899
+and after then perform a deep copy of all the members you have in your class.
+
+00:01:02.899 --> 00:01:05.269
+This is what this section is all about,
+
+00:01:05.269 --> 00:01:07.819
+overloading copy functions and implementing
+
+00:01:07.819 --> 00:01:12.299
+your own memory management policy. Now let's take a look.
+

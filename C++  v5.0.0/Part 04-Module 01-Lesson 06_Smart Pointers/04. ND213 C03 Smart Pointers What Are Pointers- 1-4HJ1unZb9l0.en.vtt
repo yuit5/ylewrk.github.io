@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.669 --> 00:00:09.794
+Well, if you really, really need a pointer out of the user-space.
+
+00:00:09.794 --> 00:00:12.179
+So even in your implementation you may have
+
+00:00:12.179 --> 00:00:15.789
+a raw pointer but then you have to do everything basic.
+
+00:00:16.160 --> 00:00:22.214
+The most basic smart pointer is known as unique pointer,
+
+00:00:22.214 --> 00:00:26.204
+it's a pointer that I own the object at the other end.
+
+00:00:26.204 --> 00:00:32.295
+So if I have it when this pointer goes out of scope,
+
+00:00:32.295 --> 00:00:33.899
+the object gets deleted.
+
+00:00:33.899 --> 00:00:37.519
+So it's very easy I hold on to it with that unique pointer,
+
+00:00:37.520 --> 00:00:39.890
+if I give it to you now you have it.
+
+00:00:39.890 --> 00:00:43.850
+If you go out of scope it will be deleted immediately.
+
+00:00:43.850 --> 00:00:46.189
+If it was raw pointers we would have to
+
+00:00:46.189 --> 00:00:48.890
+have an agreement about who's going to do the delete.
+
+00:00:48.890 --> 00:00:51.170
+But if I give you a unique pointer,
+
+00:00:51.170 --> 00:00:54.125
+I transfer ownership implicitly.
+
+00:00:54.125 --> 00:01:02.244
+The most popular and probably too popular smart pointer in C++ is the share pointer.
+
+00:01:02.244 --> 00:01:04.640
+It's the one were you don't know who owns it.
+
+00:01:04.640 --> 00:01:07.189
+So I can give you my share pointer,
+
+00:01:07.189 --> 00:01:09.004
+I give you one, give him one,
+
+00:01:09.004 --> 00:01:14.750
+and the last one to stop using it will implicitly delete the object.
+
+00:01:14.750 --> 00:01:16.849
+So it's a form of garbage collection,
+
+00:01:16.849 --> 00:01:22.879
+it's much as what is done in several other languages Swift,
+
+00:01:22.879 --> 00:01:28.824
+Python and such, except that it works for anything.
+
+00:01:28.825 --> 00:01:33.680
+This objects can hold locks and file handles and things like that,
+
+00:01:33.680 --> 00:01:36.230
+it's not just memory, it's resource management.
+
+00:01:36.230 --> 00:01:43.859
+But currently they got very popular after C++ 11,
+
+00:01:43.859 --> 00:01:48.709
+when people still used a lot of pointers and got into trouble with
+
+00:01:48.709 --> 00:01:54.349
+the resource management and share pointers get them out or most of them.
+
+00:01:54.349 --> 00:01:58.199
+But it's even better to use local objects mostly.
+

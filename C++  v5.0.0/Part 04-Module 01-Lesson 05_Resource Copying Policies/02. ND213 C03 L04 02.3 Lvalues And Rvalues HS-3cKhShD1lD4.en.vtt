@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.089
+Now, this section has some very important concepts for you.
+
+00:00:03.089 --> 00:00:05.400
+You should now be very familiar with l-values and
+
+00:00:05.400 --> 00:00:08.595
+also r-values and with l-value references.
+
+00:00:08.595 --> 00:00:12.075
+In fact, you have seen and used those before many times already.
+
+00:00:12.074 --> 00:00:13.739
+It will not be surprising though if
+
+00:00:13.740 --> 00:00:16.425
+r-value references would still seem somewhat unfamiliar.
+
+00:00:16.425 --> 00:00:19.859
+Now, the question may well arise what this construct could be used for.
+
+00:00:19.859 --> 00:00:22.829
+After all, we have already seen that some copy operations can be
+
+00:00:22.829 --> 00:00:25.994
+saved if we use r-value references instead of l-values.
+
+00:00:25.995 --> 00:00:29.519
+For example, to directly capture the result of an addition.
+
+00:00:29.519 --> 00:00:32.609
+Now, in the next section, we will look at one of the main areas of
+
+00:00:32.609 --> 00:00:35.759
+application for r-value references which is move semantics.
+
+00:00:35.759 --> 00:00:37.839
+So let's get started.
+

@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.620
+Now we have covered quite some ground here in this section.
+
+00:00:02.620 --> 00:00:05.640
+We have encountered the resource acquisition as initialization idiom which is
+
+00:00:05.639 --> 00:00:09.974
+a very useful concept for managing all kinds of resources, not only memory.
+
+00:00:09.974 --> 00:00:12.359
+Then we have looked at unique pointers which are
+
+00:00:12.359 --> 00:00:15.375
+the default smart pointer you should think of using first.
+
+00:00:15.375 --> 00:00:18.315
+It gives you exclusive ownership of a resource.
+
+00:00:18.315 --> 00:00:20.070
+If you want to allow multiple owners then
+
+00:00:20.070 --> 00:00:22.484
+the shared pointer might be a better choice for you.
+
+00:00:22.484 --> 00:00:26.219
+This one keeps track of the number of owners which share a resource,
+
+00:00:26.219 --> 00:00:29.059
+and then decide when to deallocate it.
+
+00:00:29.059 --> 00:00:30.719
+The problem with this pointer type is that there
+
+00:00:30.719 --> 00:00:32.850
+might be something called reference cycles,
+
+00:00:32.850 --> 00:00:34.920
+in the case of mutual includes between let's say
+
+00:00:34.920 --> 00:00:38.715
+two shared pointers who exclude each other mutually.
+
+00:00:38.715 --> 00:00:41.780
+Now, the weak pointer helps to break such a cycle and it is
+
+00:00:41.780 --> 00:00:45.454
+the third smart pointer type which we encounter in C++.
+
+00:00:45.454 --> 00:00:48.079
+Now, the interesting thing is that we can use
+
+00:00:48.079 --> 00:00:51.949
+smart pointers almost as if we had regular raw pointers in our code.
+
+00:00:51.950 --> 00:00:55.835
+We can even extract the raw resource pointer from a smart pointer although,
+
+00:00:55.835 --> 00:00:57.469
+this is discouraged in many examples,
+
+00:00:57.469 --> 00:00:59.299
+and it has to be done with great care.
+
+00:00:59.299 --> 00:01:00.500
+In the next section,
+
+00:01:00.500 --> 00:01:02.450
+we will look at how to pass a smart pointer
+
+00:01:02.450 --> 00:01:05.734
+between scopes let's say from Main to Function.
+
+00:01:05.734 --> 00:01:07.609
+See you soon in the last section before
+
+00:01:07.609 --> 00:01:12.439
+the final project where smart pointers will play an important role.
+

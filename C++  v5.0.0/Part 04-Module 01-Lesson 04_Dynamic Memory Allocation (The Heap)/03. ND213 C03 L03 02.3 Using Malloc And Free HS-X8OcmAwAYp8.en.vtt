@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.180
+Malloc and free are two flexible and easy to use methods.
+
+00:00:03.180 --> 00:00:06.000
+Of some basic rules observed as shown in this section that can be
+
+00:00:06.000 --> 00:00:09.390
+used to quickly and flexibly reserve and release memory on the heap.
+
+00:00:09.390 --> 00:00:11.415
+With the introduction of C plus plus however,
+
+00:00:11.414 --> 00:00:12.779
+a different picture emerged here.
+
+00:00:12.779 --> 00:00:14.789
+Suddenly, there were object-orientation,
+
+00:00:14.789 --> 00:00:17.414
+and classes, and constructors, and destructors.
+
+00:00:17.414 --> 00:00:18.960
+So the functions malloc and free from
+
+00:00:18.960 --> 00:00:21.990
+the old C had to be replaced in most cases by the operators
+
+00:00:21.989 --> 00:00:24.179
+new and delete which were created especially for
+
+00:00:24.179 --> 00:00:26.550
+the use in object oriented programming language,
+
+00:00:26.550 --> 00:00:30.210
+and allows for such things as operator overloading for example.
+
+00:00:30.210 --> 00:00:34.240
+Now in the next section, we will deal with these operators in much more detail.
+

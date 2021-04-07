@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.379
+From a memory management viewpoint,
+
+00:00:02.379 --> 00:00:04.049
+this section is pretty important.
+
+00:00:04.049 --> 00:00:05.479
+In the examples you saw here,
+
+00:00:05.480 --> 00:00:10.949
+we asked ourselves how we wanted to transfer our data during copying operations.
+
+00:00:10.949 --> 00:00:13.349
+If the default shallow copy is not enough,
+
+00:00:13.349 --> 00:00:16.259
+we have seen that overloading the copy constructor as well as
+
+00:00:16.260 --> 00:00:21.285
+the copy assignment operator enables us to tailor our own copying policy.
+
+00:00:21.285 --> 00:00:24.660
+This can be as restrictive as not performing a copy at all,
+
+00:00:24.660 --> 00:00:28.815
+can be granting exclusive ownership or allowing for shared ownership
+
+00:00:28.815 --> 00:00:33.640
+or creating a deep copy which duplicates even the resources on the heap.
+
+00:00:33.640 --> 00:00:37.590
+The last non-smart pointers later on you will find that these policies are
+
+00:00:37.590 --> 00:00:41.859
+being used by constructs such as the unique pointer all the SharePoint.
+
+00:00:41.859 --> 00:00:45.859
+One last thing we have been looking at in this section is the rule of three.
+
+00:00:45.859 --> 00:00:49.070
+Which basically says that if you change either the destructor or
+
+00:00:49.070 --> 00:00:52.340
+the copy constructor or the assignment operator,
+
+00:00:52.340 --> 00:00:57.695
+you better change them all to guarantee a consistent memory management copying policy.
+
+00:00:57.695 --> 00:01:01.399
+You don't have to do this if you only use the destructive to that say print a message to
+
+00:01:01.399 --> 00:01:05.375
+the console though but when you use it to de-allocate memory resources,
+
+00:01:05.375 --> 00:01:07.439
+the other two are needed as well.
+
+00:01:07.439 --> 00:01:11.060
+The rule of three is pretty old and C++ so to speak,
+
+00:01:11.060 --> 00:01:14.585
+an old and old means here prior to C++ 11.
+
+00:01:14.584 --> 00:01:17.390
+With the introduction of move semantics there is now the rule
+
+00:01:17.390 --> 00:01:20.344
+of five but before we can look at this new concept,
+
+00:01:20.344 --> 00:01:26.469
+let us revisit L values and R values in the next section. See you there.
+

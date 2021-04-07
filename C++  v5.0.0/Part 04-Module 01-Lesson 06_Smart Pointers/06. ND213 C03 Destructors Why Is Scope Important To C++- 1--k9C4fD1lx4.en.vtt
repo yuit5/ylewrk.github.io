@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.459 --> 00:00:10.620
+Scope is very crucial in C++ because it
+
+00:00:10.619 --> 00:00:16.814
+ties up with management of resources including memory management.
+
+00:00:16.815 --> 00:00:21.660
+The basic idea is that you enter into a scope,
+
+00:00:21.660 --> 00:00:24.300
+and when you need some resource, you grab it.
+
+00:00:24.300 --> 00:00:26.804
+Then at the end of the scope,
+
+00:00:26.804 --> 00:00:29.219
+you release all the resources you grabbed.
+
+00:00:29.219 --> 00:00:32.280
+This is known as constructors and destructors.
+
+00:00:32.280 --> 00:00:34.439
+A constructor acquire resources,
+
+00:00:34.439 --> 00:00:38.189
+build up objects, initializes objects so that you can use them.
+
+00:00:38.189 --> 00:00:41.774
+At the end the opposite of it, constructor,
+
+00:00:41.774 --> 00:00:44.339
+with a bad pun, is a destructor,
+
+00:00:44.340 --> 00:00:46.980
+cleans up the mess afterwards.
+
+00:00:46.979 --> 00:00:50.549
+Not all types have destructors, but many do.
+
+00:00:50.549 --> 00:00:53.625
+So basically, a lot of code looks like,
+
+00:00:53.625 --> 00:00:55.844
+check that things are all right,
+
+00:00:55.844 --> 00:00:57.509
+then construct some objects,
+
+00:00:57.509 --> 00:01:00.299
+if those objects are not all right, get out of here.
+
+00:01:00.299 --> 00:01:02.294
+Then whenever things build up,
+
+00:01:02.295 --> 00:01:03.810
+you do what you have to do,
+
+00:01:03.810 --> 00:01:06.365
+and at the end it cleans up itself.
+
+00:01:06.364 --> 00:01:14.879
+My philosophy with resource management is that you just must not leak things.
+
+00:01:14.879 --> 00:01:18.584
+You must not create garbage, don't litter.
+
+00:01:18.584 --> 00:01:21.779
+This counts for all resources.
+
+00:01:21.780 --> 00:01:25.519
+We know very well that people goes to the library and they
+
+00:01:25.519 --> 00:01:29.015
+borrow a lot of books and then they forget to hand some of them back.
+
+00:01:29.015 --> 00:01:30.489
+So it's not just programming.
+
+00:01:30.489 --> 00:01:35.629
+In programming, if you have to handle release of resources, give memory back,
+
+00:01:35.629 --> 00:01:40.609
+close files, unlock mutexes,
+
+00:01:40.609 --> 00:01:43.804
+whatever it is, you get it,
+
+00:01:43.805 --> 00:01:45.710
+you use it, you give it back.
+
+00:01:45.709 --> 00:01:50.764
+That has been formalized in C++ based on scope.
+
+00:01:50.765 --> 00:01:57.079
+So you don't actually tend to have explicit uses of allocations and deallocations.
+
+00:01:57.079 --> 00:01:58.864
+Instead, you build an object,
+
+00:01:58.864 --> 00:02:00.545
+it owns the resources,
+
+00:02:00.545 --> 00:02:03.120
+its destructor cleans it up.
+

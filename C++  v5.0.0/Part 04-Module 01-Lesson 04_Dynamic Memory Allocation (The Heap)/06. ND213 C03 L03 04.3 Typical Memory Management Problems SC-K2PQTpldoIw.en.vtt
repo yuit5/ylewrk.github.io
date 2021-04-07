@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.320
+So here's the output file,
+
+00:00:01.320 --> 00:00:04.620
+and as you can see from the scroll indicator on the right-hand side,
+
+00:00:04.620 --> 00:00:06.780
+actually we have lots of information.
+
+00:00:06.780 --> 00:00:09.419
+It's such a small program but the information,
+
+00:00:09.419 --> 00:00:11.669
+it's abundant to say the least.
+
+00:00:11.669 --> 00:00:13.679
+In order for us to make life easy,
+
+00:00:13.679 --> 00:00:16.620
+we can simply look at the heap summary,
+
+00:00:16.620 --> 00:00:20.890
+and this can be done by searching the text file for heap summary.
+
+00:00:20.890 --> 00:00:24.785
+This is actually the place where we want to look at.
+
+00:00:24.785 --> 00:00:28.460
+This is the total usage of memory and the number of blocks,
+
+00:00:28.460 --> 00:00:30.945
+and also the heap usage,
+
+00:00:30.945 --> 00:00:34.700
+and we can also take a look at the leak summary, which is here.
+
+00:00:34.700 --> 00:00:38.679
+The leak summary tells us how much memory is definitely lost,
+
+00:00:38.679 --> 00:00:40.604
+indirectly lost, possibly lost,
+
+00:00:40.604 --> 00:00:42.779
+still reachable, and suppressed.
+
+00:00:42.780 --> 00:00:45.950
+To limit the scope of this very small tutorial here,
+
+00:00:45.950 --> 00:00:48.350
+I only want to look at the memory leaks,
+
+00:00:48.350 --> 00:00:50.975
+which are definitely lost in the program.
+
+00:00:50.975 --> 00:00:54.500
+I'm going to move down this window a little bit and as you can see here,
+
+00:00:54.500 --> 00:01:00.439
+and we have created a block of memory on the heap consisting of the size of 10 integers.
+
+00:01:00.439 --> 00:01:03.064
+One integer takes four bytes of memory.
+
+00:01:03.064 --> 00:01:07.879
+Then obviously, 10 integers to take up a size of 40 bytes of memory,
+
+00:01:07.879 --> 00:01:13.128
+and this is exactly the size in one block in one contiguous block of memory,
+
+00:01:13.129 --> 00:01:17.180
+which has been found by Valgrind to be definitely lost.
+
+00:01:17.180 --> 00:01:22.160
+So by using Valgrind and by ignoring all the output around this leak summary here,
+
+00:01:22.159 --> 00:01:24.545
+we can say, "Okay, we have a memory leak."
+
+00:01:24.545 --> 00:01:27.769
+We can tell the size of the memory leak
+
+00:01:27.769 --> 00:01:31.670
+and because we know where to find the memory leak,
+
+00:01:31.670 --> 00:01:34.359
+we can also scan for this size here in the text file.
+
+00:01:34.359 --> 00:01:36.724
+Simply copy it and look for it.
+
+00:01:36.724 --> 00:01:38.059
+As you can see here,
+
+00:01:38.060 --> 00:01:41.495
+the 40 bytes in one block are definitely lost
+
+00:01:41.495 --> 00:01:46.579
+in main memory leaks debugging cpp at line 5,
+
+00:01:46.579 --> 00:01:48.590
+and this is exactly this position here.
+
+00:01:48.590 --> 00:01:51.335
+So here's where the delete is missing.
+
+00:01:51.334 --> 00:01:53.390
+We instantiate this variable here,
+
+00:01:53.390 --> 00:01:54.965
+allocate the memory on the heap.
+
+00:01:54.965 --> 00:01:57.635
+Don't delete it and Valgrind tells us
+
+00:01:57.635 --> 00:02:01.800
+exactly the position where the delete should have happened. Okay, that's it.
+
+00:02:01.799 --> 00:02:07.099
+The very short intro into Valgrind as a debugging tool for finding memory leaks.
+
+00:02:07.099 --> 00:02:11.150
+It's only an indicator for you to know that there are such tools out there,
+
+00:02:11.150 --> 00:02:15.200
+and if you have a program which slows down
+
+00:02:15.199 --> 00:02:19.579
+over time which uses up a huge amount of memory and you don't know why,
+
+00:02:19.580 --> 00:02:23.490
+you could use such tools to quickly on automatically search
+
+00:02:23.490 --> 00:02:28.100
+for potential memory leaks where a proper deallocation has not been performed.
+
+00:02:28.099 --> 00:02:31.608
+But as this is a tutorial or a course on memory management,
+
+00:02:31.609 --> 00:02:33.710
+and we are looking at modern C plus plus,
+
+00:02:33.710 --> 00:02:37.385
+we will encounter later in the tutorial smart pointers
+
+00:02:37.384 --> 00:02:41.299
+which actually are designed for preventing such memory leaks.
+
+00:02:41.300 --> 00:02:42.410
+So those memory leaks,
+
+00:02:42.409 --> 00:02:44.120
+especially when using new and delete,
+
+00:02:44.120 --> 00:02:47.659
+they will not happen when you use smart pointers.
+
+00:02:47.659 --> 00:02:50.270
+But nonetheless, some memory leaks still can
+
+00:02:50.270 --> 00:02:53.270
+happen with smart pointers as well as we will soon see.
+
+00:02:53.270 --> 00:02:57.000
+But for now, let's continue with the section here.
+

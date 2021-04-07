@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.320
+Now, in this section,
+
+00:00:01.320 --> 00:00:04.690
+we will look at some of the most common errors in using new and delete.
+
+00:00:04.690 --> 00:00:06.720
+These include things such as memory leaks,
+
+00:00:06.720 --> 00:00:09.975
+buffer overruns, uninitialized memory, and several more.
+
+00:00:09.975 --> 00:00:13.210
+As we will see, some of these errors are made quickly and are hard to notice,
+
+00:00:13.210 --> 00:00:14.850
+but have serious consequences for
+
+00:00:14.850 --> 00:00:18.045
+the performance and also for the robustness of your programs.
+
+00:00:18.045 --> 00:00:20.729
+Finally, we will take a look at a tool will automatically
+
+00:00:20.729 --> 00:00:23.535
+find some errors like memory leaks in the code.
+
+00:00:23.535 --> 00:00:25.780
+Let's look at some errors here.
+

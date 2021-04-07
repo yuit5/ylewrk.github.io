@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.019 --> 00:00:12.044
+It's the idea that when you come into a scope,
+
+00:00:12.044 --> 00:00:13.994
+into a function or whatever,
+
+00:00:13.994 --> 00:00:18.000
+you grab the resources you need and you initialize
+
+00:00:18.000 --> 00:00:22.815
+a local object that then holds those resources,
+
+00:00:22.815 --> 00:00:27.539
+represent the abstraction that those resources are used for,
+
+00:00:27.539 --> 00:00:35.115
+and at at the end in the scope they get released automatically.
+
+00:00:35.115 --> 00:00:42.079
+The operations that creates objects are called constructors,
+
+00:00:42.079 --> 00:00:43.984
+they construct objects, obvious;
+
+00:00:43.984 --> 00:00:45.859
+and I couldn't resist the pattern.
+
+00:00:45.859 --> 00:00:48.109
+So the ones that reverses that operation,
+
+00:00:48.109 --> 00:00:49.414
+that cleans up the mess,
+
+00:00:49.414 --> 00:00:51.924
+if necessary, are called distractors.
+
+00:00:51.924 --> 00:00:54.884
+So somewhere in the scope,
+
+00:00:54.884 --> 00:00:56.759
+often towards the top,
+
+00:00:56.759 --> 00:00:58.079
+you construct the object,
+
+00:00:58.079 --> 00:00:59.339
+you initialize the object,
+
+00:00:59.340 --> 00:01:03.200
+and at the end, you clean it up and it's called resource
+
+00:01:03.200 --> 00:01:08.100
+acquisition is initialization shortened to RAII.
+
+00:01:08.799 --> 00:01:12.349
+Well, I was very busy when I thought of that
+
+00:01:12.349 --> 00:01:17.689
+and it's not a good name for it and I should not be in marketing.
+

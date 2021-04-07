@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.485
+In this section, we will deal with memory management on the heap using new and delete.
+
+00:00:04.485 --> 00:00:07.290
+Note that new and delete are operators while malloc and free
+
+00:00:07.290 --> 00:00:10.109
+are functions taken from C. We will compare in detail
+
+00:00:10.109 --> 00:00:13.109
+how malloc differs from new especially when allocating memory or for
+
+00:00:13.109 --> 00:00:17.609
+classes in terms of type security and when overloading operators.
+
+00:00:17.609 --> 00:00:21.660
+Also, we'll look at a useful construct called placement new that can be
+
+00:00:21.660 --> 00:00:26.100
+used to separate memory allocation from the actual object creation for more performance.
+
+00:00:26.100 --> 00:00:31.870
+Finally, we will look at how arrays can be created with a new operator. So let's go.
+

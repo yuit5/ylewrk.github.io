@@ -1,0 +1,349 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Using malloc and free</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Dynamic Memory Allocation (The Heap)</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Heap Memory.html">01. Heap Memory</a>
+    </li>
+    <li class="">
+      <a href="02. Bjarne on Stack and Heap.html">02. Bjarne on Stack and Heap</a>
+    </li>
+    <li class="">
+      <a href="03. Using malloc and free.html">03. Using malloc and free</a>
+    </li>
+    <li class="">
+      <a href="04. Using new and delete.html">04. Using new and delete</a>
+    </li>
+    <li class="">
+      <a href="05. Bjarne on new and delete.html">05. Bjarne on new and delete</a>
+    </li>
+    <li class="">
+      <a href="06. Typical Memory Management Problems.html">06. Typical Memory Management Problems</a>
+    </li>
+    <li class="">
+      <a href="07. Bjarne on Memory Leaks.html">07. Bjarne on Memory Leaks</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Using malloc and free</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>ND213 C03 L03 02.1 Using Malloc And Free HS</p></h3>
+  <video controls>
+  <source src="03. ND213 C03 L03 02.1 Using Malloc And Free HS-nawlbRI6xzo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND213 C03 L03 02.1 Using Malloc And Free HS-nawlbRI6xzo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>So far we only considered primitive data types, whose storage space requirement was already fixed at compile time and could be scheduled with the building of the program executable. However, it is not always possible to plan the memory requirements exactly in advance, and it is inefficient to reserve the maximum memory space each time just to be on the safe side. C and C++ offer the option to reserve memory areas during the program execution, i.e. at runtime. It is important that the reserved memory areas are released again at the "appropriate point" to avoid memory leaks. It is one of the major challenges in memory management to always locate this "appropriate point" though. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="quiz--dynamic-memory-management-with-malloc-calloc-resize-and-free">Quiz : Dynamic Memory Management with <code>malloc</code>, <code>calloc</code>, <code>resize</code> and <code>free</code></h3>
+<h4 id="question-1-match-the-code-snippets-to-the-respective-comments">Question 1: Match the code snippets to the respective comments</h4>
+<pre><code class="cpp language-cpp">#include &lt;stdio.h&gt; 
+#include &lt;stdlib.h&gt; 
+
+int main()
+{
+    // (X)
+    int *m = (int*)malloc(sizeof(int)); 
+    m = NULL; 
+
+    // (Y)
+    int *n = (int*)malloc(sizeof(int)); 
+    free(n);
+    *n = 23;
+
+    // (Z)
+    char *o;
+    *o = 'a'; 
+
+    return 0;
+}</code></pre>
+<p>Comments: </p>
+<ol>
+<li>uses a dangling pointer</li>
+<li>uses an uninitialized pointer</li>
+<li>generates a memory leak</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>In the code above, there are three snippets marked with X, Y, and Z. Below the code there are three comments. Match the code snippets to the respective comments. Which pairing of comments and code snippets is the correct one?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1568314637132" name="931053" id="a1568314637132">
+        <label for="a1568314637132"><p>X-1, Y-3, Z-2</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568314684904" name="931053" id="a1568314684904">
+        <label for="a1568314684904"><p>X-2, Y-1, Z-3</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568314696987" name="931053" id="a1568314696987">
+        <label for="a1568314696987"><p>X-3, Y-2, Z-1</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568314699091" name="931053" id="a1568314699091">
+        <label for="a1568314699091"><p>X-3, Y-1, Z-2</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    X-3, Y-1, Z-2
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="question-2--problems-with-pointers">Question 2 : Problems with pointers</h4>
+<pre><code class="cpp language-cpp">int *f1(void)
+{
+    int x = 10;
+    return (&amp;x);
+}
+
+int *f2(void)
+{
+    int *px;
+    *px = 10;
+    return px;
+}
+
+int *f3(void)
+{
+    int *px;
+    px = (int *)malloc(sizeof(int));
+    *px = 10;
+    return px;
+}</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the functions above is likely to cause pointer-related problems?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1568314933413" name="931056" id="a1568314933413">
+        <label for="a1568314933413"><p>only <code>f3</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568314955131" name="931056" id="a1568314955131">
+        <label for="a1568314955131"><p><code>f1</code> and <code>f3</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568314962476" name="931056" id="a1568314962476">
+        <label for="a1568314962476"><p><code>f1</code> and <code>f2</code></p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1568315010388" name="931056" id="a1568315010388">
+        <label for="a1568315010388"><p><code>f1</code>, <code>f2</code>, and <code>f3</code></p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    `f1` and `f2`
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="outro">Outro</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>ND213 C03 L03 02.3 Using Malloc And Free HS</p></h3>
+  <video controls>
+  <source src="03. ND213 C03 L03 02.3 Using Malloc And Free HS-X8OcmAwAYp8.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. ND213 C03 L03 02.3 Using Malloc And Free HS-X8OcmAwAYp8.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Using new and delete.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Using malloc and free')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
