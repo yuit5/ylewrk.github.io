@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.649
+Now, in the previous lesson project,
+
+00:00:01.649 --> 00:00:05.529
+we have used promises and features to pass data between threads.
+
+00:00:05.530 --> 00:00:09.289
+A vehicle entered an intersection and send a promise to the waiting queue,
+
+00:00:09.289 --> 00:00:12.718
+and as soon as it receives clearance to proceed by other feature,
+
+00:00:12.718 --> 00:00:16.199
+it entered the intersection without danger from other vehicles.
+
+00:00:16.199 --> 00:00:20.059
+Now the promised future pair in this example is for one time use only,
+
+00:00:20.059 --> 00:00:22.214
+and only works in a single direction.
+
+00:00:22.214 --> 00:00:26.045
+It would be much easier to mutually access a shared memory location,
+
+00:00:26.045 --> 00:00:29.015
+for example, the intersection waiting huge directly.
+
+00:00:29.015 --> 00:00:32.734
+Now the concept of a mutual exclusion or a mutex for short,
+
+00:00:32.734 --> 00:00:34.115
+gives us this option.
+
+00:00:34.115 --> 00:00:36.380
+We can safely lock a shared resource,
+
+00:00:36.380 --> 00:00:39.875
+modify it, and then unlock it again once we're done with it.
+
+00:00:39.875 --> 00:00:43.280
+Now this concepts gives us a great deal of flexibility but of course,
+
+00:00:43.280 --> 00:00:46.579
+also brings along some new pitfalls we must avoid.
+
+00:00:46.579 --> 00:00:48.789
+So let's take a look.
+

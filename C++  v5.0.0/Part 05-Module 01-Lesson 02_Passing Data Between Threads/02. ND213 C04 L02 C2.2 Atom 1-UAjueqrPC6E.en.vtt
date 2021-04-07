@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.424
+Now in this section, we will be talking about promises and about futures.
+
+00:00:04.424 --> 00:00:07.439
+Until now, you are aware of several ways of passing
+
+00:00:07.440 --> 00:00:10.455
+data to the thread but only during the startup phase.
+
+00:00:10.455 --> 00:00:14.068
+Now, when you fire a thread using a lambda function for example,
+
+00:00:14.069 --> 00:00:17.730
+we can pass it some information using various capture options,
+
+00:00:17.730 --> 00:00:21.315
+and the same basically holds for variadic templates.
+
+00:00:21.315 --> 00:00:23.865
+But the drawback of these approaches is that the information
+
+00:00:23.864 --> 00:00:26.429
+only flows from the parent thread which is main,
+
+00:00:26.429 --> 00:00:28.664
+for example, to the worker thread.
+
+00:00:28.664 --> 00:00:32.719
+Now in this section, we want to look at the way to pass data in the opposite direction,
+
+00:00:32.719 --> 00:00:37.545
+that is from the worker thread back to the parent thread in our case the mean function.
+
+00:00:37.545 --> 00:00:39.605
+There is such a mechanism available in C++,
+
+00:00:39.604 --> 00:00:41.719
+a tool that we can use for this purpose,
+
+00:00:41.719 --> 00:00:45.295
+which acts as a single use channel between the threads.
+
+00:00:45.295 --> 00:00:48.710
+Now, the sending of the channel is called promise,
+
+00:00:48.710 --> 00:00:51.469
+while the receiving end is called future.
+
+00:00:51.469 --> 00:00:54.769
+You will soon see how this concept can be used to pass
+
+00:00:54.770 --> 00:00:58.910
+both data as well as exceptions from workup to parent thread.
+
+00:00:58.909 --> 00:01:02.699
+Now, please take a look and see you again down below.
+

@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.799
+In the previous section, we have used mutexes to lock and unlock shared memory resources.
+
+00:00:04.799 --> 00:00:07.379
+Now despite the flexibility this allows us,
+
+00:00:07.379 --> 00:00:10.560
+there's the great danger of a deadlock because circumstances might
+
+00:00:10.560 --> 00:00:14.160
+conspire in a way that the call to unlock never comes.
+
+00:00:14.160 --> 00:00:17.550
+In this section, we will look at an extended locking concept that
+
+00:00:17.550 --> 00:00:21.734
+ensures the unlock operation will happen regardless of the circumstances.
+
+00:00:21.734 --> 00:00:24.589
+Now the basic idea of this concept is to package
+
+00:00:24.589 --> 00:00:27.890
+calls to the mutex in an object called a lock_guard,
+
+00:00:27.890 --> 00:00:30.050
+and this object's locks the mutex at the time of
+
+00:00:30.050 --> 00:00:34.250
+its creation and unlocks it automatically when it's destroyed.
+
+00:00:34.250 --> 00:00:38.030
+Now, imagine that in the middle of accessing a shared memory location there
+
+00:00:38.030 --> 00:00:41.980
+is an exception and the program flow is directed away from the current thread.
+
+00:00:41.979 --> 00:00:46.189
+As soon as the lock_guard object is invalidated by going out of scope,
+
+00:00:46.189 --> 00:00:49.924
+the lock on the shared data is released and others can access it again.
+
+00:00:49.924 --> 00:00:51.799
+This is a super useful concept,
+
+00:00:51.799 --> 00:00:55.339
+which is extended even further by a similar form called unique_lock,
+
+00:00:55.340 --> 00:00:58.205
+which gives us even more flexibility to lock and unlock
+
+00:00:58.204 --> 00:01:02.399
+a resource at the time of our choosing. Now let's take a look.
+

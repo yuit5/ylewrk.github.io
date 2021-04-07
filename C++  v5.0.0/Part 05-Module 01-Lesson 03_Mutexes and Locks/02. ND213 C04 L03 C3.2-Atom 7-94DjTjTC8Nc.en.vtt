@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.450
+Now the major contribution of this section was to give you a tool to
+
+00:00:03.450 --> 00:00:06.599
+protect shared data from concurrent access by multiple threads.
+
+00:00:06.599 --> 00:00:08.219
+A mutex can do this for you,
+
+00:00:08.220 --> 00:00:10.660
+and you now know that it comes along in different flavors.
+
+00:00:10.660 --> 00:00:15.030
+You can use it directly or you can use it in a timed version with a delayed response that
+
+00:00:15.029 --> 00:00:17.280
+can prevent the threats from locking forever when
+
+00:00:17.280 --> 00:00:19.905
+they cannot get access to a shared resources.
+
+00:00:19.905 --> 00:00:23.750
+But mutexes can also be dangerous because when a programmer forgets to unlock
+
+00:00:23.750 --> 00:00:27.785
+it or when the program crashes in between calls to lock and unlock,
+
+00:00:27.785 --> 00:00:30.679
+the program principally can block forever and
+
+00:00:30.679 --> 00:00:34.085
+your program might freeze and the user can't do anything with it anymore.
+
+00:00:34.085 --> 00:00:35.630
+Such an error is called a deadlock.
+
+00:00:35.630 --> 00:00:38.900
+Another form of deadlock can also occur when two mutexes at
+
+00:00:38.899 --> 00:00:42.949
+the same time can be locked independently of each other in arbitrary order.
+
+00:00:42.950 --> 00:00:45.720
+So even though mutexes give us a new possibility,
+
+00:00:45.719 --> 00:00:50.854
+there are also dangers involved with using mutexes which we have to avoid carefully.
+
+00:00:50.854 --> 00:00:53.059
+In the next section, we will look at ways to mitigate
+
+00:00:53.060 --> 00:00:55.655
+those dangers and avoid deadlocks all together.
+
+00:00:55.655 --> 00:00:57.810
+So see you there.
+

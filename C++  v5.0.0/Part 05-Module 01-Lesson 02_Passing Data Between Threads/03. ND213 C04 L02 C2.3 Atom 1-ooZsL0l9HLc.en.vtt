@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.970
+Now, welcome to the section on threads versus tasks.
+
+00:00:02.970 --> 00:00:05.970
+Now, in the last section we have seen how data can be passed from
+
+00:00:05.969 --> 00:00:09.570
+a worker thread to the parents thread using promises and futures.
+
+00:00:09.570 --> 00:00:13.650
+A disadvantage as already stated of this approach is that it is very cumbersome to
+
+00:00:13.650 --> 00:00:17.789
+use and also it involves a lot of so-called boilerplate code.
+
+00:00:17.789 --> 00:00:19.589
+That means you, as a programmer,
+
+00:00:19.589 --> 00:00:24.074
+must write a lot of code to accomplish only comparatively minor functionality.
+
+00:00:24.074 --> 00:00:28.160
+Now, if you only want to quickly return data or an exception from worker to parent,
+
+00:00:28.160 --> 00:00:33.215
+there is a much simpler way using standard async instead of standard thread.
+
+00:00:33.215 --> 00:00:37.259
+Calling async generates something called a task which is a high level construct
+
+00:00:37.259 --> 00:00:41.674
+where the system can decide whether to run it in parallel or asynchronously,
+
+00:00:41.674 --> 00:00:44.629
+and you as a programmer merely state that the code which is
+
+00:00:44.630 --> 00:00:47.840
+executed by the task in this case can,
+
+00:00:47.840 --> 00:00:49.670
+in principle, be paralyzed.
+
+00:00:49.670 --> 00:00:53.710
+If it's really paralyzed and after all is going to be decided by the system.
+
+00:00:53.710 --> 00:00:57.890
+Also, there's a lot of overhead involved with creating and managing threads.
+
+00:00:57.890 --> 00:01:00.320
+There are many jobs where threads can speed up things,
+
+00:01:00.320 --> 00:01:02.960
+but there are also situations where all the overhead does
+
+00:01:02.960 --> 00:01:06.070
+not improve runtime performance but even worsens it.
+
+00:01:06.069 --> 00:01:09.500
+This is where we will also make some experiments in this section to take
+
+00:01:09.500 --> 00:01:12.875
+a close look at runtime performance of concurrent programs.
+
+00:01:12.875 --> 00:01:16.859
+So have fun with this section and see you down below again.
+

@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.060
+Now, in this section, you have learned how to use a promise
+
+00:00:03.060 --> 00:00:06.285
+future channel to pass a string between two threads.
+
+00:00:06.285 --> 00:00:09.599
+Also, you took a look at move semantics and the difference
+
+00:00:09.599 --> 00:00:12.914
+to passing data by value and thus making a copy of it.
+
+00:00:12.914 --> 00:00:15.269
+Now, move semantics are used very often in
+
+00:00:15.269 --> 00:00:18.899
+concurrent programming and it helps make your code much more efficient.
+
+00:00:18.899 --> 00:00:21.000
+So please do not shy away from it,
+
+00:00:21.000 --> 00:00:24.000
+and also if necessary dig a bit deeper into it.
+
+00:00:24.000 --> 00:00:28.425
+Use it especially when it comes to our value references.
+
+00:00:28.425 --> 00:00:31.725
+This is a super useful concept and your code will benefit from it.
+
+00:00:31.725 --> 00:00:35.429
+Now, the nice thing about using futures is that you can determine the point in
+
+00:00:35.429 --> 00:00:39.200
+time when you want to retrieve the data by calling the Get function,
+
+00:00:39.200 --> 00:00:42.095
+that can be very useful especially when you want to ensure
+
+00:00:42.094 --> 00:00:45.399
+that the result is only available at a certain point in time.
+
+00:00:45.399 --> 00:00:49.229
+Now, there are two major drawbacks of promises and futures, however.
+
+00:00:49.229 --> 00:00:54.048
+The first one is information can only be passed into one direction,
+
+00:00:54.048 --> 00:00:56.259
+that is from the worker to the parent,
+
+00:00:56.259 --> 00:00:57.769
+and the second disadvantage,
+
+00:00:57.770 --> 00:00:59.840
+they are meant for one-time use only,
+
+00:00:59.840 --> 00:01:02.855
+promises and futures are meant for single use only.
+
+00:01:02.854 --> 00:01:05.899
+At the later point we will talk about an alternative, but for now,
+
+00:01:05.900 --> 00:01:08.090
+let's move on to the next section which is about
+
+00:01:08.090 --> 00:01:10.204
+the difference between threads and tasks.
+
+00:01:10.204 --> 00:01:12.539
+So see you there.
+

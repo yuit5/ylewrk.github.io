@@ -1,0 +1,178 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.845
+So let's take a look at what this code does.
+
+00:00:01.845 --> 00:00:05.280
+We're in main here and the first thing which happens is we are
+
+00:00:05.280 --> 00:00:09.134
+running this for loop here which ranges from minus five to plus five,
+
+00:00:09.134 --> 00:00:11.879
+and inside the for loop,
+
+00:00:11.880 --> 00:00:15.480
+we are starting up several tasks which are launched a synchronously,
+
+00:00:15.480 --> 00:00:18.359
+and they are calling the thread function divide by number.
+
+00:00:18.359 --> 00:00:20.429
+The first parameter is always 50 and
+
+00:00:20.429 --> 00:00:23.684
+the second parameter is the respective i from the for loop.
+
+00:00:23.684 --> 00:00:27.464
+At the end, we are waiting for the results to show up.
+
+00:00:27.464 --> 00:00:31.605
+So this basically, is the thread barrier in the task version.
+
+00:00:31.605 --> 00:00:32.719
+With the thread version,
+
+00:00:32.719 --> 00:00:33.899
+we would have used join.
+
+00:00:33.899 --> 00:00:36.060
+Now we can use either weight or get,
+
+00:00:36.060 --> 00:00:38.070
+but let's take a look at divide by number.
+
+00:00:38.070 --> 00:00:41.024
+Now divide by number, shown here, takes two parameters;
+
+00:00:41.024 --> 00:00:43.914
+a numerator and a denominator,
+
+00:00:43.914 --> 00:00:46.280
+and in the try-catch block here,
+
+00:00:46.280 --> 00:00:50.079
+we are dividing the numerator by the denominator,
+
+00:00:50.079 --> 00:00:54.199
+but only in the case when the denominator is not zero because dividing something by zero,
+
+00:00:54.200 --> 00:00:57.440
+not only in computer science, is problematic.
+
+00:00:57.439 --> 00:00:59.974
+This is why if denominator equal 0,
+
+00:00:59.975 --> 00:01:01.835
+we are throwing an exception,
+
+00:01:01.835 --> 00:01:04.460
+it's an invalid argument exception which outputs
+
+00:01:04.459 --> 00:01:07.709
+the string to the console exception from thread division by zero.
+
+00:01:07.709 --> 00:01:09.500
+This exception is caught here in
+
+00:01:09.500 --> 00:01:13.280
+the catch block where we simply output the exception to the console,
+
+00:01:13.280 --> 00:01:15.140
+and that's what's happening here.
+
+00:01:15.140 --> 00:01:17.659
+So if the denominator is not zero,
+
+00:01:17.659 --> 00:01:19.579
+we are result of computing the result,
+
+00:01:19.579 --> 00:01:21.634
+a numerator divided by denominator,
+
+00:01:21.634 --> 00:01:23.549
+then we are sleeping for a certain amount of time,
+
+00:01:23.549 --> 00:01:26.344
+in this case, only very shortly only for one millisecond.
+
+00:01:26.344 --> 00:01:29.760
+Also you can play around with this parameter and see what happens,
+
+00:01:29.760 --> 00:01:31.895
+and then we are printing the result.
+
+00:01:31.894 --> 00:01:34.500
+Printing the results calls another function,
+
+00:01:34.500 --> 00:01:38.629
+this one here, which also write something to the standard output.
+
+00:01:38.629 --> 00:01:41.224
+As you can see in several phases, first,
+
+00:01:41.224 --> 00:01:42.979
+this string here then the result,
+
+00:01:42.980 --> 00:01:44.270
+and the second string here,
+
+00:01:44.269 --> 00:01:45.859
+then the result, then the end-line.
+
+00:01:45.859 --> 00:01:48.500
+So there's all kinds of possibilities for
+
+00:01:48.500 --> 00:01:52.040
+another threat to jump in and totally guide all the output.
+
+00:01:52.040 --> 00:01:54.460
+This is why this has to be protected,
+
+00:01:54.459 --> 00:01:57.629
+and this is the job which you hopefully have done correctly,
+
+00:01:57.629 --> 00:01:59.329
+and we're now going to look at the solution.
+
+00:01:59.329 --> 00:02:03.400
+So the first thing you have to do is you have to define a mutex.
+
+00:02:03.400 --> 00:02:05.670
+The mutex, is called mtx,
+
+00:02:05.670 --> 00:02:09.550
+has first to be locked at the beginning of the critical section,
+
+00:02:09.550 --> 00:02:12.560
+that is the area of coat which has to be
+
+00:02:12.560 --> 00:02:16.060
+performed under the lock with no other thread jumping in,
+
+00:02:16.060 --> 00:02:19.250
+and at the end of this section of the critical section,
+
+00:02:19.250 --> 00:02:21.360
+we simply unlock the mutex.
+
+00:02:21.360 --> 00:02:22.845
+That's what's happening here.
+
+00:02:22.844 --> 00:02:27.669
+Now, the problem which you relate to see is that when this exception is thrown here,
+
+00:02:27.669 --> 00:02:33.349
+we are jumping out of the critical section without issuing the unlock command.
+
+00:02:33.349 --> 00:02:36.905
+But with regards to printing something to the console nicely,
+
+00:02:36.905 --> 00:02:40.430
+locking and unlocking the mutex in this way makes sure
+
+00:02:40.430 --> 00:02:44.939
+that the output is not mixed up with output from other threads.
+

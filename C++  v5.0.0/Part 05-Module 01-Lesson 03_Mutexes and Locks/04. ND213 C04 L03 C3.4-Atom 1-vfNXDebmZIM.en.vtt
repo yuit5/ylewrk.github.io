@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.919
+Now welcome to the third lesson project.
+
+00:00:01.919 --> 00:00:04.544
+The traffic simulation at this point works quite nicely and
+
+00:00:04.544 --> 00:00:08.150
+all vehicles are properly queuing before entering intersection one by one.
+
+00:00:08.150 --> 00:00:11.480
+At least, that's the impression you might get from watching the simulation.
+
+00:00:11.480 --> 00:00:12.839
+Now the problem, however,
+
+00:00:12.839 --> 00:00:16.574
+is that the instance of class waiting vehicles is a shared resource.
+
+00:00:16.574 --> 00:00:19.859
+It's shared by all the vehicles threads approaching an intersection.
+
+00:00:19.859 --> 00:00:21.390
+As you have learned in this lesson,
+
+00:00:21.390 --> 00:00:25.185
+when one thread is writing and another thread is either reading or writing,
+
+00:00:25.184 --> 00:00:29.549
+this is a data race regardless of whether we observe an error or not at the time.
+
+00:00:29.550 --> 00:00:31.830
+Your job in this lesson project is to add
+
+00:00:31.829 --> 00:00:36.070
+a safety layer which puts a halt to this data race.
+

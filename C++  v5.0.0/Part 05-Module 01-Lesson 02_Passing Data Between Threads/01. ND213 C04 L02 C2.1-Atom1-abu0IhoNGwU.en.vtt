@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.770
+Now welcome to the second lesson.
+
+00:00:01.770 --> 00:00:04.515
+At this point, you should be able to start your own threads,
+
+00:00:04.514 --> 00:00:06.074
+block them using a barrier,
+
+00:00:06.075 --> 00:00:09.210
+and also pass data to them during thread creation.
+
+00:00:09.210 --> 00:00:12.450
+Also, you had your first brush with a concurrency buck,
+
+00:00:12.449 --> 00:00:16.425
+when several threads access the same memory location at the same time.
+
+00:00:16.425 --> 00:00:19.080
+Now the main theme of this lesson will be to pass
+
+00:00:19.079 --> 00:00:21.919
+data to the thread after it has been created.
+
+00:00:21.920 --> 00:00:23.445
+Let's take a look at the content.
+
+00:00:23.445 --> 00:00:26.429
+First, we will look at the private communication channel
+
+00:00:26.429 --> 00:00:29.908
+between two threads that can be used only a single time,
+
+00:00:29.908 --> 00:00:33.104
+but at an arbitrary moment in time of our choosing,
+
+00:00:33.104 --> 00:00:34.949
+well after that creation.
+
+00:00:34.950 --> 00:00:39.090
+Now the concept behind this channel is called promises and futures,
+
+00:00:39.090 --> 00:00:41.360
+and these can be used to pass both data,
+
+00:00:41.359 --> 00:00:46.340
+as well as exceptions from a worker thread to the parent thread which created the worker.
+
+00:00:46.340 --> 00:00:47.930
+Secondly in this lesson,
+
+00:00:47.929 --> 00:00:50.929
+we will look at the differences between threads and tasks.
+
+00:00:50.929 --> 00:00:54.019
+Now tasks are a high-level concept where the system can
+
+00:00:54.020 --> 00:00:57.965
+choose whether to execute some code in parallel or synchronously.
+
+00:00:57.965 --> 00:01:00.680
+Also tasks make it really easy to establish
+
+00:01:00.679 --> 00:01:03.320
+a promise future link in your code, which is much,
+
+00:01:03.320 --> 00:01:08.644
+much less code to write than with the standard threads we have been using so far.
+
+00:01:08.644 --> 00:01:11.089
+We will also take a look at the run time advantage or
+
+00:01:11.090 --> 00:01:14.284
+disadvantage of parallel execution, and thirdly,
+
+00:01:14.284 --> 00:01:18.259
+one of the major topics in this lesson is passing data to a thread by value,
+
+00:01:18.260 --> 00:01:23.045
+that is making a copy of it as well as using move semantics.
+
+00:01:23.045 --> 00:01:26.284
+Now move semantics is a very powerful concept in C++,
+
+00:01:26.284 --> 00:01:31.519
+it has been added with C++11 and which avoids making unnecessary copies of your data,
+
+00:01:31.519 --> 00:01:35.879
+while at the same time avoiding some of the dangers of passing by reference.
+
+00:01:35.879 --> 00:01:39.539
+It's something you should really learn when you want to go into concurrency.
+
+00:01:39.540 --> 00:01:41.715
+Forth, talking about the letter,
+
+00:01:41.715 --> 00:01:44.420
+we will also take a close look at data races which are one
+
+00:01:44.420 --> 00:01:47.105
+of the primary sources of error and concurrent programming.
+
+00:01:47.105 --> 00:01:49.234
+So as you see, there is a lot to be learned,
+
+00:01:49.234 --> 00:01:51.659
+let's start right away.
+

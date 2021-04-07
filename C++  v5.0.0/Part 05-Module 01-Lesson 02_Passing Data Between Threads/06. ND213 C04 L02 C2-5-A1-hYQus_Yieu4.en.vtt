@@ -1,0 +1,640 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.870
+Now, welcome to the second lesson project.
+
+00:00:01.870 --> 00:00:04.950
+Now, the traffic simulation and at this point works in a basic way in
+
+00:00:04.950 --> 00:00:09.000
+the sense that vehicles are driving along streets from intersection to intersection.
+
+00:00:09.000 --> 00:00:10.948
+Once they reach an intersection,
+
+00:00:10.948 --> 00:00:13.199
+they simply drive through it without checking for
+
+00:00:13.199 --> 00:00:16.634
+other vehicles that might already have been within the intersection.
+
+00:00:16.635 --> 00:00:19.920
+This cannot be called safe driving and we will set out to improve that.
+
+00:00:19.920 --> 00:00:24.615
+The major theme of this lesson has been passing data in between threads.
+
+00:00:24.614 --> 00:00:27.359
+Accordingly, we will use the concepts you have learned so
+
+00:00:27.359 --> 00:00:30.899
+far to build a communication infrastructure that will
+
+00:00:30.899 --> 00:00:33.839
+prevent vehicles from entering intersection when there is
+
+00:00:33.840 --> 00:00:37.215
+already another vehicle inside the intersection and crossing it.
+
+00:00:37.215 --> 00:00:39.520
+Let's take a closer look.
+
+00:00:39.649 --> 00:00:42.089
+In the previous lesson project,
+
+00:00:42.090 --> 00:00:46.190
+we have enabled a basic version of the concurrent traffic simulation.
+
+00:00:46.189 --> 00:00:48.409
+You have vehicles traveling along streets,
+
+00:00:48.409 --> 00:00:51.079
+you have them crossing an intersection,
+
+00:00:51.079 --> 00:00:54.844
+and once they're in an intersection they are simply driving along,
+
+00:00:54.844 --> 00:00:57.829
+changing direction, oblivious of the fact whether
+
+00:00:57.829 --> 00:01:00.954
+there is another vehicle and they get in the intersection currently or not.
+
+00:01:00.954 --> 00:01:02.640
+This is going to change now.
+
+00:01:02.640 --> 00:01:03.899
+In this lesson project,
+
+00:01:03.899 --> 00:01:07.129
+we're going to use promises and futures to
+
+00:01:07.129 --> 00:01:10.729
+enable communication between vehicles and intersections.
+
+00:01:10.730 --> 00:01:11.920
+Now, let's take a look.
+
+00:01:11.920 --> 00:01:14.114
+In the traffic simulation we have so far,
+
+00:01:14.114 --> 00:01:17.269
+we want to enable vehicles to now wait
+
+00:01:17.269 --> 00:01:20.614
+at an intersection until it is their turn to drive on.
+
+00:01:20.614 --> 00:01:23.250
+The communication between vehicles and
+
+00:01:23.250 --> 00:01:26.959
+intersections should work through a one-time communication channels.
+
+00:01:26.959 --> 00:01:31.804
+So the basic idea is once a vehicle drives up towards an intersection,
+
+00:01:31.805 --> 00:01:34.640
+it hands out a, let's say promise,
+
+00:01:34.640 --> 00:01:37.670
+to receive the info in due time when
+
+00:01:37.670 --> 00:01:40.040
+all the other vehicles that are currently queuing at
+
+00:01:40.040 --> 00:01:43.040
+the intersection process and have driven off,
+
+00:01:43.040 --> 00:01:46.100
+to receive a feedback using the future,
+
+00:01:46.099 --> 00:01:50.134
+to proceed on their own into the intersection and drive along.
+
+00:01:50.135 --> 00:01:52.730
+So the promise future concept was going to be
+
+00:01:52.730 --> 00:01:55.850
+the communication channel and it's going to work only a single time
+
+00:01:55.849 --> 00:01:58.759
+because the vehicle is only queuing a single time at
+
+00:01:58.760 --> 00:02:02.225
+the intersection and when it's going to come back some time in the future maybe,
+
+00:02:02.224 --> 00:02:06.199
+it's going to establish a new one-time communication channels.
+
+00:02:06.200 --> 00:02:10.115
+So if we have five vehicles queuing at the intersection currently,
+
+00:02:10.115 --> 00:02:16.925
+we have five channels all from five vehicles to this single intersection in the middle.
+
+00:02:16.925 --> 00:02:19.040
+Your task is to use promises and
+
+00:02:19.039 --> 00:02:21.995
+futures to set up this communication channel between vehicles and
+
+00:02:21.995 --> 00:02:25.099
+the intersections and to also implement
+
+00:02:25.099 --> 00:02:29.810
+a proper weighting mechanism to avoid having multiple vehicles enter into intersection.
+
+00:02:29.810 --> 00:02:32.164
+So that's basically the most important thing here.
+
+00:02:32.164 --> 00:02:35.134
+We want to make sure that at one point and time,
+
+00:02:35.134 --> 00:02:39.379
+only a single vehicle is within the intersection.
+
+00:02:39.379 --> 00:02:41.780
+Now this is going to be the structure of
+
+00:02:41.780 --> 00:02:44.439
+the code once you're done with the implementation.
+
+00:02:44.439 --> 00:02:47.224
+Don't be afraid, you don't have to implement everything.
+
+00:02:47.224 --> 00:02:51.844
+We will give you an almost ready implementation of the new version.
+
+00:02:51.844 --> 00:02:54.500
+When you compare this block of code here,
+
+00:02:54.500 --> 00:02:59.599
+this huge collection of different tasks to the previous lesson project,
+
+00:02:59.599 --> 00:03:01.625
+and it's fairly easy to see what is new.
+
+00:03:01.625 --> 00:03:04.669
+So old blocks which have existed before are
+
+00:03:04.669 --> 00:03:09.449
+just white and new blocks which have been added to this Lesson 2 project,
+
+00:03:09.449 --> 00:03:11.669
+they have a blue background.
+
+00:03:11.669 --> 00:03:15.979
+Hidden within those blue boxes are your various tasks which you need
+
+00:03:15.979 --> 00:03:19.949
+to do in order to enable the weighting of the vehicles at an intersection.
+
+00:03:19.949 --> 00:03:21.889
+But let's take a look and start at the front.
+
+00:03:21.889 --> 00:03:24.799
+So what's new in main on the left side is we
+
+00:03:24.800 --> 00:03:27.814
+have a block here which is called simulate intersections.
+
+00:03:27.814 --> 00:03:29.449
+Until now, the only thing we did was
+
+00:03:29.449 --> 00:03:33.019
+simulated vehicles and the green arrow, if you recall it,
+
+00:03:33.020 --> 00:03:34.909
+means that for each vehicle,
+
+00:03:34.909 --> 00:03:37.729
+an own thread is started which calls
+
+00:03:37.729 --> 00:03:41.194
+vehicle drive as it's proprietary threading function.
+
+00:03:41.194 --> 00:03:44.780
+In addition to this, we now start intersection threads.
+
+00:03:44.780 --> 00:03:46.969
+So for each intersection in the simulation,
+
+00:03:46.969 --> 00:03:48.245
+we have our own thread.
+
+00:03:48.245 --> 00:03:51.080
+The corresponding thread function which is
+
+00:03:51.080 --> 00:03:54.260
+started up here is called process vehicle queue,
+
+00:03:54.259 --> 00:03:57.409
+which is basically a processor for the queue in
+
+00:03:57.409 --> 00:04:01.294
+which vehicles are stored that wants to enter the intersection.
+
+00:04:01.294 --> 00:04:06.309
+The basic proceeding of the entire process vehicle queue function can be seen here.
+
+00:04:06.310 --> 00:04:10.069
+So what you basically can see is a large loop.
+
+00:04:10.069 --> 00:04:12.949
+If you follow my mouse while I circle here,
+
+00:04:12.949 --> 00:04:15.169
+it's basically an infinite loop that loops over
+
+00:04:15.169 --> 00:04:19.949
+the entire waiting queue and processed vehicles within the queue ending.
+
+00:04:19.949 --> 00:04:22.449
+If there's no vehicle queuing at the time,
+
+00:04:22.449 --> 00:04:27.334
+the assimilation still goes on and waits for another vehicle to arrive in the future.
+
+00:04:27.334 --> 00:04:31.579
+So the first thing that happens once we enter this process via queue is,
+
+00:04:31.579 --> 00:04:35.000
+we're going to check whether there are any vehicles in the queue.
+
+00:04:35.000 --> 00:04:38.089
+Then we are going to check for a blockage in the intersection.
+
+00:04:38.089 --> 00:04:41.810
+That means is there already another vehicle in the intersection,
+
+00:04:41.810 --> 00:04:44.420
+or can we proceed to process the queue?
+
+00:04:44.420 --> 00:04:46.160
+If there is another vehicle in the intersection,
+
+00:04:46.160 --> 00:04:47.810
+we go back to the start,
+
+00:04:47.810 --> 00:04:52.264
+and do this as long as it takes for the intersection to be cleared again.
+
+00:04:52.264 --> 00:04:54.064
+Once the intersection is cleared,
+
+00:04:54.064 --> 00:04:56.839
+we can block the intersection for another vehicle,
+
+00:04:56.839 --> 00:04:58.444
+the one which is about to enter,
+
+00:04:58.444 --> 00:05:01.939
+then we permit entry to the first vehicle in the queue.
+
+00:05:01.939 --> 00:05:05.480
+That means the one that has been waiting the longest.
+
+00:05:05.480 --> 00:05:09.170
+Then we remove the entering vehicle from
+
+00:05:09.170 --> 00:05:12.775
+the queue as soon as it has cleared the intersection.
+
+00:05:12.774 --> 00:05:15.404
+Now, what you can see here this red arrow,
+
+00:05:15.404 --> 00:05:20.704
+this is a communication channel which basically is a message which tells us that
+
+00:05:20.704 --> 00:05:23.719
+the permitting function to permit entry to
+
+00:05:23.720 --> 00:05:28.340
+the first vehicle in the queue is connected to another function.
+
+00:05:28.339 --> 00:05:30.414
+It's called intersection.
+
+00:05:30.415 --> 00:05:35.205
+Add vehicle to queue and as you can see here, there's a Channel 2,
+
+00:05:35.204 --> 00:05:39.859
+this function which ends here after the vehicle has been added to the waiting queue,
+
+00:05:39.860 --> 00:05:44.324
+we are waiting until the vehicle may enter the intersection.
+
+00:05:44.324 --> 00:05:46.039
+As soon as the permission comes,
+
+00:05:46.040 --> 00:05:50.430
+which is indicated by the red arrow here which arrives at this blue block here,
+
+00:05:50.430 --> 00:05:52.120
+we send back the message.
+
+00:05:52.120 --> 00:05:57.170
+We have been granted entry to the intersection and then the message is sent to
+
+00:05:57.170 --> 00:06:00.350
+the vehicle drive function and the vehicle will then
+
+00:06:00.350 --> 00:06:03.995
+simply drive through the intersection until it is done.
+
+00:06:03.995 --> 00:06:06.290
+So that's the basic mechanism here.
+
+00:06:06.290 --> 00:06:08.510
+What I haven't mentioned until now is
+
+00:06:08.509 --> 00:06:11.180
+a new addition to the vehicle and drive function itself,
+
+00:06:11.180 --> 00:06:15.965
+although the white boxes are the same as before in vehicle drive.
+
+00:06:15.964 --> 00:06:17.750
+That's the vehicle driving here,
+
+00:06:17.750 --> 00:06:20.480
+and a new addition is this blue box here,
+
+00:06:20.480 --> 00:06:25.819
+which basically requests the entry of the vehicle into the target intersections.
+
+00:06:25.819 --> 00:06:28.939
+So in order for a vehicle to get into the waiting queue,
+
+00:06:28.939 --> 00:06:31.245
+that's something we haven't discussed until now.
+
+00:06:31.245 --> 00:06:34.310
+On the left-hand side, this processing of the vehicle queue,
+
+00:06:34.310 --> 00:06:37.639
+assumed that the vehicle already had been added to the queue,
+
+00:06:37.639 --> 00:06:41.329
+but we didn't discuss how it got there in the first place and this is happening here.
+
+00:06:41.329 --> 00:06:44.375
+So once a vehicle drives along a street and
+
+00:06:44.375 --> 00:06:47.810
+reaches the end of the street and wants to enter intersection,
+
+00:06:47.810 --> 00:06:50.899
+it has to request entry into the intersection.
+
+00:06:50.899 --> 00:06:54.679
+That's indicated by this blue box here and
+
+00:06:54.680 --> 00:06:59.009
+we are starting up a thread which is the green dashed line here.
+
+00:06:59.009 --> 00:07:02.740
+The thread function is called intersection add vehicle to queue.
+
+00:07:02.740 --> 00:07:05.480
+Here we simply add the vehicle to waiting queue,
+
+00:07:05.480 --> 00:07:09.620
+we leave it there and the thread is put to sleep but does nothing until
+
+00:07:09.620 --> 00:07:14.209
+the set signal which we discussed earlier arrives from processed vehicle queue.
+
+00:07:14.209 --> 00:07:16.399
+Now it's your turn to wake up and drive along.
+
+00:07:16.399 --> 00:07:19.574
+Then the signal gets sent back to this block here.
+
+00:07:19.574 --> 00:07:20.889
+Then as I said before,
+
+00:07:20.889 --> 00:07:24.529
+the vehicle can safely enter and it's made safe by
+
+00:07:24.529 --> 00:07:27.589
+the mechanisms used in the project that
+
+00:07:27.589 --> 00:07:31.375
+no other vehicle at this time is already in the intersection.
+
+00:07:31.375 --> 00:07:33.019
+Once it has crossed the intersection,
+
+00:07:33.019 --> 00:07:34.279
+it continues as before.
+
+00:07:34.279 --> 00:07:36.228
+It picks in a destination, crosses,
+
+00:07:36.228 --> 00:07:41.930
+and drives off and the cycle continues until we quit the simulation.
+
+00:07:41.930 --> 00:07:45.410
+So that's the structure of the adapted project,
+
+00:07:45.410 --> 00:07:48.200
+and this is how it's supposed to look.
+
+00:07:48.199 --> 00:07:49.849
+We have a new city grid here,
+
+00:07:49.850 --> 00:07:52.805
+we have a central plaza at somewhere in Paris.
+
+00:07:52.805 --> 00:07:54.715
+This is the octree off.
+
+00:07:54.714 --> 00:08:00.664
+You can see all the vehicles driving towards this huge plaza,
+
+00:08:00.665 --> 00:08:03.110
+and once they get there they have to queue and
+
+00:08:03.110 --> 00:08:05.540
+wait until it's their turn to enter the intersection.
+
+00:08:05.540 --> 00:08:06.875
+If you watch closely here,
+
+00:08:06.875 --> 00:08:08.480
+the central intersection here,
+
+00:08:08.480 --> 00:08:12.210
+there's only a single vehicle entering it at the same time.
+
+00:08:12.209 --> 00:08:16.669
+If you look at the order in which the different vehicles arrive at the intersection,
+
+00:08:16.670 --> 00:08:19.640
+it's exactly the order in which they are allowed to drive
+
+00:08:19.639 --> 00:08:23.120
+off because we have a first-in-first-out principle here.
+
+00:08:23.120 --> 00:08:27.905
+Vehicles are added and in the order in which they have been added they will be allowed
+
+00:08:27.904 --> 00:08:33.414
+to leave the intersection after they have reached the bottom of the queue so to speak.
+
+00:08:33.414 --> 00:08:37.279
+Now let's have a look at your task which you have to complete here.
+
+00:08:37.279 --> 00:08:40.954
+Those are mentioned here. So in total it's three tasks.
+
+00:08:40.955 --> 00:08:45.620
+Task L2.1, this says that in the method vehicle drive,
+
+00:08:45.620 --> 00:08:48.725
+please start up a task using standard async which takes
+
+00:08:48.725 --> 00:08:52.654
+a reference to the method intersection at vehicle to queue,
+
+00:08:52.654 --> 00:08:55.865
+the object_current destination and
+
+00:08:55.865 --> 00:09:00.355
+a shared pointer to this using the get-shared-this function.
+
+00:09:00.355 --> 00:09:03.115
+Actually, what we have to consider here,
+
+00:09:03.115 --> 00:09:06.070
+we are using shared pointers all over the place.
+
+00:09:06.070 --> 00:09:07.750
+Usually, if you were using conventional,
+
+00:09:07.750 --> 00:09:09.070
+that is raw pointers,
+
+00:09:09.070 --> 00:09:14.360
+we could simply pass this object as a reference to the object itself.
+
+00:09:14.360 --> 00:09:16.159
+But this is not working with shared pointer,
+
+00:09:16.159 --> 00:09:19.804
+so we have to use the get-shared-this function.
+
+00:09:19.804 --> 00:09:21.079
+In order to do this,
+
+00:09:21.080 --> 00:09:25.220
+we have to make some adjustments in the header file of the appropriate function.
+
+00:09:25.220 --> 00:09:27.065
+But you will see this in the CAT.
+
+00:09:27.065 --> 00:09:29.375
+Then, once this is done,
+
+00:09:29.375 --> 00:09:33.830
+you have to wait for the data to be available before proceeding to slow down.
+
+00:09:33.830 --> 00:09:35.405
+That's task L2.1.
+
+00:09:35.404 --> 00:09:37.324
+We will shortly look at it in the college.
+
+00:09:37.325 --> 00:09:39.560
+For now this is only a short description here.
+
+00:09:39.559 --> 00:09:43.274
+Let's move onto task L2.2.
+
+00:09:43.274 --> 00:09:45.840
+This says that in the method intersection,
+
+00:09:45.840 --> 00:09:47.235
+add vehicle to queue.
+
+00:09:47.235 --> 00:09:51.080
+You should add the new vehicle to the waiting line by creating a promise,
+
+00:09:51.080 --> 00:09:56.540
+a corresponding future and then add both to _waitingvehicles which is
+
+00:09:56.539 --> 00:09:59.384
+the storage vector in which all the vehicles have to
+
+00:09:59.384 --> 00:10:03.955
+wait when they queue to an intersection until it's their turn to enter.
+
+00:10:03.955 --> 00:10:07.610
+Then we have to wait appropriately until the vehicle has been
+
+00:10:07.610 --> 00:10:11.980
+granted entry as just discussed in the schematic on the slide before.
+
+00:10:11.980 --> 00:10:16.875
+Task L2.3, says that in the method waiting vehicles,
+
+00:10:16.875 --> 00:10:19.455
+permit entry to first in queue.
+
+00:10:19.455 --> 00:10:24.275
+You should get the entries from the front of _promises and _vehicles.
+
+00:10:24.274 --> 00:10:27.799
+Both are member functions in the waiting vehicles class,
+
+00:10:27.799 --> 00:10:30.875
+which basically always store this coupling of
+
+00:10:30.875 --> 00:10:34.759
+a pointer to a vehicle object as well as the associated promise,
+
+00:10:34.759 --> 00:10:37.659
+which is used to send back the information about
+
+00:10:37.659 --> 00:10:41.750
+the respective vehicle being granted entry into the intersection.
+
+00:10:41.750 --> 00:10:44.825
+Once this is done, you fulfill the promise,
+
+00:10:44.825 --> 00:10:49.430
+send the signal back and by this grant permission to enter to
+
+00:10:49.429 --> 00:10:51.169
+the vehicle and we will then
+
+00:10:51.169 --> 00:10:54.365
+proceed according to the schematic as we have seen that before.
+
+00:10:54.365 --> 00:10:58.055
+Finally, you have to remove the front elements from both queues.
+
+00:10:58.054 --> 00:11:00.409
+That means the vehicle that just left, of course,
+
+00:11:00.409 --> 00:11:02.509
+has to be removed from the queues,
+
+00:11:02.509 --> 00:11:06.784
+both from the vehicle queue as well as from the promise queue.
+
+00:11:06.784 --> 00:11:09.213
+But specifically, this is your overview
+
+00:11:09.214 --> 00:11:11.885
+of the tasks you should complete in this lesson project.
+
+00:11:11.884 --> 00:11:13.355
+I wish you all the best for it.
+
+00:11:13.355 --> 00:11:16.200
+See you soon in the next lesson.
+

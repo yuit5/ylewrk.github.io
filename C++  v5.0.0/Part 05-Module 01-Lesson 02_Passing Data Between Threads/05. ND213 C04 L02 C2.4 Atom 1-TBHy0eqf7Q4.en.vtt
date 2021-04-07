@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.490
+Now, welcome to this section on data races.
+
+00:00:02.490 --> 00:00:05.519
+Now, this is one of the topics where you should really pay attention to
+
+00:00:05.519 --> 00:00:08.730
+the details because data races can cost you so much time
+
+00:00:08.730 --> 00:00:11.490
+during debugging and sometimes they only show
+
+00:00:11.490 --> 00:00:15.300
+themselves when the software you wrote is already been shipped to the customer.
+
+00:00:15.300 --> 00:00:18.105
+Actually, that happens quite often with concurrent programs.
+
+00:00:18.105 --> 00:00:23.219
+Now, data races occur when two concurrent threads are accessing the same memory location,
+
+00:00:23.219 --> 00:00:25.695
+where at least one of them is modifying the data.
+
+00:00:25.695 --> 00:00:27.940
+Depending what your system's scheduler does,
+
+00:00:27.940 --> 00:00:31.800
+the first thread might still be writing while the second one is coming along,
+
+00:00:31.800 --> 00:00:35.730
+is already reading, and the result is totally undefined.
+
+00:00:35.729 --> 00:00:37.409
+It might be anything from a crash,
+
+00:00:37.409 --> 00:00:41.679
+what would be the least worst on case to a full-blown security breach,
+
+00:00:41.679 --> 00:00:45.019
+when thread number one is writing sensitive information to a data location,
+
+00:00:45.020 --> 00:00:47.150
+while thread two is still reading from it at
+
+00:00:47.149 --> 00:00:50.364
+that location and maybe is now retrieving a user password.
+
+00:00:50.365 --> 00:00:53.030
+That is why we will take a good look at data races
+
+00:00:53.030 --> 00:00:55.925
+and also discuss some strategies for avoiding them.
+
+00:00:55.924 --> 00:00:57.875
+One of the first strategies involves,
+
+00:00:57.875 --> 00:01:00.814
+overwriting the copy constructor of a class to ensure
+
+00:01:00.814 --> 00:01:04.304
+a proper deep copy of all data structures as performed.
+
+00:01:04.305 --> 00:01:08.525
+The other strategy again involves the move semantics from the previous section.
+
+00:01:08.525 --> 00:01:10.670
+But let us not get too ahead of
+
+00:01:10.670 --> 00:01:13.700
+ourselves and start with the definition of data races first.
+
+00:01:13.700 --> 00:01:15.750
+See you down below.
+

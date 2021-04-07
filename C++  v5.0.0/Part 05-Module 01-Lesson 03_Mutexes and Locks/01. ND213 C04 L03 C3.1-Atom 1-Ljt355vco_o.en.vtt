@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.189
+Now welcome to this third lesson of the concurrency course.
+
+00:00:03.189 --> 00:00:06.359
+At this point you know how to start and how to manage a thread.
+
+00:00:06.360 --> 00:00:10.140
+You know the differences between a thread and a task and you can use
+
+00:00:10.140 --> 00:00:14.920
+the promised future construct to pass data from a color thread to a worker thread.
+
+00:00:14.919 --> 00:00:18.420
+Some of the major disadvantages of promises and futures are
+
+00:00:18.420 --> 00:00:21.390
+their one-time use on the one hand and the fact that
+
+00:00:21.390 --> 00:00:24.539
+you can only pass data in one direction on the other hand.
+
+00:00:24.539 --> 00:00:26.169
+Based on what you know until now,
+
+00:00:26.170 --> 00:00:30.710
+it is not possible to access a shared memory location to freely exchange
+
+00:00:30.710 --> 00:00:35.395
+information because there's always the danger of data races lurking in the shadows.
+
+00:00:35.395 --> 00:00:38.150
+In this lesson, you will get the tools to change this.
+
+00:00:38.149 --> 00:00:40.609
+With the help of mutexes and blocks,
+
+00:00:40.609 --> 00:00:43.969
+you will be able to protect share data from concurrent access and
+
+00:00:43.969 --> 00:00:48.219
+ensure that information can be safely written and read from a location.
+
+00:00:48.219 --> 00:00:49.820
+Also, we will take a look at
+
+00:00:49.820 --> 00:00:53.090
+the new hazard and concurrent programming which is deadlocks.
+
+00:00:53.090 --> 00:00:56.180
+At the end there is a lesson project waiting for you which will extend
+
+00:00:56.179 --> 00:00:59.465
+the traffic simulation with some new concurrency features.
+
+00:00:59.465 --> 00:01:01.940
+So don't lose any time and start with this lesson.
+
+00:01:01.939 --> 00:01:04.109
+See you again soon.
+

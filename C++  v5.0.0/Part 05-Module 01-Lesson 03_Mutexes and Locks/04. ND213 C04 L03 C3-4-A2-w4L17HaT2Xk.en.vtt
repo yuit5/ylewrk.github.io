@@ -1,0 +1,220 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.524
+Let's take a look at the details of the Lesson 3 project.
+
+00:00:03.524 --> 00:00:06.870
+The purpose of this project is to show that everything
+
+00:00:06.870 --> 00:00:10.039
+is not neat and nicely as it seems to be working right now,
+
+00:00:10.039 --> 00:00:12.344
+there is a data race hidden in the code.
+
+00:00:12.345 --> 00:00:14.220
+We have some shared resources,
+
+00:00:14.220 --> 00:00:19.200
+which are _vehicles and _promises in the class WaitingVehicles.
+
+00:00:19.199 --> 00:00:21.660
+We have several threads accessing them at
+
+00:00:21.660 --> 00:00:24.434
+the same time and they are not protected currently.
+
+00:00:24.434 --> 00:00:26.669
+By definition, this is a data race.
+
+00:00:26.670 --> 00:00:29.760
+The data race always happens when we have access to
+
+00:00:29.760 --> 00:00:33.945
+a shared resource where at least one of the accessing threads is writing.
+
+00:00:33.945 --> 00:00:36.564
+Another one might be writing or reading, it doesn't matter,
+
+00:00:36.564 --> 00:00:39.835
+but as soon as one thread is writing,
+
+00:00:39.835 --> 00:00:43.310
+we are having a data race when the resource is not protected property.
+
+00:00:43.310 --> 00:00:47.060
+This is a bug, and it is the idea of this project is to correct
+
+00:00:47.060 --> 00:00:51.230
+this one bug and to prevent such a data race from causing any harm.
+
+00:00:51.229 --> 00:00:53.119
+Also, as an afterthought,
+
+00:00:53.119 --> 00:00:56.390
+as a second aspect of this project, currently,
+
+00:00:56.390 --> 00:00:58.579
+we have some text output to the console,
+
+00:00:58.579 --> 00:01:02.390
+or maybe you want to switch to the debug console with a less than one project,
+
+00:01:02.390 --> 00:01:05.629
+and I'm sure you will see that many strings are mixed up.
+
+00:01:05.629 --> 00:01:08.554
+One threat might be outputting something to the console,
+
+00:01:08.555 --> 00:01:11.570
+and other thread might jump in also put out something,
+
+00:01:11.569 --> 00:01:14.329
+which is in the middle of the other thread writing and
+
+00:01:14.329 --> 00:01:17.060
+it's all jumbled up words which don't make any sense.
+
+00:01:17.060 --> 00:01:21.215
+At least that's the case with some executions of the project.
+
+00:01:21.215 --> 00:01:23.900
+We want this to look clean and nicely,
+
+00:01:23.900 --> 00:01:25.490
+and this is the second job,
+
+00:01:25.489 --> 00:01:31.149
+protect the console standard out so that printed strings are not mixed up.
+
+00:01:31.150 --> 00:01:35.570
+Now, your task is to use the concept of mutex and locks to ensure that
+
+00:01:35.569 --> 00:01:37.250
+the concurrent access of threads to
+
+00:01:37.250 --> 00:01:40.700
+the shared resources is safe and does not cause data races.
+
+00:01:40.700 --> 00:01:43.320
+Even though the graphical appearance of the project,
+
+00:01:43.319 --> 00:01:48.109
+project will not change with regards to the last state in lesson two,
+
+00:01:48.109 --> 00:01:49.950
+we will remove a critical bug here,
+
+00:01:49.950 --> 00:01:52.310
+which is really a valuable addition to
+
+00:01:52.310 --> 00:01:55.790
+the program even though it will probably not get noticed.
+
+00:01:55.790 --> 00:01:59.135
+Let's move forward to see how the output is supposed to look like.
+
+00:01:59.135 --> 00:02:00.500
+So as you can see here,
+
+00:02:00.500 --> 00:02:02.230
+the output of the program has not changed,
+
+00:02:02.230 --> 00:02:05.644
+we have those vehicles approaching the intersection entering one-by-one,
+
+00:02:05.644 --> 00:02:06.880
+and now on the console,
+
+00:02:06.879 --> 00:02:09.259
+we have this very nice output where
+
+00:02:09.259 --> 00:02:12.079
+each vehicle which does something or the intersection does something,
+
+00:02:12.080 --> 00:02:14.570
+is printing its information to the console.
+
+00:02:14.569 --> 00:02:16.979
+Everything is in a nice order,
+
+00:02:16.979 --> 00:02:18.914
+one after the other, there's nothing mixed up,
+
+00:02:18.914 --> 00:02:21.739
+and that's exactly how a protected console
+
+00:02:21.739 --> 00:02:24.784
+is supposed to look like for several threads or writing to.
+
+00:02:24.784 --> 00:02:26.465
+Let's take a look at your tasks here.
+
+00:02:26.465 --> 00:02:30.349
+So task L3.1, in class WaitingVehicles
+
+00:02:30.349 --> 00:02:34.745
+please safeguard all accesses to the private members _vehicles as well as
+
+00:02:34.745 --> 00:02:39.140
+_promises with an appropriate locking mechanism that will not cause a deadlock in
+
+00:02:39.139 --> 00:02:44.479
+situations where access to the resource are accidentally blocked.
+
+00:02:44.479 --> 00:02:46.469
+That's the first one. The second one is,
+
+00:02:46.469 --> 00:02:51.305
+at a static mutex to the base class TrafficObject called _mtxCout,
+
+00:02:51.305 --> 00:02:54.460
+and also properly instantiated in the source file.
+
+00:02:54.460 --> 00:02:59.300
+This mutex will be used in the next task to protect standard output as we have just seen.
+
+00:02:59.300 --> 00:03:01.594
+The last task L3.3,
+
+00:03:01.594 --> 00:03:03.125
+in the method intersection,
+
+00:03:03.125 --> 00:03:06.365
+addVehicleToQueue and also in Vehicle:: drive(),
+
+00:03:06.365 --> 00:03:08.510
+please ensure that the text output locks
+
+00:03:08.509 --> 00:03:11.149
+the console as a shared resource, as we have just seen.
+
+00:03:11.150 --> 00:03:13.685
+Use a mutex _mtxCout,
+
+00:03:13.685 --> 00:03:19.034
+you have added in the previous task and to the base class traffic object,
+
+00:03:19.034 --> 00:03:21.694
+and make sure that in-between the two calls to send it out
+
+00:03:21.694 --> 00:03:24.995
+at the beginning and at the end of addVehicleToQueue,
+
+00:03:24.995 --> 00:03:26.765
+the lock is not held.
+
+00:03:26.764 --> 00:03:29.329
+So those are your tasks for this lesson project here.
+
+00:03:29.330 --> 00:03:30.560
+I wish you all the best again.
+
+00:03:30.560 --> 00:03:32.270
+See you in the next lesson,
+
+00:03:32.270 --> 00:03:35.939
+which is the last less than before the final project comes up.
+

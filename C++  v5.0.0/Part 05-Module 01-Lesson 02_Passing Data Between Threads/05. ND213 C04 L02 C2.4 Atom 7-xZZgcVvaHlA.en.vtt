@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.899
+So data races are one of your primary adversaries in concurrent programming,
+
+00:00:03.899 --> 00:00:06.179
+and they can hide very effectively because they
+
+00:00:06.179 --> 00:00:08.625
+do not show up every time a program is run.
+
+00:00:08.625 --> 00:00:14.099
+Maybe only one from 100 runtime executions can show up the concurrency bug.
+
+00:00:14.099 --> 00:00:15.615
+Now, here's a useful tip for you,
+
+00:00:15.615 --> 00:00:19.800
+delaying threads using standard sleep for can help expose data races.
+
+00:00:19.800 --> 00:00:23.130
+We are doing this in many examples in this section also follow sections,
+
+00:00:23.129 --> 00:00:26.039
+and it's also useful for you during debugging.
+
+00:00:26.039 --> 00:00:28.244
+One of the keys to thread safety as you have seen
+
+00:00:28.245 --> 00:00:31.109
+is to use move semantics in conjunction with uniqueness.
+
+00:00:31.109 --> 00:00:34.859
+It is the responsibility of you as a programmer to ensure that the pointers
+
+00:00:34.859 --> 00:00:38.835
+through objects that are moved between threads are always unique.
+
+00:00:38.835 --> 00:00:42.109
+Also, you have seen how we can override the copy constructor to
+
+00:00:42.109 --> 00:00:45.589
+enable a proper deep copy of a proprietary data structure or class.
+
+00:00:45.590 --> 00:00:47.765
+Let me give you one last piece of advice
+
+00:00:47.765 --> 00:00:51.005
+regardless of the circumstances when one thread is writing,
+
+00:00:51.005 --> 00:00:52.265
+and another one is reading,
+
+00:00:52.265 --> 00:00:54.905
+and the data which they access has not been protected,
+
+00:00:54.905 --> 00:01:00.549
+this is by definition a data race even if no faulty behavior seems to happen at the time.
+
+00:01:00.549 --> 00:01:02.489
+Avoid this at all costs.
+
+00:01:02.490 --> 00:01:03.810
+Also in the next lesson,
+
+00:01:03.810 --> 00:01:08.344
+we will look at ways to properly protect share data so that data races will not happen.
+
+00:01:08.344 --> 00:01:09.560
+But before we get there,
+
+00:01:09.560 --> 00:01:12.420
+let's take a look at the lesson project.
+

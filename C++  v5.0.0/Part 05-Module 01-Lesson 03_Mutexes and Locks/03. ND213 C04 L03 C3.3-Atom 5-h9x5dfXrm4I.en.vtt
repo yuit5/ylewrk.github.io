@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.910
+Now, lock guard and unique lock are two powerful concepts
+
+00:00:02.910 --> 00:00:06.120
+that make it very easy to manage access to a shared resource.
+
+00:00:06.120 --> 00:00:09.060
+They are both an extension of the basic mutex concept,
+
+00:00:09.060 --> 00:00:14.130
+and differ mostly with regard to the flexibility of the locking and unlocking operation.
+
+00:00:14.130 --> 00:00:16.440
+Now remember that mutexes should never be used
+
+00:00:16.440 --> 00:00:18.810
+directly even though this technically works.
+
+00:00:18.809 --> 00:00:21.449
+The danger of a miss clock is simply too great.
+
+00:00:21.449 --> 00:00:22.905
+It outweighs the benefits.
+
+00:00:22.905 --> 00:00:24.195
+So don't do this.
+
+00:00:24.195 --> 00:00:27.690
+One situation with lock guard and which lock guard does not cover is
+
+00:00:27.690 --> 00:00:31.390
+a deadlock situation where one thread waits for another thread to unlock a resource,
+
+00:00:31.390 --> 00:00:35.670
+or at the same time locking a resource for which the other thread waits.
+
+00:00:35.670 --> 00:00:37.800
+Now this dilemma, where everything depends on
+
+00:00:37.799 --> 00:00:40.829
+the correct order of locking and unlocking the mutexes.
+
+00:00:40.829 --> 00:00:42.769
+This can be solved by using
+
+00:00:42.770 --> 00:00:45.859
+the standard lock operator as you have seen in the last example.
+
+00:00:45.859 --> 00:00:51.090
+So I think you're well prepared now for the next lesson project. See you there.
+
