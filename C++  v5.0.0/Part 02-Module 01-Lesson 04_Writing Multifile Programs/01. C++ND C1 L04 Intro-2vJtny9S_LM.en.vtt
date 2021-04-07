@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.004
+Welcome to the lesson on writing multi-file programs in C++.
+
+00:00:04.004 --> 00:00:05.535
+So far in this course,
+
+00:00:05.535 --> 00:00:08.175
+you've written all of your code in a single file.
+
+00:00:08.175 --> 00:00:12.179
+This works well for small programs or while you're prototyping an idea.
+
+00:00:12.179 --> 00:00:13.754
+But as your code-base grows,
+
+00:00:13.755 --> 00:00:16.830
+you'll want the ability to organize your code into multiple files,
+
+00:00:16.829 --> 00:00:19.389
+just as you might have done in other languages you've worked with.
+
+00:00:19.390 --> 00:00:22.100
+In this lesson you'll learn how to do exactly that.
+
+00:00:22.100 --> 00:00:25.040
+We'll start out with header files and you'll
+
+00:00:25.039 --> 00:00:28.464
+use header files to break a single file into multiple files.
+
+00:00:28.464 --> 00:00:31.370
+Then you'll learn a little bit about build systems which
+
+00:00:31.370 --> 00:00:34.550
+will allow you to efficiently build large programs,
+
+00:00:34.549 --> 00:00:38.434
+and a particular build system we'll cover is CMake and Make.
+
+00:00:38.435 --> 00:00:43.285
+Then you'll learn some tools for writing larger programs including references,
+
+00:00:43.284 --> 00:00:50.464
+pointers, maps, classes and a little bit of object-oriented programming in C++.
+
+00:00:50.465 --> 00:00:52.010
+You will learn a lot more about
+
+00:00:52.009 --> 00:00:55.009
+object-oriented programming in a later course in this nano degree.
+
+00:00:55.009 --> 00:00:56.299
+But after this lesson,
+
+00:00:56.299 --> 00:00:58.789
+you'll be ready to tackle the route planning project and you'll
+
+00:00:58.789 --> 00:01:02.310
+be prepared to write your own multi-file programs.
+

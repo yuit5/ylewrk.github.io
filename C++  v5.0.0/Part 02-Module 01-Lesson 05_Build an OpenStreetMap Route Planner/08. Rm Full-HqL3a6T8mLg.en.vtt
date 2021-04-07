@@ -1,0 +1,400 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.430
+Now, let's have a look at the route_model.h
+
+00:00:02.430 --> 00:00:05.745
+file which is the header file for the route model class.
+
+00:00:05.745 --> 00:00:09.300
+The route model class inherits from the model class
+
+00:00:09.300 --> 00:00:13.065
+which is provided by the io 2d OpenStreetMap example.
+
+00:00:13.064 --> 00:00:16.109
+Route model class has a subclass called
+
+00:00:16.109 --> 00:00:19.969
+Node which inherits from the model struct also called Node.
+
+00:00:19.969 --> 00:00:25.229
+The model struct node provided x and y coordinates and we extend if
+
+00:00:25.230 --> 00:00:30.464
+that struct by also adding a pointer to the parent of the Node,
+
+00:00:30.464 --> 00:00:32.070
+an h_value of the Node,
+
+00:00:32.070 --> 00:00:34.075
+the g_value of the Node,
+
+00:00:34.075 --> 00:00:36.530
+a boolean which tells whether the node has been
+
+00:00:36.530 --> 00:00:39.185
+visited and that's useful for instance search,
+
+00:00:39.185 --> 00:00:42.560
+and then a vector of node pointers called neighbors.
+
+00:00:42.560 --> 00:00:45.020
+Each node has this vector of neighbors and that
+
+00:00:45.020 --> 00:00:48.095
+will be populated with all of the neighbors of the node.
+
+00:00:48.094 --> 00:00:53.960
+There's also a method called FindNeighbors which is what is going to populate
+
+00:00:53.960 --> 00:00:56.975
+this vector once it's called and the distance method
+
+00:00:56.975 --> 00:01:00.560
+which returns the distance from this node to any other node.
+
+00:01:00.560 --> 00:01:02.795
+On lines 26 and 27,
+
+00:01:02.795 --> 00:01:04.234
+there are two constructors,
+
+00:01:04.234 --> 00:01:08.730
+a default constructor and a constructor that accepts an index,
+
+00:01:08.730 --> 00:01:12.750
+a route model, and an existing model node.
+
+00:01:12.750 --> 00:01:19.025
+We can use this to construct of RouteModel node from an existing model node.
+
+00:01:19.025 --> 00:01:23.240
+The index is useful to keep track of the nodes and it
+
+00:01:23.239 --> 00:01:27.560
+is also helpful to keep track of the model to which this node belongs.
+
+00:01:27.560 --> 00:01:29.060
+Over on the right side,
+
+00:01:29.060 --> 00:01:33.335
+we use a constructor list to initialize all of these to variables.
+
+00:01:33.334 --> 00:01:38.324
+The node has some private variables index
+
+00:01:38.325 --> 00:01:42.570
+and a private function called FindNeighbor which is
+
+00:01:42.569 --> 00:01:45.719
+used in this FindNeighbors function
+
+00:01:45.719 --> 00:01:53.019
+and also a pointer to the RouteModel to which this node belongs.
+
+00:01:53.269 --> 00:01:56.670
+Down below this class node,
+
+00:01:56.670 --> 00:01:59.640
+we see the RouteModel constructor which takes
+
+00:01:59.640 --> 00:02:03.769
+an XML file which is the OpenStreetMap data.
+
+00:02:03.769 --> 00:02:08.329
+There's a method called FindClosestNode which allows us to
+
+00:02:08.330 --> 00:02:13.594
+find the closest node in the model given some x and y coordinates.
+
+00:02:13.594 --> 00:02:17.990
+Here's a getter function which returns a vector of nodes.
+
+00:02:17.990 --> 00:02:22.080
+So this vector is declared
+
+00:02:22.080 --> 00:02:26.660
+down here and these are all of the nodes that are in the model and
+
+00:02:26.659 --> 00:02:30.784
+a vector called path which we will use to store
+
+00:02:30.784 --> 00:02:33.259
+the final path from the starting to ending
+
+00:02:33.259 --> 00:02:37.519
+points and that path will be used for rendering later on.
+
+00:02:37.520 --> 00:02:40.760
+There are some private variables down at the bottom
+
+00:02:40.759 --> 00:02:45.354
+here and a private method called CreateNodeToRoadHashMap.
+
+00:02:45.354 --> 00:02:51.139
+So this method creates a map from
+
+00:02:51.139 --> 00:02:54.469
+nodes to the roads that they belong to and that's
+
+00:02:54.469 --> 00:02:59.034
+useful when we want to find the neighboring node for a given node.
+
+00:02:59.034 --> 00:03:07.155
+Here is the map itself and that's stored as node_to_road.
+
+00:03:07.155 --> 00:03:11.669
+Then lastly, the private vector of all of the nodes.
+
+00:03:13.370 --> 00:03:16.879
+Now, let's have a look at route_model.cpp which
+
+00:03:16.879 --> 00:03:20.840
+contains all of the method definitions for the route model class.
+
+00:03:20.840 --> 00:03:24.200
+At the beginning, we have a definition for the class constructor.
+
+00:03:24.199 --> 00:03:27.229
+This class constructor and the constructor list calls
+
+00:03:27.229 --> 00:03:31.024
+the model constructor with the XML data that is passed in.
+
+00:03:31.025 --> 00:03:37.460
+This creates the model using the XML data and then the lines below iterate through
+
+00:03:37.460 --> 00:03:40.670
+the nodes in that model and create RouteModel nodes for each
+
+00:03:40.669 --> 00:03:44.405
+one of them and then store those RouteModel nodes in the m-Nodes vector.
+
+00:03:44.405 --> 00:03:49.038
+So what we see here is that this model
+
+00:03:49.038 --> 00:03:55.564
+nodes call is a getter function which gets all of the nodes that are stored in model.
+
+00:03:55.564 --> 00:03:57.395
+Then for each of those nodes,
+
+00:03:57.395 --> 00:04:01.640
+we call the RouteModel node constructor right here.
+
+00:04:01.639 --> 00:04:07.934
+So we are using the counter as the index is passed in,
+
+00:04:07.935 --> 00:04:12.675
+the model node to create the RouteModel node.
+
+00:04:12.675 --> 00:04:15.990
+Then this which is the current RouteModel,
+
+00:04:15.990 --> 00:04:19.514
+a pointer to the current RouteModel being passed in.
+
+00:04:19.514 --> 00:04:23.779
+Emplace_back is much like push_back except emplace_back
+
+00:04:23.779 --> 00:04:28.579
+returns a reference to the object that has just
+
+00:04:28.579 --> 00:04:32.959
+been pushed on to the spectrum and emplace_back and
+
+00:04:32.959 --> 00:04:38.224
+push_back function slightly differently and that push_back may create a temporary copy.
+
+00:04:38.225 --> 00:04:42.230
+We could just as easily have used push_back in this case.
+
+00:04:42.230 --> 00:04:47.069
+So after we push the node onto the m_Nodes vector,
+
+00:04:47.069 --> 00:04:48.915
+we increment the counter.
+
+00:04:48.915 --> 00:04:50.730
+Then in this class constructor,
+
+00:04:50.730 --> 00:04:56.685
+we also call the CreateNodeToRoadHashMap which is defined below.
+
+00:04:56.685 --> 00:05:00.365
+In CreateNodeToRoadHashMap, we want to create a map
+
+00:05:00.365 --> 00:05:03.980
+from the index of each node to the road that it belongs to.
+
+00:05:03.980 --> 00:05:07.310
+So first, we iterate through all of the roads.
+
+00:05:07.310 --> 00:05:12.470
+So this Roads parentheses here gets all of the roads in the model.
+
+00:05:12.470 --> 00:05:16.130
+Then we check that the road type is not a foot way.
+
+00:05:16.129 --> 00:05:18.829
+So we would actually only want to include roads that we
+
+00:05:18.829 --> 00:05:22.199
+can drive on that we'll be using for mapping.
+
+00:05:22.199 --> 00:05:26.360
+Then we get the way that this road belongs to.
+
+00:05:26.360 --> 00:05:29.300
+So this road.way is an index of
+
+00:05:29.300 --> 00:05:34.009
+way and this way returns a vector of all the ways in the model.
+
+00:05:34.009 --> 00:05:36.995
+So we take all the ways in the model,
+
+00:05:36.995 --> 00:05:41.810
+we index by the way that this particular road belongs to,
+
+00:05:41.810 --> 00:05:45.310
+and then we get all of the nodes that are on that way.
+
+00:05:45.310 --> 00:05:48.915
+Then for each of those indices,
+
+00:05:48.915 --> 00:05:52.490
+we check whether the index is already
+
+00:05:52.490 --> 00:05:56.150
+in the HashMap and if that index is not in the HashMap,
+
+00:05:56.149 --> 00:05:59.750
+we create an empty vector for that index and then we
+
+00:05:59.750 --> 00:06:04.384
+push the road into that vector for that index.
+
+00:06:04.384 --> 00:06:08.329
+So this creates a HashMap which maps
+
+00:06:08.329 --> 00:06:14.074
+the indices to a vector of roads that that node belongs to.
+
+00:06:14.074 --> 00:06:20.689
+So it's the indices of the nodes to the vector of roads that that index belongs to.
+
+00:06:20.689 --> 00:06:26.600
+The next method is the Node FindNeighbor method which takes a vector of node indices as
+
+00:06:26.600 --> 00:06:29.370
+an argument and it returns a pointer to
+
+00:06:29.370 --> 00:06:33.725
+the closest_node in that vector to the current node.
+
+00:06:33.725 --> 00:06:36.830
+So this is a method of node and it is called on
+
+00:06:36.829 --> 00:06:41.425
+a current node and then passed to these node indices.
+
+00:06:41.425 --> 00:06:44.629
+This works by iterating through each of
+
+00:06:44.629 --> 00:06:51.665
+the node indices and it finds the node object that belongs to that node index.
+
+00:06:51.665 --> 00:06:56.350
+So it does this by looking at the vector of nodes
+
+00:06:56.350 --> 00:07:01.640
+and then using the index to get the correct node out.
+
+00:07:01.639 --> 00:07:04.009
+So this is a node object.
+
+00:07:04.009 --> 00:07:09.800
+Then this loop checks if the distance to that node is less than
+
+00:07:09.800 --> 00:07:15.920
+the distance to the closest_node that we've already recorded.
+
+00:07:15.920 --> 00:07:17.629
+If it is, it replaces
+
+00:07:17.629 --> 00:07:25.199
+the closest_node with the current node and eventually returns to the closest_node.
+
+00:07:26.149 --> 00:07:30.579
+The next method is the FindNeighbors method.
+
+00:07:30.850 --> 00:07:34.939
+This method uses the index of the current node which is given
+
+00:07:34.939 --> 00:07:38.029
+by this arrow index right here and
+
+00:07:38.029 --> 00:07:40.039
+the node_to_road HashMap which
+
+00:07:40.040 --> 00:07:45.110
+returns on the vector of roads that the current node belongs to.
+
+00:07:45.110 --> 00:07:48.960
+Then for each of those roads,
+
+00:07:49.000 --> 00:07:55.589
+we call FindNeighbor on the vector of nodes that belongs to that road.
+
+00:07:55.990 --> 00:08:00.400
+This FindNeighbor produces a new neighbor and we
+
+00:08:00.399 --> 00:08:05.389
+add the new neighbor to the back of the neighbors vector.
+
+00:08:06.959 --> 00:08:11.829
+The last method definition is the definition for FindClosestNode.
+
+00:08:11.829 --> 00:08:19.844
+So this takes a float x and y which we store as node input.
+
+00:08:19.845 --> 00:08:23.975
+We set input.x to x and input.y to y.
+
+00:08:23.975 --> 00:08:27.760
+We start out with a minimum distance and
+
+00:08:27.759 --> 00:08:32.335
+a float distance and the index of the closest node so far.
+
+00:08:32.335 --> 00:08:38.675
+Then we iterate over all roads in the model that are not of type Footway.
+
+00:08:38.674 --> 00:08:41.959
+For each of those roads,
+
+00:08:42.039 --> 00:08:47.149
+we find the way that the road belongs to with this and then we
+
+00:08:47.149 --> 00:08:52.159
+find the indices of all the nodes on that way.
+
+00:08:52.159 --> 00:08:54.769
+For each of those node indices,
+
+00:08:54.769 --> 00:09:01.595
+we check the distance to the input node from that node index.
+
+00:09:01.595 --> 00:09:04.955
+If the distance is less than our minimum distance,
+
+00:09:04.955 --> 00:09:09.605
+we set the closest_index to the node_index then the minimum_distance to the distance.
+
+00:09:09.605 --> 00:09:18.090
+Once we're done, we're able to return the nodes or the node given by the closest_index.
+

@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.720
+Well done. You are now able to break a single file program into
+
+00:00:03.720 --> 00:00:06.030
+multiple files and you've learned some of the tools
+
+00:00:06.030 --> 00:00:08.714
+that will allow you to create larger programs in the future.
+
+00:00:08.714 --> 00:00:11.699
+Let's do a quick review of what you've learned in this lesson.
+
+00:00:11.699 --> 00:00:14.339
+We started out this lesson with header files,
+
+00:00:14.339 --> 00:00:17.894
+where you used headers to break a single file into multiple files.
+
+00:00:17.894 --> 00:00:20.339
+Then you learned a little bit about build systems,
+
+00:00:20.339 --> 00:00:23.655
+and in particular you learned about CMake and Make.
+
+00:00:23.655 --> 00:00:28.395
+Finally, you learned some tools for writing larger programs including references,
+
+00:00:28.394 --> 00:00:35.210
+pointers, maps, classes, and a little bit about object oriented programming in C++.
+
+00:00:35.210 --> 00:00:38.285
+Headers, CMake, pointers, and references,
+
+00:00:38.284 --> 00:00:40.519
+and object-oriented programming are topics you will
+
+00:00:40.520 --> 00:00:43.040
+see over and over again throughout this Nanodegree.
+
+00:00:43.039 --> 00:00:46.894
+So you'll get a lot more practice with each of them as you continue beyond this course.
+
+00:00:46.895 --> 00:00:50.975
+However, you are now well-prepared to start the final project for the course.
+
+00:00:50.975 --> 00:00:53.939
+Have a look at the next lesson to get started.
+

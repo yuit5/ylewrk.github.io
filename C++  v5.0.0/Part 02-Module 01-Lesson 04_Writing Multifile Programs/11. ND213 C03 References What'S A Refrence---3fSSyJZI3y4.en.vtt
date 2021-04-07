@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.389 --> 00:00:10.574
+A lot of the time in code you have to point at some stuff that's over there.
+
+00:00:10.574 --> 00:00:14.669
+One of the reasons is that you don't want to move the stuff around all the time,
+
+00:00:14.669 --> 00:00:19.800
+so you sent what is either called a pointer or reference or what they're.
+
+00:00:19.800 --> 00:00:23.190
+In C++, a pointer and a reference are roughly the
+
+00:00:23.190 --> 00:00:26.790
+same except that it's easier to use a reference,
+
+00:00:26.789 --> 00:00:28.605
+you don't have to say,
+
+00:00:28.605 --> 00:00:29.835
+"Go in there and get it",
+
+00:00:29.835 --> 00:00:31.410
+you just use it.
+
+00:00:31.410 --> 00:00:36.579
+It's like a reference in many other languages like Java or such,
+
+00:00:36.579 --> 00:00:43.460
+and furthermore a reference cannot be made to refer to a different object.
+
+00:00:43.460 --> 00:00:48.500
+If I want to give you a reference to an object and if you're on a reference,
+
+00:00:48.500 --> 00:00:52.189
+and you can now use my object but you can't make your reference point
+
+00:00:52.189 --> 00:00:56.420
+to other objects of mine which you could with a pointer,
+
+00:00:56.420 --> 00:00:59.570
+which comes from C and well in hardware,
+
+00:00:59.570 --> 00:01:03.920
+if you have an address in some place you can give its pointer you don't know the address.
+
+00:01:03.920 --> 00:01:08.420
+So that is good for low-level hardware and it's bad for the higher levels.
+
+00:01:08.420 --> 00:01:14.310
+Reference only refers to one thing and that's it.,
+

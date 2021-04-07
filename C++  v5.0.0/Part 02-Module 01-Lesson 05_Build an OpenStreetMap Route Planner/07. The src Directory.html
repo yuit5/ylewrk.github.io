@@ -1,0 +1,286 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The src Directory</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Build an OpenStreetMap Route Planner</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Intro.html">01. Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. The OpenStreetMap Project.html">02. The OpenStreetMap Project</a>
+    </li>
+    <li class="">
+      <a href="03. Building and Running.html">03. Building and Running</a>
+    </li>
+    <li class="">
+      <a href="04. Testing.html">04. Testing</a>
+    </li>
+    <li class="">
+      <a href="05. Project Code Overview.html">05. Project Code Overview</a>
+    </li>
+    <li class="">
+      <a href="06. Project Starter Repository.html">06. Project Starter Repository</a>
+    </li>
+    <li class="">
+      <a href="07. The src Directory.html">07. The src Directory</a>
+    </li>
+    <li class="">
+      <a href="08. The src Directory Additional Files.html">08. The src Directory Additional Files</a>
+    </li>
+    <li class="">
+      <a href="09. Steps to Complete the Project.html">09. Steps to Complete the Project</a>
+    </li>
+    <li class="">
+      <a href="10. Project Submission and Workspace.html">10. Project Submission and Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Build an OpenStreetMap Route Planner.html">Project Description - Build an OpenStreetMap Route Planner</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Build an OpenStreetMap Route Planner.html">Project Rubric - Build an OpenStreetMap Route Planner</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. The src Directory</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="the-src-directory">The <code>src</code> Directory</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The <code>src</code> directory contains the following files:</p>
+<ul>
+<li><code>main.cpp</code></li>
+<li><code>model.h</code> and <code>model.cpp</code></li>
+<li><code>render.h</code>and <code>render.cpp</code></li>
+<li><code>route_model.h</code> and `route_model.cpp</li>
+<li><code>route_planner.h</code> and `route_planner.cpp</li>
+</ul>
+<p>You will be writing all of your code in <code>main.cpp</code>and <code>route_planner.cpp</code>, so we will cover those files first.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/lesson-diagrams.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>&nbsp;<br />
+&nbsp;</p>
+<h2 id="maincpp">main.cpp</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Main</p></h3>
+  <video controls>
+  <source src="07. Main-3cpzSaLqyVs.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. Main-3cpzSaLqyVs.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The <code>main.cpp</code> controls the flow of the program, accomplishing four primary tasks:</p>
+<ul>
+<li>The OSM data is read into the program. </li>
+<li>A <code>RouteModel</code> object is created to store the OSM data in usable data structures.</li>
+<li>A <code>RoutePlanner</code> object is created using the <code>RouteModel</code>. This planner will eventually carry out the A* search on the model data and store the search results in the <code>RouteModel</code>.</li>
+<li>The <code>RouteModel</code> data is rendered using the IO2D library.</li>
+</ul>
+<p>Your first task is to complete <strong>TODO</strong> in <code>main.cpp</code>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr />
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2 id="route_plannerh-and-route_plannercpp">route_planner.h and route_planner.cpp</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Rp Full</p></h3>
+  <video controls>
+  <source src="07. Rp Full-C79dfjxHruo.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="07. Rp Full-C79dfjxHruo.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>These files define the <code>RoutePlanner</code> class and methods for the A* search . Your task is to implement the A* search by completing all of the <strong>TODOs</strong> in <code>route_planner.cpp</code>.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. The src Directory Additional Files.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. The src Directory')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

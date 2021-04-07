@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.110 --> 00:00:02.355
+Once your project has built,
+
+00:00:02.355 --> 00:00:04.839
+you can try running the project.
+
+00:00:05.839 --> 00:00:09.705
+So if we ls in the build here,
+
+00:00:09.705 --> 00:00:14.669
+we see an executable OSM_A_ star_search.
+
+00:00:16.489 --> 00:00:22.739
+If we run that, you should see a map pop up with nothing on it.
+
+00:00:22.739 --> 00:00:28.599
+So no path has been created yet because you haven't written any code yet. That's it.
+

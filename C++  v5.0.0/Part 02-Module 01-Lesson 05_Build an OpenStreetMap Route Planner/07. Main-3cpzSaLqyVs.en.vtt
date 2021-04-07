@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.380 --> 00:00:04.379
+Main.cpp begins with a function ReadFile,
+
+00:00:04.379 --> 00:00:06.089
+which accepts a string which is
+
+00:00:06.089 --> 00:00:09.089
+the path to the file that we'll be using for this program.
+
+00:00:09.089 --> 00:00:14.070
+ReadFile begins by creating an input file stream using ifstream here and
+
+00:00:14.070 --> 00:00:19.035
+this input file stream is called is and the is is initialized using the path.
+
+00:00:19.035 --> 00:00:21.690
+Then also, two options here,
+
+00:00:21.690 --> 00:00:25.410
+standard ios binary and standard ios ate.
+
+00:00:25.410 --> 00:00:28.699
+Binary means that we'll be reading the data and as
+
+00:00:28.699 --> 00:00:32.839
+binary data and not converting to any other data type like string.
+
+00:00:32.840 --> 00:00:36.395
+An ate stands for at the end,
+
+00:00:36.395 --> 00:00:40.200
+which means that it will immediately seek to the end of the InputStream.
+
+00:00:40.200 --> 00:00:43.910
+The reason for doing that is that then we can use
+
+00:00:43.909 --> 00:00:48.184
+input string tellg to determine the size of the input stream,
+
+00:00:48.185 --> 00:00:53.340
+and we can create a vector called Contents initialized to that size.
+
+00:00:53.340 --> 00:00:55.570
+So this is a vector of bytes.
+
+00:00:55.570 --> 00:01:00.530
+Then we can seek back to the beginning of the input stream on line 22.
+
+00:01:00.530 --> 00:01:06.974
+Then on line 23, read all of the input stream into the contents vector.
+
+00:01:06.974 --> 00:01:13.744
+When we're done, we will return the contents vector using the standard move of contents.
+
+00:01:13.745 --> 00:01:17.015
+Move is not something that we've covered in this course.
+
+00:01:17.015 --> 00:01:18.980
+It will be covered later on the another degree.
+
+00:01:18.980 --> 00:01:22.939
+Basically, move allows you to transfer the contents of
+
+00:01:22.939 --> 00:01:27.780
+this vector to another variable without using pointers or references.
+
+00:01:28.099 --> 00:01:30.314
+Down below in main,
+
+00:01:30.314 --> 00:01:33.980
+we have some code here to parse command-line arguments.
+
+00:01:33.980 --> 00:01:37.850
+So you'll see that there's a possible command line argument of dash f,
+
+00:01:37.849 --> 00:01:41.839
+which allows you to specify the osm datafile that you want to use.
+
+00:01:41.840 --> 00:01:44.310
+If you don't specify an osm datafile,
+
+00:01:44.310 --> 00:01:48.254
+then osm datafile will be set to map.osm,
+
+00:01:48.254 --> 00:01:50.219
+which is the data file we provide.
+
+00:01:50.219 --> 00:01:55.265
+Then on line 44, there's a vector of bytes called osm data,
+
+00:01:55.265 --> 00:02:01.265
+and lines 46 through 52 use the ReadFile function to read
+
+00:02:01.265 --> 00:02:08.580
+the contents of this osm datafile into the vector osmdata.
+
+00:02:09.409 --> 00:02:15.049
+Then on line 60, we create a route model object using the osm data.
+
+00:02:15.050 --> 00:02:17.405
+This route model object is called model.
+
+00:02:17.405 --> 00:02:20.360
+Then we create a route_planner object using
+
+00:02:20.360 --> 00:02:24.325
+that model and the coordinates 10, 10, 90, 90.
+
+00:02:24.324 --> 00:02:28.729
+10, 10 are the x and y coordinates of the starting and 90,
+
+00:02:28.729 --> 00:02:31.969
+90 are the x and y coordinates at the ending point.
+
+00:02:31.969 --> 00:02:36.469
+After we've created this routeplanner object, main calls routeplanner.
+
+00:02:36.469 --> 00:02:39.300
+AStarSearch, which performs the AStarSearch on
+
+00:02:39.300 --> 00:02:43.910
+the route planner and records the results in the route planner object.
+
+00:02:43.909 --> 00:02:46.593
+Afterwards, on line 69,
+
+00:02:46.593 --> 00:02:50.500
+there's a random object created using the model.
+
+00:02:50.500 --> 00:02:58.229
+Then from 71-79 is some IO2D code to display the results.
+
+00:02:58.229 --> 00:03:00.759
+Here in main is your first to do,
+
+00:03:00.759 --> 00:03:03.544
+which is to accept user input for the start_x,
+
+00:03:03.544 --> 00:03:06.679
+start_y, end_x, and end_y coordinates.
+
+00:03:06.680 --> 00:03:12.180
+You'll use this user input to replace these coordinates here.
+

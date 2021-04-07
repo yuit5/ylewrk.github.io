@@ -1,0 +1,362 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Building and Running</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Build an OpenStreetMap Route Planner</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Intro.html">01. Project Intro</a>
+    </li>
+    <li class="">
+      <a href="02. The OpenStreetMap Project.html">02. The OpenStreetMap Project</a>
+    </li>
+    <li class="">
+      <a href="03. Building and Running.html">03. Building and Running</a>
+    </li>
+    <li class="">
+      <a href="04. Testing.html">04. Testing</a>
+    </li>
+    <li class="">
+      <a href="05. Project Code Overview.html">05. Project Code Overview</a>
+    </li>
+    <li class="">
+      <a href="06. Project Starter Repository.html">06. Project Starter Repository</a>
+    </li>
+    <li class="">
+      <a href="07. The src Directory.html">07. The src Directory</a>
+    </li>
+    <li class="">
+      <a href="08. The src Directory Additional Files.html">08. The src Directory Additional Files</a>
+    </li>
+    <li class="">
+      <a href="09. Steps to Complete the Project.html">09. Steps to Complete the Project</a>
+    </li>
+    <li class="">
+      <a href="10. Project Submission and Workspace.html">10. Project Submission and Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Build an OpenStreetMap Route Planner.html">Project Description - Build an OpenStreetMap Route Planner</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Build an OpenStreetMap Route Planner.html">Project Rubric - Build an OpenStreetMap Route Planner</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Building and Running</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="building-and-running">Building and Running</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>To get started with your project, you can download the code from the GitHub repo <a href="https://github.com/udacity/CppND-Route-Planning-Project" rel="noopener noreferrer" target="_blank">here</a>, or you can use the workspace provided below. If you decide to work on this project on your local machine, you will need to install the dependencies outlined in the GitHub <a href="https://github.com/udacity/CppND-Route-Planning-Project/blob/master/README.md" rel="noopener noreferrer" target="_blank">README</a> for the project.</p>
+<p>In this classroom concept, you will see the instructions for building, running, and testing your project. In the next classroom concept, you will see a detailed overview of the project code, so you'll be well prepared to start work on the project.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="building">Building</h2>
+<p>This project will use CMake as the build system. Building the project code can be done from the terminal workspace or from the virtual desktop workspace. It is also possible to build this project locally. To do this, you will need to install the project dependencies in your local environment, including the IO2D library, which can be difficult. The complete list of dependencies can be found in the <a href="https://github.com/udacity/CppND-Route-Planning-Project/blob/master/README.md" rel="noopener noreferrer" target="_blank">GitHub README</a> for the project.</p>
+<h4 id="building-using-udacity-workspaces">Building Using Udacity Workspaces</h4>
+<p>You can use either of the following ways to build the project using Udacity workspace:</p>
+<ol>
+<li>Using the terminal workspace. </li>
+<li>Using the virtual desktop by clicking on the "Desktop" button. If using the virtual desktop, <strong>you will want to use a terminal from within VS Code</strong>, as the correct compiler options have been set up in the VS Code preferences. See the video below for a walkthrough of how to do this.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Project Build</p></h3>
+  <video controls>
+  <source src="03. Project Build-WURLUIt8Q9Q.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. Project Build-WURLUIt8Q9Q.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The video above demonstrates building the project in the virtual desktop. To follow along, be sure to click on the "Desktop" button in your workspace to open a virtual desktop window: </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-06-29-at-10.46.08-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In the workspace desktop, you can open Visual Studio Code and a terminal within Visual Studio. To build the code, make a <code>build</code> directory and then <code>cd</code> into that directory. From within the <code>build</code> directory, you can then run the following commands to compile:</p>
+<pre><code>cmake ..
+make</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="running">Running</h2>
+<p>Once the build is complete, the executable binary files will be in the <code>build</code> folder of the project, and the project will be ready to run. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Run</p></h3>
+  <video controls>
+  <source src="03. Run-e77EWSxUOUs.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="03. Run-e77EWSxUOUs.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Running the project must be done from the workspace desktop in order for you to be able to see the mapped output. In the terminal, navigate to the build folder. From the <code>build</code> directory, you can run the compiled executable with map data using the following command:</p>
+<pre><code>./OSM_A_star_search</code></pre>
+<p>Or to specify a map file:</p>
+<pre><code>./OSM_A_star_search -f ../&lt;your_osm_file.osm&gt;</code></pre>
+<p>When you run the project for the first time, you should see a blank map like the one below:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/new-map.png" alt="When running the project code for the first time, you should see a map like the one above." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>When running the project code for the first time, you should see a map like the one above.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="project-workspace">Project Workspace</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Be sure to try this yourself in the workspace below or locally on your own machine!</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+    <li>
+      <strong>userCode:</strong>
+      <br>
+      <code>
+        <p>export CXX=g++-7<br />
+export CXXFLAGS=-std=c++17</p>
+      </code>
+    </li>
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <div>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="fc2c062a-f2f9-431c-a499-b71d7ae64e19--0">
+        <label for="fc2c062a-f2f9-431c-a499-b71d7ae64e19--0"><p>I have run the project using the workspace above, or I have downloaded the GitHub repo, installed the dependencies, and run the project locally</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Great work! You can now try running the tests for the project in the next concept.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Testing.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Building and Running')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.990 --> 00:00:09.539
+Dennis Ritchie had a brilliant idea which was
+
+00:00:09.539 --> 00:00:15.059
+the basic machine model of C. It says that the memory,
+
+00:00:15.060 --> 00:00:18.283
+all the data sequences of objects,
+
+00:00:18.283 --> 00:00:24.000
+and you can refer to them by pointers which are machine addresses with a type.
+
+00:00:24.000 --> 00:00:28.719
+So fundamentally, a pointer is a machine address and so is,
+
+00:00:28.719 --> 00:00:30.285
+by the way, a reference.
+
+00:00:30.285 --> 00:00:32.460
+In memory, they look the same.
+
+00:00:32.460 --> 00:00:38.024
+A pointer, you then associate the type with it at compile time,
+
+00:00:38.024 --> 00:00:39.990
+so that you know that you're pointing
+
+00:00:39.990 --> 00:00:46.925
+to an integer or pointing to a string or something like that.
+
+00:00:46.924 --> 00:00:50.299
+The memory model of C, which C++ adopted,
+
+00:00:50.299 --> 00:00:54.909
+is that if you want the integer next to the integers you are pointing to,
+
+00:00:54.909 --> 00:01:00.149
+you can either say plus one or minus one and navigate through the memory.
+
+00:01:00.149 --> 00:01:01.920
+That's what a pointer is.
+
+00:01:01.920 --> 00:01:11.099
+It's a machine address with a type associated with it at compile time.
+

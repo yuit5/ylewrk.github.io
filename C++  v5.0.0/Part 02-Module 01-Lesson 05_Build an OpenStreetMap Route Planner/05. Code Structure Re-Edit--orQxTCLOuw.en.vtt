@@ -1,0 +1,262 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:02.000 --> 00:00:04.290
+Now that you are able to build,
+
+00:00:04.290 --> 00:00:06.209
+run and test the project starter code,
+
+00:00:06.209 --> 00:00:10.019
+let's have a closer look at the structure of the code and classes you'll be working with.
+
+00:00:10.019 --> 00:00:12.240
+Much of the project starter code came from
+
+00:00:12.240 --> 00:00:16.050
+an OpenStreetMap demonstration of the lO2D graphics rendering library.
+
+00:00:16.050 --> 00:00:18.570
+C++ doesn't currently have 2D graphics
+
+00:00:18.570 --> 00:00:21.149
+rendering functionality as part of the standard library,
+
+00:00:21.149 --> 00:00:25.140
+and IO2D has been proposed as an addition to the standard library.
+
+00:00:25.140 --> 00:00:30.975
+This project extends the IO2D OpenStreetMap demo to render a path between two points.
+
+00:00:30.975 --> 00:00:34.274
+Much like the code you were previously for ASCII A star,
+
+00:00:34.274 --> 00:00:38.045
+the main function starts out by reading the map data into the program.
+
+00:00:38.045 --> 00:00:40.344
+After reading the data into the program,
+
+00:00:40.344 --> 00:00:43.640
+main creates a route model object with the data.
+
+00:00:43.640 --> 00:00:46.640
+The route model class is a data structure that holds all of
+
+00:00:46.640 --> 00:00:47.840
+the OpenStreetMap data in
+
+00:00:47.840 --> 00:00:51.425
+a convenient format and provide some methods for using the data.
+
+00:00:51.424 --> 00:00:56.104
+The route model class has a subclass called node which is used frequently.
+
+00:00:56.104 --> 00:00:59.314
+A node represents a single point in the map data.
+
+00:00:59.314 --> 00:01:03.274
+Note that route model provides the method find closest node.
+
+00:01:03.274 --> 00:01:06.534
+When you provide a starting point or ending point to the program,
+
+00:01:06.534 --> 00:01:08.689
+the find closest node method will find
+
+00:01:08.689 --> 00:01:12.399
+the closest node in the store data to the coordinates that you provide.
+
+00:01:12.400 --> 00:01:16.965
+The node class provides two methods, FindNeighbors and distance.
+
+00:01:16.965 --> 00:01:20.090
+The FindNeighbors method can be used when you want to
+
+00:01:20.090 --> 00:01:23.510
+find the neighbors of the current node to add to the open list,
+
+00:01:23.510 --> 00:01:26.690
+and the distance method provides the distance between two nodes.
+
+00:01:26.689 --> 00:01:30.849
+This can be used when you want to compute the cost to travel to the next node,
+
+00:01:30.849 --> 00:01:33.229
+or when you want to compute the heuristic function
+
+00:01:33.230 --> 00:01:36.245
+as the distance between the current node and the goal.
+
+00:01:36.245 --> 00:01:38.540
+After main has created a route model,
+
+00:01:38.540 --> 00:01:40.670
+it will create a route planner object.
+
+00:01:40.670 --> 00:01:44.150
+The route planner class provides all of the methods needed to conduct
+
+00:01:44.150 --> 00:01:48.410
+the AStarSearch and this is the class where you will be writing almost all of your code.
+
+00:01:48.409 --> 00:01:51.019
+In particular, the route planner class
+
+00:01:51.019 --> 00:01:55.054
+contains an AStarSearch method which is called by main.
+
+00:01:55.055 --> 00:01:57.980
+Just as you saw in your ASCII A star project,
+
+00:01:57.980 --> 00:02:00.560
+the AStarSearch method starts the wild loop that
+
+00:02:00.560 --> 00:02:04.234
+continues as long as the list of open nodes is non-empty.
+
+00:02:04.234 --> 00:02:05.825
+Inside the wild loop,
+
+00:02:05.825 --> 00:02:07.730
+the next node method is called.
+
+00:02:07.730 --> 00:02:12.409
+This method sorts the open list and provides the next node to explore.
+
+00:02:12.409 --> 00:02:16.490
+In the wild loop, the code will then check if the next note is the goal.
+
+00:02:16.490 --> 00:02:18.040
+If the goal has been found,
+
+00:02:18.039 --> 00:02:20.914
+the construct a final path method is called.
+
+00:02:20.914 --> 00:02:25.159
+This method creates a vector of nodes in the path from the beginning
+
+00:02:25.159 --> 00:02:29.599
+node to the end node and this vector can be used to render the final path.
+
+00:02:29.599 --> 00:02:31.655
+If the goal has not been found,
+
+00:02:31.655 --> 00:02:33.919
+the AddNeighbors method will be called.
+
+00:02:33.919 --> 00:02:35.689
+Just as with ASCII A star,
+
+00:02:35.689 --> 00:02:37.474
+this method has several steps.
+
+00:02:37.474 --> 00:02:40.049
+So let's examine them in more detail.
+
+00:02:40.050 --> 00:02:44.525
+AddNeighbors will start by calling FindNeighbors on the current node.
+
+00:02:44.525 --> 00:02:48.409
+Each node object is created with an empty vector of neighbor nodes,
+
+00:02:48.409 --> 00:02:50.734
+and FindNeighbors will populate
+
+00:02:50.735 --> 00:02:54.290
+the neighbors vector of the current node with all of the valid neighbors.
+
+00:02:54.289 --> 00:02:56.209
+For each neighbor of the current node,
+
+00:02:56.210 --> 00:02:59.825
+the parent of that neighbor is set to the current node.
+
+00:02:59.824 --> 00:03:01.159
+So in the diagram over here,
+
+00:03:01.159 --> 00:03:03.349
+we can see that the current node is green,
+
+00:03:03.349 --> 00:03:04.864
+the neighbor node is blue,
+
+00:03:04.865 --> 00:03:08.135
+and the parents of this blue node is the green node.
+
+00:03:08.134 --> 00:03:10.294
+Keeping track of the parent of each node,
+
+00:03:10.294 --> 00:03:13.599
+allows the path to be reconstructed once we reach the end.
+
+00:03:13.599 --> 00:03:16.569
+That is, if we get to the ending node in our search,
+
+00:03:16.569 --> 00:03:18.469
+we can just step through the parent of
+
+00:03:18.469 --> 00:03:22.354
+each node to find the sequence of nodes from the beginning to the end.
+
+00:03:22.354 --> 00:03:24.224
+After setting the parent,
+
+00:03:24.224 --> 00:03:26.259
+the g value of the neighbor is set to
+
+00:03:26.259 --> 00:03:30.879
+the current g value plus the distance from the current node to the neighbor.
+
+00:03:30.879 --> 00:03:34.449
+Nodes have different distances between them and we want to
+
+00:03:34.449 --> 00:03:38.304
+record a greater cost to travel longer distances between nodes.
+
+00:03:38.305 --> 00:03:42.909
+This helps to choose the shortest next step when presented with several options.
+
+00:03:42.909 --> 00:03:44.694
+At this point in the program,
+
+00:03:44.694 --> 00:03:49.584
+the h value of the neighboring node is also set using the CalculateHValue method.
+
+00:03:49.585 --> 00:03:51.909
+Finally, the neighbor is added to
+
+00:03:51.909 --> 00:03:55.405
+the open list and then the neighbor is also marked as visited.
+
+00:03:55.405 --> 00:03:57.504
+Back in our original diagram,
+
+00:03:57.504 --> 00:03:59.289
+we can add all of these steps to complete
+
+00:03:59.289 --> 00:04:02.275
+the AStarSearch function in the route planner class.
+
+00:04:02.275 --> 00:04:05.064
+Once AStarSearch completes execution,
+
+00:04:05.064 --> 00:04:10.175
+main will create a render object and render the map with the results from AStarSearch.
+
+00:04:10.175 --> 00:04:14.030
+This completes the high level picture of how the code will work in this project.
+
+00:04:14.030 --> 00:04:18.050
+Next, we'll dive into the source files to examine the code in more detail.
+
+00:04:18.050 --> 00:04:21.829
+Some of the structure here should seem familiar from the ASCII A star code.
+
+00:04:21.829 --> 00:04:24.769
+But in this project, you'll have the additional challenge of the code being
+
+00:04:24.769 --> 00:04:28.829
+structured using object oriented techniques. Good luck.
+

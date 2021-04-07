@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.459 --> 00:00:10.150
+Different organizations have big and elaborate build processes
+
+00:00:10.150 --> 00:00:15.544
+to get their software produced consistently, coherently.
+
+00:00:15.544 --> 00:00:18.420
+You can repeat the process,
+
+00:00:18.420 --> 00:00:21.090
+and things like that.
+
+00:00:21.089 --> 00:00:24.609
+They vary a bit from organization to organization.
+
+00:00:24.609 --> 00:00:27.539
+It's not really my home territory.
+
+00:00:27.539 --> 00:00:32.780
+If you use an IDE, it would do simple things simply.
+
+00:00:33.020 --> 00:00:36.080
+When you are starting with C++,
+
+00:00:36.079 --> 00:00:38.894
+that's not probably where you would start.
+
+00:00:38.895 --> 00:00:45.185
+Then you go to make in CMake and then you may use more specific tool build systems,
+
+00:00:45.185 --> 00:00:51.490
+but really they are somewhat different and you have to learn a few.
+

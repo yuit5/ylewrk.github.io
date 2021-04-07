@@ -1,0 +1,400 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.660
+If you've downloaded the route planning project for repo or if you
+
+00:00:03.660 --> 00:00:06.839
+are reading through the code on GitHub or in the virtual desktop,
+
+00:00:06.839 --> 00:00:10.919
+you should see the following files on folders at the top level of the repo.
+
+00:00:10.919 --> 00:00:14.279
+At the top of the repo is a CMake folder.
+
+00:00:14.279 --> 00:00:18.869
+This contains a couple of files that help CMake find the required libraries.
+
+00:00:18.870 --> 00:00:22.830
+These files are provided by those libraries to be included in any CMake project.
+
+00:00:22.829 --> 00:00:25.570
+So you don't really need to worry about them.
+
+00:00:25.850 --> 00:00:28.785
+Next, you should see the source directory
+
+00:00:28.785 --> 00:00:31.019
+which is where you'll be doing most of your work.
+
+00:00:31.019 --> 00:00:34.560
+This is the contents of the source directory and we'll be exploring each of
+
+00:00:34.560 --> 00:00:38.880
+these files or most of these files in detail later on.
+
+00:00:40.759 --> 00:00:44.449
+You should see two other directories after CMake and Source,
+
+00:00:44.450 --> 00:00:47.780
+which are the test and third-party directories.
+
+00:00:47.780 --> 00:00:50.270
+The test directory contains a file,
+
+00:00:50.270 --> 00:00:53.045
+utest rp a star search.
+
+00:00:53.045 --> 00:00:57.075
+This stands for unit test route planner a star search.
+
+00:00:57.075 --> 00:00:58.810
+If you click on that file,
+
+00:00:58.810 --> 00:01:01.505
+you will see all of the unit tests for the project.
+
+00:01:01.505 --> 00:01:03.890
+These tests are implemented with Google Test,
+
+00:01:03.890 --> 00:01:06.334
+which is the testing framework provided by Google.
+
+00:01:06.334 --> 00:01:10.149
+There are tests here for many of the functions that you will be implementing.
+
+00:01:10.150 --> 00:01:16.529
+The route planner test class which is right here is on line 42,
+
+00:01:16.528 --> 00:01:18.799
+is what is called a test fixture.
+
+00:01:18.799 --> 00:01:23.075
+It sets up a data configuration that will be used across multiple tests.
+
+00:01:23.075 --> 00:01:24.939
+As you can see in this fixture,
+
+00:01:24.939 --> 00:01:28.109
+it reads the map data into the program.
+
+00:01:28.109 --> 00:01:31.454
+I'm using read OSM data,
+
+00:01:31.454 --> 00:01:33.730
+and creates a route model,
+
+00:01:33.730 --> 00:01:38.814
+then creates a route planner with the starting co-ordinates 10, 10, 90, 90.
+
+00:01:38.814 --> 00:01:44.390
+This read OSM data is defined above and read OSM data calls readFile,
+
+00:01:44.390 --> 00:01:46.769
+which is defined above that.
+
+00:01:47.290 --> 00:01:53.110
+There are a few other variables that are set up for testing including a start node,
+
+00:01:53.109 --> 00:01:56.724
+end node, and a mid node in the path.
+
+00:01:56.724 --> 00:02:02.314
+Functions marked with test f are the actual tests.
+
+00:02:02.314 --> 00:02:07.284
+These tests all use the route planner test fixture which is defined above,
+
+00:02:07.284 --> 00:02:09.620
+and that's indicated by this first argument.
+
+00:02:09.620 --> 00:02:12.935
+The second argument is the name of the test.
+
+00:02:12.935 --> 00:02:15.949
+The test name tells you which function is being tested,
+
+00:02:15.949 --> 00:02:19.865
+so you can refer back to these tests as you are developing your project.
+
+00:02:19.865 --> 00:02:22.490
+The code written in these tests can also be helpful
+
+00:02:22.490 --> 00:02:25.010
+to see how the different objects and methods in the code work.
+
+00:02:25.009 --> 00:02:27.469
+So be sure to look over the tests carefully and
+
+00:02:27.469 --> 00:02:30.620
+refer back to them from time to time as you are writing your code.
+
+00:02:30.620 --> 00:02:34.569
+For example, we can see that a start node has
+
+00:02:34.569 --> 00:02:39.909
+a neighbor's vector and it's accessed using this arrow pointer.
+
+00:02:39.909 --> 00:02:45.159
+Here, we see that the vector is stored as neighbors and then,
+
+00:02:45.159 --> 00:02:49.539
+the size of neighbors is checked to be equal to four.
+
+00:02:49.539 --> 00:02:52.629
+If that's what expect EQ does here.
+
+00:02:52.629 --> 00:02:57.789
+If the size of the neighbors is not equal to four, this test fails.
+
+00:02:57.789 --> 00:03:03.090
+You can see here other functions or methods are tested down here.
+
+00:03:03.090 --> 00:03:04.955
+So you can see for example,
+
+00:03:04.955 --> 00:03:07.900
+that a node has a parent and that parent is set
+
+00:03:07.900 --> 00:03:11.580
+to a start node and end node has a parent,
+
+00:03:11.580 --> 00:03:13.800
+that's set to mid node and then,
+
+00:03:13.800 --> 00:03:16.000
+some tests are performed.
+
+00:03:21.919 --> 00:03:24.914
+Going back to the top level directory,
+
+00:03:24.914 --> 00:03:28.189
+you'll see a third-party directory here.
+
+00:03:28.189 --> 00:03:36.050
+This directory contains two git submodules, googletests and pugixml.
+
+00:03:36.050 --> 00:03:39.230
+Pugixml is a library for parsing XML
+
+00:03:39.229 --> 00:03:42.484
+that is used to read OpenStreetMap data into your program.
+
+00:03:42.485 --> 00:03:46.280
+These numbers here to the right of the sub-module name are
+
+00:03:46.280 --> 00:03:50.495
+the commits where these submodules are being pulled from.
+
+00:03:50.495 --> 00:03:56.789
+So we're pulling the googletest code at commit given by this hash.
+
+00:03:57.310 --> 00:04:01.189
+When you clone this repo using the recurrence submodules flag,
+
+00:04:01.189 --> 00:04:03.859
+the code for a Google test and pugixml will be
+
+00:04:03.860 --> 00:04:08.400
+pulled into your cloned repo so that you can use them in your program.
+
+00:04:10.069 --> 00:04:12.954
+Back at the top level of this directory,
+
+00:04:12.955 --> 00:04:15.320
+there are few other files that you'll need to know about.
+
+00:04:15.319 --> 00:04:21.584
+There's the CMakeLists.txt and this is used for building this entire project,
+
+00:04:21.584 --> 00:04:24.180
+and then, a map osm file,
+
+00:04:24.180 --> 00:04:26.735
+which is the OpenStreetMap data for the project.
+
+00:04:26.735 --> 00:04:30.155
+Let's have a look at CMakeLists.txt.
+
+00:04:30.154 --> 00:04:33.724
+This CMakeLists is a little bit bigger than
+
+00:04:33.725 --> 00:04:37.760
+CMake lists that you've seen previously so let's go over it line by line.
+
+00:04:37.759 --> 00:04:40.120
+The first line here,
+
+00:04:40.120 --> 00:04:46.254
+CMake minimum required sets the minimum required version of CMake to 3.11.3.
+
+00:04:46.254 --> 00:04:49.980
+Which means you'll need at least that version to compile and run the project.
+
+00:04:49.980 --> 00:04:53.995
+The next line sets the CMake standard to 17.
+
+00:04:53.995 --> 00:04:57.459
+So we'll be using C++ 17 to build this project.
+
+00:04:57.459 --> 00:05:03.954
+This line sets the CMake module path to the current CMake module path plus
+
+00:05:03.954 --> 00:05:12.824
+the source directory which is where the CMakeLists.txt lives, slash CMake.
+
+00:05:12.824 --> 00:05:14.360
+So if you recall,
+
+00:05:14.360 --> 00:05:19.270
+the current directory slash CMake is where those two files were.
+
+00:05:19.269 --> 00:05:23.334
+We can go back really quick in here,
+
+00:05:23.334 --> 00:05:30.399
+and that helps CMakeLists.txt find these two libraries.
+
+00:05:32.689 --> 00:05:38.334
+On line nine, we named the project as OSM a star search.
+
+00:05:38.334 --> 00:05:44.344
+So CMakeLists.txt requires you to name each project in the top-level directory.
+
+00:05:44.345 --> 00:05:48.560
+So we just named the project OSM A star search.
+
+00:05:48.560 --> 00:05:56.180
+Then, we set the library output path to be the source directory slash lib.
+
+00:05:56.180 --> 00:05:59.720
+So as libraries are built when this code is compiled,
+
+00:05:59.720 --> 00:06:03.305
+they'll all get put in this slash lib folder.
+
+00:06:03.305 --> 00:06:07.459
+The next lines find required project prerequisites.
+
+00:06:07.459 --> 00:06:10.019
+So you need io2d to run this project.
+
+00:06:10.019 --> 00:06:12.984
+You need Cairo, you need GraphicsMagick,
+
+00:06:12.985 --> 00:06:19.340
+and find package finds each of these packages in your system.
+
+00:06:19.339 --> 00:06:23.569
+Find package uses the CMake module path to find those packages.
+
+00:06:23.569 --> 00:06:24.800
+As we saw before,
+
+00:06:24.800 --> 00:06:28.250
+we set CMake module path to include the CMake source directory,
+
+00:06:28.250 --> 00:06:33.970
+CMake, which provides those two CMake files for finding Cairo and GraphicsMagick.
+
+00:06:33.970 --> 00:06:37.185
+In lines 20 and 21,
+
+00:06:37.185 --> 00:06:40.850
+we set io2d to be compiled without
+
+00:06:40.850 --> 00:06:45.710
+samples and without tests to speed up the build process a little bit.
+
+00:06:45.709 --> 00:06:53.529
+Then, our project contains those third party pugixml and googletests libraries.
+
+00:06:53.529 --> 00:06:59.344
+So we add those as subdirectories so that CMakeLists.txt is able to find them.
+
+00:06:59.345 --> 00:07:04.930
+Then finally, we create the executable OSM A star search.
+
+00:07:04.930 --> 00:07:09.379
+So this executable is created with all of these files that follow it.
+
+00:07:09.379 --> 00:07:14.569
+So we're going to use source main.cpp, source model.cpp,
+
+00:07:14.569 --> 00:07:17.884
+source render.cpp, source route model.cpp,
+
+00:07:17.884 --> 00:07:22.539
+and source route planner.cpp to create this executable.
+
+00:07:22.790 --> 00:07:29.360
+For this executable, we will also link the library's io2d and pugixml.
+
+00:07:29.360 --> 00:07:32.120
+So this is the name of the executable and down here,
+
+00:07:32.120 --> 00:07:33.723
+in the target link libraries,
+
+00:07:33.723 --> 00:07:42.980
+we say that we want to use this target and link the library's io2d and pugixml.
+
+00:07:42.980 --> 00:07:48.170
+Normally, this would be the end of a CMakeLists.txt file except that we
+
+00:07:48.170 --> 00:07:52.985
+also want to build an executable that allows us to run the unit tests.
+
+00:07:52.985 --> 00:07:55.074
+So we do this again, test,
+
+00:07:55.074 --> 00:08:00.889
+except this time we're going to have to include the unit test
+
+00:08:00.889 --> 00:08:07.654
+rp a A star search.cpp and the necessary files from our source directory.
+
+00:08:07.654 --> 00:08:10.504
+You'll note that in this executable,
+
+00:08:10.504 --> 00:08:14.079
+we don't include render or main since we don't need those.
+
+00:08:14.079 --> 00:08:17.589
+We won't need main to accept user input and for the unit tests,
+
+00:08:17.589 --> 00:08:19.699
+we're not doing any rendering.
+
+00:08:19.699 --> 00:08:22.349
+For this test executable,
+
+00:08:22.350 --> 00:08:25.710
+we've linked the library's gtest main,
+
+00:08:25.709 --> 00:08:29.625
+which is from Google Test and pugixml.
+
+00:08:29.625 --> 00:08:37.450
+Then, these last lines set some options for Linux or Microsoft Visual C++.
+
+00:08:37.450 --> 00:08:38.840
+If you're using Linux,
+
+00:08:38.840 --> 00:08:44.700
+we target the link libraries for OSM A star search to use pthread
+
+00:08:44.700 --> 00:08:52.009
+and target some compile options for Microsoft Visual C++ down here at the end.
+
+00:08:52.009 --> 00:08:57.139
+That is an overview of all of the files
+
+00:08:57.139 --> 00:09:01.580
+that you'll need to know about in the top-level directory and next,
+
+00:09:01.580 --> 00:09:07.040
+we'll go over all of the files that you'll need to know about in Source.
+

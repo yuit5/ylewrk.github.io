@@ -1,0 +1,211 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:04.485
+Now let's have a look at the RoutePlanner header file route_planner.h.
+
+00:00:04.485 --> 00:00:08.234
+Here we have the RoutePlanner class definition.
+
+00:00:08.234 --> 00:00:10.949
+Begins with the constructor RoutePlanner which
+
+00:00:10.949 --> 00:00:13.844
+takes a RouteModel and then coordinate start x,
+
+00:00:13.845 --> 00:00:15.419
+start y, end x,
+
+00:00:15.419 --> 00:00:19.980
+and end y for the starting and ending x, y coordinates.
+
+00:00:19.980 --> 00:00:23.339
+Next there is a GetDistance method which
+
+00:00:23.339 --> 00:00:28.515
+returns the distance that is stored here as a private variable in the model.
+
+00:00:28.515 --> 00:00:31.820
+That distance will be used to store the complete distance
+
+00:00:31.820 --> 00:00:35.314
+of the path that you find from starting point to end point.
+
+00:00:35.314 --> 00:00:39.280
+After that is the declaration of the AStarSearch method.
+
+00:00:39.280 --> 00:00:44.740
+Then down below that on line 17 through 21 are the AddNeighbors, CalculateHValue,
+
+00:00:44.740 --> 00:00:47.480
+constructFinaPath, and NextNode methods
+
+00:00:47.479 --> 00:00:50.979
+which will all be used to conduct the AStarSearch.
+
+00:00:50.979 --> 00:00:56.209
+Then down at the very bottom there are private variables for the open list.
+
+00:00:56.210 --> 00:00:59.240
+So it's a vector of node pointers for the open_list.
+
+00:00:59.240 --> 00:01:02.420
+Then a pointer to the start_node,
+
+00:01:02.420 --> 00:01:03.995
+pointer to the end_node,
+
+00:01:03.994 --> 00:01:06.765
+the distance which was mentioned before,
+
+00:01:06.765 --> 00:01:11.560
+and then the RouteModel that we're using.
+
+00:01:12.980 --> 00:01:16.290
+Now let's have a look at route_planner.cpp.
+
+00:01:16.290 --> 00:01:20.469
+Route_planner.cpp starts with the definition of the class constructor.
+
+00:01:20.469 --> 00:01:22.929
+In this constructor we take the start x,
+
+00:01:22.930 --> 00:01:24.625
+start y, end x,
+
+00:01:24.625 --> 00:01:30.129
+and end y coordinates and multiply them by 0.01 to convert them to percentages.
+
+00:01:30.129 --> 00:01:32.259
+Start x, start y, end x,
+
+00:01:32.260 --> 00:01:36.490
+and end y are given by the user input in the range 0-100.
+
+00:01:36.489 --> 00:01:38.979
+We want to multiply them to convert them to
+
+00:01:38.980 --> 00:01:42.895
+percentages to be able to use them in m_Model.FindClosestNode.
+
+00:01:42.894 --> 00:01:46.289
+Your first to-do in this file is to use
+
+00:01:46.290 --> 00:01:51.370
+m_Model.FindClosestNode to find the closest nodes to the starting and ending coordinates.
+
+00:01:51.370 --> 00:01:53.469
+You want to store these nodes in
+
+00:01:53.469 --> 00:01:57.409
+the route planner as a start node and end node attributes.
+
+00:01:57.409 --> 00:02:01.869
+Your next to-do is to implement the CalculateHValue method.
+
+00:02:01.870 --> 00:02:06.544
+You can use the distance functions for nodes to determine
+
+00:02:06.543 --> 00:02:12.659
+the distance from the node to the end node and that should give you the h value.
+
+00:02:13.550 --> 00:02:17.100
+To-do four is to complete the AddNeighbors method.
+
+00:02:17.099 --> 00:02:19.379
+There are instructions here for doing that.
+
+00:02:19.379 --> 00:02:22.280
+To-do five is to complete the next node method
+
+00:02:22.280 --> 00:02:25.360
+which will sort the open_list and return the next node.
+
+00:02:25.360 --> 00:02:27.410
+To-do six is to complete
+
+00:02:27.409 --> 00:02:29.599
+the construct final path method which will return
+
+00:02:29.599 --> 00:02:32.329
+the final path found from your AStarSearch.
+
+00:02:32.330 --> 00:02:36.485
+There's some code already written for you in the ConstructFinalPath method.
+
+00:02:36.485 --> 00:02:39.515
+We start by setting distance equal to zero
+
+00:02:39.514 --> 00:02:43.714
+and creating a vector of nodes called the path_found.
+
+00:02:43.715 --> 00:02:46.115
+When you call ConstructFinalPath,
+
+00:02:46.115 --> 00:02:49.580
+it should be called with the current node as the final node in the search.
+
+00:02:49.580 --> 00:02:54.080
+Your job is to iterate through the parents of each node.
+
+00:02:54.080 --> 00:02:55.715
+So once you have the final node,
+
+00:02:55.715 --> 00:02:58.474
+you will look for the parent of that node,
+
+00:02:58.474 --> 00:03:00.514
+and then the parent of that node,
+
+00:03:00.514 --> 00:03:02.164
+and then the parent of the node before that.
+
+00:03:02.164 --> 00:03:05.209
+Each node you find you'll record in path_pound.
+
+00:03:05.210 --> 00:03:08.629
+If you're pushing these nodes onto the back path_found,
+
+00:03:08.629 --> 00:03:10.294
+then when you end,
+
+00:03:10.294 --> 00:03:12.469
+the vector of nodes will be in the wrong order so
+
+00:03:12.469 --> 00:03:15.275
+you'll need to reverse the vector before you return it.
+
+00:03:15.275 --> 00:03:17.885
+Afterwards on line 66,
+
+00:03:17.884 --> 00:03:21.424
+distance is multiplied by model metric scale.
+
+00:03:21.425 --> 00:03:25.520
+So at each iteration of this searching for the parent of
+
+00:03:25.520 --> 00:03:29.430
+the nodes you're recording the distance from each node,
+
+00:03:29.430 --> 00:03:31.300
+you're adding to the distance here.
+
+00:03:31.300 --> 00:03:36.590
+When you're done, we want to multiply by this value metric scale which
+
+00:03:36.590 --> 00:03:39.125
+converts the scale of these nodes
+
+00:03:39.125 --> 00:03:43.259
+into meters that we can display at the end of the program.
+
+00:03:43.520 --> 00:03:47.990
+To-do seven is to write the AStarSearch algorithm.
+
+00:03:47.990 --> 00:03:52.520
+So here you will implement the while loop that loops as long
+
+00:03:52.520 --> 00:03:57.990
+as the open list is not empty and you'll use all of the methods from above.
+

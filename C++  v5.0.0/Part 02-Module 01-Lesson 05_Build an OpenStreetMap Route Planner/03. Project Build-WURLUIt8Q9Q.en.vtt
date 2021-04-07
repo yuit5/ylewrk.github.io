@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.159 --> 00:00:04.485
+Now, let's try building your project.
+
+00:00:04.485 --> 00:00:07.379
+If you're using the workspace to build your project,
+
+00:00:07.378 --> 00:00:11.109
+you can go to the desktop by clicking here,
+
+00:00:12.320 --> 00:00:16.690
+and you can open Visual Studio Code.
+
+00:00:28.429 --> 00:00:35.289
+We can close these windows and then open a new terminal in Visual Studio Code,
+
+00:00:35.990 --> 00:00:42.390
+and we will cd into the project and
+
+00:00:42.390 --> 00:00:49.929
+make a directory called build.
+
+00:00:49.929 --> 00:00:52.604
+Then we'll cd into builds,
+
+00:00:52.604 --> 00:00:55.229
+and then cmake dot dot.
+
+00:00:55.229 --> 00:01:01.714
+Dot dot, since we're in build the CMakeLists.txt is one directory above.
+
+00:01:01.715 --> 00:01:10.090
+So dot dot points cmake to the CMakeLists.txt that's one directory above. So we enter.
+
+00:01:12.920 --> 00:01:16.185
+This completes. Once you make completes,
+
+00:01:16.185 --> 00:01:19.000
+you can type make,
+
+00:01:19.459 --> 00:01:22.339
+and this will start building the project.
+
+00:01:22.340 --> 00:01:24.350
+If this is the first time you've built the project,
+
+00:01:24.349 --> 00:01:27.329
+it may take some time.
+
+00:01:49.340 --> 00:01:53.430
+That's it. Our project has successfully built.
+

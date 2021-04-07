@@ -1,0 +1,260 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Classes and Object-Oriented Programming</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Writing Multifile Programs</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Header Files.html">02. Header Files</a>
+    </li>
+    <li class="">
+      <a href="03. Using Headers with Multiple Files.html">03. Using Headers with Multiple Files</a>
+    </li>
+    <li class="">
+      <a href="04. Bjarne on Build Systems.html">04. Bjarne on Build Systems</a>
+    </li>
+    <li class="">
+      <a href="05. CMake and Make.html">05. CMake and Make</a>
+    </li>
+    <li class="">
+      <a href="06. References.html">06. References</a>
+    </li>
+    <li class="">
+      <a href="07. Pointers.html">07. Pointers</a>
+    </li>
+    <li class="">
+      <a href="08. Pointers Continued.html">08. Pointers Continued</a>
+    </li>
+    <li class="">
+      <a href="09. Bjarne on pointers.html">09. Bjarne on pointers</a>
+    </li>
+    <li class="">
+      <a href="10. References vs Pointers.html">10. References vs Pointers</a>
+    </li>
+    <li class="">
+      <a href="11. Bjarne on References.html">11. Bjarne on References</a>
+    </li>
+    <li class="">
+      <a href="12. Maps.html">12. Maps</a>
+    </li>
+    <li class="">
+      <a href="13. Classes and Object-Oriented Programming.html">13. Classes and Object-Oriented Programming</a>
+    </li>
+    <li class="">
+      <a href="14. Classes and OOP Continued.html">14. Classes and OOP Continued</a>
+    </li>
+    <li class="">
+      <a href="15. This Pointer.html">15. This Pointer</a>
+    </li>
+    <li class="">
+      <a href="16. How Long Does it Take to Learn C++ .html">16. How Long Does it Take to Learn C++? </a>
+    </li>
+    <li class="">
+      <a href="17. Outro.html">17. Outro</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">13. Classes and Object-Oriented Programming</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="classes-and-object-oriented-programming">Classes and Object-Oriented Programming</h1>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/object.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>If you are taking this course, you have probably used object-oriented programming (OOP) previously in another language. If it's been a while since you've used OOP, OOP is a style of coding that collects related data (object <em>attributes</em>) and functions (object <em>methods</em>) together to form a single data structure, called an <em>object</em>. This allows that collection of attributes and methods to be used repeatedly in your program without code repetition.</p>
+<p>In C++ the attributes and methods that make up an object are specified in a code <em>class</em>, and each object in the program is an <em>instance</em> of that class. </p>
+<p>This concept is intended to provide you with the basic syntax for writing classes in C++. In this Foundations course, you will not need to write your own classes for the project, but you will be modifying existing classes in the code. You will be writing your own classes in the next course of this Nanodegree: Object-Oriented Programming.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="inheritance">Inheritance</h2>
+<p>It is possible for a class to use methods and attributes from another class using class <em>inheritance</em>. For example, if you wanted to make a <code>Sedan</code> class with additional attributes or methods not found in the generic <code>Car</code> class, you could create a <code>Sedan</code> class that inherited from the <code>Car</code> by using the colon notation:</p>
+<pre><code class="cpp language-cpp">class Sedan : public Car {
+    // Sedan class declarations/definitions here.
+};</code></pre>
+<p>By doing this, each <code>Sedan</code> class instance will have access to any of the <em>public</em> methods and attributes of <code>Car</code>. In the code above, these are<code>IncrementDistance()</code> and <code>PrintCarData()</code>. You can add additional features to the <code>Sedan</code> class as well. In the example above, <code>Car</code> is often referred to as the <em>parent</em> class, and <code>Sedan</code> as the <em>child</em> or <em>derived</em> class.</p>
+<p>A full discussion of inheritance is beyond the scope of this course, but you will encounter it briefly in the project code later. In the project code, the classes are set up to inherit from existing classes of an open source code project. You won't need to use inheritance otherwise, but keep in mind that your classes can use all of the public methods and attributes of their parent class.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="14. Classes and OOP Continued.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Classes and Object-Oriented Programming')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
